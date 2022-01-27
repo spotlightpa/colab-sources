@@ -52,11 +52,11 @@ def process(ifname, odname):
             row[field] = row[field].strip()
         row["title"] = soft_join(row, "first", "middle", "last")
         row["linktitle"] = soft_join(row, "first", "last")
-        row["expertise"] = trim_all(row["expertise"].title().split(","))
+        row["expertise"] = get_expertise(row["expertise"])
         row["keywords"] = trim_all(row["keywords"].split(","))
         row["email"] = btoa(row["email"].encode("utf8")).decode("ascii")
         row["layout"] = "person"
-        row["images"] = []
+        row["images"] = get_images(row["headshot"])
         newrows.append({key: row.get(key, "") for key in canonical_rows})
 
     seen = set()
@@ -84,6 +84,20 @@ def trim_all(ss):
             r.append(s)
     return r
 
+def get_images(s):
+    image, _, _ = s.rpartition(" (")
+    if not image:
+        return []
+    return ["/img/uploads/"+image]
+
+def get_expertise(s):
+    s = s.replace('"Civil rights, equality"', "Civil Rights & Equality")
+    s = s.replace('"Arts, entertainment, & culture"', "Arts, Entertainment & Culture")
+    ss = trim_all(s.title().split(","))
+    return [
+        s.replace("Arts, Entertainment & Culture", "Arts, Entertainment & Culture")
+        for s in ss
+    ]
 
 if __name__ == "__main__":
     main()
