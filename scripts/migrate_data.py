@@ -36,7 +36,9 @@ def transform(p):
         f.write('\n')
 
 def mutate(p, data):
-    data['location'] = [data['location']]
+    data["expertise"] = [
+        s.replace(" And ", " & ") for s in data["expertise"]
+    ]
 
 if __name__ == "__main__":
     main()
