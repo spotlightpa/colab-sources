@@ -9,6 +9,8 @@ export default function formatTel() {
       let re = /^tel:1?(\d{3})(\d{3})(\d{4})$/.exec(this.tel);
       if (re) {
         this.tel = `(${re[1]}) ${re[2]}-${re[3]}`;
+      } else {
+        this.tel = decodeURIComponent(this.$el.href).replace(/tel:/, '');
       }
     },
   };
