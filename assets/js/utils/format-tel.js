@@ -10,7 +10,7 @@ export default function formatTel() {
       if (re) {
         this.tel = `(${re[1]}) ${re[2]}-${re[3]}`;
       } else {
-        this.tel = decodeURIComponent(this.$el.href).replace(/tel:/, '');
+        this.tel = decodeURIComponent(this.$el.href).replace(/tel:/, "");
       }
     },
   };
