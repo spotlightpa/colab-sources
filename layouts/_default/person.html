@@ -7,9 +7,15 @@
         {{ .Title }}
       </span>
       {{ with .Param "pronunciation" }}
-        <span class="text-base text-g-6">
-          ({{ . }})
-        </span>
+        {{ if hasPrefix . "http" }}
+          <span class="text-base text-g-6">
+            (<a href="{{ . }}">Listen</a>)
+          </span>
+        {{ else }}
+          <span class="text-base text-g-6">
+            ({{ . }})
+          </span>
+        {{ end }}
       {{ end }}
     </h1>
     {{ with .Param "role" }}
