@@ -37,7 +37,7 @@ def transform(p):
 
 def mutate(p, data):
     data["expertise"] = [
-        s.replace(" And ", " & ") for s in data["expertise"]
+        s.replace("Economy / Economics", "Economics") for s in data["expertise"]
     ]
 
 if __name__ == "__main__":
