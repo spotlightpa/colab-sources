@@ -1,10 +1,12 @@
-# Spotlight PA Diverse Sources Database
+# CT Mirror Diverse Sources Database
 
-A resource for Pennsylvania journalists to improve representation and diversify perspectives in their coverage.
+A resource for Connecticut journalists to improve representation and diversify perspectives in their coverage.
+
+Project forked from https://github.com/spotlightpa/sourcesdb. See original project for details about creation and architecture.
 
 ## License
 
-All content copyright Spotlight PA. Code available under the MIT license. Photos used with permission of subjects. Information contained in this database is self-reported by participants and should be verified before publication.
+All content copyright CT Mirror. Code available under the MIT license. Photos used with permission of subjects. Information contained in this database is self-reported by participants and should be verified before publication.
 
 ## Installation
 
