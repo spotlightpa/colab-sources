@@ -10,6 +10,8 @@ googleAnalytics = "UA-141126362-5"
 buildFuture = true
 
 [params]
+  favicon = "/img/logos/ctmirror-small.png"
+  touch-icon = "/img/logos/ctmirror-logo.png"
   donate-link = "http://checkout.fundjournalism.org/memberform?org_id=spotlightpa&campaign=7015G0000003ZZVQA2&utm_source=sources.spotlightpa.org"
   nominate-link = "https://docs.google.com/forms/d/e/1FAIpQLSeVh7CFSaKc5H7VTWcizw1sxmC8XQfWZ_yerww6SvWad5vmQQ/viewform"
 [taxonomies]

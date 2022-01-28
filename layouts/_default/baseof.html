@@ -49,19 +49,26 @@
     href='{{ $js.RelPermalink }}'
   />
 
-  {{ $icon := resources.Get "/img/logos/circle-black-on-trans-920.png" }}
-  {{ range $size := slice "32x32" "128x128" "152x152" "167x167" "180x180" "192x192" "196x196" }}
+  <link
+    rel="icon"
+    href='/favicon.ico'
+    type="image/png"
+    sizes="any"
+  />
+  {{ $icon := site.Param "favicon" | resources.Get | fingerprint }}
+  <link
+    rel="icon"
+    type="{{ $icon.MediaType }}"
+    href='{{ $icon.Permalink }}'
+  />
+  {{ $icon = site.Param "touch-icon" | resources.Get }}
+  {{ range $size := slice "180x180" }}
     {{ $iconShrunk := $icon.Fit $size }}
-    <link rel="shortcut icon" href="{{ $iconShrunk.Permalink }}" sizes="{{ $size }}">
+    <link
+      rel="apple-touch-icon"
+      href="{{ $iconShrunk.Permalink }}"
+    />
   {{ end }}
-  {{ $icon = resources.Get "/img/logos/square-white-on-black-920.png" }}
-  {{ range $size := slice "32x32" "128x128" "152x152" "167x167" "180x180" "192x192" "196x196" }}
-    {{ $iconShrunk := $icon.Fit $size }}
-    <link rel="apple-touch-icon" href="{{ $iconShrunk.Permalink }}" sizes="{{ $size }}">
-  {{ end }}
-
-  {{ $logo := resources.Get "/img/logos/circle-default-on-trans.svg" | fingerprint }}
-  <link rel="mask-icon" href="{{ $logo.Permalink }}" color="black">
 
   {{ if .Param "no-index" }}
     <meta name="robots" content="noindex">
