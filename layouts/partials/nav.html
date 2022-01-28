@@ -2,16 +2,17 @@
   <nav x-data="{ isOpen: false }">
     <div class="max-w-7xl mx-auto px-6">
       <div class="relative flex items-center justify-between h-16">
-        <div class="flex-1 flex items-center items-stretch justify-start">
+        <div class="flex-1 flex items-center justify-start">
           <a
             class="flex-shrink-0 inline-flex text-white hover:text-yellow"
             href="/"
           >
-            <svg class="h-12 w-12 fill-current">
-              <title>Home</title>
-              <desc>Spotlight PA logo</desc>
-              <use xlink:href="#logo-svg"></use>
-            </svg>
+            {{ $img := resources.Get "/img/logos/ctmirror-small.png" }}
+            {{ $img = $img | fingerprint }}
+            <img
+              class="relative mt-3 h-6 w-6"
+              src="{{ $img.RelPermalink }}"
+            >
             <svg class="h-12 w-32 fill-current">
               <title>Home</title>
               <desc>Diverse Source Database logo</desc>
