@@ -1,8 +1,8 @@
 media_folder: static/img/uploads
 public_folder: /img/uploads
 
-site_url: https://sources.spotlightpa.org
-display_url: https://sources.spotlightpa.org
+site_url: https://sources.ctmirror.org
+display_url: https://sources.ctmirror.org
 logo_url: https://www.spotlightpa.org/img/logos/capitol-moody-logo-500.jpeg
 
 show_preview_links: true
