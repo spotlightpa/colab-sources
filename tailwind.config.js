@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     fontFamily: {
       serif: "'EB Garamond', serif",
-      sans: 'Lora, serif',
+      sans: "Lora, serif",
     },
     fontSize: {
       xs: "0.7rem",
