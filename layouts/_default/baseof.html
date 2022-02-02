@@ -24,8 +24,6 @@
     {{ $css = $css | minify | fingerprint | resources.PostProcess }}
   {{ end }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
-  <link rel="preload" as="font" href="/css/fonts/merriweather-v22/merriweather-v22-latin-regular.woff2" crossorigin>
-  <link rel="preload" as="font" href="/css/fonts/merriweather-v22/merriweather-v22-latin-700.woff2" crossorigin>
   {{ block "extra-head" . }}{{ end }}
 
   <noscript>
@@ -88,7 +86,7 @@
 <body
   data-ga-label='{{ $pageCat }}:featured'
   data-ga-category="featured"
-  class="bg-beige text-g-9 font-serif leading-normal"
+  class="bg-beige text-g-9 text-base font-serif leading-normal"
 >
   <div class="flex flex-col max-w-screen  min-h-screen bg-white overflow-x-hidden">
     {{ partialCached "nav.html" . }}
