@@ -1,6 +1,6 @@
 [[navbar]]
-name = "Spotlight PA"
-url = "https://www.spotlightpa.org/"
+name = "CT Mirror"
+url = "https://www.ctmirror.org/"
 weight = 1
 
 [[navbar]]
@@ -14,8 +14,8 @@ url = "/"
 weight = 1
 
 [[mobile]]
-name = "Spotlight PA"
-url = "https://www.spotlightpa.org/"
+name = "CT Mirror"
+url = "https://www.ctmirror.org/"
 weight = 2
 
 [[mobile]]
