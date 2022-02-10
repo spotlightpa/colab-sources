@@ -7,12 +7,11 @@
             class="flex-shrink-0 inline-flex text-white hover:text-yellow"
             href="/"
           >
-            {{ $img := resources.Get "/img/logos/ctmirror-small.png" }}
-            {{ $img = $img | fingerprint }}
-            <img
-              class="relative mt-3 h-6 w-6"
-              src="{{ $img.RelPermalink }}"
-            >
+            <svg class="h-12 w-12 fill-current">
+              <title>Home</title>
+              <desc>CT Mirror logo</desc>
+              <use xlink:href="#logo-svg"></use>
+            </svg>
             <svg class="h-12 w-32 fill-current">
               <title>Home</title>
               <desc>Diverse Source Database logo</desc>
