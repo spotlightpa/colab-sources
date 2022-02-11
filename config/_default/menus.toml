@@ -5,8 +5,13 @@ weight = 1
 
 [[navbar]]
 name = "Nominate An Expert"
-url = "https://docs.google.com/forms/d/e/1FAIpQLSeVh7CFSaKc5H7VTWcizw1sxmC8XQfWZ_yerww6SvWad5vmQQ/viewform"
+url = "https://airtable.com/shrwKYg7fBgjHJVU3"
 weight = 2
+
+[[navbar]]
+name = "Contact Us"
+url = "mailto:sources@ctmirror.org"
+weight = 3
 
 [[mobile]]
 name = "Home"
@@ -20,98 +25,176 @@ weight = 2
 
 [[mobile]]
 name = "Nominate An Expert"
-url = "https://docs.google.com/forms/d/e/1FAIpQLSeVh7CFSaKc5H7VTWcizw1sxmC8XQfWZ_yerww6SvWad5vmQQ/viewform"
+url = "https://airtable.com/shrwKYg7fBgjHJVU3"
 weight = 3
 
 [[mobile]]
+name = "Contact Us"
+url = "mailto:sources@ctmirror.org"
+weight = 4
+
+[[mobile]]
 name = "Support us"
-url = "http://checkout.fundjournalism.org/memberform?org_id=spotlightpa&campaign=7015G0000003ZZVQA2&utm_source=sources.spotlightpa.org"
+url = "https://checkout.fundjournalism.org/memberform?org_id=ctmirror&campaign"
 weight = 4
 
+
 [[footer]]
-name = "Home"
-url = "https://www.spotlightpa.org/"
+name = "News"
+link = "https://ctmirror.org/news/"
 weight = 1
 
 [[footer]]
-name = "About Us"
-url = "https://www.spotlightpa.org/about/mission/"
+name = "Viewpoints"
+link = "https://ctmirror.org/viewpoints/"
 weight = 2
 
 [[footer]]
-name = "Contact"
-url = "https://www.spotlightpa.org/contact/"
+name = "Events"
+link = "https://ctmirror.org/events"
 weight = 3
 
 [[footer]]
-name = "Tips"
-url = "https://www.spotlightpa.org/tips/"
+name = "Podcasts"
+link = "https://ctmirror.org/podcasts/"
 weight = 4
 
 [[footer]]
-name = "Newsletters"
-url = "https://www.spotlightpa.org/newsletters/"
+name = "Announcements"
+link = "https://ctmirror.org/announcements/"
 weight = 5
 
 [[footer]]
-name = "Staff"
-url = "https://www.spotlightpa.org/about/staff/"
+name = "In-Depth Series"
+link = "https://ctmirror.org/series/"
 weight = 6
 
 [[footer]]
-name = "FAQ"
-url = "https://www.spotlightpa.org/about/faq/"
-weight = 8
-
-[[footer]]
-name = "Donate"
-pre = "is-uppercase"
-url = "http://checkout.fundjournalism.org/memberform?org_id=spotlightpa&campaign=7015G0000003ZZVQA2&utm_source=sources.spotlightpa.org"
-weight = 9
-
-[[social]]
-name = "Facebook"
-pre = "is-uppercase"
-url = "https://www.facebook.com/SpotlightPennsylvania"
-weight = 1
-
-[[social]]
-name = "Twitter"
-pre = "is-uppercase"
-url = "https://www.twitter.com/SpotlightPA"
-weight = 2
-
-[[social]]
-name = "@PA_Sources"
-url = "https://twitter.com/pa_sources"
-weight = 3
-
-[[social]]
-name = "Instagram"
-pre = "is-uppercase"
-url = "https://www.instagram.com/Spotlightpennsylvania/"
-weight = 4
-
-[[social]]
-name = "Apple News"
-pre = "is-uppercase"
-url = "https://apple.news/TJOxac5Y3SDWgviiNxcD9gA"
-weight = 5
-
-[[social]]
-name = "Flipboard"
-pre = "is-uppercase"
-url = "https://flipboard.com/@SpotlightPA"
-weight = 6
-
-[[social]]
-name = "Google News"
-pre = "is-uppercase"
-url = "https://news.google.com/publications/CAAqBwgKMJOpkgswx-CnAw"
+name = "Investigations"
+link = "https://ctmirror.org/news/investigations/"
 weight = 7
 
-[[social]]
-name = "Github"
-pre = "is-uppercase"
-url = "https://www.github.com/spotlightpa/"
+[[footer]]
+name = "COVID Tracker"
+link = "https://ctmirror.org/covidtracker/"
 weight = 8
+
+[[footer]]
+name = "Economic Indicator Dashboard"
+link = "https://ctmirror.org/economic-indicator-dashboard/"
+weight = 9
+
+[[engage]]
+name = "Sign Up for Newsletters"
+link = "https://ctmirror.us5.list-manage.com/subscribe?u=c546ffdc4bbb36c1f14f9c8f1&id=571d22f8e4"
+weight = 10
+
+[[engage]]
+name = "Donate"
+link = "https://checkout.fundjournalism.org/memberform?org_id=ctmirror&campaign=7015a000000zJPnAAM"
+weight = 11
+
+[[engage]]
+name = "Submit to CT Viewpoints"
+link = "https://ctmirror.org/yourviewpoint/"
+weight = 12
+
+[[engage]]
+name = "Manage Your CT Mirror Membership"
+link = "https://ctmirror.org/members/"
+weight = 13
+
+[[engage]]
+name = "Advertise with Us"
+link = "https://ctmirror.org/advertising-and-sponsorship/"
+weight = 14
+
+[[engage]]
+name = "Request a Speaking Engagement"
+link = "https://ctmirror.org/speaking-engagements/"
+weight = 15
+
+[[engage]]
+name = "Use CT Mirror Photography"
+link = "https://ctmirror.org/use-of-photography/"
+weight = 16
+
+[[learn]]
+name = "About Us"
+link = "https://ctmirror.org/about/"
+weight = 17
+
+[[learn]]
+name = "History"
+link = "https://ctmirror.org/about/history/"
+weight = 18
+
+[[learn]]
+name = "Impact"
+link = "https://ctmirror.org/about/impact/"
+weight = 19
+
+[[learn]]
+name = "Awards"
+link = "https://ctmirror.org/about/awards/"
+weight = 20
+
+[[learn]]
+name = "Financial"
+link = "https://ctmirror.org/about/financial/"
+weight = 21
+
+[[learn]]
+name = "Strategic Plan"
+link = "https://ctmirror.org/about/strategic-plan/"
+weight = 22
+
+[[learn]]
+name = "Policies"
+link = "https://ctmirror.org/about/policies/"
+weight = 23
+
+[[learn]]
+name = "FAQ"
+link = "https://ctmirror.org/about/faq/"
+weight = 24
+
+[[connect]]
+name = "Board of Directors"
+link = "https://ctmirror.org/about/board/"
+weight = 25
+
+[[connect]]
+name = "Staff"
+link = "https://ctmirror.org/about/staff/"
+weight = 26
+
+[[connect]]
+name = "Community Editorial Board"
+link = "https://ctmirror.org/about/community-editorial-board/"
+weight = 27
+
+[[connect]]
+name = "Sponsors and Funders"
+link = "https://ctmirror.org/about/sponsors/"
+weight = 28
+
+[[connect]]
+name = "Donors"
+link = "https://ctmirror.org/about/donors/"
+weight = 29
+
+[[connect]]
+name = "Friends of The Connecticut Mirror"
+link = "https://ctmirror.org/about/friends/"
+weight = 30
+
+[[connect]]
+name = "Work for Us"
+link = "https://ctmirror.org/work-for-us/"
+weight = 31
+
+[[connect]]
+name = "Contact Us"
+link = "https://ctmirror.org/contact-us/"
+weight = 32

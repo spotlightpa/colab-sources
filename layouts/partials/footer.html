@@ -1,7 +1,7 @@
 <footer class="mt-auto p-12 font-sans bg-black text-white">
-  <nav class="flex flex-col space-y-6 md:flex-row md:space-y-0 max-w-screen-xl uppercase">
+  <nav class="flex flex-col lg:flex-row gap-6 max-w-screen-xl">
     <div
-      class="-mt-2 flex-grow md:order-last"
+      class="-mt-2 flex-grow lg:order-last uppercase"
     >
       <a
         href="https://www.spotlightpa.org/"
@@ -17,17 +17,21 @@
       </a>
       <p class="mt-2 leading-tight">
         &copy; {{ now.Format "2006" }} <br>
-        Spotlight PA <br>
-        225 Market St <br>
-        Suite 502A <br>
-        Harrisburg PA 17101
+        CT Mirror <br>
+        1049 Asylum Avenue <br>
+        Hartford, CT 06105 <br>
+        <a href="tel:18602186380">860-218-6380</a> <br>
+        <a href="mailto:membership@ctmirror.org">membership@ctmirror.org</a>
       </p>
     </div>
-    {{ $context := dict "menu" site.Menus.footer "name" "Spotlight PA" }}
+    {{ $context := dict
+      "menu" site.Menus.footer
+      "name" "Start"
+    }}
     {{ block "featured-footer" $context }}
       <div class="flex-1">
-        <h3 class="font-bold">{{ .name }}</h3>
-        <ul class="mt-2">
+        <h3 class="font-bold uppercase">{{ .name }}</h3>
+        <ul class="mt-2 leading-tight space-y-2">
           {{ range .menu }}
             <li>
               <a
@@ -39,26 +43,11 @@
         </ul>
       </div>
     {{ end }}
-    {{ $context = dict "menu" site.Menus.social "name" "Follow Us" }}
+    {{ $context = dict "menu" site.Menus.engage "name" "Engage" }}
+    {{ template "featured-footer" $context }}
+    {{ $context = dict "menu" site.Menus.learn "name" "Learn" }}
+    {{ template "featured-footer" $context }}
+    {{ $context = dict "menu" site.Menus.connect "name" "Connect" }}
     {{ template "featured-footer" $context }}
   </nav>
-  <div class="mx-auto max-w-sm">
-    <p class="mt-12 text-center leading-snug">
-      This project was supported by the
-      <a
-        class="text-blue hover:text-yellow duration-500"
-        href="https://panewsmedia.org/services/foundation-fellows-grants/foundation-fellows-fund-for-the-future/"
-      >Pennsylvania NewsMedia Association Foundation Fellows Fund for the Future</a>. If you found it useful
-      <a
-        class="text-blue hover:text-yellow duration-500"
-        href="https://www.spotlightpa.org/contact/"
-      >let us know</a>
-      and consider
-      <a
-        class="text-blue hover:text-yellow duration-500"
-        href='{{ site.Param "donate-link" }}'
-      >becoming a member</a>
-      today.
-    </p>
-  </div>
 </footer>
