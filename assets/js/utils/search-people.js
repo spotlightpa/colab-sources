@@ -74,7 +74,7 @@ export default function searchPeople() {
       }
       let nStories = this.results?.hits?.length ?? 0;
       let more = nHits > nStories ? `Showing first ${nStories}.` : "";
-      return `Got ${nHits} search results. ${more}`;
+      return `Got ${nHits} search results. Click on name for more information. ${more}`;
     },
 
     storeHistory() {

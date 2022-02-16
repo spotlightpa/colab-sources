@@ -1,7 +1,7 @@
-<footer class="mt-auto p-12 font-sans bg-black text-white">
+<footer class="mt-auto p-12 font-serif bg-black text-white">
   <nav class="flex flex-col lg:flex-row gap-6 max-w-screen-xl">
     <div
-      class="-mt-2 flex-grow lg:order-last uppercase"
+      class="flex-grow lg:order-last uppercase"
     >
       <a
         href="https://www.ctmirror.org/"
@@ -26,7 +26,7 @@
     </div>
     {{ $context := dict
       "menu" site.Menus.footer
-      "name" "Start"
+      "name" "CT Mirror"
     }}
     {{ block "featured-footer" $context }}
       <div class="flex-1">
@@ -43,11 +43,7 @@
         </ul>
       </div>
     {{ end }}
-    {{ $context = dict "menu" site.Menus.engage "name" "Engage" }}
-    {{ template "featured-footer" $context }}
-    {{ $context = dict "menu" site.Menus.learn "name" "Learn" }}
-    {{ template "featured-footer" $context }}
-    {{ $context = dict "menu" site.Menus.connect "name" "Connect" }}
+    {{ $context = dict "menu" site.Menus.follow "name" "Follow Us" }}
     {{ template "featured-footer" $context }}
   </nav>
 </footer>

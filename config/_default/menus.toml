@@ -7,6 +7,7 @@ weight = 1
 name = "Nominate An Expert"
 url = "https://airtable.com/shrwKYg7fBgjHJVU3"
 weight = 2
+post = "_blank"
 
 [[navbar]]
 name = "Contact Us"
@@ -27,6 +28,7 @@ weight = 2
 name = "Nominate An Expert"
 url = "https://airtable.com/shrwKYg7fBgjHJVU3"
 weight = 3
+post = "_blank"
 
 [[mobile]]
 name = "Contact Us"
@@ -34,167 +36,79 @@ url = "mailto:sources@ctmirror.org"
 weight = 4
 
 [[mobile]]
-name = "Support us"
-url = "https://checkout.fundjournalism.org/memberform?org_id=ctmirror&campaign"
-weight = 4
+name = "Donate"
+url = "https://ctmirror.org/donate?campaign=7015a000000zTxmAAE"
+weight = 5
 
 
 [[footer]]
-name = "News"
-link = "https://ctmirror.org/news/"
+name = "Home"
+url = "https://ctmirror.org/"
 weight = 1
 
 [[footer]]
-name = "Viewpoints"
-link = "https://ctmirror.org/viewpoints/"
+name = "About"
+url = "https://ctmirror.org/about"
 weight = 2
 
 [[footer]]
-name = "Events"
-link = "https://ctmirror.org/events"
+name = "FAQ"
+url = "https://ctmirror.org/about/faq/"
 weight = 3
 
 [[footer]]
-name = "Podcasts"
-link = "https://ctmirror.org/podcasts/"
+name = "Staff"
+url = "https://ctmirror.org/about/staff/"
 weight = 4
 
 [[footer]]
-name = "Announcements"
-link = "https://ctmirror.org/announcements/"
+name = "Newsletters"
+url = "https://ctmirror.org/newsletters"
 weight = 5
 
 [[footer]]
-name = "In-Depth Series"
-link = "https://ctmirror.org/series/"
+name = "Donate"
+url = "https://ctmirror.org/donate?campaign=7015a000000zTxmAAE"
 weight = 6
 
 [[footer]]
-name = "Investigations"
-link = "https://ctmirror.org/news/investigations/"
+name = "Contact Us"
+url = "https://ctmirror.org/contact-us/"
 weight = 7
 
-[[footer]]
-name = "COVID Tracker"
-link = "https://ctmirror.org/covidtracker/"
-weight = 8
 
-[[footer]]
-name = "Economic Indicator Dashboard"
-link = "https://ctmirror.org/economic-indicator-dashboard/"
-weight = 9
+[[follow]]
+name = "Facebook"
+url = "https://facebook.com/CTMirror/"
+weight = 1
 
-[[engage]]
-name = "Sign Up for Newsletters"
-link = "https://ctmirror.us5.list-manage.com/subscribe?u=c546ffdc4bbb36c1f14f9c8f1&id=571d22f8e4"
-weight = 10
+[[follow]]
+name = "Twitter"
+url = "https://twitter.com/ctmirror"
+weight = 2
 
-[[engage]]
-name = "Donate"
-link = "https://checkout.fundjournalism.org/memberform?org_id=ctmirror&campaign=7015a000000zJPnAAM"
-weight = 11
+[[follow]]
+name = "Instagram"
+url = "https://www.instagram.com/ctmirror/"
+weight = 3
 
-[[engage]]
-name = "Submit to CT Viewpoints"
-link = "https://ctmirror.org/yourviewpoint/"
-weight = 12
+[[follow]]
+name = "LinkedIn"
+url = "https://www.linkedin.com/company/ctmirror/"
+weight = 4
 
-[[engage]]
-name = "Manage Your CT Mirror Membership"
-link = "https://ctmirror.org/members/"
-weight = 13
+[[follow]]
+name = "YouTube"
+url = "https://www.youtube.com/c/theconnecticutmirror"
+weight = 5
 
-[[engage]]
-name = "Advertise with Us"
-link = "https://ctmirror.org/advertising-and-sponsorship/"
-weight = 14
+[[follow]]
+name = "Google News"
+url = "https://news.google.com/publications/CAAiEB2eGe8Jj40myR82AY8_MUQqFAgKIhAdnhnvCY-NJskfNgGPPzFE?hl=en-US&gl=US&ceid=US:en"
+weight = 6
 
-[[engage]]
-name = "Request a Speaking Engagement"
-link = "https://ctmirror.org/speaking-engagements/"
-weight = 15
+[[follow]]
+name = "NewsBreak"
+url = "https://www.newsbreak.com/channels/connecticut-mirror-512909"
+weight = 7
 
-[[engage]]
-name = "Use CT Mirror Photography"
-link = "https://ctmirror.org/use-of-photography/"
-weight = 16
-
-[[learn]]
-name = "About Us"
-link = "https://ctmirror.org/about/"
-weight = 17
-
-[[learn]]
-name = "History"
-link = "https://ctmirror.org/about/history/"
-weight = 18
-
-[[learn]]
-name = "Impact"
-link = "https://ctmirror.org/about/impact/"
-weight = 19
-
-[[learn]]
-name = "Awards"
-link = "https://ctmirror.org/about/awards/"
-weight = 20
-
-[[learn]]
-name = "Financial"
-link = "https://ctmirror.org/about/financial/"
-weight = 21
-
-[[learn]]
-name = "Strategic Plan"
-link = "https://ctmirror.org/about/strategic-plan/"
-weight = 22
-
-[[learn]]
-name = "Policies"
-link = "https://ctmirror.org/about/policies/"
-weight = 23
-
-[[learn]]
-name = "FAQ"
-link = "https://ctmirror.org/about/faq/"
-weight = 24
-
-[[connect]]
-name = "Board of Directors"
-link = "https://ctmirror.org/about/board/"
-weight = 25
-
-[[connect]]
-name = "Staff"
-link = "https://ctmirror.org/about/staff/"
-weight = 26
-
-[[connect]]
-name = "Community Editorial Board"
-link = "https://ctmirror.org/about/community-editorial-board/"
-weight = 27
-
-[[connect]]
-name = "Sponsors and Funders"
-link = "https://ctmirror.org/about/sponsors/"
-weight = 28
-
-[[connect]]
-name = "Donors"
-link = "https://ctmirror.org/about/donors/"
-weight = 29
-
-[[connect]]
-name = "Friends of The Connecticut Mirror"
-link = "https://ctmirror.org/about/friends/"
-weight = 30
-
-[[connect]]
-name = "Work for Us"
-link = "https://ctmirror.org/work-for-us/"
-weight = 31
-
-[[connect]]
-name = "Contact Us"
-link = "https://ctmirror.org/contact-us/"
-weight = 32
