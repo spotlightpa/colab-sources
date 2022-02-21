@@ -36,9 +36,10 @@ def transform(p):
         f.write('\n')
 
 def mutate(p, data):
-    data["expertise"] = [
-        s.replace("Economy / Economics", "Economics") for s in data["expertise"]
-    ]
+    if isinstance(data["location"], str):
+        data["location"] = [data["location"]]
+
+    data["location"] = [loc for loc in data["location"] if loc]
 
 if __name__ == "__main__":
     main()
