@@ -173,6 +173,10 @@
     {{ with .Param "images" }}
       {{ range . }}
         {{ $img := resources.GetMatch . }}
+        {{ if not $img }}
+          {{ warnf "missing image %q" . }}
+          {{ continue }}
+        {{ end }}
         {{ $imgSmall := $img.Resize "200x" }}
         {{ $imgMedium := $img.Resize "400x" }}
         <p class="float-left mt-6 mr-4 mb-4">
