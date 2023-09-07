@@ -1,12 +1,11 @@
-baseURL = "https://sources.ctmirror.org/"
+baseURL = "https://sources.colabnews.co/"
 languageCode = "en-us"
-title = "Diverse Source Database"
+title = "Colorado News Collaborative Sources"
 enableRobotsTXT = true
 enableGitInfo = true
 rssLimit = 50
 Paginate = 25
 
-googleAnalytics = "UA-141126362-5"
 buildFuture = true
 
 [params]
