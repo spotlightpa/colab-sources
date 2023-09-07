@@ -6,13 +6,13 @@
   "scripts": {
     "format": "yarn run format:eslint; yarn run format:prettier",
     "format:eslint": "eslint --fix --ext .js --ignore-path .gitignore .",
-    "format:prettier": "prettier --ignore-path .gitignore --write **/*.{css,js,yml}",
+    "format:prettier": "prettier --ignore-path .gitignore --write '**/*.{html,css,js,yml}'",
     "build:prod": "hugo version && hugo --cleanDestinationDir && yarn run searchindex",
     "build:stage": "hugo version && hugo --environment staging --baseURL ${DEPLOY_PRIME_URL:-https://sources.ctmirror.org}",
     "searchindex": "GOBIN=$(pwd)/bin go install github.com/spotlightpa/algolia-indexer@latest && ./bin/algolia-indexer -src ./public/searchindex.json -verbose",
     "test": "yarn run test:eslint && yarn run test:prettier",
     "test:eslint": "eslint --ext .js --ignore-path .gitignore .",
-    "test:prettier": "prettier --ignore-path .gitignore --check **/*.{css,js,yml}"
+    "test:prettier": "prettier --ignore-path .gitignore --check '**/*.{html,css,js,yml}'"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",

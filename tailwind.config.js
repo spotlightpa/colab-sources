@@ -5,18 +5,6 @@ module.exports = {
       serif: "'EB Garamond', serif",
       sans: "Lora, serif",
     },
-    fontSize: {
-      xs: "0.75rem",
-      sm: "1rem",
-      base: "1.25rem",
-      lg: "1.4rem",
-      xl: "1.5rem",
-      "2xl": "1.6rem",
-      "3xl": "2rem",
-      "4xl": "2.5rem",
-      "5xl": "3rem",
-      "6xl": "3.5em",
-    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -72,8 +60,5 @@ module.exports = {
     textColor: ["responsive", "hover", "focus", "group-hover"],
   },
   plugins: [],
-  future: {
-    purgeLayersByDefault: true,
-    removeDeprecatedGapUtilities: true,
-  },
+  content: ["./hugo_stats.json"],
 };

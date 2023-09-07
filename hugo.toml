@@ -51,6 +51,18 @@ buildFuture = true
 
 [build]
   writeStats = true
+  [[build.cachebusters]]
+    source = "assets/watching/hugo_stats\\.json"
+    target = "css"
+  [[build.cachebusters]]
+    source = "(postcss|tailwind)\\.config\\.js"
+    target = "css"
+  [[build.cachebusters]]
+    source = "assets/.*\\.(js|ts|jsx|tsx)"
+    target = "js"
+  [[build.cachebusters]]
+    source = "assets/.*\\.(.*)$"
+    target = "$1"
 
 [minify]
   minifyOutput = true
@@ -78,3 +90,7 @@ target = "content"
 [[module.mounts]]
 source = "node_modules/@fortawesome/fontawesome-free/svgs"
 target = "assets/@fontawesome"
+
+[[module.mounts]]
+source = "hugo_stats.json"
+target = "assets/watching/hugo_stats.json"
