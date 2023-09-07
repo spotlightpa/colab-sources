@@ -1,14 +1,15 @@
 {{ define "main" }}
   <section class="p-8">
     <div class="mx-auto max-w-screen-md">
-      <h1 class="leading-tight mb-4">
+      <h1 class="mb-4 leading-tight">
         {{ with .Parent }}
           {{ if ne . site.Home }}
-          <a
-            class="text-2xl text-blue hover:text-yellow duration-500"
-            href="{{ .RelPermalink }}"
-          >{{ .LinkTitle }}</a>
-          <span class="text-2xl text-g-5">»</span>
+            <a
+              class="text-2xl text-blue duration-500 hover:text-yellow"
+              href="{{ .RelPermalink }}"
+              >{{ .LinkTitle }}</a
+            >
+            <span class="text-2xl text-g-5">»</span>
           {{ end }}
         {{ end }}
         <span class="text-2xl font-bold">

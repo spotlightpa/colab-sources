@@ -1,18 +1,15 @@
-<header class="bg-black font-sans border-b border-g-5">
+<header class="border-b border-g-5 bg-black font-sans">
   <nav x-data="{ isOpen: false }">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="relative flex items-center justify-between h-16">
-        <div class="flex-1 flex items-center justify-start">
-          <a
-            class="flex-shrink-0 inline-flex text-white leading-none"
-            href="/"
-          >
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="relative flex h-16 items-center justify-between">
+        <div class="flex flex-1 items-center justify-start">
+          <a class="inline-flex flex-shrink-0 leading-none text-white" href="/">
             <svg class="h-12 w-32 fill-current">
               <title>Home</title>
               <desc>CT Mirror banner</desc>
               <use xlink:href="#banner-svg"></use>
             </svg>
-            <svg class="mt-px ml-1 h-12 w-32 fill-current">
+            <svg class="ml-1 mt-px h-12 w-32 fill-current">
               <title>Home</title>
               <desc>Diverse Source Database logo</desc>
               <use xlink:href="#sources-svg"></use>
@@ -21,20 +18,21 @@
         </div>
 
         <div
-          class="relative flex items-center justify-between h-16"
+          class="relative flex h-16 items-center justify-between"
           @click.away="isOpen = false"
         >
-          <span class="hidden lg:flex flex-row content-center space-x-6">
+          <span class="hidden flex-row content-center space-x-6 lg:flex">
             {{ range site.Menus.navbar }}
               <a
-                class="self-center uppercase text-white hover:text-yellow duration-500"
+                class="self-center uppercase text-white duration-500 hover:text-yellow"
                 href="{{ .URL }}"
                 {{ with .Post }}target="{{ . }}"{{ end }}
-              >{{ .Name }}</a>
+                >{{ .Name }}</a
+              >
             {{ end }}
             <a
-              class="group self-center px-4 py-2 bg-red text-white rounded uppercase font-semibold tracking-wide leading-none"
-              href='{{ site.Param "donate-link" }}'
+              class="group self-center rounded bg-red px-4 py-2 font-semibold uppercase leading-none tracking-wide text-white"
+              href="{{ site.Param "donate-link" }}"
             >
               <svg
                 class="inline h-4 w-4 fill-current"
@@ -42,16 +40,20 @@
                 aria-hidden="true"
                 style="margin-top: -4px;"
               >
-                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+                <path
+                  fill-rule="evenodd"
+                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                  clip-rule="evenodd"
+                />
               </svg>
               Donate
             </a>
           </span>
-          <div class="flex lg:hidden items-center">
+          <div class="flex items-center lg:hidden">
             <!-- Mobile menu button-->
             <button
               type="button"
-              class="inline-flex items-center justify-center p-2 rounded-md text-g-1 hover:text-yellow focus:outline-none focus:text-yellow"
+              class="inline-flex items-center justify-center rounded-md p-2 text-g-1 hover:text-yellow focus:text-yellow focus:outline-none"
               aria-label="Main menu"
               :aria-expanded="String(isOpen)"
               @click="isOpen = !isOpen"
@@ -65,11 +67,16 @@
                 stroke="currentColor"
               >
                 <desc>Open menu button</desc>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
               <!-- Heroicon name: x -->
               <svg
-                x-cloak=1
+                x-cloak="1"
                 x-show="isOpen"
                 class="h-6 w-6"
                 fill="none"
@@ -77,7 +84,12 @@
                 stroke="currentColor"
               >
                 <desc>Close menu button</desc>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
 
@@ -90,22 +102,25 @@
               x-transition:leave-start="transform opacity-100 scale-100"
               x-transition:leave-end="transform opacity-0 scale-95"
               x-cloak
-              class="absolute inset-y-0 right-0 flex items-center inset-auto w-0"
+              class="absolute inset-auto inset-y-0 right-0 flex w-0 items-center"
             >
               <div class="relative">
-                <div class="origin-top-right absolute right-0 mt-4 w-48 rounded-md shadow-lg">
+                <div
+                  class="absolute right-0 mt-4 w-48 origin-top-right rounded-md shadow-lg"
+                >
                   <ul
-                    class="py-1 rounded-md bg-white shadow-xs"
+                    class="shadow-xs rounded-md bg-white py-1"
                     role="menu"
                     aria-orientation="vertical"
                   >
                     {{ range site.Menus.mobile }}
                       <a
                         href="{{ .URL }}"
-                        class="block px-4 py-2 text-sm leading-5 text-g-7 hover:bg-g-3 focus:outline-none focus:bg-g-3 transition duration-150 ease-in-out"
+                        class="block px-4 py-2 text-sm leading-5 text-g-7 transition duration-150 ease-in-out hover:bg-g-3 focus:bg-g-3 focus:outline-none"
                         role="menuitem"
                         {{ with .Post }}target="{{ . }}"{{ end }}
-                      >{{ .Name }}</a>
+                        >{{ .Name }}</a
+                      >
                     {{ end }}
                   </ul>
                 </div>

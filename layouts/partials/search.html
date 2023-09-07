@@ -1,12 +1,6 @@
-<div
-  class="mx-auto max-w-screen-md font-sans"
-  x-data="searchPeople"
->
+<div class="mx-auto max-w-screen-md font-sans" x-data="searchPeople">
   <h2 class="ml-10 text-g-9">
-    <label
-      class="uppercase text-lg text-black font-bold"
-      for="search"
-    >
+    <label class="text-lg font-bold uppercase text-black" for="search">
       Search for an expert
     </label>
     <span
@@ -18,27 +12,27 @@
     <input
       id="search"
       type="search"
-      class="appearance-none block w-full rounded-full border-2 border-g-5 px-10 py-2 bg-white text-g-8 placeholder-g-5 placeholder-opacity-100 tracking-wider"
+      class="block w-full appearance-none rounded-full border-2 border-g-5 bg-white px-10 py-2 tracking-wider text-g-8 placeholder-g-5 placeholder-opacity-100"
       x-model="query"
       @keydown.escape="clear()"
       placeholder="Ex. “Jane Smith” “History” “Pittsburgh”"
-    >
+    />
     <span
-      class="absolute inline-flex items-center justify-center inset-y-0 left-0 text-g-5 pointer-events-none z-10 w-10 leading-none"
+      class="pointer-events-none absolute inset-y-0 left-0 z-10 inline-flex w-10 items-center justify-center leading-none text-g-5"
       aria-hidden="true"
     >
-      <svg class="fill-current h-4 w-auto">
+      <svg class="h-4 w-auto fill-current">
         <title>Search</title>
         <use xlink:href="#search-svg"></use>
       </svg>
     </span>
     <span
       x-cloak
-      class="absolute items-center justify-center inset-y-0 right-0 text-g-5 pointer-events-none z-10 w-10 leading-none"
+      class="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 items-center justify-center leading-none text-g-5"
       aria-hidden="true"
       :class="{ 'inline-flex': isLoading, 'hidden': !isLoading }"
     >
-      <svg class="animate-spin h-4 w-auto fill-current ">
+      <svg class="h-4 w-auto animate-spin fill-current ">
         <title>Is Loading</title>
         <use xlink:href="#loading-svg"></use>
       </svg>
@@ -47,7 +41,7 @@
       x-cloak
       @click="clear()"
       type="button"
-      class="absolute flex items-center justify-center inset-y-0 right-0 text-g-5 hover:text-g-7 z-10 w-10 leading-none"
+      class="absolute inset-y-0 right-0 z-10 flex w-10 items-center justify-center leading-none text-g-5 hover:text-g-7"
       :class="{ 'flex': showClearButton, 'hidden': !showClearButton }"
     >
       <svg class="h-4 w-auto fill-current ">
@@ -56,46 +50,24 @@
       </svg>
     </button>
   </div>
-  <p
-    x-cloak
-    x-show="error"
-    class="mt-2"
-  >
-    <span class="italic">
-      Something went wrong:
-    </span>
-    <br>
-    <span
-      class="font-bold"
-      x-text="error && error.name || ''"></span>
-    <br>
-    <span
-      class="text-g-7"
-      x-text="error && error.message || ''"></span>
+  <p x-cloak x-show="error" class="mt-2">
+    <span class="italic"> Something went wrong: </span>
+    <br />
+    <span class="font-bold" x-text="error && error.name || ''"></span>
+    <br />
+    <span class="text-g-7" x-text="error && error.message || ''"></span>
   </p>
   <div class="m-2 space-y-2">
-    <template
-      x-for="p, i of people"
-      hidden
-    >
+    <template x-for="p, i of people" hidden>
       <a
-        class="block p-2 rounded hover:shadow-md duration-100"
+        class="block rounded p-2 duration-100 hover:shadow-md"
         :class='{"bg-beige": i%2 }'
         :href="p.path"
       >
-        <h2
-          class="inline text-base font-bold"
-          x-text="p.name"
-        ></h2>
-        <h3
-          class="inline ml-1 text-g-7"
-          x-text="p.role"
-        ></h3>
+        <h2 class="inline text-base font-bold" x-text="p.name"></h2>
+        <h3 class="ml-1 inline text-g-7" x-text="p.role"></h3>
         <div>
-          <span
-            x-show="p.expertise.length"
-            class="mr-1 text-g-7"
-          >
+          <span x-show="p.expertise.length" class="mr-1 text-g-7">
             <svg class="inline-block h-4 w-4 fill-current align-middle">
               <title>Expertise</title>
               <use xlink:href="#university-svg"></use>
@@ -105,22 +77,14 @@
             class="mr-1 align-middle"
             x-text="p.expertise.join(', ')"
           ></span>
-          <span
-            x-show="p.keywords.length"
-            class="mr-1 text-g-7"
-          >
+          <span x-show="p.keywords.length" class="mr-1 text-g-7">
             <svg class="inline-block h-4 w-4 fill-current align-middle">
               <title>Keywords</title>
               <use xlink:href="#tags-svg"></use>
             </svg>
           </span>
-          <span
-            class="mr-1 align-middle"
-            x-text="p.keywords.join(', ')"></span>
-          <span
-            x-show="p.location"
-            class="mr-1 text-g-7"
-          >
+          <span class="mr-1 align-middle" x-text="p.keywords.join(', ')"></span>
+          <span x-show="p.location" class="mr-1 text-g-7">
             <svg class="inline-block h-4 w-4 fill-current align-middle">
               <title>Location</title>
               <use xlink:href="#earth-svg"></use>
@@ -129,7 +93,8 @@
           <span
             x-show="p.location.length"
             class="align-middle"
-            x-text="p.location.join(', ')"></span>
+            x-text="p.location.join(', ')"
+          ></span>
         </div>
       </a>
     </template>

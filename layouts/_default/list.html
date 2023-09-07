@@ -1,18 +1,16 @@
 {{ define "main" }}
   <section class="p-8">
     <div class="mx-auto max-w-screen-md">
-      <h1 class="text-right leading-tight text-lg">
+      <h1 class="text-right text-lg leading-tight">
         {{ with .Parent }}
-            <a
-            class="text-blue hover:text-yellow duration-500"
-            href="/"
-          >Home</a>
+          <a class="text-blue duration-500 hover:text-yellow" href="/">Home</a>
           <span class="text-g-5">»</span>
           {{ if ne . site.Home }}
             <a
-              class="text-blue hover:text-yellow duration-500"
+              class="text-blue duration-500 hover:text-yellow"
               href="/#by-{{ .RelPermalink | anchorize }}"
-            >{{ .LinkTitle }}</a>
+              >{{ .LinkTitle }}</a
+            >
             <span class="text-g-5">»</span>
           {{ end }}
         {{ end }}
@@ -25,21 +23,20 @@
         {{ $isOdd := false }}
         {{ range .Pages.ByParam "last" }}
           {{ $isOdd = not $isOdd }}
-          <li class='p-2 {{ cond $isOdd "bg-beige rounded" ""}}'>
-            <a
-              class="text-base"
-              href="{{ .RelPermalink }}"
-            >
-              <h2 class="inline font-bold text-blue hover:text-yellow duration-500">
+          <li class="{{ cond $isOdd "bg-beige rounded" "" }} p-2">
+            <a class="text-base" href="{{ .RelPermalink }}">
+              <h2
+                class="inline font-bold text-blue duration-500 hover:text-yellow"
+              >
                 {{ .LinkTitle }}
               </h2>
               {{ with .Param "role" }}
-                <h3 class="inline ml-1 text-g-9 hover:underline">
+                <h3 class="ml-1 inline text-g-9 hover:underline">
                   {{ . }}
                 </h3>
               {{ end }}
             </a>
-            <div class="text-g-7 text-base font-sans leading-snug">
+            <div class="font-sans text-base leading-snug text-g-7">
               {{ with .GetTerms "expertise" }}
                 <span class="mr-1 text-g-7">
                   <svg class="inline-block h-3 w-3 fill-current align-middle">
@@ -47,16 +44,11 @@
                     <use xlink:href="#university-svg"></use>
                   </svg>
                 </span>
-                <span
-                  class="mr-1 align-middle"
-                >
+                <span class="mr-1 align-middle">
                   {{ range $i, $p := . }}
                     {{- if ne $i 0 }},{{ end }}
-                    {{ if ne $.RelPermalink $p.RelPermalink}}
-                      <a
-                        class="hover:underline"
-                        href="{{ $p.RelPermalink }}"
-                      >
+                    {{ if ne $.RelPermalink $p.RelPermalink }}
+                      <a class="hover:underline" href="{{ $p.RelPermalink }}">
                         {{ .Title -}}
                       </a>
                     {{- else }}
