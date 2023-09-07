@@ -1,8 +1,8 @@
 {{ $svgs := dict
   "banner-svg" "/img/logos/ctmirror-banner.svg"
   "check-svg" "@fontawesome/solid/check.svg"
-  "close-svg" "@fontawesome/solid/times.svg"
-  "earth-svg" "@fontawesome/solid/globe-americas.svg"
+  "close-svg" "@fontawesome/solid/xmark.svg"
+  "earth-svg" "@fontawesome/solid/earth-americas.svg"
   "email-svg" "@fontawesome/regular/envelope.svg"
   "fb-svg" "@fontawesome/brands/facebook-f.svg"
   "globe-svg" "@fontawesome/solid/globe.svg"
@@ -10,19 +10,23 @@
   "linkedin-svg" "@fontawesome/brands/linkedin.svg"
   "loading-svg" "@fontawesome/solid/spinner.svg"
   "phone-svg" "@fontawesome/solid/phone.svg"
-  "search-svg" "@fontawesome/solid/search.svg"
+  "search-svg" "@fontawesome/solid/magnifying-glass.svg"
   "share-svg" "@fontawesome/solid/share.svg"
   "sources-svg" "/img/logos/sources.svg"
   "tags-svg" "@fontawesome/solid/tags.svg"
   "twitter-svg" "@fontawesome/brands/twitter.svg"
-  "university-svg" "@fontawesome/solid/university.svg"
+  "university-svg" "@fontawesome/solid/building-columns.svg"
   "user-svg" "@fontawesome/solid/user.svg"
 }}
+
 
 <div hidden>
   {{ range $id, $rsc := $svgs }}
     {{ $svg := resources.Get $rsc }}
-    <svg id="{{ $id }}">{{ $svg.Content|safeHTML }}</svg>
+    {{ if $svg }}
+      <svg id="{{ $id }}">{{ $svg.Content|safeHTML }}</svg>
+    {{ else }}
+      {{ warnf "no svg! %q" $rsc }}
+    {{ end }}
   {{ end }}
 </div>
-
