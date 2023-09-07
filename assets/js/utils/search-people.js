@@ -25,7 +25,7 @@ export default function searchPeople() {
 
     init() {
       const bouncedSearch = debouncer({ milliseconds: 500 }, () =>
-        this.search()
+        this.search(),
       );
       this.$watch("query", (query) => {
         this.isLoading = !!query;
@@ -86,7 +86,7 @@ export default function searchPeople() {
           searchQuery,
           searchResult,
         },
-        ""
+        "",
       );
     },
 
