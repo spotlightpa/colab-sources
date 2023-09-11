@@ -31,7 +31,7 @@
               </svg>
             </span>
             <a
-              class="text-blue transition-colors duration-500 hover:text-yellow"
+              class="text-blue transition-colors duration-500 hover:text-blue-darker"
               href="{{ .RelPermalink }}"
               >{{ .Title }}</a
             >
@@ -63,7 +63,7 @@
               </svg>
             </span>
             <a
-              class="text-blue transition-colors duration-500 hover:text-yellow"
+              class="text-blue transition-colors duration-500 hover:text-blue-darker"
               :href="'mailto:'+email"
               x-text="email"
             ></a>
@@ -79,7 +79,7 @@
               </svg>
             </span>
             <a
-              class="text-blue transition-colors duration-500 hover:text-yellow"
+              class="text-blue transition-colors duration-500 hover:text-blue-darker"
               href="tel:{{ . }}"
               x-data="formatTel"
               x-text="tel"
@@ -98,7 +98,7 @@
               </svg>
             </span>
             <a
-              class="text-blue transition-colors duration-500 hover:text-yellow"
+              class="text-blue transition-colors duration-500 hover:text-blue-darker"
               href="{{ . }}"
               target="_blank"
               >{{ $url.Host }}</a
@@ -115,7 +115,7 @@
               </svg>
             </span>
             <a
-              class="text-blue transition-colors duration-500 hover:text-yellow"
+              class="text-blue transition-colors duration-500 hover:text-blue-darker"
               href="https://www.facebook.com/{{ . }}"
               target="_blank"
               >{{ . }}</a
@@ -132,7 +132,7 @@
               </svg>
             </span>
             <a
-              class="text-blue transition-colors duration-500 hover:text-yellow"
+              class="text-blue transition-colors duration-500 hover:text-blue-darker"
               href="https://www.twitter.com/{{ . }}"
               target="_blank"
               >@{{ . }}</a
@@ -149,7 +149,7 @@
               </svg>
             </span>
             <a
-              class="text-blue transition-colors duration-500 hover:text-yellow"
+              class="text-blue transition-colors duration-500 hover:text-blue-darker"
               href="https://www.instagram.com/{{ . }}/"
               target="_blank"
               >@{{ . }}</a
@@ -166,7 +166,7 @@
               </svg>
             </span>
             <a
-              class="text-blue transition-colors duration-500 hover:text-yellow"
+              class="text-blue transition-colors duration-500 hover:text-blue-darker"
               href="https://www.linkedin.com/in/{{ . }}/"
               target="_blank"
               >{{ . }}</a
@@ -218,7 +218,7 @@
               {{ range $i, $p := . }}
                 {{- if ne $i 0 }},{{ end }}
                 <a
-                  class="text-blue transition-colors duration-500 hover:text-yellow"
+                  class="text-blue transition-colors duration-500 hover:text-blue-darker"
                   href="{{ $p.RelPermalink }}"
                 >
                   {{ .Title -}}

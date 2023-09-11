@@ -2,13 +2,19 @@
   {{ $wellClass := `mx-auto max-w-screen-md` }}
   <section class="p-8">
     <h1
-      class="text-center text-3xl font-bold leading-none text-black sm:text-4xl md:text-6xl"
+      class="text-center font-sans text-3xl font-bold leading-none text-black sm:text-4xl md:text-5xl"
     >
       {{ .Title }}
     </h1>
-    <h2 class="mt-4 text-center text-xl leading-tight text-g-7">
+    <h2
+      class="mt-4 text-center font-sans text-xl leading-tight text-gray md:text-2xl"
+    >
       A public service by
-      <a class="font-bold" href="https://www.ctmirror.org">CT Mirror</a>
+      <a
+        class="font-bold text-blue hover:text-blue-darker"
+        href="https://colabnews.co"
+        >Colordado News Collaborative</a
+      >
     </h2>
     <div class="content-area mx-auto mt-8 max-w-screen-md text-center">
       {{ .Content }}
@@ -18,12 +24,12 @@
     {{ partial "search.html" . }}
   </section>
   <section
-    class="flex flex-col justify-around space-y-4 bg-beige p-8 shadow-inner sm:flex-row sm:space-x-4 sm:space-y-0"
+    class="flex flex-col justify-around space-y-4 bg-g-3 p-8 shadow-inner sm:flex-row sm:space-x-4 sm:space-y-0"
   >
     {{ $blkClass := `group relative block w-full sm:w-64 border border-g-5 rounded p-2 bg-white leading-tight shadow-md hover:shadow-lg duration-100 text-center` }}
-    {{ $svgWrapperClass := `text-g-5 group-hover:text-yellow` }}
+    {{ $svgWrapperClass := `text-g-5 group-hover:text-green` }}
     {{ $hedClass := `font-sans font-bold uppercase group-hover:text-blue duration-100` }}
-    {{ $dekClass := `my-1 mx-auto max-w-xs font-sans text-g-7 group-hover:text-darkblue duration-100` }}
+    {{ $dekClass := `my-1 mx-auto max-w-xs font-serif text-g-7` }}
     <a
       class="{{ $blkClass }}"
       href="{{ site.Param "nominate-link" }}"
@@ -105,7 +111,7 @@
       {{ partial "pages-list.html" $expertise }}
     </div>
   </section>
-  <section class="bg-beige p-8 shadow-inner">
+  <section class="bg-g-3 p-8 shadow-inner">
     <div class="{{ $wellClass }}">
       <h2 class="{{ $secHedClass }}" id="by-location">Experts by location</h2>
       {{ $loc := .GetPage "location" }}

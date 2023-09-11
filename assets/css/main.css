@@ -1,3 +1,4 @@
+@import "./fonts.css";
 @tailwind base;
 
 html {
@@ -42,7 +43,7 @@ html {
 }
 
 .content-area a:hover {
-  @apply text-yellow;
+  @apply text-blue-darker;
 }
 
 .content-area > p + p,
@@ -73,12 +74,12 @@ html {
 }
 
 .content-aside a {
-  @apply text-darkblue underline;
+  @apply text-blue underline;
   @apply transition-colors duration-500;
 }
 
 .content-aside a:hover {
-  @apply text-yellow;
+  @apply text-blue-darker;
 }
 
 .content-aside > ul {

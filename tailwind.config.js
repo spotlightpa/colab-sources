@@ -2,8 +2,8 @@ module.exports = {
   purge: false,
   theme: {
     fontFamily: {
-      serif: "'EB Garamond', serif",
-      sans: "Lora, serif",
+      sans: "Montserrat, serif",
+      serif: "'Roboto Slab', serif",
     },
     colors: {
       transparent: "transparent",
@@ -21,12 +21,13 @@ module.exports = {
       "g-9": "#1a202c",
       beige: "#f4f1ee",
       robin: "#99d9f1",
-      blue: "#009edb",
-      "blue-darker": "#1982BD",
+      blue: "#4085FF",
+      gray: "#2D2D2D",
+      green: "#70A83A",
+      "blue-darker": "#001181",
       "tw-blue": "#99d9f1",
       "fb-blue": "#009edb",
       red: "#84181d",
-      green: "#78bc20",
       yellow: "#ffcb05",
       "yellow-darker": "#cda52d",
       darkblue: "#22416e",

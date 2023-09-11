@@ -1,4 +1,4 @@
-<header class="border-b border-g-5 bg-black font-sans">
+<header class="border-b border-g-5 bg-gray font-serif">
   <nav x-data="{ isOpen: false }">
     <div class="mx-auto max-w-7xl px-6">
       <div class="relative flex h-16 items-center justify-between">
@@ -24,15 +24,15 @@
           <span class="hidden flex-row content-center space-x-6 lg:flex">
             {{ range site.Menus.navbar }}
               <a
-                class="self-center uppercase text-white duration-500 hover:text-yellow"
+                class="self-center uppercase text-white duration-500 hover:text-blue"
                 href="{{ .URL }}"
                 {{ with .Post }}target="{{ . }}"{{ end }}
                 >{{ .Name }}</a
               >
             {{ end }}
             <a
-              class="group self-center rounded bg-red px-4 py-2 font-semibold uppercase leading-none tracking-wide text-white"
-              href="{{ site.Param "donate-link" }}"
+              class="group self-center rounded bg-blue px-4 py-2 font-semibold uppercase leading-none tracking-wide text-white"
+              href="{{ site.Param `donate-link` }}"
             >
               <svg
                 class="inline h-4 w-4 fill-current"
@@ -46,14 +46,14 @@
                   clip-rule="evenodd"
                 />
               </svg>
-              Donate
+              <span class="ml-[2px]">Donate</span>
             </a>
           </span>
           <div class="flex items-center lg:hidden">
             <!-- Mobile menu button-->
             <button
               type="button"
-              class="inline-flex items-center justify-center rounded-md p-2 text-g-1 hover:text-yellow focus:text-yellow focus:outline-none"
+              class="inline-flex items-center justify-center rounded-md p-2 text-g-1 hover:text-blue-darker focus:text-yellow focus:outline-none"
               aria-label="Main menu"
               :aria-expanded="String(isOpen)"
               @click="isOpen = !isOpen"

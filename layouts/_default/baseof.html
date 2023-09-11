@@ -12,12 +12,31 @@
       {{- end -}}
     </title>
 
-    {{ $cssFonts := resources.Get "css/fonts.css" }}
-
-    <style>
-      {{ $cssFonts.Content | safeCSS }}
-    </style>
-    <!--  -->
+    <!-- Preload fonts -->
+    <link
+      rel="preload"
+      as="font"
+      href="/css/fonts/montserrat-v25/montserrat-v25-latin-700.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/css/fonts/roboto-slab-v32/roboto-slab-v32-latin-regular.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/css/fonts/roboto-slab-v32/roboto-slab-v32-latin-700.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/css/fonts/montserrat-v25/montserrat-v25-latin-regular.woff2"
+      crossorigin
+    />
 
     {{ $cssTW := resources.Get "css/main.css" }}
     {{ $css := $cssTW | resources.PostCSS (dict "inlineImports" true) }}
@@ -77,10 +96,10 @@
   <body
     data-ga-label="{{ $pageCat }}:featured"
     data-ga-category="featured"
-    class="bg-beige font-serif text-base leading-normal text-g-9"
+    class="bg-blue font-serif text-base leading-normal text-g-9"
   >
     <div
-      class="max-w-screen flex min-h-screen  flex-col overflow-x-hidden bg-white"
+      class="max-w-screen flex min-h-screen flex-col overflow-x-hidden bg-white"
     >
       {{ partialCached "nav.html" . }}
       {{ block "main" . }}
