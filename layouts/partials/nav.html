@@ -7,7 +7,7 @@
             {{ $logo := resources.Get "img/logos/colab-white-trans.png" }}
             {{ $logo = $logo | fingerprint }}
             <img
-              class="aspect-[987/279] h-14 sm:h-16 md:h-20 w-auto"
+              class="aspect-[987/279] h-14 w-auto sm:h-16 md:h-20"
               width="987"
               height="279"
               src="{{ $logo.RelPermalink }}"
