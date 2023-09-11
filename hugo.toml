@@ -9,8 +9,8 @@ Paginate = 25
 buildFuture = true
 
 [params]
-  favicon = "/img/logos/ctmirror-small.png"
-  touch-icon = "/img/logos/ctmirror-logo.png"
+  favicon = "/img/logos/colab-square.png"
+  touch-icon = "/img/logos/colab-square.png"
   donate-link = "https://ctmirror.org/donate?campaign=7015a000000zTxmAAE"
   nominate-link = "https://airtable.com/shrwKYg7fBgjHJVU3"
 [taxonomies]
