@@ -1,19 +1,18 @@
-<header class="border-b border-g-5 bg-gray font-serif">
+<header class="border-b border-g-5 bg-blue-darker font-serif">
   <nav x-data="{ isOpen: false }">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="relative flex h-16 items-center justify-between">
+      <div class="relative flex h-16 items-center justify-between md:h-24">
         <div class="flex flex-1 items-center justify-start">
           <a class="inline-flex flex-shrink-0 leading-none text-white" href="/">
-            <svg class="h-12 w-32 fill-current">
-              <title>Home</title>
-              <desc>CT Mirror banner</desc>
-              <use xlink:href="#banner-svg"></use>
-            </svg>
-            <svg class="ml-1 mt-px h-12 w-32 fill-current">
-              <title>Home</title>
-              <desc>Diverse Source Database logo</desc>
-              <use xlink:href="#sources-svg"></use>
-            </svg>
+            {{ $logo := resources.Get "img/logos/colab-white-trans.png" }}
+            {{ $logo = $logo | fingerprint }}
+            <img
+              class="aspect-[987/279] h-14 sm:h-16 md:h-20 w-auto"
+              width="987"
+              height="279"
+              src="{{ $logo.RelPermalink }}"
+              alt="Diverse Source Database logo"
+            />
           </a>
         </div>
 
@@ -53,7 +52,7 @@
             <!-- Mobile menu button-->
             <button
               type="button"
-              class="inline-flex items-center justify-center rounded-md p-2 text-g-1 hover:text-blue-darker focus:text-yellow focus:outline-none"
+              class="inline-flex items-center justify-center rounded-md p-2 text-g-1 hover:text-blue focus:text-blue-darker focus:outline-none"
               aria-label="Main menu"
               :aria-expanded="String(isOpen)"
               @click="isOpen = !isOpen"

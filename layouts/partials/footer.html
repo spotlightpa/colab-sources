@@ -1,14 +1,19 @@
 <footer class="mt-auto bg-gray p-12 font-serif text-white">
   <nav class="flex max-w-screen-xl flex-col gap-6 lg:flex-row">
     <div class="flex-grow uppercase lg:order-last">
-      <a href="https://www.ctmirror.org/" class="hover:text-blue-darker">
-        <svg
-          class="h-8 w-40 fill-current"
-          role="img"
-          aria-label="CT Mirror banner"
-        >
-          <use xlink:href="#banner-svg"></use>
-        </svg>
+      <a
+        class="inline-flex flex-shrink-0 leading-none text-white"
+        href="https://colabnews.co/"
+      >
+        {{ $logo := resources.Get "img/logos/colab-white-trans.png" }}
+        {{ $logo = $logo | fingerprint }}
+        <img
+          class="aspect-[987/279] h-20 w-auto"
+          width="987"
+          height="279"
+          src="{{ $logo.RelPermalink }}"
+          alt="Diverse Source Database logo"
+        />
       </a>
       <p class="mt-2 leading-tight">
         &copy; {{ now.Format "2006" }} <br />
