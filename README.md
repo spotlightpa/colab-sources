@@ -1,6 +1,6 @@
 # CT Mirror Diverse Sources Database
 
-A resource for Connecticut journalists to improve representation and diversify perspectives in their coverage.
+A resource for Colorado journalists to improve representation and diversify perspectives in their coverage.
 
 Project forked from https://github.com/spotlightpa/sourcesdb. See original project for details about creation and architecture.
 

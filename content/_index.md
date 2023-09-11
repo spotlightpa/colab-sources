@@ -1,8 +1,8 @@
 ---
 title: Colorado News Collaborative Sources
-description: A resource for Connecticut journalists to improve representation
+description: A resource for Colorado journalists to improve representation
   and diversify perspectives in their coverage.
-title-tag: Connecticut Mirror Diverse Source Database
+title-tag: Colorado News Collaborative Diverse Source Database
 ---
 We have created The Diverse Source Database to help CT Mirror and other news organizations in Connecticut publish local and statewide news coverage that is more equitable and better reflects the communities we serve.
 
