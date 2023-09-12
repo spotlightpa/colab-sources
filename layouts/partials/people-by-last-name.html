@@ -8,11 +8,11 @@
         {{ $lastLetter = $initial }}
         {{ `</div>` | safeHTML }}
         {{ `<div class="break-inside-avoid-column">` | safeHTML }}
-        <h2 class="text-3xl font-bold">{{ $lastLetter }}</h2>
+        <h2 class="font-sans text-3xl font-bold">{{ $lastLetter }}</h2>
       {{ end }}
       <li>
         <a
-          class="text-blue duration-500 hover:text-yellow"
+          class="text-blue duration-500 hover:text-blue-darker"
           href="{{ .RelPermalink }}"
           >{{ .LinkTitle }}</a
         >
