@@ -1,6 +1,6 @@
 baseURL = "https://sources.colabnews.co/"
 languageCode = "en-us"
-title = "Colorado News Collaborative Sources"
+title = "Amplify Colorado Sources"
 enableRobotsTXT = true
 enableGitInfo = true
 rssLimit = 50

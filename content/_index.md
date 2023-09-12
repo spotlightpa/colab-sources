@@ -1,5 +1,5 @@
 ---
-title: Colorado News Collaborative Sources
+title: Amplify Colorado Sources
 description: A resource for Colorado journalists to improve representation
   and diversify perspectives in their coverage.
 title-tag: Colorado News Collaborative Diverse Source Database
