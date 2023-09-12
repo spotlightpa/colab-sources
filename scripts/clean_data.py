@@ -34,7 +34,7 @@ def process(ifname, odname):
         "last",
         # "suffix",
         "organization",
-        "diversity",
+        # "diversity",
         "pronunciation",
         "contact",
         "honorific",
