@@ -71,19 +71,23 @@
                 </span>
               {{ end }}
               {{ with .GetTerms "location" }}
-                {{ range . }}
-                  <span class="mr-1 text-g-7">
-                    <svg class="inline-block h-3 w-3 fill-current align-middle">
-                      <title>Location</title>
-                      <use xlink:href="#earth-svg"></use>
-                    </svg>
-                  </span>
-                  <a
-                    class="align-middle hover:underline"
-                    href="{{ .RelPermalink }}"
-                  >
-                    {{ .Title }}
-                  </a>
+                {{ if le (len .) 2 }}
+                  {{ range . }}
+                    <span class="mr-1 text-g-7">
+                      <svg
+                        class="inline-block h-3 w-3 fill-current align-middle"
+                      >
+                        <title>Location</title>
+                        <use xlink:href="#earth-svg"></use>
+                      </svg>
+                    </span>
+                    <a
+                      class="align-middle hover:underline"
+                      href="{{ .RelPermalink }}"
+                    >
+                      {{ .Title }}
+                    </a>
+                  {{ end }}
                 {{ end }}
               {{ end }}
             </div>
