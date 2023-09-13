@@ -1,0 +1,83 @@
+<a
+  class="group flex h-full w-full max-w-screen-sm flex-col gap-3 rounded border border-g-5 p-4 shadow"
+  href="{{ $.RelPermalink }}"
+>
+  {{ with .Param "images" }}
+    {{ range . }}
+      {{ $img := resources.GetMatch . }}
+      {{ if not $img }}
+        {{ warnf "missing image %q" . }}
+        {{ continue }}
+      {{ end }}
+      {{ $imgSmall := $img.Resize "239x" }}
+      {{ $imgMedium := $img.Resize "478x" }}
+      <div>
+        <img
+          title="{{ $.Title }}"
+          class="rounded bg-g-4 shadow"
+          alt="Headshot of {{ $.Title }}"
+          width="{{ $imgSmall.Width }}"
+          height="{{ $imgSmall.Height }}"
+          src="{{ $imgSmall.RelPermalink }}"
+          srcset="
+            {{ $imgSmall.RelPermalink }} 1x,
+            {{ $imgMedium.RelPermalink }} 2x
+          "
+        />
+      </div>
+    {{ end }}
+  {{ end }}
+
+
+  <h2
+    class="mt-auto font-sans text-lg font-bold underline decoration-blue decoration-4 underline-offset-2 transition-colors duration-500 group-hover:decoration-blue-darker"
+  >
+    {{- .Title -}}
+  </h2>
+  {{ if $xpts := .GetTerms "expertise" }}
+    <p class="text-sm leading-normal">
+      <svg
+        class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
+      >
+        <title>Expertise</title>
+        <use xlink:href="#university-svg"></use>
+      </svg>
+      <span class="text-gray">
+        {{ $list := $xpts }}
+        {{ if gt ($xpts) 3 }}
+          {{ $list = first 2 $xpts }}
+        {{ end }}
+        {{ range $i, $p := $list }}
+          {{- if ne $i 0 }},{{ end }}
+          {{ .Title -}}
+        {{- end }}
+        {{ if gt (len $xpts) 3 }}
+          and more
+        {{ end }}
+      </span>
+    </p>
+  {{ end }}
+  {{ if $locs := .GetTerms "location" }}
+    <p class="text-sm leading-normal">
+      <svg
+        class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
+      >
+        <title>Location</title>
+        <use xlink:href="#earth-svg"></use>
+      </svg>
+      <span class="text-gray">
+        {{ $list := $locs }}
+        {{ if gt ($locs) 3 }}
+          {{ $list = first 2 $locs }}
+        {{ end }}
+        {{ range $i, $p := $list }}
+          {{- if ne $i 0 }},{{ end }}
+          {{ .Title -}}
+        {{- end }}
+        {{ if gt (len $locs) 3 }}
+          and more
+        {{ end }}
+      </span>
+    </p>
+  {{ end }}
+</a>
