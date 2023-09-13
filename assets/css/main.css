@@ -136,3 +136,11 @@ input[type="search"]::-webkit-search-cancel-button {
   display: none;
 }
 /*! purgecss end ignore */
+
+.first-dozen > * {
+  display: none;
+}
+
+.first-dozen > *:nth-child(-n + 12) {
+  display: revert;
+}
