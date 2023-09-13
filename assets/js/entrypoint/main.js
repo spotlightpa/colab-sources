@@ -17,4 +17,12 @@ if (window.location.hash.match(routes)) {
   );
 }
 
+function shuffleChildren(el) {
+  let children = Array.from(el.children);
+  children.sort(() => 0.5 - Math.random());
+  el.replaceChildren(...children);
+}
+
+Alpine.directive("shuffle", (el) => shuffleChildren(el));
+
 Alpine.start();
