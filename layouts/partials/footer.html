@@ -5,14 +5,15 @@
         class="inline-flex flex-shrink-0 leading-none text-white"
         href="https://colabnews.co/"
       >
-        {{ $logo := resources.Get "img/logos/colab-white-trans.png" }}
+        {{ $logo := resources.Get "img/logos/colab-white-trans-square.png" }}
         {{ $logo = $logo | fingerprint }}
         <img
-          class="aspect-[987/279] h-20 w-auto"
-          width="987"
-          height="279"
+          class="aspect-square h-auto w-48"
+          width="800"
+          height="800"
           src="{{ $logo.RelPermalink }}"
-          alt="Diverse Source Database logo"
+          alt="Colorado News Collaborative logo"
+          loading="lazy"
         />
       </a>
       <p class="mt-2 leading-tight">
