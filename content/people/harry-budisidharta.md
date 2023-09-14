@@ -19,7 +19,7 @@
   "images": [
     "/img/uploads/harry-budisidharta.jpeg"
   ],
-  "resume": "",
+  "resume": "https://docs.google.com/document/d/1pjWKNiHcIhNUjgotKtDJ9QyLYBP1JwGB/edit",
   "website": "",
   "location": [
     "Adams",
