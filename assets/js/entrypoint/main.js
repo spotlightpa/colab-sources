@@ -23,6 +23,6 @@ function shuffleChildren(el) {
   el.replaceChildren(...children);
 }
 
-Alpine.directive("shuffle", (el) => shuffleChildren(el));
+Alpine.magic("shuffle", () => (el) => shuffleChildren(el));
 
 Alpine.start();

@@ -106,13 +106,18 @@
   </section>
   {{ $secHedClass := `text-2xl font-sans font-bold leading-tight mb-2` }}
   <section class="p-8">
-    <div class="{{ $wellClass }}">
-      <h2 class="{{ $secHedClass }}">Meet our journalists and experts</h2>
+    <div class="{{ $wellClass }}" x-data>
+      <h2 class="{{ $secHedClass }} scroll-mt-2" x-ref="hed">
+        Meet our journalists and experts
+      </h2>
       {{ $people := .GetPage "people" }}
       <ul
-        x-data
-        x-shuffle
-        class="first-dozen mt-4 grid max-w-screen-md gap-x-4 gap-y-4 sm:grid-cols-2 md:grid-cols-3"
+        x-init="$shuffle($el)"
+        class="
+          first-dozen mt-4 grid max-w-screen-md gap-x-4  gap-y-4
+          sm:grid-cols-2 md:grid-cols-3
+        "
+        x-ref="container"
       >
         {{ range $people.RegularPages }}
           <li>
@@ -121,7 +126,17 @@
         {{ end }}
       </ul>
       <div class="mt-4 text-right font-sans font-bold">
-        <p>And many more…</p>
+        <p>
+          <button
+            type="button"
+            @click="
+              $shuffle($refs.container);
+              $refs.hed.scrollIntoView({ block: 'start', behavior: 'smooth' });
+            "
+          >
+            And many more…
+          </button>
+        </p>
       </div>
     </div>
   </section>
