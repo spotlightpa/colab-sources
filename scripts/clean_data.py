@@ -45,6 +45,7 @@ def process(ifname, odname):
         # "keywords",
         "email",
         "images",
+        "resume",
         "website",
         # "facebook",
         # "twitter",
@@ -72,6 +73,7 @@ def process(ifname, odname):
         row["email"] = btoa(row["email"].encode("utf8")).decode("ascii")
         row["layout"] = "person"
         row["images"] = get_images(row)
+        row["resume"] = get_resume(row)
         newrows.append({key: row.get(key, "") for key in canonical_rows})
 
     seen = set()
@@ -100,7 +102,7 @@ def trim_all(ss):
     return r
 
 def get_images(row):
-    skip_download = True
+    skip_download = False
 
     headshot = row["headshot"].strip()
     if not headshot:
@@ -130,6 +132,38 @@ def get_images(row):
     with open(image, "wb") as f:
         f.write(rsp.content)
     return [f"/img/uploads/{name}.jpeg"]
+
+def get_resume(row):
+    skip_download = False
+
+    headshot = row["resume"].strip()
+    if not headshot:
+      return ""
+
+    if headshot.startswith("https://drive.google.com/file/d/"):
+      gid = headshot.removeprefix("https://drive.google.com/file/d/")
+      gid, _, _ = gid.partition("/")
+    elif headshot.startswith("https://drive.google.com/open?id="):
+      gid = headshot.removeprefix("https://drive.google.com/open?id=")
+    else:
+      print(f"bad resume {headshot}")
+      return ""
+    url = f"https://drive.google.com/uc?export=download&id={gid}"
+    name =  slugify(row["linktitle"])
+    image = Path("static", "img", "uploads", f"{name}.pdf")
+    if image.exists() or skip_download:
+      print(f"have {url}...")
+      return f"/img/uploads/{name}.pdf"
+    try:
+      print(f"getting {url}...")
+      rsp = requests.get(url)
+      rsp.raise_for_status()
+    except Exception as e:
+      print(f"bad {e}")
+      return ""
+    with open(image, "wb") as f:
+        f.write(rsp.content)
+    return f"/img/uploads/{name}.pdf"
 
 def get_expertise(s):
     s = s.replace("GOVERNMENT (FEDERAL, STATE, LOCAL)", "Government")
