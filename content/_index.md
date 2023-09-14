@@ -1,9 +1,11 @@
 ---
-title: Amplify Colorado Sources
+title: Amplify Colorado - COLab
 description: A resource for Colorado journalists to improve representation
   and diversify perspectives in their coverage.
 title-tag: Colorado News Collaborative Diverse Source Database
 ---
-We have created The Diverse Source Database to help CT Mirror and other news organizations in Connecticut publish local and statewide news coverage that is more equitable and better reflects the communities we serve.
+Amplify Colorado aims to ensure that Colorado’s local and statewide news coverage is more equitable and better reflects the communities it serves.
 
-<em>Information contained in this database is self-reported by participants and should be verified before publication. See an error? Have a question? Want to help us improve? [Send us a note](mailto:sources@ctmirror.org).</em>
+Information in this diverse source guide is voluntarily shared and self-reported by participants, and should be verified before publication. It is meant to be used by local journalists to broaden the range of voices, experiences and expertise in local news coverage and by community members to connect with their local reporters.
+
+Have a question? Ideas for improvements? See an error? [Send us a note.](mailto:todo@example.com)

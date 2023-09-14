@@ -48,14 +48,14 @@
           />
         </svg>
       </div>
-      <div class="{{ $hedClass }}">Nominate a source</div>
+      <div class="{{ $hedClass }}">Suggest a source</div>
       <div class="{{ $dekClass }}">
-        Know someone we should list here? Nominate them today.
+        Know someone we should list here? Recommend them today.
       </div>
     </a>
     {{ $emailSubject:= `About my Amplify Colorado database entry` }}
     <a
-      href="mailto:sources@ctmirror.org?subject={{ $emailSubject }}"
+      href="mailto:todo@example.com?subject={{ $emailSubject }}"
       class="{{ $blkClass }}"
     >
       <div class="{{ $svgWrapperClass }}">
@@ -73,12 +73,12 @@
           />
         </svg>
       </div>
-      <div class="{{ $hedClass }}">Update your information</div>
+      <div class="{{ $hedClass }}">Update your profile</div>
       <div class="{{ $dekClass }}">
         Has your information changed? Let us know.
       </div>
     </a>
-    <a class="{{ $blkClass }}" href="{{ site.Param "donate-link" }}">
+    <a class="{{ $blkClass }}" href="{{ site.Param `donate-link` }}">
       <div class="{{ $svgWrapperClass }}">
         <svg
           class="inline h-20 w-20"
@@ -95,10 +95,7 @@
         </svg>
       </div>
       <div class="{{ $hedClass }}">Support this project</div>
-      <div class="{{ $dekClass }}">
-        Want more equitable accountability journalism? Become a CT Mirror
-        member.
-      </div>
+      <div class="{{ $dekClass }}">Help us maintain and grow this guide.</div>
     </a>
   </section>
   <section class="no-js-hide p-8">

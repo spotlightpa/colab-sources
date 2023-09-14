@@ -1,6 +1,6 @@
-baseURL = "https://sources.colabnews.co/"
+baseURL = "https://amplifycolorado.colabnews.co/"
 languageCode = "en-us"
-title = "Amplify Colorado Sources"
+title = "Amplify Colorado"
 enableRobotsTXT = true
 enableGitInfo = true
 rssLimit = 50
@@ -11,8 +11,8 @@ buildFuture = true
 [params]
   favicon = "/img/logos/colab-square.png"
   touch-icon = "/img/logos/colab-square.png"
-  donate-link = "https://ctmirror.org/donate?campaign=7015a000000zTxmAAE"
-  nominate-link = "https://airtable.com/shrwKYg7fBgjHJVU3"
+  donate-link = "http://colab.fundjournalism.org/donate"
+  nominate-link = "http://bit.ly/AmplifyColorado"
 [taxonomies]
   expertise = "expertise"
   location = "location"

@@ -1,6 +1,6 @@
 <footer class="mt-auto bg-gray p-12 font-serif text-white">
   <nav class="flex max-w-screen-xl flex-col gap-6 lg:flex-row">
-    <div class="flex-grow uppercase lg:order-last">
+    <div class="">
       <a
         class="inline-flex flex-shrink-0 leading-none text-white"
         href="https://colabnews.co/"
@@ -16,36 +16,71 @@
           loading="lazy"
         />
       </a>
-      <p class="mt-2 leading-tight">
-        &copy; {{ now.Format "2006" }} <br />
-        CT Mirror <br />
-        1049 Asylum Avenue <br />
-        Hartford, CT 06105 <br />
-        <a href="tel:18602186380">860-218-6380</a> <br />
-        <a href="mailto:membership@ctmirror.org">membership@ctmirror.org</a>
-      </p>
     </div>
+
     {{ $context := dict
       "menu" site.Menus.footer
-      "name" "CT Mirror"
+      "name" "COLab"
     }}
     {{ block "featured-footer" $context }}
-      <div class="flex-1">
+      <div class="flex-1 font-sans">
         <h3 class="font-bold uppercase">{{ .name }}</h3>
-        <ul class="mt-2 space-y-2 leading-tight">
+        <ul class="mt-2 space-y-2 uppercase leading-tight">
           {{ range .menu }}
             <li>
               <a
                 class="text-blue duration-500 hover:text-blue-darker"
                 href="{{ .URL }}"
-                >{{ .Name }}</a
               >
+                {{- .Name -}}
+              </a>
             </li>
           {{ end }}
         </ul>
       </div>
     {{ end }}
-    {{ $context = dict "menu" site.Menus.follow "name" "Follow Us" }}
+    {{ $context = dict "menu" site.Menus.follow "name" "Amplify Colorado" }}
     {{ template "featured-footer" $context }}
+    <div class="flex-grow">
+      <p class="mt-2 leading-tight">
+        &copy;
+        {{ now.Format "2006" }}
+        Colorado News Collaborative
+      </p>
+      <p class="mt-4 leading-tight">
+        Amplify Colorado is a project of the <br />
+        <a class="text-blue hover:text-blue-darker" href="https://colabnews.co"
+          >Colorado News Collaborative</a
+        >, <br />
+        with generous funding from <br />
+        <a
+          class="text-blue hover:text-blue-darker"
+          href="https://coloradomediaproject.com/"
+          >Colorado Media Project</a
+        >.
+        <br />
+        Thanks to
+        <a
+          class="text-blue hover:text-blue-darker"
+          href="https://www.spotlightpa.org"
+          >Spotlight PA</a
+        >
+        <br />
+        and their
+        <a
+          class="text-blue hover:text-blue-darker"
+          href="https://sources.spotlightpa.org"
+          >diverse source database</a
+        >,
+        <br />
+        which this project is inspired by <br />
+        and is based on
+        <a
+          class="text-blue hover:text-blue-darker"
+          href="https://github.com/spotlightpa/sourcesdb"
+          >its code</a
+        >.
+      </p>
+    </div>
   </nav>
 </footer>

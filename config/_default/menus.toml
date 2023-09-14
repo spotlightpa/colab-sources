@@ -1,17 +1,17 @@
 [[navbar]]
-name = "CT Mirror"
-url = "https://www.ctmirror.org/"
+name = "COLab"
+url = "https://colabnews.co/"
 weight = 1
 
 [[navbar]]
-name = "Nominate An Expert"
-url = "https://airtable.com/shrwKYg7fBgjHJVU3"
+name = "Suggest a Source"
+url = "http://bit.ly/AmplifyColorado"
 weight = 2
 post = "_blank"
 
 [[navbar]]
 name = "Contact Us"
-url = "mailto:sources@ctmirror.org"
+url = "mailto:todo@example.com"
 weight = 3
 
 [[mobile]]
@@ -20,95 +20,60 @@ url = "/"
 weight = 1
 
 [[mobile]]
-name = "CT Mirror"
-url = "https://www.ctmirror.org/"
+name = "COLab"
+url = "https://colabnews.co/"
 weight = 2
 
 [[mobile]]
-name = "Nominate An Expert"
-url = "https://airtable.com/shrwKYg7fBgjHJVU3"
+name = "Suggest a Source"
+url = "http://bit.ly/AmplifyColorado"
 weight = 3
 post = "_blank"
 
 [[mobile]]
 name = "Contact Us"
-url = "mailto:sources@ctmirror.org"
+url = "mailto:todo@example.com"
 weight = 4
 
 [[mobile]]
 name = "Donate"
-url = "https://ctmirror.org/donate?campaign=7015a000000zTxmAAE"
+url = "http://colab.fundjournalism.org/donate"
 weight = 5
 
 
 [[footer]]
 name = "Home"
-url = "https://ctmirror.org/"
+url = "https://colabnews.co/"
 weight = 1
 
 [[footer]]
-name = "About"
-url = "https://ctmirror.org/about"
+name = "About Us"
+url = "https://colabnews.co/mission-and-vision/"
 weight = 2
 
 [[footer]]
-name = "FAQ"
-url = "https://ctmirror.org/about/faq/"
+name = "Contact"
+url = "mailto:todo@example.com"
 weight = 3
-
-[[footer]]
-name = "Staff"
-url = "https://ctmirror.org/about/staff/"
-weight = 4
-
-[[footer]]
-name = "Newsletters"
-url = "https://ctmirror.org/newsletters"
-weight = 5
 
 [[footer]]
 name = "Donate"
-url = "https://ctmirror.org/donate?campaign=7015a000000zTxmAAE"
-weight = 6
-
-[[footer]]
-name = "Contact Us"
-url = "https://ctmirror.org/contact-us/"
-weight = 7
+url = "http://colab.fundjournalism.org/donate"
+weight = 4
 
 
 [[follow]]
-name = "Facebook"
-url = "https://facebook.com/CTMirror/"
+name = "FAQs"
+url = "https://colabnews.co/amplify-colorado/"
 weight = 1
 
 [[follow]]
-name = "Twitter"
-url = "https://twitter.com/ctmirror"
+name = "Suggest a Source"
+url = "http://bit.ly/AmplifyColorado"
 weight = 2
+post = "_blank"
 
 [[follow]]
-name = "Instagram"
-url = "https://www.instagram.com/ctmirror/"
+name = "Contact"
+url = "mailto:todo@example.com"
 weight = 3
-
-[[follow]]
-name = "LinkedIn"
-url = "https://www.linkedin.com/company/ctmirror/"
-weight = 4
-
-[[follow]]
-name = "YouTube"
-url = "https://www.youtube.com/c/theconnecticutmirror"
-weight = 5
-
-[[follow]]
-name = "Google News"
-url = "https://news.google.com/publications/CAAiEB2eGe8Jj40myR82AY8_MUQqFAgKIhAdnhnvCY-NJskfNgGPPzFE?hl=en-US&gl=US&ceid=US:en"
-weight = 6
-
-[[follow]]
-name = "NewsBreak"
-url = "https://www.newsbreak.com/channels/connecticut-mirror-512909"
-weight = 7
-
