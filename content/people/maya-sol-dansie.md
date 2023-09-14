@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/maya-sol-dansie.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Boulder",

@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/stacey-shigaya.jpeg"
   ],
+  "resume": "/img/uploads/stacey-shigaya.pdf",
   "website": "",
   "location": [
     "Arapahoe",

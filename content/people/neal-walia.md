@@ -17,6 +17,7 @@
   "languages": "English, Hindi and Japanese",
   "email": "bmVhbGt3YWxpYUBnbWFpbC5jb20=",
   "images": [],
+  "resume": "",
   "website": "",
   "location": [
     "Denver"

@@ -20,6 +20,7 @@
   "images": [
     "/img/uploads/tara-mclain-manthey.jpeg"
   ],
+  "resume": "/img/uploads/tara-mclain-manthey.pdf",
   "website": "",
   "location": [
     "Denver"

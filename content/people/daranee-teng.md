@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/daranee-teng.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Denver"

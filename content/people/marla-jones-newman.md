@@ -18,6 +18,7 @@
   "images": [
     "/img/uploads/marla-jones-newman.jpeg"
   ],
+  "resume": "/img/uploads/marla-jones-newman.docx",
   "website": "",
   "location": [
     "Douglas"

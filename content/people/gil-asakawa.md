@@ -20,6 +20,7 @@
   "images": [
     "/img/uploads/gil-asakawa.jpeg"
   ],
+  "resume": "/img/uploads/gil-asakawa.pdf",
   "website": "",
   "location": [
     "Jefferson"

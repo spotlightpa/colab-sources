@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/judi-diaz-bonacquisti.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Denver"

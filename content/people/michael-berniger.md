@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/michael-berniger.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "El Paso"

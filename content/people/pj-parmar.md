@@ -19,7 +19,8 @@
   "images": [
     "/img/uploads/pj-parmar.jpeg"
   ],
-  "website": "",
+  "resume": "",
+  "website": "http://ardasclinic.com/mangohouse.htm",
   "location": [
     "Adams",
     "Arapahoe",
@@ -27,6 +28,6 @@
   ],
   "linkedin": "",
   "phone": "303-900-8639",
-  "bio": "you can google mango house or my work if you like.",
+  "bio": "P.J. Parmar is a family doctor who started and runs a primary care clinic, dental clinic, youth programs and other endeavors for resettled refugees in the Denver area. He focuses on process efficiencies in underserved primary care medicine and challenges the notion that private practices can't thrive while serving low-income patients. He has also been covered widely for his work founding a Boy Scout Troop for resettled refugees.",
   "layout": "person"
 }

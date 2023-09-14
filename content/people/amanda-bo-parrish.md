@@ -20,6 +20,7 @@
   "images": [
     "/img/uploads/amanda-bo-parrish.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Denver"

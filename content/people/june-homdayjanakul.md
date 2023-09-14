@@ -18,6 +18,7 @@
   "images": [
     "/img/uploads/june-homdayjanakul.jpeg"
   ],
+  "resume": "/img/uploads/june-homdayjanakul.pdf",
   "website": "",
   "location": [
     "Arapahoe"

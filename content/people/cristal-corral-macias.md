@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/cristal-corral-macias.jpeg"
   ],
+  "resume": "/img/uploads/cristal-corral-macias.pdf",
   "website": "",
   "location": [
     "Jefferson"

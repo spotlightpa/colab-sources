@@ -17,6 +17,7 @@
   "languages": "English",
   "email": "YWx2aW5hQHBvd2VybWFwbHRkLmNvbQ==",
   "images": [],
+  "resume": "",
   "website": "",
   "location": [
     "Jefferson"

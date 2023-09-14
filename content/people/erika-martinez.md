@@ -18,6 +18,7 @@
   "images": [
     "/img/uploads/erika-martinez.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Adams",

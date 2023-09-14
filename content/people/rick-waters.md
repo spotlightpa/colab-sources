@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/rick-waters.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Boulder",

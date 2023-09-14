@@ -20,6 +20,7 @@
   "images": [
     "/img/uploads/santo-alvarez.jpeg"
   ],
+  "resume": "/img/uploads/santo-alvarez.pdf",
   "website": "",
   "location": [
     "Denver"

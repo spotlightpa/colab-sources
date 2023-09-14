@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/sridevi-bangaru.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Boulder"

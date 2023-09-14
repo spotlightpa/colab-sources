@@ -18,6 +18,7 @@
   "languages": "English, Spanish",
   "email": "bGFyYUBicmlkZ2luZ2RpZ2l0YWxkaXZpZGVzLm9yZw==",
   "images": [],
+  "resume": "",
   "website": "",
   "location": [
     "Boulder"

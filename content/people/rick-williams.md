@@ -20,6 +20,7 @@
   "images": [
     "/img/uploads/rick-williams.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Broomfield"

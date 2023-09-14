@@ -17,6 +17,7 @@
   "images": [
     "/img/uploads/dyllon-mills.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Montezuma"

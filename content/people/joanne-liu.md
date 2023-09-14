@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/joanne-liu.jpeg"
   ],
+  "resume": "/img/uploads/joanne-liu.pdf",
   "website": "",
   "location": [
     "Denver"

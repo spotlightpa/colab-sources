@@ -20,6 +20,7 @@
   "images": [
     "/img/uploads/mario-carrera.jpeg"
   ],
+  "resume": "/img/uploads/mario-carrera.docx",
   "website": "",
   "location": [
     "Denver",

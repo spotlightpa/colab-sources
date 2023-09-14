@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/lena-chhay.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Adams",

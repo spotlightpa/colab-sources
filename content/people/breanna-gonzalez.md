@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/breanna-gonzalez.jpeg"
   ],
+  "resume": "/img/uploads/breanna-gonzalez.pdf",
   "website": "",
   "location": [
     "Alamosa",

@@ -20,6 +20,7 @@
   "images": [
     "/img/uploads/kai-vong.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Denver",

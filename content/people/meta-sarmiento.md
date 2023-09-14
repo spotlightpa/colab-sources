@@ -20,6 +20,7 @@
   "images": [
     "/img/uploads/meta-sarmiento.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Arapahoe"

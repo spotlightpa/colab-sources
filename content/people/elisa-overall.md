@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/elisa-overall.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Denver",

@@ -20,6 +20,7 @@
   "images": [
     "/img/uploads/william-wei.jpeg"
   ],
+  "resume": "/img/uploads/william-wei.doc",
   "website": "",
   "location": [
     "Boulder"

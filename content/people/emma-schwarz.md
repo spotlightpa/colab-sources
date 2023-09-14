@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/emma-schwarz.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Arapahoe",

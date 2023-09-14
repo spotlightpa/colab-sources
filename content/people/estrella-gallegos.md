@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/estrella-gallegos.jpeg"
   ],
+  "resume": "/img/uploads/estrella-gallegos.pdf",
   "website": "",
   "location": [
     "Arapahoe"

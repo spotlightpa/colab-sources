@@ -12,17 +12,19 @@
   "expertise": [
     "Diversity & Inclusion",
     "Law",
+    "Sports",
     "Ski & Outdoor Industries"
   ],
   "languages": "English, Mandarin",
   "email": "YWthb0BhbHRlcnJhbXRuY28uY29t",
   "images": [],
+  "resume": "",
   "website": "",
   "location": [
     "Denver"
   ],
   "linkedin": "https://www.linkedin.com/in/annietkao",
   "phone": "",
-  "bio": "Because it\u2019s not clear who will have access to this Guide and I am cognizant of trolling and doxxing, please see my LinkedIn page for information that is publicly available. I\u2019d be happy to provide a separate short bio if I am included in the Guide and there is clarity about the scope of distribution.",
+  "bio": "",
   "layout": "person"
 }

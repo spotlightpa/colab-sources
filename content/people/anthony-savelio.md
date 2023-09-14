@@ -22,6 +22,7 @@
   "images": [
     "/img/uploads/anthony-savelio.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Arapahoe",

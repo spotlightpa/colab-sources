@@ -18,6 +18,7 @@
   "images": [
     "/img/uploads/carlos-jimenez.jpeg"
   ],
+  "resume": "/img/uploads/carlos-jimenez.docx",
   "website": "",
   "location": [
     "El Paso"

@@ -20,6 +20,7 @@
   "images": [
     "/img/uploads/sara-moore.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Jefferson"

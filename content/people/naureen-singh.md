@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/naureen-singh.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Arapahoe",

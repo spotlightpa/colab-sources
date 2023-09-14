@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/riyaz-gayasaddin.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Larimer"

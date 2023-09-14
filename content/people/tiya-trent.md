@@ -21,6 +21,7 @@
   "images": [
     "/img/uploads/tiya-trent.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Denver",

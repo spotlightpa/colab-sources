@@ -20,6 +20,7 @@
   "images": [
     "/img/uploads/kimberly-ming.jpeg"
   ],
+  "resume": "/img/uploads/kimberly-ming.pdf",
   "website": "",
   "location": [
     "Larimer"

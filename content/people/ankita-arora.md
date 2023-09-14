@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/ankita-arora.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Adams"

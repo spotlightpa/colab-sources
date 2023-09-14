@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/cynthia-trinidad-sheahan.jpeg"
   ],
+  "resume": "/img/uploads/cynthia-trinidad-sheahan.pdf",
   "website": "",
   "location": [
     "Adams",

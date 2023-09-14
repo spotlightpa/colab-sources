@@ -20,6 +20,7 @@
   "images": [
     "/img/uploads/kat-ling.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Adams",

@@ -18,6 +18,7 @@
   "images": [
     "/img/uploads/radna-segal.jpeg"
   ],
+  "resume": "/img/uploads/radna-segal.pdf",
   "website": "",
   "location": [
     "Boulder"

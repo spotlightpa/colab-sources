@@ -12,13 +12,14 @@
   "expertise": [
     "Health & Medicine",
     "Immigration",
-    "Refugee And Immigrants"
+    "Refugees"
   ],
   "languages": "English",
   "email": "ZnJhbmtAcHJvamVjdHdvcnRobW9yZS5vcmc=",
   "images": [
     "/img/uploads/frank-anello.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Adams",

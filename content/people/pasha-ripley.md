@@ -19,6 +19,7 @@
   "languages": "English",
   "email": "cGFzaGFAcGFyYXNvbHBhdHJvbC5vcmc=",
   "images": [],
+  "resume": "",
   "website": "",
   "location": [
     "Adams",

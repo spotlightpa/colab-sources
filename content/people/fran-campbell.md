@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/fran-campbell.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Denver",

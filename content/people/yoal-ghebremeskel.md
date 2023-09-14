@@ -12,12 +12,12 @@
   "expertise": [
     "Immigration",
     "Youth",
-    "Violence",
-    "Gun Violence"
+    "Violence & Gun Violence"
   ],
   "languages": "English, Tigrigna",
   "email": "eW9hbEBzdHJlZXRmcmF0ZXJuaXR5dXNhLm9yZw==",
   "images": [],
+  "resume": "",
   "website": "",
   "location": [
     "Adams",

@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/susanna-park.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Douglas"

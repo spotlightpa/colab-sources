@@ -20,6 +20,7 @@
   "images": [
     "/img/uploads/tracie-keesee.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Arapahoe",

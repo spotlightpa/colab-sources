@@ -17,6 +17,7 @@
   "images": [
     "/img/uploads/kristi-keolakai.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Dolores"

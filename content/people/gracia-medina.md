@@ -18,7 +18,8 @@
   "languages": "English, Spanish",
   "email": "bXJzLmdAdGhjYm9va2tlZXBlci5jb20=",
   "images": [],
-  "website": "",
+  "resume": "",
+  "website": "https://substack.com/@gmedina",
   "location": [
     "El Paso"
   ],

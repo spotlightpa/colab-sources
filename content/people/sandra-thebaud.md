@@ -17,6 +17,7 @@
   "languages": "English",
   "email": "c2FuZHJhLnRoZWJhdWQucGhkQGdtYWlsLmNvbQ==",
   "images": [],
+  "resume": "",
   "website": "",
   "location": [
     "Denver"

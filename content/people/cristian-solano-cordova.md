@@ -21,6 +21,7 @@
   "images": [
     "/img/uploads/cristian-solano-cordova.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Arapahoe",

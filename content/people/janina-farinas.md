@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/janina-farinas.jpeg"
   ],
+  "resume": "/img/uploads/janina-farinas.pdf",
   "website": "",
   "location": [
     "Denver",

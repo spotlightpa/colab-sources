@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/joie-ha.jpeg"
   ],
+  "resume": "/img/uploads/joie-ha.pdf",
   "website": "",
   "location": [
     "Arapahoe",

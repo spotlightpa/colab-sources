@@ -17,6 +17,7 @@
   "images": [
     "/img/uploads/katie-garcia.jpeg"
   ],
+  "resume": "/img/uploads/katie-garcia.pdf",
   "website": "",
   "location": [
     "Denver"

@@ -20,6 +20,7 @@
   "images": [
     "/img/uploads/rachel-garcia.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Denver"

@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/annie-vandan.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Arapahoe",

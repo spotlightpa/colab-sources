@@ -19,6 +19,7 @@
   "images": [
     "/img/uploads/duane-gurule.jpeg"
   ],
+  "resume": "/img/uploads/duane-gurule.pdf",
   "website": "",
   "location": [
     "Crowley",

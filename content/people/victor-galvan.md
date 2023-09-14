@@ -18,6 +18,7 @@
   "languages": "English, Spanish",
   "email": "dmljdG9yQGNvbnNlcnZhdGlvbmNvLm9yZw==",
   "images": [],
+  "resume": "",
   "website": "",
   "location": [
     "Arapahoe",

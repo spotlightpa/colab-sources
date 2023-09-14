@@ -16,7 +16,10 @@
   ],
   "languages": "English, Spanish",
   "email": "anJzbWVzMjVAZ21haWwuY29t",
-  "images": [],
+  "images": [
+    "/img/uploads/jose-salas.jpeg"
+  ],
+  "resume": "",
   "website": "",
   "location": [
     "Adams",

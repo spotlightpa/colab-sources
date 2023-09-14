@@ -20,6 +20,7 @@
   "images": [
     "/img/uploads/carla-colin.jpeg"
   ],
+  "resume": "",
   "website": "",
   "location": [
     "Boulder",
