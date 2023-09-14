@@ -16,9 +16,7 @@
   ],
   "languages": "English, Spanish",
   "email": "Y3Jpc3RhbC5jb3JyYWxtYWNpYXNAZWZpcnN0YmFuay5jb20=",
-  "images": [
-    "/img/uploads/cristal-corral-macias.jpeg"
-  ],
+  "images": [],
   "resume": "/img/uploads/cristal-corral-macias.pdf",
   "website": "",
   "location": [
