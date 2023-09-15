@@ -14,7 +14,7 @@
       <div>
         <img
           title="{{ $.Title }}"
-          class="rounded bg-g-4 shadow"
+          class="mx-auto h-auto max-h-56 w-auto rounded bg-g-4 shadow"
           alt="Headshot of {{ $.Title }}"
           width="{{ $imgSmall.Width }}"
           height="{{ $imgSmall.Height }}"
@@ -34,6 +34,11 @@
   >
     {{- .LinkTitle -}}
   </h2>
+  {{ with .Param "organization" }}
+    <h3 class="truncate font-sans text-g-6">
+      {{ . }}
+    </h3>
+  {{ end }}
   {{ if $xpts := .GetTerms "expertise" }}
     <p class="text-sm leading-normal">
       <svg
