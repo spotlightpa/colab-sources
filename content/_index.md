@@ -1,8 +1,8 @@
 ---
-title: Amplify Colorado - COLab
+title: Amplify Colorado
 description: A resource for Colorado journalists to improve representation
   and diversify perspectives in their coverage.
-title-tag: Colorado News Collaborative Diverse Source Database
+title-tag: Amplify Colorado - COLab
 ---
 Amplify Colorado aims to ensure that Colorado’s local and statewide news coverage is more equitable and better reflects the communities it serves.
 
