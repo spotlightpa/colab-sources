@@ -7,7 +7,7 @@
       {{ if ne $initial $lastLetter }}
         {{ $lastLetter = $initial }}
         {{ `</div>` | safeHTML }}
-        {{ `<div class="break-inside-avoid-column">` | safeHTML }}
+        {{ `<div class="mb-6 break-inside-avoid-column">` | safeHTML }}
         <h2 class="font-sans text-3xl font-bold">{{ $lastLetter }}</h2>
       {{ end }}
       <li>
