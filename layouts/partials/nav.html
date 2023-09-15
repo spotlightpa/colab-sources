@@ -1,4 +1,4 @@
-<header class="border-b border-g-5 bg-blue-darker font-serif">
+<header class="border-b border-g-5 bg-blue-darker font-sans">
   <nav x-data="{ isOpen: false }">
     <div class="mx-auto max-w-7xl px-6">
       <div class="relative flex h-16 items-center justify-between md:h-24">
@@ -23,7 +23,7 @@
           <span class="hidden flex-row content-center space-x-6 lg:flex">
             {{ range site.Menus.navbar }}
               <a
-                class="self-center uppercase text-white duration-500 hover:text-blue"
+                class="self-center text-white duration-500 hover:text-blue"
                 href="{{ .URL }}"
                 {{ with .Post }}target="{{ . }}"{{ end }}
                 >{{ .Name }}</a
