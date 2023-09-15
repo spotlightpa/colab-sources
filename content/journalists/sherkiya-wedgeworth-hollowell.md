@@ -15,7 +15,7 @@
   "languages": "English",
   "email": "c3dlZGdld29ydGhAY3ByLm9yZw==",
   "images": [
-    "/img/uploads/sherkiya-wedgeworth-hollowell.jpeg"
+    "/img/uploads/sherkiya-wedgeworth-hollowell.png"
   ],
   "resume": "",
   "website": "",
