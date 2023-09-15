@@ -108,3 +108,4 @@ resources/
 hugo_stats.json
 bin/
 .hugo_build.lock
+static/pagefind

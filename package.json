@@ -7,9 +7,10 @@
     "format": "yarn run format:eslint; yarn run format:prettier",
     "format:eslint": "eslint --fix --ext .js --ignore-path .gitignore .",
     "format:prettier": "prettier --ignore-path .gitignore --write '**/*.{html,css,js,yml}'",
-    "build:prod": "hugo version && hugo --cleanDestinationDir && yarn run searchindex",
-    "build:stage": "hugo version && hugo --environment staging --baseURL ${DEPLOY_PRIME_URL:-https://amplifycolorado.colabnews.co}",
-    "searchindex": "echo TODO",
+    "build:prod": "hugo version && hugo --cleanDestinationDir && yarn run pagefind",
+    "build:stage": "hugo version && hugo --environment staging --baseURL ${DEPLOY_PRIME_URL:-https://amplifycolorado.colabnews.co} && yarn run pagefind",
+    "pagefind-dev": "hugo && pagefind --site public --output-path static/pagefind",
+    "pagefind": "pagefind --site public",
     "test": "yarn run test:eslint && yarn run test:prettier",
     "test:eslint": "eslint --ext .js --ignore-path .gitignore .",
     "test:prettier": "prettier --ignore-path .gitignore --check '**/*.{html,css,js,yml}'"
@@ -22,6 +23,7 @@
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "alpinejs": "^3.1.1",
     "autoprefixer": "^10.2.6",
+    "pagefind": "^1.0.2",
     "postcss": "^8.3.5",
     "postcss-cli": "^10.1.0",
     "tailwindcss": "^3.3.3"
