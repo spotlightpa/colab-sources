@@ -105,9 +105,11 @@
   <section class="p-8">
     <div class="{{ $wellClass }}" x-data>
       <h2 class="{{ $secHedClass }} scroll-mt-2" x-ref="hed">
-        Meet our journalists and experts
+        Meet our journalists and community experts
       </h2>
-      {{ $people := .GetPage "people" }}
+      {{ $expts := .GetPage "people" }}
+      {{ $journos := .GetPage "journalists" }}
+      {{ $people := union $expts.RegularPages $journos.RegularPages }}
       <ul
         x-init="$shuffle($el)"
         class="
@@ -116,7 +118,7 @@
         "
         x-ref="container"
       >
-        {{ range $people.RegularPages }}
+        {{ range $people }}
           <li>
             {{ partial "person-box.html" . }}
           </li>
@@ -141,20 +143,45 @@
     <div class="{{ $wellClass }}">
       <h2 class="{{ $secHedClass }}" id="by-expertise">Areas of expertise</h2>
       {{ $expertise := .GetPage "expertise" }}
-      {{ partial "pages-list.html" $expertise }}
+      {{ partial "pages-list.html" $expertise.Pages }}
     </div>
   </section>
   <section class="p-8">
     <div class="{{ $wellClass }}">
       <h2 class="{{ $secHedClass }}" id="by-location">Experts by location</h2>
       {{ $loc := .GetPage "location" }}
-      {{ partial "pages-list.html" $loc }}
+      {{ partial "pages-list.html" $loc.Pages }}
     </div>
   </section>
   <section class="bg-g-3 p-8 shadow-inner">
     <div class="{{ $wellClass }}">
       <h2 class="{{ $secHedClass }}" id="by-name">Experts by last name</h2>
       {{ $people := .GetPage "people" }}
+      {{ partial "people-by-last-name.html" $people }}
+    </div>
+  </section>
+  <section class="p-8">
+    <div class="{{ $wellClass }}">
+      <h2 class="{{ $secHedClass }}" id="by-beat">Journalists by beat</h2>
+      {{ $beat := .GetPage "beat" }}
+      {{ partial "pages-list.html" $beat.Pages }}
+    </div>
+  </section>
+  <section class="bg-g-3 p-8 shadow-inner">
+    <div class="{{ $wellClass }}">
+      <h2 class="{{ $secHedClass }}" id="by-area">
+        Journalists by coverage areas
+      </h2>
+      {{ $area := .GetPage "area" }}
+      {{ partial "pages-list.html" $area.Pages }}
+    </div>
+  </section>
+  <section class="p-8">
+    <div class="{{ $wellClass }}">
+      <h2 class="{{ $secHedClass }}" id="journalists">
+        Journalists by last name
+      </h2>
+      {{ $people := .GetPage "journalists" }}
       {{ partial "people-by-last-name.html" $people }}
     </div>
   </section>

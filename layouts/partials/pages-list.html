@@ -1,11 +1,12 @@
 <ul class="sm:column-count-2 md:column-count-3">
-  {{ range .Pages }}
+  {{ range . }}
     <li>
       <a
         class="text-blue duration-500 hover:text-blue-darker"
         href="{{ .RelPermalink }}"
-        >{{ .LinkTitle }}</a
       >
+        {{- .LinkTitle -}}
+      </a>
       {{ if gt (len .Pages) 1 }}
         <span class="text-g-6"> ({{ len .Pages }}) </span>
       {{ end }}

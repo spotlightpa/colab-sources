@@ -32,7 +32,7 @@
               >
                 {{ .LinkTitle }}
               </h2>
-              {{ with .Param "role" }}
+              {{ with .Param "organization" }}
                 <h3 class="ml-1 inline text-g-9 hover:underline">
                   {{ . }}
                 </h3>
@@ -59,15 +59,24 @@
                   {{- end }}
                 </span>
               {{ end }}
-              {{ with .Param "keywords" }}
+              {{ with .GetTerms "beat" }}
                 <span class="mr-1 text-g-7">
                   <svg class="inline-block h-3 w-3 fill-current align-middle">
-                    <title>Keywords</title>
-                    <use xlink:href="#tags-svg"></use>
+                    <title>Beat</title>
+                    <use xlink:href="#newspaper-svg"></use>
                   </svg>
                 </span>
                 <span class="mr-1 align-middle">
-                  {{ delimit . ", " }}
+                  {{ range $i, $p := . }}
+                    {{- if ne $i 0 }},{{ end }}
+                    {{ if ne $.RelPermalink $p.RelPermalink }}
+                      <a class="hover:underline" href="{{ $p.RelPermalink }}">
+                        {{ .Title -}}
+                      </a>
+                    {{- else }}
+                      {{ .Title -}}
+                    {{ end }}
+                  {{- end }}
                 </span>
               {{ end }}
               {{ with .GetTerms "location" }}
@@ -78,6 +87,26 @@
                         class="inline-block h-3 w-3 fill-current align-middle"
                       >
                         <title>Location</title>
+                        <use xlink:href="#earth-svg"></use>
+                      </svg>
+                    </span>
+                    <a
+                      class="align-middle hover:underline"
+                      href="{{ .RelPermalink }}"
+                    >
+                      {{ .Title }}
+                    </a>
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+              {{ with .GetTerms "area" }}
+                {{ if le (len .) 2 }}
+                  {{ range . }}
+                    <span class="mr-1 text-g-7">
+                      <svg
+                        class="inline-block h-3 w-3 fill-current align-middle"
+                      >
+                        <title>Coverage area</title>
                         <use xlink:href="#earth-svg"></use>
                       </svg>
                     </span>

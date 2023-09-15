@@ -16,6 +16,8 @@ buildFuture = true
 [taxonomies]
   expertise = "expertise"
   location = "location"
+  beat = "beat"
+  area = "area"
 
 [markup]
   defaultMarkdownHandler = "goldmark"
