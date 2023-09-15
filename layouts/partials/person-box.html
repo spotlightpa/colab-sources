@@ -1,5 +1,5 @@
 <a
-  class="group flex h-full w-full max-w-screen-sm flex-col gap-3 rounded border border-g-5 p-4 shadow"
+  class="group flex h-full w-full max-w-screen-sm flex-col gap-3 border-8 border-blue p-4 shadow transition-colors duration-500 hover:border-blue-darker"
   href="{{ $.RelPermalink }}"
 >
   {{ with .Param "images" }}
@@ -9,8 +9,8 @@
         {{ warnf "missing image %q" . }}
         {{ continue }}
       {{ end }}
-      {{ $imgSmall := $img.Resize "239x" }}
-      {{ $imgMedium := $img.Resize "478x" }}
+      {{ $imgSmall := $img.Resize "225x" }}
+      {{ $imgMedium := $img.Resize "450x" }}
       <div>
         <img
           title="{{ $.Title }}"
