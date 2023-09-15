@@ -3,10 +3,7 @@
     <label class="text-lg font-bold uppercase text-black" for="search">
       Search for an expert
     </label>
-    <span
-      class="text-g-7"
-      x-text="query && !isLoading ? resultsText : ''"
-    ></span>
+    <span class="text-g-7" x-text="resultsText"></span>
   </h2>
   <div class="relative">
     <input
@@ -21,7 +18,7 @@
       class="pointer-events-none absolute inset-y-0 left-0 z-10 inline-flex w-10 items-center justify-center leading-none text-g-5"
       aria-hidden="true"
     >
-      <svg class="h-4 w-auto fill-current">
+      <svg class="h-4 w-4 fill-current">
         <title>Search</title>
         <use xlink:href="#search-svg"></use>
       </svg>
@@ -32,7 +29,7 @@
       aria-hidden="true"
       :class="{ 'inline-flex': isLoading, 'hidden': !isLoading }"
     >
-      <svg class="h-4 w-auto animate-spin fill-current ">
+      <svg class="h-4 w-4 animate-spin fill-current ">
         <title>Is Loading</title>
         <use xlink:href="#loading-svg"></use>
       </svg>
@@ -41,14 +38,16 @@
       x-cloak
       @click="clear()"
       type="button"
-      class="absolute inset-y-0 right-0 z-10 flex w-10 items-center justify-center leading-none text-g-5 hover:text-g-7"
-      :class="{ 'flex': showClearButton, 'hidden': !showClearButton }"
+      class="inlineflex absolute inset-y-0 right-0 z-10 w-10 items-center justify-center leading-none text-g-5 hover:text-g-7"
+      :class="{ 'inline-flex': showClearButton, 'hidden': !showClearButton }"
     >
-      <svg class="h-4 w-auto fill-current ">
+      <svg class="h-4 w-4 fill-current ">
         <title>Clear search</title>
         <use xlink:href="#close-svg"></use>
       </svg>
     </button>
+    <!-- prevent CSS purge -->
+    <span hidden class="hidden"></span>
   </div>
   <p x-cloak x-show="error" class="mt-2">
     <span class="italic"> Something went wrong: </span>
@@ -58,6 +57,8 @@
     <span class="text-g-7" x-text="error && error.message || ''"></span>
   </p>
   <div class="m-2 space-y-2">
+    <span x-text="JSON.stringify(people)"></span>
+    <!--
     <template x-for="p, i of people" hidden>
       <a
         class="block rounded p-2 duration-100 hover:shadow-md"
@@ -98,5 +99,6 @@
         </div>
       </a>
     </template>
+     -->
   </div>
 </div>

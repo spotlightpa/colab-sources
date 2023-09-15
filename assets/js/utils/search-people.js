@@ -1,102 +1,74 @@
-import searchAPI from "../utils/search-api.js";
-import { debouncer } from "../utils/timers.js";
-
-function normalize(obj) {
-  return {
-    path: obj["path"] || "",
-    name: obj["name"] || "",
-    full_name: obj["full_name"] || "",
-    bio: obj["bio"] || "",
-    last_name: obj["last_name"] || "",
-    location: obj["location"] || "",
-    role: obj["role"] || "",
-    expertise: obj["expertise"] || [],
-    keywords: obj["keywords"] || [],
-  };
-}
-
 export default function searchPeople() {
   return {
-    query: window.history.state?.searchQuery || "",
-    results: window.history.state?.searchResult || null,
+    query: "",
+    pagefind: null,
     error: null,
     isLoading: false,
-    fetchID: 0,
+    results: null,
 
-    init() {
-      const bouncedSearch = debouncer({ milliseconds: 500 }, () =>
-        this.search(),
-      );
-      this.$watch("query", (query) => {
-        this.isLoading = !!query;
-        bouncedSearch();
-      });
-    },
-
-    search() {
-      this.fetchID++;
-      let currentFetch = this.fetchID;
-
-      searchAPI(this.query)
-        .then((results) => {
-          if (currentFetch !== this.fetchID) {
-            return;
-          }
-          this.error = null;
-          if (results) {
-            this.results = results;
-          }
-          this.storeHistory();
-        })
-        .catch((error) => {
-          this.isLoading = false;
-          this.error = error;
-        })
-        .finally(() => {
-          this.isLoading = false;
-        });
-    },
-
-    get people() {
-      if (!this.results || !this.results.hits) {
-        return [];
+    async init() {
+      console.log("search people init");
+      let pagefind;
+      try {
+        pagefind = await import("/pagefind/pagefind.js");
+        pagefind.init();
+      } catch (e) {
+        this.error = e;
       }
-      return this.results.hits.map(normalize);
+      this.pagefind = pagefind;
+      console.log("done pagefind init");
+      this.$watch("query", (val) => this.search(val));
     },
 
-    get resultsText() {
-      let nHits = this.results?.nbHits ?? 0;
-      if (!nHits) {
-        return "No search results.";
+    async search(val) {
+      console.log("search", val);
+      let query = val.trim();
+      if (!query || !this.pagefind) {
+        this.error = null;
+        this.isLoading = false;
+        this.result = null;
+        return;
       }
-      if (nHits === 1) {
-        return "Got one search result.";
+
+      this.isLoading = true;
+      let search, results;
+      try {
+        search = await this.pagefind.debouncedSearch(query);
+        if (search === null) return;
+        results = await Promise.all(
+          search.results.slice(0, 5).map((r) => r.data()),
+        );
+      } catch (e) {
+        this.error = e;
+        this.isLoading = false;
+        return;
       }
-      let nStories = this.results?.hits?.length ?? 0;
-      let more = nHits > nStories ? `Showing first ${nStories}.` : "";
-      return `Got ${nHits} search results. Click on name for more information. ${more}`;
-    },
+      this.results = results;
+      this.isLoading = false;
 
-    storeHistory() {
-      let searchQuery = "" + this.query;
-      let searchResult = JSON.parse(JSON.stringify(this.results));
-
-      window.history.replaceState(
-        {
-          searchQuery,
-          searchResult,
-        },
-        "",
-      );
+      console.log("got results for", val);
     },
 
     clear() {
-      this.results = null;
       this.query = "";
+      this.isLoading = false;
+      this.results = null;
+      this.error = null;
     },
 
     get showClearButton() {
-      return !this.isLoading && (this.query || this.people.length);
+      if (this.isLoading) return false;
+      return !!this.query.trim();
+    },
+
+    get people() {
+      if (!this.results) return [];
+
+      return this.results.map((r) => r.excerpt);
+    },
+
+    get resultsText() {
+      return "";
     },
   };
 }

@@ -58,7 +58,12 @@
       </style>
     </noscript>
     {{ $shouldMinify := not site.IsServer }}
-    {{ $jsOpts := dict "minify" $shouldMinify "targetPath" "/js/main.js" "target" "es2019" }}
+    {{ $jsOpts := dict
+      "minify" $shouldMinify
+      "targetPath" "/js/main.js"
+      "target" "es2020"
+      "externals" (slice "/pagefind/*")
+    }}
     {{ $js := resources.Get "js/entrypoint/main.js" | js.Build $jsOpts }}
     {{ if $shouldMinify }}
       {{ $js = $js | minify | fingerprint }}
