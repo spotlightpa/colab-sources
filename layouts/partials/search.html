@@ -73,6 +73,7 @@
             </svg>
           </span>
           <span
+            x-show="p.expertise.length"
             class="mr-1 align-middle"
             x-text="p.expertise.join(', ')"
           ></span>
@@ -82,7 +83,11 @@
               <use xlink:href="#newspaper-svg"></use>
             </svg>
           </span>
-          <span class="mr-1 align-middle" x-text="p.beat.join(', ')"></span>
+          <span
+            x-show="p.beat.length"
+            class="mr-1 align-middle"
+            x-text="p.beat.join(', ')"
+          ></span>
           <span x-show="p.location.length" class="mr-1 text-g-7">
             <svg class="inline-block h-4 w-4 fill-current align-middle">
               <title>Location</title>
