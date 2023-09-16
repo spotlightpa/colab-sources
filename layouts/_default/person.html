@@ -19,12 +19,18 @@
         {{ end }}
       </h1>
       {{ with .Param "organization" }}
-        <h2 class="break-word  text-lg leading-tight text-gray">
+        <h2
+          class="break-word  text-lg leading-tight text-gray"
+          data-pagefind-meta="organization"
+        >
           {{ . }}
         </h2>
       {{ end }}
       {{ with .Param "role" }}
-        <h2 class="break-word text-lg leading-tight text-g-6">
+        <h2
+          class="break-word text-lg leading-tight text-g-6"
+          data-pagefind-meta="role"
+        >
           {{ . }}
         </h2>
       {{ end }}
@@ -45,6 +51,8 @@
                 <a
                   class="text-blue transition-colors duration-500 hover:text-blue-darker"
                   href="{{ .RelPermalink }}"
+                  data-pagefind-filter="location"
+                  data-pagefind-body
                 >
                   {{- .Title -}}
                 </a>
@@ -68,6 +76,8 @@
                 <a
                   class="text-blue transition-colors duration-500 hover:text-blue-darker"
                   href="{{ .RelPermalink }}"
+                  data-pagefind-filter="area"
+                  data-pagefind-body
                 >
                   {{- .Title -}}
                 </a>
@@ -327,6 +337,8 @@
                 <a
                   class="text-blue transition-colors duration-500 hover:text-blue-darker"
                   href="{{ $p.RelPermalink }}"
+                  data-pagefind-filter="expertise"
+                  data-pagefind-body
                 >
                   {{ .Title -}}
                 </a>
@@ -343,6 +355,8 @@
                 <a
                   class="text-blue transition-colors duration-500 hover:text-blue-darker"
                   href="{{ $p.RelPermalink }}"
+                  data-pagefind-filter="beat"
+                  data-pagefind-body
                 >
                   {{ .Title -}}
                 </a>

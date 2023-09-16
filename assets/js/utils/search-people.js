@@ -5,48 +5,48 @@ export default function searchPeople() {
     error: null,
     isLoading: false,
     results: null,
+    resultCount: 0,
 
     async init() {
-      console.log("search people init");
       let pagefind;
       try {
         pagefind = await import("/pagefind/pagefind.js");
         pagefind.init();
       } catch (e) {
         this.error = e;
+        return;
       }
       this.pagefind = pagefind;
-      console.log("done pagefind init");
       this.$watch("query", (val) => this.search(val));
     },
 
     async search(val) {
-      console.log("search", val);
       let query = val.trim();
       if (!query || !this.pagefind) {
-        this.error = null;
         this.isLoading = false;
-        this.result = null;
+        this.results = null;
+        this.error = null;
         return;
       }
 
       this.isLoading = true;
-      let search, results;
+      this.resultCount = 0;
+      let results;
       try {
-        search = await this.pagefind.debouncedSearch(query);
+        const search = await this.pagefind.debouncedSearch(query);
         if (search === null) return;
         results = await Promise.all(
-          search.results.slice(0, 5).map((r) => r.data()),
+          search.results.slice(0, 20).map((r) => r.data()),
         );
+        this.resultCount = search.results.length;
       } catch (e) {
+        this.resultCount = 0;
         this.error = e;
         this.isLoading = false;
         return;
       }
       this.results = results;
       this.isLoading = false;
-
-      console.log("got results for", val);
     },
 
     clear() {
@@ -64,11 +64,36 @@ export default function searchPeople() {
     get people() {
       if (!this.results) return [];
 
-      return this.results.map((r) => r.excerpt);
+      return this.results.map((data) => ({
+        id: data.url,
+        url: data.url,
+        name: data.meta.title,
+        excerpt: data.excerpt,
+        organization: data.meta.organization || "",
+        role: data.meta.role || "",
+        beat: data.filters.beat || [],
+        expertise: data.filters.expertise || [],
+        location: data.filters.location || [],
+        area: data.filters.area || [],
+        image: data.meta.image,
+        image_alt: data.meta.image_alt,
+      }));
     },
 
     get resultsText() {
-      return "";
+      if (this.isLoading || !this.results) return "";
+
+      let total = this.resultCount;
+      let shown = this.results.length;
+
+      if (total < 1) {
+        return "No search results.";
+      }
+      if (total === 1) {
+        return "Got one search result.";
+      }
+      let more = total > shown ? `Showing first ${shown} results.` : "";
+      return `Got ${total} search results. ${more}`;
     },
   };
 }
