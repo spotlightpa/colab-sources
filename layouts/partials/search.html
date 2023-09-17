@@ -3,7 +3,6 @@
     <label class="text-lg font-bold uppercase text-black" for="search">
       Search for an expert or journalist
     </label>
-    <span class="text-g-7" x-text="resultsText"></span>
   </h2>
   <div class="relative">
     <input
@@ -49,6 +48,7 @@
     <!-- prevent CSS purge -->
     <span hidden class="hidden"></span>
   </div>
+  <p class="ml-10 mt-1 text-g-7" x-text="resultsText"></p>
   <p x-cloak x-show="error" class="mt-2">
     <span class="italic"> Something went wrong: </span>
     <br />
