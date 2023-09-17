@@ -20,15 +20,7 @@ export default function searchPeople() {
       this.$watch("query", (val) => this.search(val));
     },
 
-    async search(val) {
-      let query = val.trim();
-      if (!query || !this.pagefind) {
-        this.isLoading = false;
-        this.results = null;
-        this.error = null;
-        return;
-      }
-
+    async search(query) {
       this.isLoading = true;
       this.resultCount = 0;
       let results;
@@ -81,7 +73,7 @@ export default function searchPeople() {
     },
 
     get resultsText() {
-      if (this.isLoading || !this.results) return "";
+      if (this.isLoading || !this.query || !this.results) return "";
 
       let total = this.resultCount;
       let shown = this.results.length;
