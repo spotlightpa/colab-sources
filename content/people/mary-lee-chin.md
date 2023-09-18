@@ -19,7 +19,7 @@
   "images": [
     "/img/uploads/mary-lee-chin.jpeg"
   ],
-  "resume": "",
+  "resume": "https://docs.google.com/document/d/1b5pn9b_SdgypJR_TJ8dez9HCu_66J5XJ/edit",
   "website": "",
   "location": [
     "Denver"
