@@ -68,7 +68,10 @@ export default function searchPeople() {
         location: data.filters.location || [],
         area: data.filters.area || [],
         image: data.meta.image,
-        image_alt: data.meta.image_alt,
+        alt: data.meta.image_alt,
+        srcset: data.meta.image_srcset,
+        width: data.meta.image_width,
+        height: data.meta.image_height,
       }));
     },
 
@@ -86,6 +89,13 @@ export default function searchPeople() {
       }
       let more = total > shown ? `Showing first ${shown} results.` : "";
       return `Got ${total} search results. ${more}`;
+    },
+
+    andMore(a) {
+      if (a.length > 3) {
+        return a.slice(0, 2).join(", ") + " and more";
+      }
+      return a.join(", ");
     },
   };
 }

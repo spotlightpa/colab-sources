@@ -56,60 +56,75 @@
     <br />
     <span class="text-g-7" x-text="error && error.message || ''"></span>
   </p>
-  <div class="m-2 space-y-2">
+  <div
+    class="grid max-w-screen-md gap-x-4 gap-y-4 p-2 sm:grid-cols-2 md:grid-cols-3"
+  >
     <template x-for="p, i of people" :key="p.id" hidden>
       <a
-        class="block rounded p-2 duration-100 hover:shadow-md"
+        class="group flex h-full min-w-0 flex-col gap-3 border-8 border-blue p-4 shadow transition-colors duration-500 hover:border-blue-darker"
         :class='{"bg-g-3": i%2 }'
         :href="p.url"
       >
-        <h2 class="inline text-base font-bold" x-text="p.name"></h2>
-        <h3 class="ml-1 inline text-g-7" x-text="p.organization"></h3>
-        <div>
-          <span x-show="p.expertise.length" class="mr-1 text-g-7">
-            <svg class="inline-block h-4 w-4 fill-current align-middle">
-              <title>Expertise</title>
-              <use xlink:href="#university-svg"></use>
-            </svg>
-          </span>
-          <span
-            x-show="p.expertise.length"
-            class="mr-1 align-middle"
-            x-text="p.expertise.join(', ')"
-          ></span>
-          <span x-show="p.beat.length" class="mr-1 text-g-7">
-            <svg class="inline-block h-4 w-4 fill-current align-middle">
-              <title>Beat</title>
-              <use xlink:href="#newspaper-svg"></use>
-            </svg>
-          </span>
-          <span
-            x-show="p.beat.length"
-            class="mr-1 align-middle"
-            x-text="p.beat.join(', ')"
-          ></span>
-          <span x-show="p.location.length" class="mr-1 text-g-7">
-            <svg class="inline-block h-4 w-4 fill-current align-middle">
-              <title>Location</title>
-              <use xlink:href="#earth-svg"></use>
-            </svg>
-          </span>
-          <span
-            x-show="p.location.length"
-            class="align-middle"
-            x-text="p.location.join(', ')"
-          ></span>
-          <span x-show="p.area.length" class="mr-1 text-g-7">
-            <svg class="inline-block h-4 w-4 fill-current align-middle">
-              <title>Coverage area</title>
-              <use xlink:href="#earth-svg"></use>
-            </svg>
-          </span>
-          <span
-            x-show="p.area.length"
-            class="align-middle"
-            x-text="p.area.join(', ')"
-          ></span>
+        <div x-show="p.srcset">
+          <img
+            class="mx-auto h-auto max-h-56 w-auto rounded bg-g-4 shadow"
+            :alt="p.alt"
+            :src="p.image"
+            :srcset="p.srcset"
+            :width="p.width"
+            :height="p.height"
+          />
+        </div>
+        <h2
+          class="mt-auto text-lg font-bold underline decoration-blue decoration-4 underline-offset-2 transition-colors duration-500 group-hover:decoration-blue-darker"
+          x-text="p.name"
+        ></h2>
+        <h3 class="truncate text-g-6" x-text="p.organization"></h3>
+        <div class="font-serif text-sm leading-normal text-gray">
+          <p x-show="p.expertise.length">
+            <span class="mr-1 text-g-7">
+              <svg
+                class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
+              >
+                <title>Expertise</title>
+                <use xlink:href="#university-svg"></use>
+              </svg>
+            </span>
+            <span x-text="andMore(p.expertise)"></span>
+          </p>
+          <p x-show="p.beat.length">
+            <span class="mr-1 text-g-7">
+              <svg
+                class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
+              >
+                <title>Beat</title>
+                <use xlink:href="#newspaper-svg"></use>
+              </svg>
+            </span>
+            <span x-text="andMore(p.beat)"></span>
+          </p>
+          <p x-show="p.location.length">
+            <span class="mr-1 text-g-7">
+              <svg
+                class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
+              >
+                <title>Location</title>
+                <use xlink:href="#earth-svg"></use>
+              </svg>
+            </span>
+            <span x-text="andMore(p.location)"></span>
+          </p>
+          <p x-show="p.area.length">
+            <span class="mr-1 text-g-7">
+              <svg
+                class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
+              >
+                <title>Coverage area</title>
+                <use xlink:href="#earth-svg"></use>
+              </svg>
+            </span>
+            <span x-text="andMore(p.area)"></span>
+          </p>
         </div>
         <p
           class="mt-2 truncate font-serif text-gray [&_mark]:bg-blue [&_mark]:p-1 [&_mark]:text-white"
