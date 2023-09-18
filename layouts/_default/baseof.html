@@ -94,7 +94,7 @@
     {{ template "_internal/twitter_cards.html" . }}
     {{ template "_internal/schema.html" . }}
 
-    {{ template "_internal/google_analytics_async.html" . }}
+    {{ template "_internal/google_analytics.html" . }}
   </head>
   {{ $pageCat := printf "%s:%s" (.Section | default .Type) .Kind }}
   {{ if eq .Kind "home" }}{{ $pageCat = "home " }}{{ end }}

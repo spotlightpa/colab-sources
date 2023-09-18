@@ -6,6 +6,7 @@ enableGitInfo = true
 rssLimit = 50
 Paginate = 25
 
+googleAnalytics = 'G-0N3FRVSW3G'
 buildFuture = true
 
 [params]
