@@ -11,7 +11,7 @@ post = "_blank"
 
 [[navbar]]
 name = "Contact Us"
-url = "mailto:todo@example.com"
+url = "mailto:amplifycolorado@colabnews.co"
 weight = 3
 
 [[mobile]]
@@ -32,7 +32,7 @@ post = "_blank"
 
 [[mobile]]
 name = "Contact Us"
-url = "mailto:todo@example.com"
+url = "mailto:amplifycolorado@colabnews.co"
 weight = 4
 
 [[mobile]]
@@ -53,7 +53,7 @@ weight = 2
 
 [[footer]]
 name = "Contact"
-url = "mailto:todo@example.com"
+url = "mailto:amplifycolorado@colabnews.co"
 weight = 3
 
 [[footer]]
@@ -75,5 +75,5 @@ post = "_blank"
 
 [[follow]]
 name = "Contact"
-url = "mailto:todo@example.com"
+url = "mailto:amplifycolorado@colabnews.co"
 weight = 3
