@@ -302,6 +302,13 @@
           <p class="float-left mb-4 mr-4 mt-6">
             <a href="{{ $img.RelPermalink }}" download>
               <img
+                data-pagefind-meta="
+                  image[src],
+                  image_alt[alt],
+                  image_srcset[srcset],
+                  image_width[width],
+                  image_height[height],
+                "
                 title="Click to download"
                 class="rounded bg-g-4 shadow transition-shadow duration-500 hover:shadow-lg"
                 alt="Headshot of {{ $.Title }}"
