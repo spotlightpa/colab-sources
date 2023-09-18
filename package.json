@@ -9,7 +9,7 @@
     "format:prettier": "prettier --ignore-path .gitignore --write '**/*.{html,css,js,yml}'",
     "build:prod": "hugo version && hugo --cleanDestinationDir && yarn run pagefind",
     "build:stage": "hugo version && hugo --environment staging --baseURL ${DEPLOY_PRIME_URL:-https://amplifycolorado.colabnews.co} && yarn run pagefind",
-    "pagefind-dev": "hugo && pagefind --site public --output-path static/pagefind",
+    "pagefind-dev": "hugo --cleanDestinationDir && pagefind --site public --output-path static/pagefind",
     "pagefind": "pagefind --site public",
     "test": "yarn run test:eslint && yarn run test:prettier",
     "test:eslint": "eslint --ext .js --ignore-path .gitignore .",
