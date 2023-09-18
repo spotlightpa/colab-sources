@@ -107,7 +107,7 @@
       <h2 class="{{ $secHedClass }} scroll-mt-2" x-ref="hed">
         Meet our journalists and community experts
       </h2>
-      {{ $expts := .GetPage "people" }}
+      {{ $expts := .GetPage "experts" }}
       {{ $journos := .GetPage "journalists" }}
       {{ $people := union $expts.RegularPages $journos.RegularPages }}
       <ul
@@ -157,7 +157,7 @@
   <section class="bg-g-3 p-8 shadow-inner">
     <div class="{{ $wellClass }}">
       <h2 class="{{ $secHedClass }}" id="by-name">Experts by last name</h2>
-      {{ $people := .GetPage "people" }}
+      {{ $people := .GetPage "experts" }}
       {{ partial "people-by-last-name.html" $people }}
     </div>
   </section>
