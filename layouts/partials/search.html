@@ -45,8 +45,6 @@
         <use xlink:href="#close-svg"></use>
       </svg>
     </button>
-    <!-- prevent CSS purge -->
-    <span hidden class="hidden"></span>
   </div>
   <p class="ml-10 mt-1 text-g-7" x-text="resultsText"></p>
   <p x-cloak x-show="error" class="mt-2">
@@ -127,10 +125,13 @@
           </p>
         </div>
         <p
-          class="mt-2 truncate font-serif text-gray [&_mark]:bg-blue [&_mark]:p-1 [&_mark]:text-white"
+          class="mt-2 font-serif italic text-gray [&_mark]:bg-blue [&_mark]:p-1 [&_mark]:text-white"
           x-html="p.excerpt"
         ></p>
       </a>
     </template>
   </div>
 </div>
+
+<!-- prevent CSS purge -->
+<mark hidden class="hidden"></mark>
