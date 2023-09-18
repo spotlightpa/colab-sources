@@ -28,7 +28,7 @@ export default function searchPeople() {
         const search = await this.pagefind.debouncedSearch(query);
         if (search === null) return;
         results = await Promise.all(
-          search.results.slice(0, 20).map((r) => r.data()),
+          search.results.slice(0, 30).map((r) => r.data()),
         );
         this.resultCount = search.results.length;
       } catch (e) {
