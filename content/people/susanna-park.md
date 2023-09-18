@@ -16,9 +16,7 @@
   ],
   "languages": "English, Korean",
   "email": "c3lqcGFya0BnbWFpbC5jb20=",
-  "images": [
-    "/img/uploads/susanna-park.jpeg"
-  ],
+  "images": [],
   "resume": "",
   "website": "",
   "location": [

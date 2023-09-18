@@ -14,9 +14,7 @@
   ],
   "languages": "",
   "email": "RG1pbGxzQHV0ZWtjYS5vcmc=",
-  "images": [
-    "/img/uploads/dyllon-mills.jpeg"
-  ],
+  "images": [],
   "resume": "",
   "website": "",
   "location": [

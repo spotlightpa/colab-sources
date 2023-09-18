@@ -16,9 +16,7 @@
   ],
   "languages": "English, Spanish, Basic Hindi/Urdu",
   "email": "cmdheWFzYWRkaW5AZ21haWwuY29t",
-  "images": [
-    "/img/uploads/riyaz-gayasaddin.jpeg"
-  ],
+  "images": [],
   "resume": "",
   "website": "",
   "location": [

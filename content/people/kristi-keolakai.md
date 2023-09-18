@@ -14,9 +14,7 @@
   ],
   "languages": "English",
   "email": "a3Jpc3RpLmtlb2xha2FpQGdtYWlsLmNvbQ==",
-  "images": [
-    "/img/uploads/kristi-keolakai.jpeg"
-  ],
+  "images": [],
   "resume": "",
   "website": "",
   "location": [

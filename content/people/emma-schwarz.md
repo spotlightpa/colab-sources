@@ -16,9 +16,7 @@
   ],
   "languages": "English, Mongolian",
   "email": "ZW1tYS5zY2h3YXJ6MzBAZ21haWwuY29t",
-  "images": [
-    "/img/uploads/emma-schwarz.jpeg"
-  ],
+  "images": [],
   "resume": "",
   "website": "",
   "location": [

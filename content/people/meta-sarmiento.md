@@ -17,9 +17,7 @@
   ],
   "languages": "English, Tagalog",
   "email": "cmVhY2gubWV0YUBnbWFpbC5jb20=",
-  "images": [
-    "/img/uploads/meta-sarmiento.jpeg"
-  ],
+  "images": [],
   "resume": "",
   "website": "",
   "location": [

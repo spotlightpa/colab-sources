@@ -16,9 +16,7 @@
   ],
   "languages": "English",
   "email": "c3JpLmJhbmdhcnVAZ21haWwuY29t",
-  "images": [
-    "/img/uploads/sridevi-bangaru.jpeg"
-  ],
+  "images": [],
   "resume": "",
   "website": "",
   "location": [
