@@ -1,33 +1,27 @@
-# CT Mirror Diverse Sources Database
+# Amplify Colorado Diverse Sources Database
 
 A resource for Colorado journalists to improve representation and diversify perspectives in their coverage.
 
-Project forked from https://github.com/spotlightpa/sourcesdb. See original project for details about creation and architecture.
+Project forked from https://github.com/spotlightpa/sourcesdb and https://github.com/spotlightpa/ctmirror-sources. See original project for details about creation and architecture.
 
 ## License
 
-All content copyright CT Mirror. Code available under the MIT license. Photos used with permission of subjects. Information contained in this database is self-reported by participants and should be verified before publication.
+All content copyright Colorado News Collective. Code available under the MIT license. Photos used with permission of subjects. Information contained in this database is self-reported by participants and should be verified before publication.
 
 ## Installation
 
-Project requires Yarn, Hugo, and optionally Go. See netlify.toml file for Node and Hugo versions. Go version specified in .go-version file.
+Project requires Yarn and Hugo. See netlify.toml file for Node and Hugo versions.
 
 To setup, run `yarn`.
+
+To build the search index, run `yarn pagefind-dev`.
 
 To develop locally, run `hugo serve` and open a web browser to http://localhost:1313/.
 
 ## Architecture
 
-The site uses a [THANG Stack](https://twitter.com/carlmjohnson/status/1327090078578053120) architecture:
-
-- [**T**ailwind CSS](https://tailwindcss.com): Provides basic CSS architecture/theming
-- [**H**ugo](https://gohugo.io): Site builder
-- [**A**lpine.js](https://github.com/alpinejs/alpine): JavaScript micro-framework
-- [**N**etlify CMS](https://www.netlifycms.org): Allows editors to change pages without coding
-- [**G**o](https://golang.org): Handles miscellaneous tasks
-
-Site search is powered by [Algolia](https://www.algolia.com). On deploy, a search index JSON file is built at /searchindex.json and sent to Algolia by a small Go script. To work, the Algolia script API key must have permission to create/drop an index because it creates a temporary table, sends all the data to the temporary table, then swaps it in.
+Site search is powered by [PageFind](https://pagefind.app/). Before deploy, a search index is built at /public/pagefind/. During development, the search files are copied to /static/pagefind/, which is not synchronized to Git.
 
 Email addresses are Base64 encoded to prevent casual scraping.
 
-The site was not made with reuse in mind, but it shouldn't be so hard. Just rip out the content files, rewrite nav.html and footer.html to remove references to Spotlight PA, and change the base URL and Google Analytics key in config.toml. Contact webmaster@spotlightpa.org with questions.
+The site was not made with reuse in mind, but it hasn't been so hard. Just rip out the content files, rewrite nav.html and footer.html to remove references to Spotlight PA or Colorado, and change the base URL in config.toml. Contact webmaster@spotlightpa.org with questions.
