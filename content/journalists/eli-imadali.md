@@ -32,7 +32,9 @@
   ],
   "languages": "English",
   "email": "ZWltYWRhbGkxNkBnbWFpbC5jb20=",
-  "images": [],
+  "images": [
+    "/img/uploads/eli-imadali.jpeg"
+  ],
   "resume": "/img/uploads/eli-imadali.pdf",
   "website": "https://www.eliimadaliphoto.com",
   "facebook": "",
