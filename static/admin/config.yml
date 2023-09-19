@@ -109,6 +109,10 @@ collections:
         name: role
         widget: string
         required: false
+      - label: Languages
+        name: languages
+        widget: string
+        required: false
       - label: Expertise
         name: expertise
         widget: list
@@ -210,6 +214,10 @@ collections:
       - label: Title or Profession
         hint: E.g. Sub-sub-sub-editor
         name: role
+        widget: string
+        required: false
+      - label: Languages
+        name: languages
         widget: string
         required: false
       - label: Beat
