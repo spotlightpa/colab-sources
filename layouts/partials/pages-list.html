@@ -1,10 +1,7 @@
-<ul class="sm:columns-2 md:columns-3">
+<ul class="links-blue-darker sm:columns-2 md:columns-3">
   {{ range . }}
     <li>
-      <a
-        class="text-blue duration-500 hover:text-blue-darker"
-        href="{{ .RelPermalink }}"
-      >
+      <a href="{{ .RelPermalink }}">
         {{- .LinkTitle -}}
       </a>
       {{ if gt (len .Pages) 1 }}

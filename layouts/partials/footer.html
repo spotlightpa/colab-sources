@@ -25,13 +25,10 @@
     {{ block "featured-footer" $context }}
       <div class="flex-1 font-sans">
         <h3 class="font-bold uppercase">{{ .name }}</h3>
-        <ul class="mt-2 space-y-2 uppercase leading-tight">
+        <ul class="links-blue-darker mt-2 space-y-2 uppercase leading-tight">
           {{ range .menu }}
             <li>
-              <a
-                class="text-blue duration-500 hover:text-blue-darker"
-                href="{{ .URL }}"
-              >
+              <a href="{{ .URL }}">
                 {{- .Name -}}
               </a>
             </li>
@@ -47,39 +44,21 @@
         {{ now.Format "2006" }}
         Colorado News Collaborative
       </p>
-      <p class="mt-4 leading-tight">
+      <p class="links-blue-darker mt-4 leading-tight">
         Amplify Colorado is a project of the <br />
-        <a class="text-blue hover:text-blue-darker" href="https://colabnews.co"
-          >Colorado News Collaborative</a
-        >, <br />
+        <a href="https://colabnews.co">Colorado News Collaborative</a>, <br />
         with generous funding from <br />
-        <a
-          class="text-blue hover:text-blue-darker"
-          href="https://coloradomediaproject.com/"
-          >Colorado Media Project</a
-        >.
+        <a href="https://coloradomediaproject.com/">Colorado Media Project</a>.
         <br />
         Thanks to
-        <a
-          class="text-blue hover:text-blue-darker"
-          href="https://www.spotlightpa.org"
-          >Spotlight PA</a
-        >
+        <a href="https://www.spotlightpa.org">Spotlight PA</a>
         <br />
         and their
-        <a
-          class="text-blue hover:text-blue-darker"
-          href="https://sources.spotlightpa.org"
-          >diverse source database</a
-        >,
+        <a href="https://sources.spotlightpa.org">diverse source database</a>,
         <br />
         which this project is inspired by <br />
         and is based on
-        <a
-          class="text-blue hover:text-blue-darker"
-          href="https://github.com/spotlightpa/sourcesdb"
-          >its code</a
-        >.
+        <a href="https://github.com/spotlightpa/sourcesdb">its code</a>.
       </p>
     </div>
   </nav>
