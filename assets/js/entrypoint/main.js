@@ -23,6 +23,12 @@ function shuffleChildren(el) {
   el.replaceChildren(...children);
 }
 
+function rotateChildren(el, n) {
+  let children = Array.from(el.children);
+  el.replaceChildren(...children.slice(n), ...children.slice(0, n));
+}
+
 Alpine.magic("shuffle", () => (el) => shuffleChildren(el));
+Alpine.magic("rotate", () => (el, n) => rotateChildren(el, n));
 
 Alpine.start();

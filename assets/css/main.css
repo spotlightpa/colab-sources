@@ -137,10 +137,10 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 /*! purgecss end ignore */
 
-.first-dozen > * {
+.first-half-dozen > * {
   display: none;
 }
 
-.first-dozen > *:nth-child(-n + 12) {
+.first-half-dozen > *:nth-child(-n + 6) {
   display: revert;
 }

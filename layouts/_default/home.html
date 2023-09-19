@@ -113,7 +113,7 @@
       <ul
         x-init="$shuffle($el)"
         class="
-          first-dozen mt-4 grid max-w-screen-md gap-x-4  gap-y-4
+          first-half-dozen mt-4 grid max-w-screen-md gap-x-4  gap-y-4
           sm:grid-cols-2 md:grid-cols-3
         "
         x-ref="container"
@@ -129,7 +129,7 @@
           <button
             type="button"
             @click="
-              $shuffle($refs.container);
+              $rotate($refs.container, 6);
               $refs.hed.scrollIntoView({ block: 'start', behavior: 'smooth' });
             "
             class="decoration-blue decoration-4 underline-offset-2 transition-colors duration-500 hover:underline"
