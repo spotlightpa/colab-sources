@@ -3,7 +3,7 @@ public_folder: /img/uploads
 
 site_url: https://amplifycolorado.colabnews.co
 display_url: https://amplifycolorado.colabnews.co
-logo_url: https://www.spotlightpa.org/img/logos/capitol-moody-logo-500.jpeg
+logo_url: https://amplifycolorado.colabnews.co/img/logos/colab-white-trans-square.png
 
 show_preview_links: true
 
@@ -55,16 +55,16 @@ yaml-definitions: &page-fields
       widget: string
 
 collections:
-  - label: People
-    label_singular: Person
-    name: people
-    folder: content/people
+  - label: Community Experts
+    label_singular: Expert
+    name: experts
+    folder: content/experts
     filter: { field: "layout", value: "person" }
     format: json
     extension: md
     create: true
     slug: "{{title}}"
-    preview_path: /people/{{slug}}/
+    preview_path: /experts/{{slug}}/
     identity_field: title
     editor:
       preview: false
@@ -94,14 +94,14 @@ collections:
         name: pronunciation
         widget: string
         required: false
-      - label: Honorific
-        hint: E.g. Dr., Prof., Mr., Ms., Mx.
-        name: honorific
-        widget: string
-        required: false
       - label: Pronoun
         hint: E.g. "he/him," "she/her," "they/them"
         name: pronoun
+        widget: string
+        required: false
+      - label: Organization
+        hint: E.g. University of Colorado
+        name: organization
         widget: string
         required: false
       - label: Title or Profession
@@ -113,10 +113,6 @@ collections:
         name: expertise
         widget: list
         required: false
-      - label: Keywords
-        name: keywords
-        widget: list
-        required: false
       - label: Email
         name: email
         widget: email
@@ -126,28 +122,17 @@ collections:
         widget: list
         summary: "{{fields.image}}"
         field: { label: Image, name: image, widget: image }
+      - label: "Resume"
+        name: "resume"
+        widget: file
+        required: false
       - label: Website
-        hint: Full URL with http://
+        hint: Full URL with https:// or http://
         name: website
         widget: string
         required: false
-      - label: Facebook
-        hint: Just the username without http://facebook.com/
-        name: facebook
-        widget: string
-        required: false
-      - label: Twitter
-        hint: Just the username without the @
-        name: twitter
-        widget: string
-        required: false
-      - label: Instagram
-        hint: Just the username without the @
-        name: instagram
-        widget: string
-        required: false
       - label: LinkedIn
-        hint: Just the username without the https://www.linkedin.com/in/
+        hint: Full URL with the https://www.linkedin.com/in/
         name: linkedin
         widget: string
         required: false
@@ -161,7 +146,129 @@ collections:
           name: location
           widget: string
       - label: "Phone"
-        hint: Just the digits
+        name: phone
+        widget: string
+        required: false
+      - label: Biography
+        name: bio
+        widget: markdown
+        required: false
+      - label: layout
+        name: layout
+        default: person
+        widget: hidden
+        required: true
+  - label: Journalists
+    label_singular: Journalist
+    name: journalists
+    folder: content/journalists
+    filter: { field: "layout", value: "person" }
+    format: json
+    extension: md
+    create: true
+    slug: "{{title}}"
+    preview_path: /journalists/{{slug}}/
+    identity_field: title
+    editor:
+      preview: false
+    fields:
+      - label: Full name
+        hint: E.g. "John Jacob Jingleheimer Schmidt, IV PhD CPA"
+        name: title
+        widget: string
+        required: true
+      - label: Short name
+        hint: E.g. "John Schmidt" or "Betty Jo Smith-Rodriguez"
+        name: linktitle
+        widget: string
+        required: true
+      - label: First name
+        hint: E.g. "John" or "Betty Jo"
+        name: first
+        widget: string
+        required: true
+      - label: Last name
+        hint: E.g. "Schmidt" or "Smith-Rodriguez"
+        name: last
+        widget: string
+        required: true
+      - label: Pronunciation
+        hint: E.g. "Err On" "Co Bye Ah She"
+        name: pronunciation
+        widget: string
+        required: false
+      - label: Pronoun
+        hint: E.g. "he/him," "she/her," "they/them"
+        name: pronoun
+        widget: string
+        required: false
+      - label: Organization
+        hint: E.g. Picayune Times
+        name: organization
+        widget: string
+        required: false
+      - label: Title or Profession
+        hint: E.g. Sub-sub-sub-editor
+        name: role
+        widget: string
+        required: false
+      - label: Beat
+        name: beat
+        widget: list
+        required: false
+      - label: Email
+        name: email
+        widget: email
+        required: false
+      - label: "Headshot"
+        name: "images"
+        widget: list
+        summary: "{{fields.image}}"
+        field: { label: Image, name: image, widget: image }
+      - label: "Resume"
+        name: "resume"
+        widget: file
+        required: false
+      - label: Website
+        hint: Full URL with https:// or http://
+        name: website
+        widget: string
+        required: false
+      - label: Facebook
+        hint: Full URL with https://facebook.com/
+        name: facebook
+        widget: string
+        required: false
+      - label: Twitter
+        hint: Full URL with https://twitter.com
+        name: twitter
+        widget: string
+        required: false
+      - label: Instagram
+        hint: Full URL with https://instagram.com
+        name: instagram
+        widget: string
+        required: false
+      - label: Threads
+        hint: Full URL with https://www.threads.net
+        name: threads
+        widget: string
+        required: false
+      - label: LinkedIn
+        hint: Full URL with the https://www.linkedin.com/in/
+        name: linkedin
+        widget: string
+        required: false
+      - label: Coverage area
+        hint: E.g. "Boulder"
+        name: area
+        widget: list
+        required: false
+        field:
+          label: Coverage area
+          name: area
+          widget: string
+      - label: "Phone"
         name: phone
         widget: string
         required: false
