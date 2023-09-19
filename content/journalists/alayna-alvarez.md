@@ -1,38 +1,38 @@
 {
-  "title": "Alayna Alvarez",
-  "linktitle": "Alayna Alvarez",
-  "first": "Alayna",
-  "last": "Alvarez",
-  "organization": "Axios Denver",
-  "pronunciation": "Uh-LAY-nuh AL-ver-ez",
   "contact": "Email, Phone, Text",
   "honorific": "",
+  "facebook": "",
   "pronoun": "She/Her/Hers",
+  "bio": "Alayna Alvarez is co-author of the daily Axios Denver newsletter. She covers local politics, business development and lifestyle.\n\n\n\nTest. Fix me.",
+  "threads": "",
+  "layout": "person",
+  "resume": "",
+  "area": [
+    "Statewide (Colorado)",
+    "Denver"
+  ],
+  "phone": "361-550-4787",
+  "first": "Alayna",
+  "instagram": "",
+  "organization": "Axios Denver",
+  "twitter": "https://twitter.com/alaynaEalvarez/",
+  "pronunciation": "Uh-LAY-nuh AL-ver-ez",
+  "location": "",
   "role": "Journalist",
+  "last": "Alvarez",
   "beat": [
     "Business & Finance",
     "Crime & Justice",
     "Food & Dining",
     "Politics"
   ],
-  "languages": "English",
-  "email": "YWxheW5hLmFsdmFyZXpAYXhpb3MuY29t",
+  "title": "Alayna Alvarez",
   "images": [
     "/img/uploads/alayna-alvarez.jpeg"
   ],
-  "resume": "",
+  "languages": "English",
   "website": "https://axios.com/denver",
-  "facebook": "",
-  "twitter": "https://twitter.com/alaynaEalvarez/",
-  "instagram": "",
-  "threads": "",
-  "area": [
-    "Statewide (Colorado)",
-    "Denver"
-  ],
+  "email": "YWxheW5hLmFsdmFyZXpAYXhpb3MuY29t",
   "linkedin": "",
-  "location": "",
-  "phone": "361-550-4787",
-  "bio": "Alayna Alvarez is co-author of the daily Axios Denver newsletter. She covers local politics, business development and lifestyle.",
-  "layout": "person"
+  "linktitle": "Alayna Alvarez"
 }
