@@ -1,12 +1,6 @@
 import Alpine from "alpinejs";
 
-import formatTel from "../utils/format-tel.js";
 import searchPeople from "../utils/search-people.js";
-
-document.addEventListener("alpine:initializing", () => {
-  Alpine.data("formatTel", formatTel);
-  Alpine.data("searchPeople", searchPeople);
-});
 
 // Redirect admin emails to admin
 const routes = /(confirmation|invite|recovery|email_change)_token=([^&]+)/g;
@@ -27,6 +21,8 @@ function rotateChildren(el, n) {
   let children = Array.from(el.children);
   el.replaceChildren(...children.slice(n), ...children.slice(0, n));
 }
+
+Alpine.data("searchPeople", searchPeople);
 
 Alpine.magic("shuffle", () => (el) => shuffleChildren(el));
 Alpine.magic("rotate", () => (el, n) => rotateChildren(el, n));
