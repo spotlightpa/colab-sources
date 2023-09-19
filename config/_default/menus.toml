@@ -37,9 +37,8 @@ weight = 4
 
 [[mobile]]
 name = "Donate"
-url = "http://colab.fundjournalism.org/donate"
+url = "http://colab.fundjournalism.org/amplifycolorado"
 weight = 5
-
 
 [[footer]]
 name = "Home"
@@ -58,9 +57,8 @@ weight = 3
 
 [[footer]]
 name = "Donate"
-url = "http://colab.fundjournalism.org/donate"
+url = "http://colab.fundjournalism.org/amplifycolorado"
 weight = 4
-
 
 [[follow]]
 name = "FAQs"
