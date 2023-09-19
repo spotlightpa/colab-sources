@@ -3,7 +3,7 @@
   "honorific": "",
   "facebook": "",
   "pronoun": "She/Her/Hers",
-  "bio": "Alayna Alvarez is co-author of the daily Axios Denver newsletter. She covers local politics, business development and lifestyle.\n\ntest",
+  "bio": "Alayna Alvarez is co-author of the daily Axios Denver newsletter. She covers local politics, business development and lifestyle.\n\ntest 1, 2, 3",
   "threads": "",
   "layout": "person",
   "resume": "",
