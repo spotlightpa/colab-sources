@@ -1,4 +1,8 @@
-<div class="mx-auto max-w-screen-md font-sans" x-data="searchPeople">
+<search
+  role="search"
+  class="mx-auto block max-w-screen-md font-sans"
+  x-data="searchPeople"
+>
   <h2 class="text-g-9">
     <label class="text-2xl font-bold leading-tight text-black" for="search">
       Search for an expert or journalist
@@ -45,6 +49,20 @@
         <use xlink:href="#close-svg"></use>
       </svg>
     </button>
+  </div>
+  <div class="mt-2 flex flex-wrap gap-4">
+    <label>
+      <input x-model="filterType" type="radio" name="type" value="" />
+      <span class="ml-1">Everyone</span>
+    </label>
+    <label>
+      <input x-model="filterType" type="radio" name="type" value="expert" />
+      <span class="ml-1">Community Experts</span>
+    </label>
+    <label>
+      <input x-model="filterType" type="radio" name="type" value="journalist" />
+      <span class="ml-1">Journalists</span>
+    </label>
   </div>
   <p class="mt-1 text-g-7" x-text="resultsText"></p>
   <p x-cloak x-show="error" class="mt-2">
@@ -125,13 +143,13 @@
           </p>
         </div>
         <p
-          class="mt-2 font-serif italic text-gray [&_mark]:bg-blue [&_mark]:p-1 [&_mark]:text-white"
-          x-html="p.excerpt"
+          class="mt-2 break-words font-serif text-sm italic text-gray [&_mark]:bg-green [&_mark]:p-[2px] [&_mark]:text-white"
+          x-html="p.excerpt+'…'"
         ></p>
       </a>
     </template>
   </div>
-</div>
+</search>
 
 <!-- prevent CSS purge -->
 <mark hidden class="hidden"></mark>

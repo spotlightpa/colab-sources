@@ -1,9 +1,6 @@
 {{ define "main" }}
   <main class="p-8" data-pagefind-body>
     <div class="mx-auto max-w-screen-md">
-      <div hidden data-pagefind-meta="title">
-        {{- .LinkTitle -}}
-      </div>
       <h1 class="break-word font-bold leading-tight">
         <span class="text-2xl text-black">
           {{ .Title }}
@@ -370,4 +367,11 @@
       </div>
     </div>
   </main>
+
+  <div hidden data-pagefind-meta="title">
+    {{- .LinkTitle -}}
+  </div>
+  <div hidden data-pagefind-filter="type">
+    {{- .Param "person-type" -}}
+  </div>
 {{ end }}

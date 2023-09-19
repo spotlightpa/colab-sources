@@ -1,5 +1,34 @@
+const asyncSleep = async (ms = 100) => {
+  return new Promise((r) => setTimeout(r, ms));
+};
+
+let currentSearchID = 0;
+
+// See https://github.com/CloudCannon/pagefind/issues/441
+async function debouncedSearch(
+  pf,
+  term,
+  options = {},
+  debounceTimeoutMs = 300,
+) {
+  const thisSearchID = ++currentSearchID;
+  pf.preload(term, { ...options });
+  await asyncSleep(debounceTimeoutMs);
+
+  if (thisSearchID !== currentSearchID) {
+    return null;
+  }
+
+  const searchResult = await pf.search(term, options);
+  if (thisSearchID !== currentSearchID) {
+    return null;
+  }
+  return searchResult;
+}
+
 export default function searchPeople() {
   return {
+    filterType: "",
     query: "",
     pagefind: null,
     error: null,
@@ -11,25 +40,39 @@ export default function searchPeople() {
       let pagefind;
       try {
         pagefind = await import("/pagefind/pagefind.js");
-        pagefind.init();
+        await pagefind.options({ excerptLength: 10 });
+        await pagefind.init();
       } catch (e) {
         this.error = e;
         return;
       }
       this.pagefind = pagefind;
-      this.$watch("query", (val) => this.search(val));
+      this.$watch("query", () => this.search());
+      this.$watch("filterType", () => this.search());
     },
 
-    async search(query) {
+    async search() {
+      let query = this.query;
+      // Don't wait for an empty search
+      let timeout = this.query.trim() ? 300 : 0;
       this.isLoading = true;
       this.resultCount = 0;
+      let options = {};
+      if (this.filterType) {
+        options.filters = {
+          type: this.filterType,
+        };
+      }
       let results;
       try {
-        const search = await this.pagefind.debouncedSearch(query);
-        if (search === null) return;
-        results = await Promise.all(
-          search.results.slice(0, 30).map((r) => r.data()),
+        const search = await debouncedSearch(
+          this.pagefind,
+          query,
+          options,
+          timeout,
         );
+        if (search === null) return;
+        results = await Promise.all(search.results.map((r) => r.data()));
         this.resultCount = search.results.length;
       } catch (e) {
         this.resultCount = 0;
