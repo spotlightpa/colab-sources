@@ -153,49 +153,105 @@
     </div>
   </section>
   <section class="bg-g-3 p-8 shadow-inner">
-    <div class="{{ $wellClass }}">
-      <h2 class="{{ $secHedClass }}" id="by-expertise">Areas of expertise</h2>
-      {{ $expertise := .GetPage "expertise" }}
-      {{ partial "pages-list.html" $expertise.Pages }}
+    <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
+      <h2 class="{{ $secHedClass }}" id="by-expertise">
+        <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
+          <span x-show="isOpen" x-cloak aria-hidden="true" class="">
+            &minus;
+          </span>
+          <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
+          <span>Experts by area of expertise</span>
+        </button>
+      </h2>
+      <div x-cloak x-show="isOpen" x-collapse>
+        {{ $expertise := .GetPage "expertise" }}
+        {{ partial "pages-list.html" $expertise.Pages }}
+      </div>
     </div>
   </section>
   <section class="p-8">
-    <div class="{{ $wellClass }}">
-      <h2 class="{{ $secHedClass }}" id="by-location">Experts by location</h2>
-      {{ $loc := .GetPage "location" }}
-      {{ partial "pages-list.html" $loc.Pages }}
+    <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
+      <h2 class="{{ $secHedClass }}" id="by-location">
+        <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
+          <span x-show="isOpen" x-cloak aria-hidden="true" class="">
+            &minus;
+          </span>
+          <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
+          <span>Experts by location</span>
+        </button>
+      </h2>
+      <div x-cloak x-show="isOpen" x-collapse>
+        {{ $loc := .GetPage "location" }}
+        {{ partial "pages-list.html" $loc.Pages }}
+      </div>
     </div>
   </section>
   <section class="bg-g-3 p-8 shadow-inner">
-    <div class="{{ $wellClass }}">
-      <h2 class="{{ $secHedClass }}" id="by-name">Experts by last name</h2>
-      {{ $people := .GetPage "experts" }}
-      {{ partial "people-by-last-name.html" $people }}
+    <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
+      <h2 class="{{ $secHedClass }}" id="by-name">
+        <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
+          <span x-show="isOpen" x-cloak aria-hidden="true" class="">
+            &minus;
+          </span>
+          <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
+          <span>Experts by last name</span>
+        </button>
+      </h2>
+      <div x-cloak x-show="isOpen" x-collapse>
+        {{ $people := .GetPage "experts" }}
+        {{ partial "people-by-last-name.html" $people }}
+      </div>
     </div>
   </section>
   <section class="p-8">
-    <div class="{{ $wellClass }}">
-      <h2 class="{{ $secHedClass }}" id="by-beat">Journalists by beat</h2>
-      {{ $beat := .GetPage "beat" }}
-      {{ partial "pages-list.html" $beat.Pages }}
+    <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
+      <h2 class="{{ $secHedClass }}" id="by-beat">
+        <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
+          <span x-show="isOpen" x-cloak aria-hidden="true" class="">
+            &minus;
+          </span>
+          <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
+          <span>Journalists by beat</span>
+        </button>
+      </h2>
+      <div x-cloak x-show="isOpen" x-collapse>
+        {{ $beat := .GetPage "beat" }}
+        {{ partial "pages-list.html" $beat.Pages }}
+      </div>
     </div>
   </section>
   <section class="bg-g-3 p-8 shadow-inner">
-    <div class="{{ $wellClass }}">
+    <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
       <h2 class="{{ $secHedClass }}" id="by-area">
-        Journalists by coverage areas
+        <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
+          <span x-show="isOpen" x-cloak aria-hidden="true" class="">
+            &minus;
+          </span>
+          <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
+          <span>Journalists by coverage areas</span>
+        </button>
       </h2>
-      {{ $area := .GetPage "area" }}
-      {{ partial "pages-list.html" $area.Pages }}
+      <div x-cloak x-show="isOpen" x-collapse>
+        {{ $area := .GetPage "area" }}
+        {{ partial "pages-list.html" $area.Pages }}
+      </div>
     </div>
   </section>
   <section class="p-8">
-    <div class="{{ $wellClass }}">
+    <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
       <h2 class="{{ $secHedClass }}" id="journalists">
-        Journalists by last name
+        <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
+          <span x-show="isOpen" x-cloak aria-hidden="true" class="">
+            &minus;
+          </span>
+          <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
+          <span>Journalists by last name</span>
+        </button>
       </h2>
-      {{ $people := .GetPage "journalists" }}
-      {{ partial "people-by-last-name.html" $people }}
+      <div x-cloak x-show="isOpen" x-collapse>
+        {{ $people := .GetPage "journalists" }}
+        {{ partial "people-by-last-name.html" $people }}
+      </div>
     </div>
   </section>
 {{ end }}

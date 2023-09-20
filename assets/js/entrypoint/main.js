@@ -1,4 +1,5 @@
 import Alpine from "alpinejs";
+import collapse from "@alpinejs/collapse";
 
 import searchPeople from "../utils/search-people.js";
 
@@ -22,6 +23,8 @@ function rotateChildren(el, n) {
   let children = Array.from(el.children);
   el.replaceChildren(...children.slice(n), ...children.slice(0, n));
 }
+
+Alpine.plugin(collapse);
 
 Alpine.data("searchPeople", searchPeople);
 
