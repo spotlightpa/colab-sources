@@ -1,6 +1,6 @@
 <footer class="mt-auto bg-gray p-12 font-serif text-white">
   <nav class="flex max-w-screen-xl flex-col gap-6 lg:flex-row">
-    <div>
+    <div class="flex items-center">
       <a
         class="inline-flex flex-shrink-0 leading-none text-white"
         href="https://colabnews.co/"
@@ -36,15 +36,48 @@
         </ul>
       </div>
     {{ end }}
+    <div class="flex items-center">
+      {{ $logoAmp := resources.Get "img/logos/amplify-vertical.png" }}
+      {{ $imgSmall := $logoAmp.Resize "50x" }}
+      {{ $imgMedium := $logoAmp.Resize "100x" }}
+      <a class="" href="/">
+        <img
+          class="h-auto w-[50px]"
+          width="{{ $imgSmall.Width }}"
+          height="{{ $imgSmall.Height }}"
+          src="{{ $imgSmall.RelPermalink }}"
+          srcset="
+            {{ $imgSmall.RelPermalink }}  50w,
+            {{ $imgMedium.RelPermalink }} 100w
+          "
+          alt="Amplify Colorado logo"
+          loading="lazy"
+        />
+      </a>
+    </div>
     {{ $context = dict "menu" site.Menus.follow "name" "Amplify Colorado" }}
     {{ template "featured-footer" $context }}
-    <div>
-      <p class="mt-2 leading-tight">
-        &copy;
-        {{ now.Format "2006" }}
-        Colorado News Collaborative
-      </p>
-      <p class="links-blue-lighter mt-4 leading-tight">
+    <div class="flex items-center">
+      {{ $logoAmp := resources.Get "img/logos/cmp-white-trans.png" }}
+      {{ $imgSmall := $logoAmp.Resize "200x" }}
+      {{ $imgMedium := $logoAmp.Resize "400x" }}
+      <a href="https://coloradomediaproject.com/">
+        <img
+          class="h-auto w-[200px]"
+          width="{{ $imgSmall.Width }}"
+          height="{{ $imgSmall.Height }}"
+          src="{{ $imgSmall.RelPermalink }}"
+          srcset="
+            {{ $imgSmall.RelPermalink }} 200w,
+            {{ $imgMedium.RelPermalink }} 400w
+          "
+          alt="Colorado Media Project logo"
+          loading="lazy"
+        />
+      </a>
+    </div>
+    <div class="flex-grow">
+      <p class="links-blue-lighter leading-tight">
         Amplify Colorado is a project of the <br />
         <a href="https://colabnews.co">Colorado News Collaborative</a>, <br />
         with generous funding from <br />
@@ -60,23 +93,11 @@
         and is based on
         <a href="https://github.com/spotlightpa/sourcesdb">its code</a>.
       </p>
-    </div>
-    <div class="flex-grow">
-      {{ $logoAmp := resources.Get "img/logos/amplify-vertical.png" }}
-      {{ $imgSmall := $logoAmp.Resize "50x" }}
-      {{ $imgMedium := $logoAmp.Resize "100x" }}
-      <img
-        class="h-auto w-[50px]"
-        width="{{ $imgSmall.Width }}"
-        height="{{ $imgSmall.Height }}"
-        src="{{ $imgSmall.RelPermalink }}"
-        srcset="
-          {{ $imgSmall.RelPermalink }}  50w,
-          {{ $imgMedium.RelPermalink }} 100w
-        "
-        alt="Amplify Colorado logo"
-        loading="lazy"
-      />
+      <p class="mt-4 leading-tight">
+        &copy;
+        {{ now.Format "2006" }}
+        Colorado News Collaborative
+      </p>
     </div>
   </nav>
 </footer>
