@@ -1,13 +1,28 @@
 {{ define "main" }}
   {{ $wellClass := `mx-auto max-w-screen-md` }}
   <section class="p-8">
-    <h1
-      class="text-center font-sans text-3xl font-bold leading-none text-black sm:text-4xl md:text-5xl"
-    >
-      {{ .Title }}
+    <h1>
+      <span class="sr-only">
+        {{ .Title }}
+      </span>
+      {{ $img := resources.Get `img/logos/amplify-logo.png` }}
+      {{ $imgSmall := $img.Resize "650x" }}
+      {{ $imgMedium := $img.Resize "1300x" }}
+      <img
+        title="{{ $.Title }}"
+        class="mx-auto h-auto w-[650px] max-w-full"
+        alt="Amplify Colorado logo"
+        width="{{ $imgSmall.Width }}"
+        height="{{ $imgSmall.Height }}"
+        src="{{ $imgSmall.RelPermalink }}"
+        srcset="
+          {{ $imgSmall.RelPermalink }} 450w,
+          {{ $imgMedium.RelPermalink }} 900w
+        "
+      />
     </h1>
     <h2
-      class="links-blue-darker mt-4 text-center font-sans text-xl leading-tight text-gray md:text-2xl"
+      class="links-blue-darker text-center font-sans text-xl leading-tight text-gray md:text-2xl"
     >
       A public service by
       <a class="font-bold" href="https://colabnews.co">
