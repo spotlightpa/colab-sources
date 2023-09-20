@@ -91,6 +91,23 @@
             :height="p.height"
           />
         </div>
+        <div x-show="!p.srcset">
+          {{ $img := resources.Get "img/logos/amplify-placeholder.png" }}
+          {{ $imgSmall := $img.Resize "150x" }}
+          {{ $imgMedium := $img.Resize "300x" }}
+          <img
+            aria-hidden="true"
+            class="mx-auto h-auto w-auto max-w-[150px] rounded bg-green shadow"
+            alt="Placeholder"
+            width="{{ $imgSmall.Width }}"
+            height="{{ $imgSmall.Height }}"
+            src="{{ $imgSmall.RelPermalink }}"
+            srcset="
+              {{ $imgSmall.RelPermalink }} 150w,
+              {{ $imgMedium.RelPermalink }} 300w
+            "
+          />
+        </div>
         <h2
           class="mt-auto text-lg font-bold underline decoration-blue decoration-4 underline-offset-2 transition-colors duration-500 group-hover:decoration-blue-darker"
           x-text="p.name"

@@ -26,6 +26,24 @@
         />
       </div>
     {{ end }}
+  {{ else }}
+    {{ $img := resources.Get "img/logos/amplify-placeholder.png" }}
+    {{ $imgSmall := $img.Resize "150x" }}
+    {{ $imgMedium := $img.Resize "300x" }}
+    <div>
+      <img
+        aria-hidden="true"
+        class="mx-auto h-auto w-auto max-w-[150px] rounded bg-green shadow"
+        alt="Placeholder"
+        width="{{ $imgSmall.Width }}"
+        height="{{ $imgSmall.Height }}"
+        src="{{ $imgSmall.RelPermalink }}"
+        srcset="
+          {{ $imgSmall.RelPermalink }} 150w,
+          {{ $imgMedium.RelPermalink }} 300w
+        "
+      />
+    </div>
   {{ end }}
 
 
