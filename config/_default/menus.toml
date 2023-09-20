@@ -3,7 +3,7 @@ name = "COLab"
 url = "https://colabnews.co/"
 weight = 1
 [navbar.params]
-image = "img/logos/colab-all-white-trans.png"
+image = "img/logos/colab-square-all-white-trans.png"
 
 [[navbar]]
 name = "Contact Us"

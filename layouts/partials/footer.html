@@ -38,17 +38,17 @@
     {{ end }}
     <div class="flex items-center">
       {{ $logoAmp := resources.Get "img/logos/amplify-vertical.png" }}
-      {{ $imgSmall := $logoAmp.Resize "50x" }}
-      {{ $imgMedium := $logoAmp.Resize "100x" }}
+      {{ $imgSmall := $logoAmp.Resize "30x" }}
+      {{ $imgMedium := $logoAmp.Resize "600x" }}
       <a class="" href="/">
         <img
-          class="h-auto w-[50px]"
+          class="h-auto w-[30px]"
           width="{{ $imgSmall.Width }}"
           height="{{ $imgSmall.Height }}"
           src="{{ $imgSmall.RelPermalink }}"
           srcset="
-            {{ $imgSmall.RelPermalink }}  50w,
-            {{ $imgMedium.RelPermalink }} 100w
+            {{ $imgSmall.RelPermalink }} 30w,
+            {{ $imgMedium.RelPermalink }} 60w
           "
           alt="Amplify Colorado logo"
           loading="lazy"
