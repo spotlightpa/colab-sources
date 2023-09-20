@@ -5,7 +5,7 @@
 >
   <h2 class="text-g-9">
     <label class="text-2xl font-bold leading-tight text-black" for="search">
-      Search for an expert or journalist
+      Search for a community member or journalist
     </label>
   </h2>
   <div class="relative mt-4 lg:-mx-10">
@@ -57,7 +57,7 @@
     </label>
     <label>
       <input x-model="filterType" type="radio" name="type" value="expert" />
-      <span class="ml-1">Community Experts</span>
+      <span class="ml-1">Community Members</span>
     </label>
     <label>
       <input x-model="filterType" type="radio" name="type" value="journalist" />
@@ -68,17 +68,17 @@
   <div class="mt-2 grid grid-cols-2 items-end gap-4">
     {{ partial "combobox.html" (dict
       "options" (.GetPage "expertise").Pages
-      "placeholder" "Experts by area of expertise"
+      "placeholder" "Community members by area of experience"
       )
     }}
     {{ partial "combobox.html" (dict
       "options" (.GetPage "location").Pages
-      "placeholder" "Experts by location"
+      "placeholder" "Community members by location"
       )
     }}
     {{ partial "combobox.html" (dict
       "options" (.GetPage "location").Pages
-      "placeholder" "Journalist by coverage area"
+      "placeholder" "Journalists by coverage area"
       )
     }}
     {{ partial "combobox.html" (dict
