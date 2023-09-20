@@ -1,15 +1,15 @@
-<header class="border-b border-g-5 bg-blue-darker font-sans uppercase">
+<header class="border-b border-g-5 bg-blue font-sans uppercase">
   <nav x-data="{ isOpen: false }">
     <div class="mx-auto max-w-7xl px-6">
       <div class="relative flex h-16 items-center justify-between md:h-24">
         <div class="flex flex-1 items-center justify-start">
           <a class="inline-flex flex-shrink-0 leading-none text-white" href="/">
-            {{ $logo := resources.Get "img/logos/colab-white-trans.png" }}
+            {{ $logo := resources.Get "img/logos/amplify-white-trans.png" }}
             {{ $logo = $logo | fingerprint }}
             <img
-              class="aspect-[987/279] h-14 w-auto sm:h-16 md:h-20"
-              width="987"
-              height="279"
+              class="h-14 w-auto sm:h-16 md:h-20"
+              width="{{ $logo.Width }}"
+              height="{{ $logo.Height }}"
               src="{{ $logo.RelPermalink }}"
               alt="Diverse Source Database logo"
             />
@@ -22,12 +22,31 @@
         >
           <span class="hidden flex-row content-center space-x-6 lg:flex">
             {{ range site.Menus.navbar }}
-              <a
-                class="self-center text-white duration-500 hover:text-blue"
-                href="{{ .URL }}"
-                {{ with .Post }}target="{{ . }}"{{ end }}
-                >{{ .Name }}</a
-              >
+              {{ if .Params.image }}
+                <a
+                  class="self-center"
+                  href="{{ .URL }}"
+                  {{ with .Post }}target="{{ . }}"{{ end }}
+                >
+                  {{ $img := resources.Get .Params.image }}
+                  {{ $img = $img | fingerprint }}
+                  <img
+                    class="h-14 w-auto sm:h-16 md:h-20"
+                    width="{{ $img.Width }}"
+                    height="{{ $img.Height }}"
+                    src="{{ $img.RelPermalink }}"
+                    alt="{{ .Name }}"
+                  />
+                </a>
+              {{ else }}
+                <a
+                  class="self-center text-white duration-500 hover:text-blue-darker"
+                  href="{{ .URL }}"
+                  {{ with .Post }}target="{{ . }}"{{ end }}
+                >
+                  {{- .Name -}}
+                </a>
+              {{ end }}
             {{ end }}
             <a
               class="group self-center rounded bg-green px-4 py-2 font-semibold uppercase leading-none tracking-wide text-white"
@@ -52,7 +71,7 @@
             <!-- Mobile menu button-->
             <button
               type="button"
-              class="inline-flex items-center justify-center rounded-md p-2 text-g-1 hover:text-blue focus:text-blue-darker focus:outline-none"
+              class="inline-flex items-center justify-center rounded-md p-2 text-g-1 hover:text-blue-darker focus:text-blue-darker focus:outline-none"
               aria-label="Main menu"
               :aria-expanded="String(isOpen)"
               @click="isOpen = !isOpen"

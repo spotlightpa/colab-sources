@@ -2,17 +2,13 @@
 name = "COLab"
 url = "https://colabnews.co/"
 weight = 1
-
-[[navbar]]
-name = "Suggest a Source"
-url = "http://bit.ly/AmplifyColorado"
-weight = 2
-post = "_blank"
+[navbar.params]
+image = "img/logos/colab-all-white-trans.png"
 
 [[navbar]]
 name = "Contact Us"
 url = "mailto:amplifycolorado@colabnews.co"
-weight = 3
+weight = 2
 
 [[mobile]]
 name = "Home"
