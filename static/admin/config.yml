@@ -353,6 +353,11 @@ collections:
                 widget: number
                 value_type: int
                 required: false
+              - label: Extra parameters
+                name: params
+                widget: object
+                field: { label: Image, name: image, widget: string }
+                required: false
           - label: "Menu items"
             label_singular: "menu item"
             name: mobile
