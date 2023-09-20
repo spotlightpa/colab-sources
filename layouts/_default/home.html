@@ -60,9 +60,9 @@
           />
         </svg>
       </div>
-      <div class="{{ $hedClass }}">Suggest a source</div>
+      <div class="{{ $hedClass }}">Add your info</div>
       <div class="{{ $dekClass }}">
-        Know someone we should list here? Recommend them today.
+        Or recommend some one else and we’ll reach out!
       </div>
     </a>
     {{ $emailSubject:= `About my Amplify Colorado database entry` }}
@@ -117,7 +117,7 @@
   <section class="p-8">
     <div class="{{ $wellClass }}" x-data>
       <h2 class="{{ $secHedClass }} scroll-mt-2" x-ref="hed">
-        Meet our journalists and community experts
+        Meet our community members and journalists
       </h2>
       {{ $expts := .GetPage "experts" }}
       {{ $journos := .GetPage "journalists" }}
@@ -160,7 +160,7 @@
             &minus;
           </span>
           <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
-          <span>Experts by area of expertise</span>
+          <span>Community members by area of experience</span>
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>
@@ -177,7 +177,7 @@
             &minus;
           </span>
           <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
-          <span>Experts by location</span>
+          <span>Community members by location</span>
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>
@@ -194,7 +194,7 @@
             &minus;
           </span>
           <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
-          <span>Experts by last name</span>
+          <span>Community members by last name</span>
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>
