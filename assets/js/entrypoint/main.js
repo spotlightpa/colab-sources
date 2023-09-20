@@ -1,7 +1,10 @@
 import Alpine from "alpinejs";
 import collapse from "@alpinejs/collapse";
+import focus from "@alpinejs/focus";
+import ui from "@alpinejs/ui";
 
 import searchPeople from "../utils/search-people.js";
+import comboBox from "../utils/combobox.js";
 
 // Redirect admin emails to admin
 const routes =
@@ -25,8 +28,12 @@ function rotateChildren(el, n) {
 }
 
 Alpine.plugin(collapse);
+Alpine.plugin(focus);
+Alpine.plugin(ui);
 
 Alpine.data("searchPeople", searchPeople);
+
+Alpine.data("combobox", comboBox);
 
 Alpine.magic("shuffle", () => (el) => shuffleChildren(el));
 Alpine.magic("rotate", () => (el, n) => rotateChildren(el, n));

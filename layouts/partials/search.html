@@ -64,6 +64,29 @@
       <span class="ml-1">Journalists</span>
     </label>
   </div>
+
+  <div class="mt-2 grid grid-cols-2 items-end gap-4">
+    {{ partial "combobox.html" (dict
+      "options" (.GetPage "expertise").Pages
+      "placeholder" "Experts by area of expertise"
+      )
+    }}
+    {{ partial "combobox.html" (dict
+      "options" (.GetPage "location").Pages
+      "placeholder" "Experts by location"
+      )
+    }}
+    {{ partial "combobox.html" (dict
+      "options" (.GetPage "location").Pages
+      "placeholder" "Journalist by coverage area"
+      )
+    }}
+    {{ partial "combobox.html" (dict
+      "options" (.GetPage "beat").Pages
+      "placeholder" "Journalists by beat"
+      )
+    }}
+  </div>
   <p class="mt-1 text-g-7" x-text="resultsText"></p>
   <p x-cloak x-show="error" class="mt-2">
     <span class="italic"> Something went wrong: </span>
