@@ -20,10 +20,7 @@
   "last": "Homdayjanakul",
   "title": "June Homdayjanakul",
   "images": [
-    "/img/uploads/june-homdayjanakul.jpeg",
-    [
-      "/img/uploads/june-homdayjanakul.jpg"
-    ]
+    "/img/uploads/june-homdayjanakul.jpeg"
   ],
   "languages": "English, Thai",
   "website": "",
