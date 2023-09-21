@@ -1,4 +1,4 @@
-<div x-data="combobox" class="w-full">
+<div x-data="combobox" class="w-full" data-xmodel="{{ .xmodel }}">
   <datalist x-ref="options">
     {{ range .options }}
       <option value="{{ .Title }}">{{ .Title }}</option>
@@ -6,7 +6,7 @@
   </datalist>
   <div
     x-combobox
-    x-model="selected"
+    x-model="{{ .xmodel }}"
     multiple
     class="border-none bg-transparent"
   >
@@ -14,15 +14,12 @@
       x-show="selected.length"
       class="mb-4 mt-1 flex flex-wrap items-center gap-1.5"
     >
-      <template
-        x-for="selectedFramework in selected"
-        :key="selectedFramework.id"
-      >
+      <template x-for="selectedOpt in selected" :key="selectedOpt.id">
         <button
-          x-on:click.prevent="remove(selectedFramework)"
+          @click.prevent="remove(selectedOpt)"
           class="inline-flex items-center gap-1 rounded bg-blue p-1 px-2 text-xs text-white hover:bg-gray"
         >
-          <span x-text="selectedFramework.name"></span>
+          <span x-text="selectedOpt.name"></span>
           <svg class="h-3 w-3 fill-current">
             <use href="#xmark-svg" />
           </svg>

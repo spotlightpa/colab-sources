@@ -58,11 +58,13 @@
       {{ partial "combobox.html" (dict
         "options" (.GetPage "expertise").Pages
         "placeholder" "Experts by area of expertise"
+        "xmodel" "filterExpertise"
         )
       }}
       {{ partial "combobox.html" (dict
         "options" (.GetPage "location").Pages
         "placeholder" "Experts by location"
+        "xmodel" "filterLocation"
         )
       }}
     </div>
@@ -73,11 +75,13 @@
       {{ partial "combobox.html" (dict
         "options" (.GetPage "location").Pages
         "placeholder" "Journalist by coverage area"
+        "xmodel" "filterArea"
         )
       }}
       {{ partial "combobox.html" (dict
         "options" (.GetPage "beat").Pages
         "placeholder" "Journalists by beat"
+        "xmodel" "filterBeat"
         )
       }}
     </div>

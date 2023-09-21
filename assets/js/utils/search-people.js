@@ -29,6 +29,10 @@ async function debouncedSearch(
 export default function searchPeople() {
   return {
     filterType: "expert",
+    filterExpertise: [],
+    filterLocation: [],
+    filterArea: [],
+    filterBeat: [],
     query: "",
     pagefind: null,
     error: null,
@@ -47,8 +51,17 @@ export default function searchPeople() {
         return;
       }
       this.pagefind = pagefind;
-      this.$watch("query", () => this.search());
-      this.$watch("filterType", () => this.search());
+      for (let param of [
+        "query",
+        "filterType",
+        "filterArea",
+        "filterExpertise",
+        "filterLocation",
+        "filterArea",
+        "filterBeat",
+      ]) {
+        this.$watch(param, () => this.search());
+      }
     },
 
     async search() {
@@ -58,11 +71,27 @@ export default function searchPeople() {
       this.isLoading = true;
       this.resultCount = 0;
       let options = {};
+      let hasFilters = false;
       if (this.filterType) {
         options.filters = {
           type: this.filterType,
         };
+        if (this.filterType === "expert") {
+          options.filters.expertise = this.filterExpertise.map((f) => f.value);
+          options.filters.location = this.filterLocation.map((f) => f.value);
+          hasFilters =
+            options.filters.expertise.length || options.filters.location.length;
+        } else if (this.filterType === "journalist") {
+          options.filters.area = this.filterArea.map((f) => f.value);
+          options.filters.beat = this.filterBeat.map((f) => f.value);
+          hasFilters =
+            options.filters.area.length || options.filters.beat.length;
+        }
       }
+      if (hasFilters && !query) {
+        query = null; // magic value for show all in category
+      }
+
       let results;
       try {
         const search = await debouncedSearch(
