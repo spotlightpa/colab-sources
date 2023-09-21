@@ -152,8 +152,8 @@ export default function searchPeople() {
     },
 
     get resultsText() {
-      if (this.isLoading || !this.results) return "";
-      if (!this.query && !this.hasFilters) return "";
+      if (this.isLoading || !this.results) return "\u00a0";
+      if (!this.query && !this.hasFilters) return "\u00a0";
 
       let total = this.resultCount;
       let shown = this.results.length;

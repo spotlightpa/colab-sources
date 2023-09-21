@@ -69,8 +69,9 @@
       }}
     </div>
     <div
-      class=" grid items-end gap-4 md:grid-cols-2"
+      class="grid items-end gap-4 md:grid-cols-2"
       x-show="filterType === 'journalist'"
+      x-cloak
     >
       {{ partial "combobox.html" (dict
         "options" (.GetPage "location").Pages
