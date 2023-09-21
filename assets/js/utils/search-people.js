@@ -28,7 +28,7 @@ async function debouncedSearch(
 
 export default function searchPeople() {
   return {
-    filterType: "",
+    filterType: "expert",
     query: "",
     pagefind: null,
     error: null,

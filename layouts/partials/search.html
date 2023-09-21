@@ -8,7 +8,7 @@
       Search for a community member or journalist
     </label>
   </h2>
-  <div class="relative mt-4 lg:-mx-10">
+  <div class="relative mt-4">
     <input
       id="search"
       type="search"
@@ -50,42 +50,57 @@
       </svg>
     </button>
   </div>
+  <div class="mt-2">
+    <div
+      class="grid items-end gap-4 md:grid-cols-2"
+      x-show="filterType === 'expert'"
+    >
+      {{ partial "combobox.html" (dict
+        "options" (.GetPage "expertise").Pages
+        "placeholder" "Experts by area of expertise"
+        )
+      }}
+      {{ partial "combobox.html" (dict
+        "options" (.GetPage "location").Pages
+        "placeholder" "Experts by location"
+        )
+      }}
+    </div>
+    <div
+      class=" grid items-end gap-4 md:grid-cols-2"
+      x-show="filterType === 'journalist'"
+    >
+      {{ partial "combobox.html" (dict
+        "options" (.GetPage "location").Pages
+        "placeholder" "Journalist by coverage area"
+        )
+      }}
+      {{ partial "combobox.html" (dict
+        "options" (.GetPage "beat").Pages
+        "placeholder" "Journalists by beat"
+        )
+      }}
+    </div>
+  </div>
   <div class="mt-2 flex flex-wrap gap-4">
     <label>
-      <input x-model="filterType" type="radio" name="type" value="" />
-      <span class="ml-1">Everyone</span>
-    </label>
-    <label>
-      <input x-model="filterType" type="radio" name="type" value="expert" />
+      <input
+        x-model="filterType"
+        type="radio"
+        name="type"
+        value="expert"
+        checked
+      />
       <span class="ml-1">Community Members</span>
     </label>
     <label>
       <input x-model="filterType" type="radio" name="type" value="journalist" />
       <span class="ml-1">Journalists</span>
     </label>
-  </div>
-
-  <div class="mt-2 grid grid-cols-2 items-end gap-4">
-    {{ partial "combobox.html" (dict
-      "options" (.GetPage "expertise").Pages
-      "placeholder" "Community members by area of experience"
-      )
-    }}
-    {{ partial "combobox.html" (dict
-      "options" (.GetPage "location").Pages
-      "placeholder" "Community members by location"
-      )
-    }}
-    {{ partial "combobox.html" (dict
-      "options" (.GetPage "location").Pages
-      "placeholder" "Journalists by coverage area"
-      )
-    }}
-    {{ partial "combobox.html" (dict
-      "options" (.GetPage "beat").Pages
-      "placeholder" "Journalists by beat"
-      )
-    }}
+    <label>
+      <input x-model="filterType" type="radio" name="type" value="" />
+      <span class="ml-1">Everyone</span>
+    </label>
   </div>
   <p class="mt-1 text-g-7" x-text="resultsText"></p>
   <p x-cloak x-show="error" class="mt-2">
