@@ -57,13 +57,13 @@
     >
       {{ partial "combobox.html" (dict
         "options" (.GetPage "expertise").Pages
-        "placeholder" "by area of experience"
+        "placeholder" "Filter by area of experience"
         "xmodel" "filterExpertise"
         )
       }}
       {{ partial "combobox.html" (dict
         "options" (.GetPage "location").Pages
-        "placeholder" "by location"
+        "placeholder" "Filter by location"
         "xmodel" "filterLocation"
         )
       }}
@@ -74,13 +74,13 @@
     >
       {{ partial "combobox.html" (dict
         "options" (.GetPage "location").Pages
-        "placeholder" "by coverage area"
+        "placeholder" "Filter by coverage area"
         "xmodel" "filterArea"
         )
       }}
       {{ partial "combobox.html" (dict
         "options" (.GetPage "beat").Pages
-        "placeholder" "by beat"
+        "placeholder" "Filter by beat"
         "xmodel" "filterBeat"
         )
       }}
