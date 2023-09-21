@@ -21,7 +21,7 @@ url = "https://colabnews.co/"
 weight = 2
 
 [[mobile]]
-name = "Suggest a Source"
+name = "Add your info"
 url = "http://bit.ly/AmplifyColorado"
 weight = 3
 post = "_blank"
@@ -62,7 +62,7 @@ url = "https://colabnews.co/amplify-colorado/"
 weight = 1
 
 [[follow]]
-name = "Suggest a Source"
+name = "Add your info"
 url = "http://bit.ly/AmplifyColorado"
 weight = 2
 post = "_blank"
