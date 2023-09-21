@@ -71,7 +71,6 @@ export default function searchPeople() {
       this.isLoading = true;
       this.resultCount = 0;
       let options = {};
-      let hasFilters = false;
       if (this.filterType) {
         options.filters = {
           type: this.filterType,
@@ -79,16 +78,12 @@ export default function searchPeople() {
         if (this.filterType === "expert") {
           options.filters.expertise = this.filterExpertise.map((f) => f.value);
           options.filters.location = this.filterLocation.map((f) => f.value);
-          hasFilters =
-            options.filters.expertise.length || options.filters.location.length;
         } else if (this.filterType === "journalist") {
           options.filters.area = this.filterArea.map((f) => f.value);
           options.filters.beat = this.filterBeat.map((f) => f.value);
-          hasFilters =
-            options.filters.area.length || options.filters.beat.length;
         }
       }
-      if (hasFilters && !query) {
+      if (this.hasFilters && !query) {
         query = null; // magic value for show all in category
       }
 
@@ -147,8 +142,18 @@ export default function searchPeople() {
       }));
     },
 
+    get hasFilters() {
+      if (this.filterType === "expert") {
+        return this.filterExpertise.length || this.filterLocation.length;
+      } else if (this.filterType === "journalist") {
+        return this.filterArea.length || this.filterBeat.length;
+      }
+      return false;
+    },
+
     get resultsText() {
-      if (this.isLoading || !this.query || !this.results) return "";
+      if (this.isLoading || !this.results) return "";
+      if (!this.query && !this.hasFilters) return "";
 
       let total = this.resultCount;
       let shown = this.results.length;
