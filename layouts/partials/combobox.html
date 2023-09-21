@@ -31,12 +31,12 @@
       class="relative mt-1 rounded focus-within:ring-2 focus-within:ring-blue"
     >
       <div
-        class="flex w-full items-center justify-between gap-2 rounded border-2 border-g-5 bg-white py-2.5 pl-5 pr-3"
+        class="flex w-full items-center justify-between gap-2 rounded border-2 border-g-5 bg-white py-2.5 pl-5 pr-10"
       >
         <input
           x-combobox:input
           @change="query = $event.target.value;"
-          class="w-full border-none p-0 focus:outline-none focus:ring-0"
+          class="w-full truncate border-none p-0 focus:outline-none focus:ring-0"
           placeholder="{{ .placeholder }}"
         />
         <button
