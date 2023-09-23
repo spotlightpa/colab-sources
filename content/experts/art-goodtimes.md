@@ -6,12 +6,12 @@
   "phone": "970-729-0220",
   "first": "Art",
   "expertise": [
-    "ARTS",
-    "ENTERTAINMENT & CULTURE",
-    "GOVERNMENT (FEDERAL",
-    "STATE",
-    "LOCAL)",
-    "POLITICS"
+    "Arts",
+    "Entertainment & Culture",
+    "Government (Federal",
+    "State",
+    "Local)",
+    "Politics"
   ],
   "organization": "Telluride Institute",
   "pronunciation": "Art GOODtimes",
