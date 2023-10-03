@@ -1,0 +1,53 @@
+{
+  "pronoun": "He/Him/His",
+  "bio": "Ryan Warner is senior host of Colorado Matters, the flagship daily interview program from CPR News. His voice is heard on frequencies around the state as he talks with Coloradans from all walks of life — politicians, scientists, artists, activists and others. Ryan’s interviews with Colorado’s governor now span four administrations. During his tenure, Colorado Matters has consistently been recognized as the best major market public radio talk show in the country. He speaks French, geeks out on commercial aviation, adores and tolerates his tuxedo cat Bob, and owns too many shoes.",
+  "threads": "https://www.threads.net/oddryhepburn/",
+  "layout": "person",
+  "area": [
+    "Statewide"
+  ],
+  "first": "Ryan",
+  "instagram": "https://www.instagram.com/oddryhepburn/",
+  "organization": "Colorado Public Radio News",
+  "twitter": "https://twitter.com/cprwarner",
+  "pronunciation": "RYE-n WAR-nurr",
+  "role": "Sr. Host of Colorado Matters",
+  "last": "Warner",
+  "beat": [
+    "Arts",
+    "Culture and Entertainment",
+    "Books",
+    "Business and Finance",
+    "Climate and Environment",
+    "Crime and Justice",
+    "Education",
+    "Energy",
+    "Equity",
+    "Food and Dining",
+    "Health",
+    "Housing",
+    "Immigration",
+    "Investigative",
+    "Media",
+    "Military",
+    "Politics",
+    "Real Estate",
+    "Religion",
+    "Rural Colorado",
+    "Science",
+    "Sports and Outdoor Recreation",
+    "Technology",
+    "Transportation",
+    "Water",
+    "Anything Colorado!"
+  ],
+  "title": "Ryan Warner",
+  "images": [
+    "/img/uploads/211006-staff-ryan-warner-0001-1024x683-ryan-warner.jpg"
+  ],
+  "languages": "English, French",
+  "website": "http://cpr.org/coloradomatters",
+  "email": "cndhcm5lckBjcHIub3Jn",
+  "linkedin": "https://www.linkedin.com/in/ryan-warner-439381222/",
+  "linktitle": "Ryan Warner"
+}
