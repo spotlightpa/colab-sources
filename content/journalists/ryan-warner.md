@@ -4,7 +4,7 @@
   "threads": "https://www.threads.net/oddryhepburn/",
   "layout": "person",
   "area": [
-    "Statewide"
+    "Statewide (Colorado)"
   ],
   "first": "Ryan",
   "instagram": "https://www.instagram.com/oddryhepburn/",
