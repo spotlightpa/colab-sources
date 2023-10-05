@@ -2,6 +2,7 @@
 name = "COLab"
 url = "https://colabnews.co/"
 weight = 1
+
 [navbar.params]
 image = "img/logos/colab-square-all-white-trans.png"
 
@@ -33,7 +34,7 @@ weight = 4
 
 [[mobile]]
 name = "Donate"
-url = "http://colab.fundjournalism.org/amplifycolorado"
+url = "https://colab.fundjournalism.org/amplifycolorado/"
 weight = 5
 
 [[footer]]
