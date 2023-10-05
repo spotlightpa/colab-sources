@@ -12,7 +12,7 @@ buildFuture = true
 [params]
   favicon = "/img/logos/amplify-placeholder.png"
   touch-icon = "/img/logos/colab-square.png"
-  donate-link = "http://colab.fundjournalism.org/donate"
+  donate-link = "https://colab.fundjournalism.org/amplifycolorado/"
   nominate-link = "http://bit.ly/AmplifyColorado"
 [taxonomies]
   expertise = "expertise"
