@@ -8,9 +8,7 @@
   "expertise": [
     "Arts",
     "Entertainment & Culture",
-    "Government (Federal",
-    "State",
-    "Local)",
+    "Government",
     "Politics"
   ],
   "organization": "Telluride Institute",
