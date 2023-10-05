@@ -55,8 +55,8 @@ yaml-definitions: &page-fields
       widget: string
 
 collections:
-  - label: Community Experts
-    label_singular: Expert
+  - label: Community members
+    label_singular: Community member
     name: experts
     folder: content/experts
     filter: { field: "layout", value: "person" }
