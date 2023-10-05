@@ -93,7 +93,7 @@
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
     {{ template "_internal/schema.html" . }}
-
+    <meta name="description" content="{{ .Description }}" />
     {{ template "_internal/google_analytics.html" . }}
   </head>
   {{ $pageCat := printf "%s:%s" (.Section | default .Type) .Kind }}
