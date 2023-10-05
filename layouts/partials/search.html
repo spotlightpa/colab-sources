@@ -12,7 +12,7 @@
     <input
       id="search"
       type="search"
-      class="block w-full appearance-none rounded-full border-2 border-g-5 bg-white px-10 py-2 tracking-wider text-g-8 placeholder-g-5 placeholder-opacity-100"
+      class="block w-full appearance-none rounded-full border-2 border-g-5 bg-white px-10 py-2 tracking-wider text-g-8 placeholder-g-5 placeholder-opacity-100 outline-none ring-blue focus:ring-2"
       x-model="query"
       @keydown.escape="clear()"
       placeholder="Ex. “Jane Smith” “History” “Boulder”"
@@ -54,6 +54,7 @@
     <div
       class="grid items-end gap-4 md:grid-cols-2"
       x-show="filterType === 'expert'"
+      x-cloak
     >
       {{ partial "combobox.html" (dict
         "options" (.GetPage "expertise").Pages
@@ -90,21 +91,34 @@
   <div class="mt-2 flex flex-wrap gap-4">
     <label>
       <input
+        class="accent-blue"
+        x-model="filterType"
+        type="radio"
+        name="type"
+        value=""
+        checked
+      />
+      <span class="ml-1">Everyone</span>
+    </label>
+    <label>
+      <input
+        class="accent-blue"
         x-model="filterType"
         type="radio"
         name="type"
         value="expert"
-        checked
       />
       <span class="ml-1">Community Members</span>
     </label>
     <label>
-      <input x-model="filterType" type="radio" name="type" value="journalist" />
+      <input
+        class="accent-blue"
+        x-model="filterType"
+        type="radio"
+        name="type"
+        value="journalist"
+      />
       <span class="ml-1">Journalists</span>
-    </label>
-    <label>
-      <input x-model="filterType" type="radio" name="type" value="" />
-      <span class="ml-1">Everyone</span>
     </label>
   </div>
   <p class="mt-1 text-g-7" x-text="resultsText"></p>
