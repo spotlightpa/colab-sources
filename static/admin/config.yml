@@ -153,6 +153,11 @@ collections:
         name: phone
         widget: string
         required: false
+      - label: Preferred method of contact
+        hint: E.g. "Phone" or "Email"
+        name: contact
+        widget: string
+        required: false
       - label: Biography
         name: bio
         widget: markdown
