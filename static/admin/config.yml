@@ -368,7 +368,8 @@ collections:
               - label: Extra parameters
                 name: params
                 widget: object
-                field: { label: Image, name: image, widget: string, required: false }
+                field:
+                  { label: Image, name: image, widget: string, required: false }
                 required: false
           - label: "Menu items"
             label_singular: "menu item"
