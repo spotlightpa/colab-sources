@@ -22,7 +22,6 @@
   "last": "Parrish",
   "title": "Amanda \"Bo\" Parrish",
   "images": [
-    "/img/uploads/amanda-bo-parrish.jpeg",
     "/img/uploads/amanda-bo-parrish.jpeg"
   ],
   "languages": "English, French",
