@@ -63,7 +63,7 @@ html {
   @apply list-decimal;
 }
 
-@responsive {
+@layer utilities {
   .shape-outside {
     shape-outside: border-box;
   }
