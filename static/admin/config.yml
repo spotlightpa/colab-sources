@@ -113,7 +113,7 @@ collections:
         name: languages
         widget: string
         required: false
-      - label: Expertise
+      - label: Areas of experience
         name: expertise
         widget: list
         hint: Use commas to separate items
@@ -321,7 +321,7 @@ collections:
         file: content/location/_index.md
         format: toml-frontmatter
         fields: *page-fields
-      - label: "Expertise list page"
+      - label: "Area of experience list page"
         name: expertise
         file: content/expertise/_index.md
         format: toml-frontmatter
