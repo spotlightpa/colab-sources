@@ -35,13 +35,8 @@ buildFuture = true
 [markup.goldmark.renderer]
   unsafe = true
 
-[outputFormats.searchindex]
-  mediaType = "application/json"
-  baseName = "searchindex"
-  isPlainText = true
-
 [outputs]
-  home = ["html", "searchindex"]
+  home = ["html"]
   section = ["html"]
   taxonomy = ["html"]
   term = ["html"]
