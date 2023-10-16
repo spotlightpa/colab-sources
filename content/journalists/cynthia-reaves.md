@@ -3,6 +3,7 @@
   "pronoun": " She/Her/Hers",
   "bio": "Founder of The Silver Lining Magazine and Argento Studios. Master's in New Media Journalism. Cares about making a difference in this world.",
   "layout": "person",
+  "resume": "https://drive.google.com/file/d/1DdBSvsF5e_6o4m_CgTFgH0Lu8filLAsl/view",
   "area": [
     "Statewide (Colorado)"
   ],
