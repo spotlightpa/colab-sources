@@ -40,7 +40,7 @@
 
     {{ $cssTW := resources.Get "css/main.css" }}
     {{ $css := $cssTW | resources.PostCSS (dict "inlineImports" true) }}
-    {{ if hugo.IsProduction }}
+    {{ if not site.IsServer }}
       {{ $css = $css | minify | fingerprint | resources.PostProcess }}
     {{ end }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
