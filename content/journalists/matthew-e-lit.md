@@ -1,12 +1,12 @@
 {
   "contact": "Email",
-  "bio": "I am the managing editor for a nonprofit community newspaper covering Crestone and the San Luis Valley. I am also a highly-skilled photojournalist.",
+  "bio": "I am the managing editor for a nonprofit community newspaper covering Crestone and the San Luis Valley. I am also a highly-skilled photojournalist. <https://linktr.ee/fotomatt>",
   "layout": "person",
   "area": [
     "Saguache"
   ],
   "first": "Matthew E. ",
-  "instagram": "https://linktr.ee/fotomatt",
+  "instagram": "",
   "organization": "Crestone Eagle",
   "role": "Managing Editor",
   "last": "Lit",
