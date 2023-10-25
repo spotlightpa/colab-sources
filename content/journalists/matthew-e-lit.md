@@ -6,7 +6,7 @@
     "Saguache"
   ],
   "first": "Matthew E. ",
-  "instagram": "linktr.ee/fotomatt",
+  "instagram": "https://instagram.com/linktr.ee/fotomatt",
   "organization": "Crestone Eagle",
   "role": "Managing Editor",
   "last": "Lit",
@@ -19,7 +19,7 @@
     "/img/uploads/mvhr_matt-carrie-12bw-matt-lit.jpg"
   ],
   "languages": "English",
-  "website": "www.CrestoneEagle.com",
+  "website": "http://www.crestoneeagle.com/",
   "email": "ZWRpdG9yQGNyZXN0b25lZWFnbGUuY29t",
   "linktitle": "Matthew E. Lit"
 }
