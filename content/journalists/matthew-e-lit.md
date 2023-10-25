@@ -6,7 +6,7 @@
     "Saguache"
   ],
   "first": "Matthew E. ",
-  "instagram": "https://instagram.com/linktr.ee/fotomatt",
+  "instagram": "https://linktr.ee/fotomatt",
   "organization": "Crestone Eagle",
   "role": "Managing Editor",
   "last": "Lit",
