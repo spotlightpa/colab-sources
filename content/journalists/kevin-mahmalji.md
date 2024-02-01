@@ -15,11 +15,10 @@
   "role": "Owner and Managing Editor",
   "last": "Mahmalji",
   "beat": [
-    "Arts",
-    "Culture and Entertainment",
+    "Arts & Entertainment",
+    "Government",
     "Investigative",
-    "Politics",
-    "City Government"
+    "Politics"
   ],
   "title": "Kevin Mahmalji",
   "images": [
