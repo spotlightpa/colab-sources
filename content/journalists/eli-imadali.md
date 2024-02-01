@@ -1,22 +1,32 @@
 {
-  "title": "Eli Imadali",
-  "linktitle": "Eli Imadali",
-  "first": "Eli",
-  "last": "Imadali",
-  "organization": "Freelance",
-  "pronunciation": "E-lie ih-ma-DAW-lee",
   "contact": "Email, Phone",
   "honorific": "",
+  "facebook": "",
   "pronoun": "He/Him/His",
+  "bio": "Eli Imadali is a freelance visual journalist and documentary photographer in Denver, CO. He explores policy, injustice, trauma and healing, culture, identity, place and more through visual storytelling for publications like The New York Times, ProPublica and NPR. Imadali also teaches visual journalism at the University of Colorado, Boulder.",
+  "threads": "",
+  "layout": "person",
+  "resume": "/img/uploads/eli-imadali.pdf",
+  "area": [
+    "Statewide (Colorado)"
+  ],
+  "phone": "480-512-2035",
+  "first": "Eli",
+  "instagram": "https://www.instagram.com/eliimadali/",
+  "organization": "Freelance",
+  "twitter": "https://twitter.com/eliimadaliphoto/",
+  "pronunciation": "E-lie ih-ma-DAW-lee",
+  "location": "",
   "role": "Visual Journalist and Documentary Photographer",
+  "last": "Imadali",
   "beat": [
-    "General Reporting",
     "Climate & Environment",
     "Crime & Justice",
     "Education",
     "Energy",
     "Equity",
     "Food & Dining",
+    "General Assignment",
     "Health",
     "Housing",
     "Immigration",
@@ -30,23 +40,13 @@
     "Transportation",
     "Water"
   ],
-  "languages": "English",
-  "email": "ZWltYWRhbGkxNkBnbWFpbC5jb20=",
+  "title": "Eli Imadali",
   "images": [
     "/img/uploads/eli-imadali.jpeg"
   ],
-  "resume": "/img/uploads/eli-imadali.pdf",
+  "languages": "English",
   "website": "https://www.eliimadaliphoto.com",
-  "facebook": "",
-  "twitter": "https://twitter.com/eliimadaliphoto/",
-  "instagram": "https://www.instagram.com/eliimadali/",
-  "threads": "",
-  "area": [
-    "Statewide (Colorado)"
-  ],
+  "email": "ZWltYWRhbGkxNkBnbWFpbC5jb20=",
   "linkedin": "",
-  "location": "",
-  "phone": "480-512-2035",
-  "bio": "Eli Imadali is a freelance visual journalist and documentary photographer in Denver, CO. He explores policy, injustice, trauma and healing, culture, identity, place and more through visual storytelling for publications like The New York Times, ProPublica and NPR. Imadali also teaches visual journalism at the University of Colorado, Boulder.",
-  "layout": "person"
+  "linktitle": "Eli Imadali"
 }
