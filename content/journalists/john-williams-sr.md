@@ -20,15 +20,15 @@
   "role": "Freelance journalist",
   "last": "Williams Sr",
   "beat": [
-    "Climate and Environment",
-    "Crime and Justice",
+    "Climate & Environment",
+    "Crime & Justice",
     "Health",
     "Investigative",
     "Military",
-    "Opinion and Editorial",
+    "Opinion & Editorial",
     "Politics",
     "Rural Colorado",
-    "Sports and Outdoor Recreation"
+    "Sports & Outdoor Recreation"
   ],
   "title": "John Williams Sr",
   "images": [
