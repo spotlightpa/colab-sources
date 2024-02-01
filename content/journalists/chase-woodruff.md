@@ -14,7 +14,7 @@
   "role": "Reporter",
   "last": "Woodruff",
   "beat": [
-    "Climate and Environment",
+    "Climate & Environment",
     "Energy",
     "Housing",
     "Investigative",
