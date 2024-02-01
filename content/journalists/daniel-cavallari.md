@@ -16,8 +16,8 @@
   "last": "Cavallari",
   "beat": [
     "Media",
-    "Opinion and Editorial",
-    "Sports and Outdoor Recreation"
+    "Opinion & Editorial",
+    "Sports & Outdoor Recreation"
   ],
   "title": "Daniel Cavallari",
   "images": [
