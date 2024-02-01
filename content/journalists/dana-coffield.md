@@ -1,17 +1,26 @@
 {
-  "title": "Dana Coffield",
-  "linktitle": "Dana Coffield",
-  "first": "Dana",
-  "last": "Coffield",
-  "organization": "The Colorado Sun",
-  "pronunciation": "Dan-uh Cough-field",
   "contact": "Email",
   "honorific": "",
+  "facebook": "",
   "pronoun": "She/Her/Hers",
+  "bio": "I'm a life long Colorado journalist interested in amplifying the stories of people all over Colorado and explaining crucial issues that impact communities.",
+  "threads": "",
+  "layout": "person",
+  "resume": "/img/uploads/dana-coffield.pdf",
+  "area": [
+    "Statewide (Colorado)"
+  ],
+  "phone": "303-808-5519",
+  "first": "Dana",
+  "instagram": "https://www.instagram.com/dana.coffield/",
+  "organization": "The Colorado Sun",
+  "twitter": "https://twitter.com/danacoffield",
+  "pronunciation": "Dan-uh Cough-field",
+  "location": "",
   "role": "Co-founder, Senior editor",
+  "last": "Coffield",
   "beat": [
-    "Arts",
-    "Culture & Entertainment",
+    "Arts & Entertainment",
     "Business & Finance",
     "Climate & Environment",
     "Education",
@@ -25,23 +34,13 @@
     "Transportation",
     "Water"
   ],
-  "languages": "English",
-  "email": "ZGFuYUBjb2xvcmFkb3N1bi5jb20=",
+  "title": "Dana Coffield",
   "images": [
     "/img/uploads/dana-coffield.jpeg"
   ],
-  "resume": "/img/uploads/dana-coffield.pdf",
+  "languages": "English",
   "website": "https://www.coloradosun.com",
-  "facebook": "",
-  "twitter": "https://twitter.com/danacoffield",
-  "instagram": "https://www.instagram.com/dana.coffield/",
-  "threads": "",
-  "area": [
-    "Statewide (Colorado)"
-  ],
+  "email": "ZGFuYUBjb2xvcmFkb3N1bi5jb20=",
   "linkedin": "",
-  "location": "",
-  "phone": "303-808-5519",
-  "bio": "I'm a life long Colorado journalist interested in amplifying the stories of people all over Colorado and explaining crucial issues that impact communities.",
-  "layout": "person"
+  "linktitle": "Dana Coffield"
 }
