@@ -9,9 +9,7 @@
   "role": "Reporter",
   "last": "Harford",
   "beat": [
-    "Education",
-    "Douglas County School District",
-    "town of Castle Rock"
+    "Education"
   ],
   "title": "McKenna Harford",
   "images": [
