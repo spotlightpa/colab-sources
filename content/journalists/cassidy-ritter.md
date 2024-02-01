@@ -8,9 +8,9 @@
   "role": "Tech reporter and Colorado Inno editor",
   "last": "Ritter",
   "beat": [
-    "Business and Finance",
-    "Technology",
-    "Innovation & startups"
+    "Business & Finance",
+    "Innovation & Startups",
+    "Technology"
   ],
   "title": "Cassidy Ritter",
   "images": [
