@@ -22,8 +22,8 @@
   "role": "Editor in Chief",
   "last": "de Yoanna",
   "beat": [
-    "Climate and Environment",
-    "Crime and Justice",
+    "Climate & Environment",
+    "Crime & Justice",
     "Energy",
     "Equity",
     "Health",
@@ -34,8 +34,7 @@
     "Politics",
     "Religion",
     "Rural Colorado",
-    "Sports and Outdoor Recreation",
-    "I cover everything"
+    "Sports & Outdoor Recreation"
   ],
   "title": "Michael de Yoanna",
   "images": [
