@@ -18,10 +18,8 @@
   "last": "Ashike",
   "beat": [
     "Arts",
-    "Culture and Entertainment",
-    "Crime and Justice",
-    "Investigative",
-    "photojournalism"
+    "Culture & Entertainment",
+    "Crime & Justice"
   ],
   "title": "Crystal Ashike",
   "images": [
