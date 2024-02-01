@@ -1,14 +1,24 @@
 {
-  "title": "Susan Greene",
-  "linktitle": "Susan Greene",
-  "first": "Susan",
-  "last": "Greene",
-  "organization": "Colorado News Collaborative",
-  "pronunciation": "",
   "contact": "Email",
   "honorific": "",
+  "facebook": "",
   "pronoun": "She/Her/Hers",
-  "role": "Journalist and coach",
+  "bio": "Susan Greene is the Forward’s Israel-based correspondent. She has spent the last quarter century reporting news in Colorado, most recently as an investigative reporter and coach for journalists throughout the state.",
+  "threads": "",
+  "layout": "person",
+  "resume": "",
+  "area": [
+    "Statewide (Colorado)"
+  ],
+  "phone": "303-886-8852",
+  "first": "Susan",
+  "instagram": "",
+  "organization": "The Forward",
+  "twitter": "https://twitter.com/Greeneindenver",
+  "pronunciation": "",
+  "location": "",
+  "role": "Journalist",
+  "last": "Greene",
   "beat": [
     "Crime & Justice",
     "Investigative",
@@ -16,23 +26,13 @@
     "Water",
     "Mental Health"
   ],
-  "languages": "English, French",
-  "email": "c3VzYW5AY29sYWJuZXdzLmNv",
+  "title": "Susan Greene",
   "images": [
     "/img/uploads/susan-greene.jpeg"
   ],
-  "resume": "",
-  "website": "https://colabnews.co",
-  "facebook": "",
-  "twitter": "https://twitter.com/Greeneindenver",
-  "instagram": "",
-  "threads": "",
-  "area": [
-    "Statewide (Colorado)"
-  ],
+  "languages": "English, French",
+  "website": "https://forward.com/authors/susan-greene/",
+  "email": "Z3JlZW5lQGZvcndhcmQuY29t",
   "linkedin": "",
-  "location": "",
-  "phone": "303-886-8852",
-  "bio": "I've been reporting in Colorado (starting at The Denver Post) since 1998. I'm now leading collaborative news investigations at COLab.",
-  "layout": "person"
+  "linktitle": "Susan Greene"
 }
