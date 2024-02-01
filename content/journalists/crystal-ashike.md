@@ -17,9 +17,9 @@
   "role": "Digital Content Editor / Marketing Coordinator",
   "last": "Ashike",
   "beat": [
-    "Arts",
-    "Culture & Entertainment",
-    "Crime & Justice"
+    "Arts & Entertainment",
+    "Crime & Justice",
+    "Tribal Issues"
   ],
   "title": "Crystal Ashike",
   "images": [
