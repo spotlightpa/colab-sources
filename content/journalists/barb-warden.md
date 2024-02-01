@@ -12,10 +12,9 @@
   "role": "Journalist, Publisher",
   "last": "Warden",
   "beat": [
-    "Arts",
-    "Culture and Entertainment",
-    "Politics",
-    "Local Government"
+    "Arts & Entertainment",
+    "Government",
+    "Politics"
   ],
   "title": "Barb Warden",
   "images": [
