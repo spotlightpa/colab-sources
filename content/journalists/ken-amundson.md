@@ -16,9 +16,9 @@
   "last": "Amundson",
   "beat": [
     "Arts",
-    "Culture and Entertainment",
-    "Business and Finance",
-    "Climate and Environment",
+    "Culture & Entertainment",
+    "Business & Finance",
+    "Climate & Environment",
     "Energy",
     "Health",
     "Investigative",
