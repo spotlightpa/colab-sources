@@ -15,8 +15,7 @@
   "role": "Managing Editor",
   "last": "Amundson",
   "beat": [
-    "Arts",
-    "Culture & Entertainment",
+    "Arts & Entertainment",
     "Business & Finance",
     "Climate & Environment",
     "Energy",
