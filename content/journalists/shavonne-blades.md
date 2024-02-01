@@ -14,13 +14,12 @@
   "role": "Publisher",
   "last": "Blades",
   "beat": [
-    "Climate and Environment",
-    "Crime and Justice",
+    "Climate & Environment",
+    "Crime & Justice",
     "Equity",
     "Health",
-    "Opinion and Editorial",
-    "Rural Colorado",
-    "Marketing and Advertising expertise"
+    "Opinion & Editorial",
+    "Rural Colorado"
   ],
   "title": "Shavonne Blades",
   "images": [
