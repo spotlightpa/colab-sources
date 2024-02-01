@@ -1,14 +1,24 @@
 {
-  "title": "Dave Rosenthal",
-  "linktitle": "Dave Rosenthal",
-  "first": "Dave",
-  "last": "Rosenthal",
-  "organization": "Mountain West News Bureau, a six-state collaboration of NPR stations",
-  "pronunciation": "ROW-sen-thall",
   "contact": "Email",
   "honorific": "",
+  "facebook": "",
   "pronoun": "He/Him/His",
+  "bio": "Dave Rosenthal is managing editor of the Mountain West News Bureau, a six-state  collaboration of NPR stations. As an editor for the Baltimore Sun and radio collaborations, he has led award-winning projects on police brutality, equitable water access and other issues. He was an editor for Sun staff work that was a finalist for the Pulitzer Prize in 2003 and 2016. Dave has degrees from Wesleyan University and Boston University School of Law",
+  "threads": "",
+  "layout": "person",
+  "resume": "/img/uploads/dave-rosenthal.pdf",
+  "area": [
+    "Statewide (Colorado)"
+  ],
+  "phone": "410-979-2341",
+  "first": "Dave",
+  "instagram": "",
+  "organization": "Mountain West News Bureau, a six-state collaboration of NPR stations",
+  "twitter": "",
+  "pronunciation": "ROW-sen-thall",
+  "location": "",
   "role": "Managing Editor",
+  "last": "Rosenthal",
   "beat": [
     "Climate & Environment",
     "Energy",
@@ -24,26 +34,16 @@
     "Sports & Outdoor Recreation",
     "Technology",
     "Transportation",
-    "Water",
-    "Tribal Issues"
+    "Tribal Issues",
+    "Water"
   ],
-  "languages": "English",
-  "email": "ZGF2ZXJvc2VudGhhbEBib2lzZXN0YXRlLmVkdQ==",
+  "title": "Dave Rosenthal",
   "images": [
     "/img/uploads/dave-rosenthal.jpeg"
   ],
-  "resume": "/img/uploads/dave-rosenthal.pdf",
+  "languages": "English",
   "website": "https://www.boisestatepublicradio.org/mountain-west-news-bureau",
-  "facebook": "",
-  "twitter": "",
-  "instagram": "",
-  "threads": "",
-  "area": [
-    "Statewide (Colorado)"
-  ],
+  "email": "ZGF2ZXJvc2VudGhhbEBib2lzZXN0YXRlLmVkdQ==",
   "linkedin": "",
-  "location": "",
-  "phone": "410-979-2341",
-  "bio": "Dave Rosenthal is managing editor of the Mountain West News Bureau, a six-state  collaboration of NPR stations. As an editor for the Baltimore Sun and radio collaborations, he has led award-winning projects on police brutality, equitable water access and other issues. He was an editor for Sun staff work that was a finalist for the Pulitzer Prize in 2003 and 2016. Dave has degrees from Wesleyan University and Boston University School of Law",
-  "layout": "person"
+  "linktitle": "Dave Rosenthal"
 }
