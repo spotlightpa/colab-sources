@@ -16,8 +16,7 @@
   "role": "Freelance reporter and youth journalism instructor",
   "last": "Souldern",
   "beat": [
-    "Arts",
-    "Culture and Entertainment",
+    "Arts & Entertainment",
     "Books",
     "Education",
     "Equity",
@@ -26,7 +25,7 @@
     "Politics",
     "Religion",
     "Rural Colorado",
-    "Sports and Outdoor Recreation"
+    "Sports & Outdoor Recreation"
   ],
   "title": "Jeanne Souldern",
   "images": [
