@@ -11,8 +11,7 @@
   "role": "Managing Editor",
   "last": "Lit",
   "beat": [
-    "Rural Colorado",
-    "Photography"
+    "Rural Colorado"
   ],
   "title": "Matthew E. Lit",
   "images": [
