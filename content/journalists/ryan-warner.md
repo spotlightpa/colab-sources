@@ -14,8 +14,7 @@
   "role": "Sr. Host of Colorado Matters",
   "last": "Warner",
   "beat": [
-    "Arts",
-    "Culture & Entertainment",
+    "Arts & Entertainment",
     "Books",
     "Business & Finance",
     "Climate & Environment",
@@ -24,6 +23,7 @@
     "Energy",
     "Equity",
     "Food & Dining",
+    "General Assignment",
     "Health",
     "Housing",
     "Immigration",
