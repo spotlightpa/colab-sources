@@ -15,8 +15,9 @@
   "role": "Freelance journalist/fact-checker",
   "last": "Clark",
   "beat": [
-    "Climate and Environment",
-    "Crime and Justice",
+    "Climate & Environment",
+    "Crime & Justice",
+    "Government",
     "Housing",
     "Investigative",
     "Politics"
