@@ -12,8 +12,8 @@
   "role": "Natural resources journalist",
   "last": "Whittaker",
   "beat": [
-    "Business and Finance",
-    "Climate and Environment",
+    "Business & Finance",
+    "Climate & Environment",
     "Energy",
     "Rural Colorado",
     "Science",
