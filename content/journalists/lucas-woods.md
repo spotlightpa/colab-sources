@@ -14,8 +14,8 @@
   "role": "Statehouse Reporter",
   "last": "Woods",
   "beat": [
-    "Climate and Environment",
-    "Crime and Justice",
+    "Climate & Environment",
+    "Crime & Justice",
     "Education",
     "Energy",
     "Equity",
