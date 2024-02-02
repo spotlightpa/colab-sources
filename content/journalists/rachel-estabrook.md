@@ -12,8 +12,8 @@
   "role": "Producer, editor and reporter",
   "last": "Estabrook",
   "beat": [
-    "Business and Finance",
-    "Crime and Justice",
+    "Business & Finance",
+    "Crime & Justice",
     "Equity",
     "Housing",
     "Immigration",
