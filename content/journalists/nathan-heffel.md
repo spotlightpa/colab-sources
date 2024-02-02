@@ -14,10 +14,9 @@
   "role": "Senior host All Things Considered, CPR News, Co-host Real Talk with Denver 7 and CPR News",
   "last": "Heffel",
   "beat": [
-    "Arts",
-    "Culture and Entertainment",
+    "Arts & Entertainment",
     "Books",
-    "Climate and Environment",
+    "Climate & Environment",
     "Education",
     "Equity",
     "Housing",
