@@ -9,7 +9,8 @@
   "role": "Reporter",
   "last": "Harford",
   "beat": [
-    "Education"
+    "Education",
+    "Government"
   ],
   "title": "McKenna Harford",
   "images": [
