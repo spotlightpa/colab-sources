@@ -20,6 +20,7 @@
   "role": "data journalist",
   "last": "Fish",
   "beat": [
+    "Government",
     "Politics"
   ],
   "title": "Sandra Fish",
