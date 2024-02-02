@@ -12,7 +12,7 @@
   "role": "Reporter",
   "last": "Toomer",
   "beat": [
-    "Crime and Justice",
+    "Crime & Justice",
     "Education",
     "Equity",
     "Health",
