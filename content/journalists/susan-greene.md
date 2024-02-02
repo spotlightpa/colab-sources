@@ -21,10 +21,11 @@
   "last": "Greene",
   "beat": [
     "Crime & Justice",
+    "Government",
     "Investigative",
+    "Mental Health",
     "Politics",
-    "Water",
-    "Mental Health"
+    "Water"
   ],
   "title": "Susan Greene",
   "images": [
