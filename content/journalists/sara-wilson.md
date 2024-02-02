@@ -15,6 +15,7 @@
   "role": "Reporter",
   "last": "Wilson",
   "beat": [
+    "Government",
     "Politics"
   ],
   "title": "Sara Wilson",
