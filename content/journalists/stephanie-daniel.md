@@ -37,7 +37,7 @@
   "role": "Senior Managing Editor, report and podcast host",
   "last": "Daniel",
   "beat": [
-    "Crime and Justice",
+    "Crime & Justice",
     "Education",
     "Equity",
     "Health",
