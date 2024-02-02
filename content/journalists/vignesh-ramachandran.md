@@ -1,40 +1,39 @@
 {
-  "title": "Vignesh Ramachandran",
-  "linktitle": "Vignesh Ramachandran",
-  "first": "Vignesh",
-  "last": "Ramachandran",
-  "organization": "Red, White and Brown Media",
-  "pronunciation": "VIG-NAYSH",
   "contact": "Email",
   "honorific": "",
+  "facebook": "",
   "pronoun": "He/Him/His",
+  "bio": "Vignesh Ramachandran (he/him) is a member of the AAPI Voices working group and participated in the South Asian-focused session. He is a Denver-based journalist reporting on race, culture and politics currently working as a growth editor for Apple News. He is also co-founder of Red, White and Brown Media, an online platform chronicling South Asian American stories.",
+  "threads": "",
+  "layout": "person",
+  "resume": "",
+  "area": [
+    "Statewide (Colorado)"
+  ],
+  "phone": "303-915-5735",
+  "first": "Vignesh",
+  "instagram": "https://www.instagram.com/vigneshr/",
+  "organization": "Red, White and Brown Media",
+  "twitter": "https://twitter.com/VigneshR",
+  "pronunciation": "VIG-NAYSH",
+  "location": "",
   "role": "Co-Founder/ Editor",
+  "last": "Ramachandran",
   "beat": [
-    "Arts",
-    "Culture & Entertainment",
+    "Arts & Entertainment",
     "Equity",
     "Health",
     "Immigration",
     "Politics",
     "Religion"
   ],
-  "languages": "English",
-  "email": "VmlnbmVzaEBWaWduZXNoUi5jb20=",
+  "title": "Vignesh Ramachandran",
   "images": [
     "/img/uploads/vignesh-ramachandran.jpeg"
   ],
-  "resume": "",
+  "languages": "English",
   "website": "https://vigneshr.com/#clips",
-  "facebook": "",
-  "twitter": "https://twitter.com/VigneshR",
-  "instagram": "https://www.instagram.com/vigneshr/",
-  "threads": "",
-  "area": [
-    "Statewide (Colorado)"
-  ],
+  "email": "VmlnbmVzaEBWaWduZXNoUi5jb20=",
   "linkedin": "https://www.linkedin.com/in/vigneshram/",
-  "location": "",
-  "phone": "303-915-5735",
-  "bio": "Vignesh Ramachandran (he/him) is a member of the AAPI Voices working group and participated in the South Asian-focused session. He is a Denver-based journalist reporting on race, culture and politics currently working as a growth editor for Apple News. He is also co-founder of Red, White and Brown Media, an online platform chronicling South Asian American stories.",
-  "layout": "person"
+  "linktitle": "Vignesh Ramachandran"
 }
