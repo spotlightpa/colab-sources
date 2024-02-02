@@ -1,17 +1,29 @@
 {
-  "title": "London Lyle",
-  "linktitle": "London Lyle",
-  "first": "London",
-  "last": "Lyle",
-  "organization": "Bucket List Community cafe and The Sopris Sun (freelancer)",
-  "pronunciation": "Lun-Din-Lie-Uhl",
   "contact": "Text",
   "honorific": "",
+  "facebook": "",
   "pronoun": "She/Her/Hers",
+  "bio": "London Lyle is a freelance journalist for The Sopris Sun and Bucket List Community Cafe. She graduated with a bachelor's degree in journalism from the University of Colorado Boulder. A Colorado Native, she is a Denver Women's Chorus member and enjoys skiing and spending time outdoors in Colorado.",
+  "threads": "",
+  "layout": "person",
+  "resume": "/img/uploads/london-lyle.pdf",
+  "area": [
+    "Statewide (Colorado)",
+    "Boulder",
+    "Denver",
+    "Garfield"
+  ],
+  "phone": "719-648-3118",
+  "first": "London",
+  "instagram": "https://www.instagram.com/londonlyle/",
+  "organization": "Bucket List Community cafe and The Sopris Sun (freelancer)",
+  "twitter": "https://twitter.com/londonaverylyle",
+  "pronunciation": "Lun-Din-Lie-Uhl",
+  "location": "",
   "role": "Journalist",
+  "last": "Lyle",
   "beat": [
-    "Arts",
-    "Culture & Entertainment",
+    "Arts & Entertainment",
     "Climate & Environment",
     "Equity",
     "Housing",
@@ -20,26 +32,13 @@
     "Opinion & Editorial",
     "Politics"
   ],
-  "languages": "English",
-  "email": "bG9uZG9ubHlsZTY0QGdtYWlsLmNvbQ==",
+  "title": "London Lyle",
   "images": [
     "/img/uploads/london-lyle.jpeg"
   ],
-  "resume": "/img/uploads/london-lyle.pdf",
+  "languages": "English",
   "website": "https://bucketlistcommunitycafe.com/author/londonlyle99/",
-  "facebook": "",
-  "twitter": "https://twitter.com/londonaverylyle",
-  "instagram": "https://www.instagram.com/londonlyle/",
-  "threads": "",
-  "area": [
-    "Statewide (Colorado)",
-    "Boulder",
-    "Denver",
-    "Garfield"
-  ],
+  "email": "bG9uZG9ubHlsZTY0QGdtYWlsLmNvbQ==",
   "linkedin": "",
-  "location": "",
-  "phone": "719-648-3118",
-  "bio": "London Lyle is a freelance journalist for The Sopris Sun and Bucket List Community Cafe. She graduated with a bachelor's degree in journalism from the University of Colorado Boulder. A Colorado Native, she is a Denver Women's Chorus member and enjoys skiing and spending time outdoors in Colorado.",
-  "layout": "person"
+  "linktitle": "London Lyle"
 }
