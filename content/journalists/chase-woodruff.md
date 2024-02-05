@@ -29,7 +29,7 @@
   "images": [
     "/img/uploads/chase.woodruff-chase-woodruff.jpeg"
   ],
-  "languages": "Reporter",
+  "languages": "English",
   "website": "https://coloradonewsline.com/",
   "email": "Y2hhc2VAY29sb3JhZG9uZXdzbGluZS5jb20=",
   "linktitle": "Chase Woodruff"
