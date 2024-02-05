@@ -16,11 +16,11 @@
   "phone": "720-891-9632",
   "first": "Gloria",
   "instagram": "https://www.instagram.com/honeyhushglo/",
-  "organization": "I also freelance",
+  "organization": "",
   "twitter": "https://twitter.com/honeyhushglo",
   "pronunciation": "",
   "location": "",
-  "role": "Host; Said/Unsaid, PBS12",
+  "role": "Host; Said/Unsaid, PBS12; Freelance Journalist",
   "last": "Neal",
   "beat": [
     "Arts & Entertainment",
