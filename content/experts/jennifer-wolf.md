@@ -18,7 +18,7 @@
     "Boulder",
     "Broomfield",
     "Denver",
-    "Jeffersoon",
+    "Jefferson",
     "Kit Carson",
     "Larimer",
     "Pueblo",
