@@ -5,7 +5,7 @@
   "area": [
     "Boulder",
     "Broomfield",
-    "Weld (part)"
+    "Weld"
   ],
   "phone": "303-828-2700",
   "first": "Shavonne",
