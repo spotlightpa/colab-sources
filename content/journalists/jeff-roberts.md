@@ -13,7 +13,7 @@
   "role": "Executive Director",
   "last": "Roberts",
   "beat": [
-    "Government transparency"
+    "Government"
   ],
   "title": "Jeff Roberts",
   "images": [
