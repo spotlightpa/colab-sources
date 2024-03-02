@@ -12,7 +12,7 @@
   "organization": "Independent - Freelance",
   "twitter": "https://twitter.com/moe_clark15/",
   "pronunciation": "M-O",
-  "role": "Freelance journalist/fact-checker",
+  "role": "Journalist/Fact-Checker",
   "last": "Clark",
   "beat": [
     "Climate & Environment",
