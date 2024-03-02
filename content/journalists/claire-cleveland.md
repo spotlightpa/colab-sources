@@ -7,8 +7,9 @@
     "Statewide (Colorado)"
   ],
   "first": "Claire",
+  "organization": "Freelance",
   "pronunciation": "K-lare K-leev-land",
-  "role": "Freelance Science and Health Reporter",
+  "role": "Science and Health Reporter",
   "last": "Cleveland",
   "beat": [
     "Equity",
