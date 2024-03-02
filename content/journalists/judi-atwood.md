@@ -8,8 +8,9 @@
   ],
   "phone": "360-445-0501",
   "first": "Judi",
+  "organization": "Freelance",
   "pronunciation": "Ju DEE",
-  "role": "Freelance Writer",
+  "role": "Writer",
   "last": "Atwood",
   "title": "Judi Atwood",
   "images": [
