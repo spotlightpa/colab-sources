@@ -11,9 +11,10 @@
   ],
   "phone": "970-274-0329",
   "first": "Jeanne",
+  "organization": "Freelance",
   "twitter": "https://twitter.com/cowgirlwriter",
   "pronunciation": "JEE-nee Soul-DERN",
-  "role": "Freelance reporter and youth journalism instructor",
+  "role": "Reporter and Youth Journalism Instructor",
   "last": "Souldern",
   "beat": [
     "Arts & Entertainment",
