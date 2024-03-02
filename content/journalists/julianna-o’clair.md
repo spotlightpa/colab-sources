@@ -9,8 +9,8 @@
   "phone": "970-768-0702",
   "first": "Julianna",
   "instagram": "https://www.instagram.com/juilsclair",
-  "organization": "Out Front Magazine, Denver Westword",
-  "role": "Editorial Intern and Freelancer",
+  "organization": "Freelance",
+  "role": "Editorial Intern, Journalist",
   "last": "O’Clair",
   "beat": [
     "Arts & Entertainment",
