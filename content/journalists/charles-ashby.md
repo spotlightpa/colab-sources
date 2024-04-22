@@ -30,7 +30,7 @@
     "/img/uploads/charles-charles.ashby-gjsentinel.com.jpg"
   ],
   "languages": "English",
-  "website": "www.gjsentinel.com",
+  "website": "https://www.gjsentinel.com/",
   "email": "Y2hhcmxlcy5hc2hieUBnanNlbnRpbmVsLmNvbQ==",
   "linktitle": "Charles Ashby"
 }
