@@ -3,7 +3,7 @@
   "honorific": "",
   "facebook": "https://www.facebook.com/PikesPeakBulletinNewspaper",
   "pronoun": "He/Him/His",
-  "bio": "will add",
+  "bio": "",
   "threads": "",
   "layout": "person",
   "resume": "",
