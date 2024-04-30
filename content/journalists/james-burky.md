@@ -11,7 +11,7 @@
   ],
   "phone": "970-256-4247",
   "first": "James",
-  "instagram": "https://www.instagram.com//BamesJurky/",
+  "instagram": "https://instagram.com//BamesJurky/",
   "organization": "Grand Junction Daily Sentinel",
   "twitter": "https://twitter.com/BamesJurky/",
   "pronunciation": "JAYMS BUHR-KEE",
