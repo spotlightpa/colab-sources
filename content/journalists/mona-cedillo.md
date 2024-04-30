@@ -1,11 +1,14 @@
 {
   "contact": "Email",
   "pronoun": "She/Her/Hers",
-  "bio": "Award winning journalist. 17-year resident of Colorado. Chicana and single mom of two amazing humans. Known to raise awareness on issues of social injustice, domestic violence, and mental health. Specific focus on issues impacting Brown and Black communities. Founder of End Violence Against Women Media, a social media group started in 2017 with now with over 24,000 followers. The group raises awareness and provides resources on the many forms of violence. Mona is a senior seeking her Bachelor of Arts degree in Journalism with MSU Denver.\n\nWork examples can be found [here](https://yellowscene.com/2021/11/03/domestic-violence-and-homelessness/).",
+  "bio": "Born and raised in Southern California, Mona is an 18-year resident of Colorado. Having grown up in the barrios of Southern California, she is proud to be a Chicana and Native American. She enjoys splitting her time between CO, CA and TX to visit her two young adults she raised as a single mom. As a known writer who focuses on issues impacting underrepresented communities, she prefers to write about social injustice, issues in the community, and stories of people of color. She is an NBCU Scholarship recipient, has won an SPJ Top of Rockies, and First Place for CCD DigiFest Stories in the News. A multimedia chameleon, she is also a speaker and podcast host.",
   "layout": "person",
+  "resume": "/img/uploads/2024_intern_resume-2-mona-cedillo.docx",
   "area": [
     "Arapahoe",
-    "Denver"
+    "Denver",
+    "Douglas",
+    "Jefferson"
   ],
   "first": "Mona",
   "organization": "Freelance",
@@ -13,7 +16,7 @@
   "last": "Cedillo",
   "beat": [
     "Arts & Entertainment",
-    "Crime & Justice",
+    "General Assignment",
     "Investigative",
     "Opinion & Editorial",
     "Tribal Issues"
