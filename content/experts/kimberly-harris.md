@@ -8,7 +8,8 @@
   "first": "Kimberly",
   "expertise": [
     "Health & Medicine",
-    "Technology"
+    "Technology",
+    "Aging"
   ],
   "organization": "Health Tequity",
   "location": [
