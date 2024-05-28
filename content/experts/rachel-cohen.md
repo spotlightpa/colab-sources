@@ -7,14 +7,14 @@
   "phone": "215-868-1865",
   "first": "Rachel",
   "expertise": [
+    "Affordable Housing",
+    "Aging",
+    "Community Development",
     "Community Services",
     "Education",
-    "Aging",
+    "Intergenerational Programming",
     "Older Adult Education",
     "Social Services",
-    "Intergenerational Programming",
-    "Affordable Housing",
-    "Community Development",
     "Public Health"
   ],
   "organization": "Aging Dynamics ",
@@ -40,6 +40,6 @@
   "images": [
     "/img/uploads/rachel-29-edit-rachel-cohen.jpg"
   ],
-  "email": "cmFjaGVsQGFnaW5nLWR5bmFtaWNzLmNvbSwgaW5mb0BhZ2luZy1keW5hbWljcy5jb20=",
+  "email": "aW5mb0BhZ2luZy1keW5hbWljcy5jb20=",
   "linktitle": "Rachel Cohen"
 }
