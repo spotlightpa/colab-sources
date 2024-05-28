@@ -6,6 +6,17 @@
   "resume": "/img/uploads/rachel-b-cohen-resume-2023-rachel-cohen.pdf",
   "phone": "215-868-1865",
   "first": "Rachel",
+  "expertise": [
+    "Community Services",
+    "Education",
+    "Aging",
+    "Older Adult Education",
+    "Social Services",
+    "Intergenerational Programming",
+    "Affordable Housing",
+    "Community Development",
+    "Public Health"
+  ],
   "organization": "Aging Dynamics ",
   "location": [
     "Adams",
