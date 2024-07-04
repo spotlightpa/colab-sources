@@ -1,35 +1,16 @@
 {{ define "main" }}
   {{ $wellClass := `mx-auto max-w-screen-md` }}
-  <section class="p-8" style = "background-image: url(img/logos/amplify-logo.png); background-size: cover; background-position: center;">
-    <h1>
-      <span class="sr-only">
-        {{ .Title }}
-      </span>
-      {{ $img := resources.Get `img/logos/amplify-logo.png` }}
-      {{ $imgSmall := $img.Resize "650x" }}
-      {{ $imgMedium := $img.Resize "1300x" }}
-      <img
-        title="{{ $.Title }}"
-        class="mx-auto h-auto w-[650px] max-w-full"
-        alt="Amplify Colorado logo"
-        width="{{ $imgSmall.Width }}"
-        height="{{ $imgSmall.Height }}"
-        src="{{ $imgSmall.RelPermalink }}"
-        srcset="
-          {{ $imgSmall.RelPermalink }} 450w,
-          {{ $imgMedium.RelPermalink }} 900w
-        "
-      />
+  {{ $bgImage := resources.Get `img/background/titlebackground.webp` }}
+  <section class="p-8" style="background-image: url('{{ $bgImage.RelPermalink }}'); background-size: cover; background-position: center;">
+    <h1 class = "font-extrabold text-4xl bold text-center font-snas text-white">
+      HIDDEN FIGGURE
     </h1>
     <h2
-      class="links-blue-darker text-center font-sans text-xl leading-tight text-gray md:text-2xl"
+      class="links-blue-darker text-center font-sans text-xl leading-tight text-white md:text-2xl"
     >
-      A public service by
-      <a class="font-bold" href="https://colabnews.co">
-        {{- "Colorado News Collaborative" -}}
-      </a>
+      Recognize the scientists contribute to the astronomy
     </h2>
-    <div class="content-area mx-auto mt-8 max-w-prose">
+    <div class="content-area mx-auto mt-8 max-w-prose text-white">
       {{ .Content }}
     </div>
   </section>
