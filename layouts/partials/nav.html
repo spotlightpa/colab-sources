@@ -138,8 +138,9 @@
                         class="block px-4 py-2 text-sm leading-5 text-g-7 transition duration-150 ease-in-out hover:bg-g-3 focus:bg-g-3 focus:outline-none"
                         role="menuitem"
                         {{ with .Post }}target="{{ . }}"{{ end }}
-                        >{{ .Name }}</a
                       >
+                        {{ .Name }}
+                      </a>
                     {{ end }}
                   </ul>
                 </div>
