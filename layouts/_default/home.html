@@ -98,11 +98,10 @@
   <section class="p-8 pt-0">
     <div class="{{ $wellClass }}" x-data>
       <h2 class="{{ $secHedClass }} scroll-mt-2" x-ref="hed">
-        Meet our community members and journalists
+        Meet our Scientists
       </h2>
-      {{ $expts := .GetPage "experts" }}
-      {{ $journos := .GetPage "journalists" }}
-      {{ $people := union $expts.RegularPages $journos.RegularPages }}
+      {{ $scientists := .GetPage "scientist" }}
+      {{ $people := $scientists.RegularPages }}
       <ul
         x-init="$shuffle($el)"
         class="
@@ -133,6 +132,10 @@
       </div>
     </div>
   </section>
+
+
+
+
   <section class="bg-g-3 p-8 shadow-inner">
     <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
       <h2 class="{{ $secHedClass }}" id="by-expertise">
@@ -192,7 +195,7 @@
             &minus;
           </span>
           <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
-          <span>Journalists by beat</span>
+          <span>Scientist by area</span>
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>
@@ -220,7 +223,7 @@
   </section>
   <section class="p-8">
     <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
-      <h2 class="{{ $secHedClass }}" id="journalists">
+      <h2 class="{{ $secHedClass }}" id="scientist">
         <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
           <span x-show="isOpen" x-cloak aria-hidden="true" class="">
             &minus;
@@ -230,7 +233,7 @@
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>
-        {{ $people := .GetPage "journalists" }}
+        {{ $people := .GetPage "scientist" }}
         {{ partial "people-by-last-name.html" $people }}
       </div>
     </div>

@@ -168,16 +168,16 @@ collections:
         default: person
         widget: hidden
         required: true
-  - label: Journalists
-    label_singular: Journalist
-    name: journalists
-    folder: content/journalists
+  - label: Scientist
+    label_singular: Scientist
+    name: scientist
+    folder: content/scientist
     filter: { field: "layout", value: "person" }
     format: json
     extension: md
     create: true
     slug: "{{title}}"
-    preview_path: /journalists/{{slug}}/
+    preview_path: /scientist/{{slug}}/
     identity_field: title
     editor:
       preview: false
@@ -226,7 +226,7 @@ collections:
         name: languages
         widget: string
         required: false
-      - label: Beat
+      - label: beat
         name: beat
         widget: list
         hint: Use commas to separate items
