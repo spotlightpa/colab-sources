@@ -12,23 +12,23 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@alpinejs/collapse@^3.13.0":
-  version "3.13.0"
-  resolved "https://registry.yarnpkg.com/@alpinejs/collapse/-/collapse-3.13.0.tgz#fd1374d3fdbfbeb4a363f821c5025357573481f8"
-  integrity sha512-nmFhB6VFhl6IqpXukoMjZJ0Qd3V/s5Z0cdp1Fts9AbolyxuWeT2Zl5O9Nk1wZxU6wzw27gqzt3rYGwJmJ2Tp6w==
+"@alpinejs/collapse@^3.14.1":
+  version "3.14.1"
+  resolved "https://registry.yarnpkg.com/@alpinejs/collapse/-/collapse-3.14.1.tgz#3e02f60c909bb5c297c05fc4fc57c95c7294d630"
+  integrity sha512-aI0pq8SjK7c43/nMIVL1Lt8naowPRepqQGNSb9KaG7adEneOwj/vq4ZaeZYjuGbd8sq1LKPwWU+klIZIXXujUA==
 
-"@alpinejs/focus@^3.13.0":
-  version "3.13.0"
-  resolved "https://registry.yarnpkg.com/@alpinejs/focus/-/focus-3.13.0.tgz#4310570d858896dec83611557ad5766e9cd908ad"
-  integrity sha512-8ls5d6oIYtsnIeYRMczPTo2uUW0Qj7uJQII5PIksaKVPqrHPU94qcmYWZnKJ4yW0moUGaC1/Km/XrA5GzVXeRA==
+"@alpinejs/focus@^3.14.1":
+  version "3.14.1"
+  resolved "https://registry.yarnpkg.com/@alpinejs/focus/-/focus-3.14.1.tgz#b0bb74b19a7d21b6455af5869a390cd4b09c4612"
+  integrity sha512-z4xdpK6X1LB2VitsWbL61tmABoOORuEhE5v2tnUX/be6/nAygXyeDxZ1x9s1u+bOEYlIOXXLmjdmTlhchUVWxw==
   dependencies:
     focus-trap "^6.9.4"
     tabbable "^5.3.3"
 
-"@alpinejs/ui@^3.13.0-beta.0":
-  version "3.13.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@alpinejs/ui/-/ui-3.13.0-beta.0.tgz#415a0f7532e900870dfc16c40f312386e87025f3"
-  integrity sha512-vVkA6TzeEP3xNSSOIu8f67tjCthXjkemqZF96qSW4xiC6P1Mrimn3XfYenRSXqiE4akmUX16XRqGmpFyBsF3yQ==
+"@alpinejs/ui@^3.14.1-beta.0":
+  version "3.14.1-beta.0"
+  resolved "https://registry.yarnpkg.com/@alpinejs/ui/-/ui-3.14.1-beta.0.tgz#578f48088491412c9623992bf0ec6f53a0d2e11b"
+  integrity sha512-k7sm5Zyfaq+0Wp6hxAKGc/+eSIohlRLywgYNvMoULstz/xUDJi2sGGH1+tZ0+qgMy9cG3AkCyoUk0zfaTOyx8Q==
 
 "@babel/code-frame@^7.0.0":
   version "7.22.13"
@@ -345,10 +345,10 @@ ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-alpinejs@^3.1.1:
-  version "3.13.0"
-  resolved "https://registry.yarnpkg.com/alpinejs/-/alpinejs-3.13.0.tgz#0334d5f9edb612be33f1f8a7eb3a579b53e4f04e"
-  integrity sha512-7FYR1Yz3evIjlJD1mZ3SYWSw+jlOmQGeQ1QiSufSQ6J84XMQFkzxm6OobiZ928SfqhGdoIp2SsABNsS4rXMMJw==
+alpinejs@^3.14.1:
+  version "3.14.1"
+  resolved "https://registry.yarnpkg.com/alpinejs/-/alpinejs-3.14.1.tgz#549e056c3b75e57c0f23076a13cde09da684ba0a"
+  integrity sha512-ICar8UsnRZAYvv/fCNfNeKMXNoXGUfwHrjx7LqXd08zIP95G2d9bAOuaL97re+1mgt/HojqHsfdOLo/A5LuWgQ==
   dependencies:
     "@vue/reactivity" "~3.1.1"
 
