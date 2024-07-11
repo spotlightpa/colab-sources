@@ -1,6 +1,7 @@
 {
   "name": "Chien-Shiung Wu",
   "linktitle": "Chien-Shiung Wu",
+  "last": "Wu", 
   "institution_of_phd": "University of California, Berkeley",
   "field_of_phd": "Physics",
   "year_of_phd": 1940,

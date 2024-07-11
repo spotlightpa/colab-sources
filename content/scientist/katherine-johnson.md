@@ -1,6 +1,7 @@
 {
   "name": "Katherine Johnson",
   "linktitle": "Katherine Johnson",
+  "last" : "Johnson",
   "institution_of_phd": "West Virginia University",
   "field_of_phd": "Mathematics",
   "year_of_phd": 1937,

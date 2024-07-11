@@ -32,6 +32,7 @@ export default function searchPeople() {
     filterExpertise: [],
     filterLocation: [],
     filterResearchAreas: [], 
+    filterRelevantCourses: [], 
     filterArea: [],
     filterBeat: [],
     query: "",
@@ -57,7 +58,8 @@ export default function searchPeople() {
         "filterType",
         "filterArea",
         "filterExpertise",
-        "filterResearchareas", 
+        "filterResearchAreas", 
+        "filterRelevantCourses", 
         "filterLocation",
         "filterArea",
         "filterBeat",
@@ -77,14 +79,14 @@ export default function searchPeople() {
         options.filters = {
           type: this.filterType,
         };
+        options.filters.researchAreas = this.filterResearchAreas.map((f) => f.value);
+        options.filters.relevantCourses = this.filterRelevantCourses.map((f) => f.value);
         if (this.filterType === "expert") {
           options.filters.expertise = this.filterExpertise.map((f) => f.value);
           options.filters.location = this.filterLocation.map((f) => f.value);
-          options.filters.researchAreas = this.filterResearchAreas.map((f) => f.value);
         } else if (this.filterType === "journalist") {
           options.filters.area = this.filterArea.map((f) => f.value);
           options.filters.beat = this.filterBeat.map((f) => f.value);
-          options.filters.researchAreas = this.filterResearchAreas.map((f) => f.value);
         }
       }
       if (this.hasFilters && !query) {

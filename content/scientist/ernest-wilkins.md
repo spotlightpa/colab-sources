@@ -1,6 +1,7 @@
 {
   "name": "Ernest Wilkins Jr.",
   "linktitle" : "Ernest Wilkins Jr.",
+  "last" :  "Wilkins", 
   "institution_of_phd": "University of Chicago",
   "field_of_phd": "Mathematics",
   "year_of_phd": 1942,

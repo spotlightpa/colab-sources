@@ -212,12 +212,12 @@
             &minus;
           </span>
           <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
-          <span>Journalists by coverage area</span>
+          <span>Scientists by relevant course work</span>
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>
-        {{ $area := .GetPage "area" }}
-        {{ partial "pages-list.html" $area.Pages }}
+        {{ $course := .GetPage "relevant_courses" }}
+        {{ partial "pages-list.html" $course.Pages }}
       </div>
     </div>
   </section>
@@ -229,7 +229,7 @@
             &minus;
           </span>
           <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
-          <span>Journalists by last name</span>
+          <span>Scientist by last name</span>
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>

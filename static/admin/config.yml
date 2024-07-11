@@ -191,6 +191,11 @@ collections:
         hint: "When linking to this page from another page, use this as the link title instead of hed"
         widget: string
         required: false
+      - label: Last name
+        hint: E.g. "Schmidt" or "Smith-Rodriguez"
+        name: last
+        widget: string
+        required: true
       - label: 'Institution of Ph.D.'
         name: 'institution_of_phd'
         widget: 'string'
@@ -277,6 +282,11 @@ collections:
       - label: "research area page"
         name: research_areas
         file: content/research_areas/_index.md
+        format: toml-frontmatter
+        fields: *page-fields
+      - label: "relevant courses page"
+        name: relevant_courses
+        file: content/relevant_courses/_index.md
         format: toml-frontmatter
         fields: *page-fields
   - label: Content pages
