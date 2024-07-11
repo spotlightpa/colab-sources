@@ -40,7 +40,7 @@
 
     {{ $cssTW := resources.Get "css/main.css" }}
     {{ $css := $cssTW | resources.PostCSS (dict "inlineImports" true) }}
-    {{ if not site.IsServer }}
+    {{ if not hugo.IsServer }}
       {{ $css = $css | minify | fingerprint | resources.PostProcess }}
     {{ end }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
@@ -57,7 +57,7 @@
         }
       </style>
     </noscript>
-    {{ $shouldMinify := not site.IsServer }}
+    {{ $shouldMinify := not hugo.IsServer }}
     {{ $jsOpts := dict
       "minify" $shouldMinify
       "targetPath" "/js/main.js"

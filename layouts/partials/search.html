@@ -5,7 +5,7 @@
 >
   <h2 class="text-g-9">
     <label class="text-2xl font-bold leading-tight text-black" for="search">
-      Search for a community member or journalist
+      Search for a scientist
     </label>
   </h2>
   <div class="relative mt-4">
@@ -51,14 +51,10 @@
     </button>
   </div>
   <div class="mt-2">
-    <div
-      class="grid items-end gap-4 md:grid-cols-2"
-      x-show="filterType === 'expert'"
-      x-cloak
-    >
+    <div class="grid items-end gap-4 md:grid-cols-2">
       {{ partial "combobox.html" (dict
         "options" (.GetPage "expertise").Pages
-        "placeholder" "Filter by area of experience"
+        "placeholder" "Filter by area"
         "xmodel" "filterExpertise"
         )
       }}
@@ -69,57 +65,6 @@
         )
       }}
     </div>
-    <div
-      class="grid items-end gap-4 md:grid-cols-2"
-      x-show="filterType === 'journalist'"
-      x-cloak
-    >
-      {{ partial "combobox.html" (dict
-        "options" (.GetPage "location").Pages
-        "placeholder" "Filter by coverage area"
-        "xmodel" "filterArea"
-        )
-      }}
-      {{ partial "combobox.html" (dict
-        "options" (.GetPage "beat").Pages
-        "placeholder" "Filter by beat"
-        "xmodel" "filterBeat"
-        )
-      }}
-    </div>
-  </div>
-  <div class="mt-2 flex flex-wrap gap-4">
-    <label>
-      <input
-        class="accent-blue"
-        x-model="filterType"
-        type="radio"
-        name="type"
-        value=""
-        checked
-      />
-      <span class="ml-1">Everyone</span>
-    </label>
-    <label>
-      <input
-        class="accent-blue"
-        x-model="filterType"
-        type="radio"
-        name="type"
-        value="expert"
-      />
-      <span class="ml-1">Community Members</span>
-    </label>
-    <label>
-      <input
-        class="accent-blue"
-        x-model="filterType"
-        type="radio"
-        name="type"
-        value="journalist"
-      />
-      <span class="ml-1">Journalists</span>
-    </label>
   </div>
   <p class="mt-1 text-g-7" x-text="resultsText"></p>
   <p x-cloak x-show="error" class="mt-2">

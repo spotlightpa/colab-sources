@@ -1,6 +1,6 @@
 {{ define "main" }}
-  <main class="p-8" data-pagefind-body>
-    <div class="mx-auto max-w-screen-md">
+  <main class="p-8" data-pagefind-body x-data="{isBio: true}">
+    <div class="mx-auto flex max-w-screen-md flex-col">
       <h1 class="break-word font-bold leading-tight">
         <span class="text-2xl text-black">
           {{ .Title }}
@@ -31,6 +31,9 @@
           {{ . }}
         </h2>
       {{ end }}
+
+
+      <!-- basic info section -->
       <div class="links-blue-darker mt-2 text-sm sm:flex sm:flex-wrap">
         {{ if .GetTerms "location" }}
           <p class="sm:w-1/2">
@@ -254,80 +257,121 @@
         {{ end }}
       </div>
 
-      {{ with .Param "images" }}
-        {{ range . }}
-          {{ $img := resources.GetMatch . }}
-          {{ if not $img }}
-            {{ warnf "missing image %q" . }}
-            {{ continue }}
-          {{ end }}
-          {{ $imgSmall := $img.Resize "200x" }}
-          {{ $imgMedium := $img.Resize "400x" }}
-          <p class="float-left mb-4 mr-4 mt-6">
-            <a href="{{ $img.RelPermalink }}" download>
-              <img
-                data-pagefind-meta="
-                  image[src],
-                  image_alt[alt],
-                  image_srcset[srcset],
-                  image_width[width],
-                  image_height[height],
-                "
-                title="Click to download"
-                class="rounded bg-g-4 shadow transition-shadow duration-500 hover:shadow-lg"
-                alt="Headshot of {{ $.Title }}"
-                width="{{ $imgSmall.Width }}"
-                height="{{ $imgSmall.Height }}"
-                src="{{ $imgSmall.RelPermalink }}"
-                srcset="
-                  {{ $imgSmall.RelPermalink }} 1x,
-                  {{ $imgMedium.RelPermalink }} 2x
-                "
-              />
-            </a>
-          </p>
-        {{ end }}
-      {{ end }}
+      <!-- content button switch -->
+      <div class="mt-4 flex flex-row justify-around bg-blue p-2">
+        <button
+          :class="isBio ? 'bg-white text-black' : 'bg-blue text-white'"
+          class="mx-4 flex-1 transform rounded-lg px-4 py-2 
+          transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg focus:outline-none"
+          @click="isBio = true"
+        >
+          Bio
+        </button>
+        <button
+          :class="!isBio ? 'bg-white text-black' : 'bg-blue text-white'"
+          class="mx-4 flex-1 transform rounded-lg px-4 py-2 
+          transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg focus:outline-none"
+          @click="isBio = false"
+        >
+          Contribution
+        </button>
+      </div>
 
-
-      <section
-        class="content-area links-blue-darker clear-both mt-4 sm:clear-none"
+      <!-- content section: BIO -->
+      <div
+        x-show="isBio"
+        x-transition:enter="transition ease-out duration-100 delay-100"
+        x-transition:enter-start="transform opacity-0 scale-95"
+        x-transition:enter-end="transform opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-75"
+        x-transition:leave-start="transform opacity-100 scale-100"
+        x-transition:leave-end="transform opacity-0 scale-95"
       >
-        <h2 class="sr-only" data-pagefind-ignore>Biographical information</h2>
-
-        {{ .Param "bio" | markdownify }}
-      </section>
-
-      <div class="links-blue-darker mt-4 md:flex">
-        {{ with .GetTerms "expertise" }}
-          <div class="md:max-w-sm">
-            <h2 class="text-lg font-bold">Areas of experience</h2>
-            <p class="text-md">
-              {{ range $i, $p := . }}
-                {{- if ne $i 0 }},{{ end }}
-                <a
-                  href="{{ $p.RelPermalink }}"
-                  data-pagefind-filter="expertise"
-                >
-                  {{- .Title -}}
-                </a>
-              {{- end }}
+        {{ with .Param "images" }}
+          {{ range . }}
+            {{ $img := resources.GetMatch . }}
+            {{ if not $img }}
+              {{ warnf "missing image %q" . }}
+              {{ continue }}
+            {{ end }}
+            {{ $imgSmall := $img.Resize "200x" }}
+            {{ $imgMedium := $img.Resize "400x" }}
+            <p class="float-left mb-4 mr-4 mt-6">
+              <a href="{{ $img.RelPermalink }}" download>
+                <img
+                  data-pagefind-meta="
+                    image[src],
+                    image_alt[alt],
+                    image_srcset[srcset],
+                    image_width[width],
+                    image_height[height],
+                  "
+                  title="Click to download"
+                  class="rounded bg-g-4 shadow transition-shadow duration-500 hover:shadow-lg"
+                  alt="Headshot of {{ $.Title }}"
+                  width="{{ $imgSmall.Width }}"
+                  height="{{ $imgSmall.Height }}"
+                  src="{{ $imgSmall.RelPermalink }}"
+                  srcset="
+                    {{ $imgSmall.RelPermalink }} 1x,
+                    {{ $imgMedium.RelPermalink }} 2x
+                  "
+                />
+              </a>
             </p>
-          </div>
+          {{ end }}
         {{ end }}
-        {{ with .GetTerms "beat" }}
-          <div class="md:max-w-sm">
-            <h2 class="text-lg font-bold">Journalism beat</h2>
-            <p class="text-md">
-              {{ range $i, $p := . }}
-                {{- if ne $i 0 }},{{ end }}
-                <a href="{{ $p.RelPermalink }}" data-pagefind-filter="beat">
-                  {{- .Title -}}
-                </a>
-              {{- end }}
-            </p>
-          </div>
-        {{ end }}
+        <section
+          class="content-area links-blue-darker clear-both mt-4 sm:clear-none"
+        >
+          <h2 class="sr-only" data-pagefind-ignore>Biographical information</h2>
+          {{ .Param "bio" | markdownify }}
+        </section>
+        <div class="links-blue-darker mt-4 md:flex">
+          {{ with .GetTerms "expertise" }}
+            <div class="md:max-w-sm">
+              <h2 class="text-lg font-bold">Areas of experience</h2>
+              <p class="text-md">
+                {{ range $i, $p := . }}
+                  {{- if ne $i 0 }},{{ end }}
+                  <a
+                    href="{{ $p.RelPermalink }}"
+                    data-pagefind-filter="expertise"
+                  >
+                    {{- .Title -}}
+                  </a>
+                {{- end }}
+              </p>
+            </div>
+          {{ end }}
+          {{ with .GetTerms "beat" }}
+            <div class="md:max-w-sm">
+              <h2 class="text-lg font-bold">Journalism beat</h2>
+              <p class="text-md">
+                {{ range $i, $p := . }}
+                  {{- if ne $i 0 }},{{ end }}
+                  <a href="{{ $p.RelPermalink }}" data-pagefind-filter="beat">
+                    {{- .Title -}}
+                  </a>
+                {{- end }}
+              </p>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- Contribute section -->
+      <div
+        x-show="!isBio"
+        x-transition:enter="transition ease-out duration-100 delay-100"
+        x-transition:enter-start="transform opacity-0 scale-95"
+        x-transition:enter-end="transform opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-75"
+        x-transition:leave-start="transform opacity-100 scale-100"
+        x-transition:leave-end="transform opacity-0 scale-95"
+        x-cloak
+      >
+        <p>This Feature is waiting for implementing</p>
       </div>
     </div>
   </main>

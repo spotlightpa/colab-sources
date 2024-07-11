@@ -1,35 +1,19 @@
 {{ define "main" }}
   {{ $wellClass := `mx-auto max-w-screen-md` }}
-  <section class="p-8">
-    <h1>
-      <span class="sr-only">
-        {{ .Title }}
-      </span>
-      {{ $img := resources.Get `img/logos/amplify-logo.png` }}
-      {{ $imgSmall := $img.Resize "650x" }}
-      {{ $imgMedium := $img.Resize "1300x" }}
-      <img
-        title="{{ $.Title }}"
-        class="mx-auto h-auto w-[650px] max-w-full"
-        alt="Amplify Colorado logo"
-        width="{{ $imgSmall.Width }}"
-        height="{{ $imgSmall.Height }}"
-        src="{{ $imgSmall.RelPermalink }}"
-        srcset="
-          {{ $imgSmall.RelPermalink }} 450w,
-          {{ $imgMedium.RelPermalink }} 900w
-        "
-      />
+  {{ $bgImage := resources.Get `img/background/titlebackground.webp` }}
+  <section
+    class="p-8"
+    style="background-image: url('{{ $bgImage.RelPermalink }}'); background-size: cover; background-position: center;"
+  >
+    <h1 class="bold font-snas text-center text-4xl font-extrabold text-white">
+      HIDDEN FIGGURE
     </h1>
     <h2
-      class="links-blue-darker text-center font-sans text-xl leading-tight text-gray md:text-2xl"
+      class="links-blue-darker text-center font-sans text-xl leading-tight text-white md:text-2xl"
     >
-      A public service by
-      <a class="font-bold" href="https://colabnews.co">
-        {{- "Colorado News Collaborative" -}}
-      </a>
+      Recognize the scientists contribute to the astronomy
     </h2>
-    <div class="content-area mx-auto mt-8 max-w-prose">
+    <div class="content-area mx-auto mt-8 max-w-prose text-white">
       {{ .Content }}
     </div>
   </section>
@@ -117,11 +101,10 @@
   <section class="p-8 pt-0">
     <div class="{{ $wellClass }}" x-data>
       <h2 class="{{ $secHedClass }} scroll-mt-2" x-ref="hed">
-        Meet our community members and journalists
+        Meet our Scientists
       </h2>
-      {{ $expts := .GetPage "experts" }}
-      {{ $journos := .GetPage "journalists" }}
-      {{ $people := union $expts.RegularPages $journos.RegularPages }}
+      {{ $scientists := .GetPage "scientist" }}
+      {{ $people := $scientists.RegularPages }}
       <ul
         x-init="$shuffle($el)"
         class="
@@ -152,6 +135,7 @@
       </div>
     </div>
   </section>
+
   <section class="bg-g-3 p-8 shadow-inner">
     <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
       <h2 class="{{ $secHedClass }}" id="by-expertise">
@@ -160,7 +144,7 @@
             &minus;
           </span>
           <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
-          <span>Community members by area of experience</span>
+          <span>Scientist by expertise area</span>
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>
@@ -211,7 +195,7 @@
             &minus;
           </span>
           <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
-          <span>Journalists by beat</span>
+          <span>Scientist by area</span>
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>
@@ -239,7 +223,7 @@
   </section>
   <section class="p-8">
     <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
-      <h2 class="{{ $secHedClass }}" id="journalists">
+      <h2 class="{{ $secHedClass }}" id="scientist">
         <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
           <span x-show="isOpen" x-cloak aria-hidden="true" class="">
             &minus;
@@ -249,7 +233,7 @@
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>
-        {{ $people := .GetPage "journalists" }}
+        {{ $people := .GetPage "scientist" }}
         {{ partial "people-by-last-name.html" $people }}
       </div>
     </div>

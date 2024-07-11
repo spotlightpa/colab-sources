@@ -62,4 +62,5 @@ module.exports = {
   },
   plugins: [],
   content: ["./hugo_stats.json"],
+  safelist: ["bg-blue-700", "bg-blue-500"],
 };
