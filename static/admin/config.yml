@@ -168,139 +168,78 @@ collections:
         default: person
         widget: hidden
         required: true
-  - label: Scientist
-    label_singular: Scientist
-    name: scientist
-    folder: content/scientist
-    filter: { field: "layout", value: "person" }
-    format: json
-    extension: md
-    create: true
-    slug: "{{title}}"
-    preview_path: /scientist/{{slug}}/
-    identity_field: title
+  - label: 'Scientists'
+    label_singular: 'Scientist'
+    name: 'scientists'
+    folder: 'content/scientists'
+    format: 'json'
+    extension: 'md'
+    create: True
+    slug: '{{title}}'
+    preview_path: '/scientists/{{slug}}/'
+    identity_field: 'title'
     editor:
-      preview: false
+      preview: False
     fields:
-      - label: Full name
-        hint: E.g. "John Jacob Jingleheimer Schmidt, IV PhD CPA"
-        name: title
-        widget: string
-        required: true
-      - label: Short name
-        hint: E.g. "John Schmidt" or "Betty Jo Smith-Rodriguez"
-        name: linktitle
-        widget: string
-        required: true
-      - label: First name
-        hint: E.g. "John" or "Betty Jo"
-        name: first
-        widget: string
-        required: true
-      - label: Last name
-        hint: E.g. "Schmidt" or "Smith-Rodriguez"
-        name: last
-        widget: string
-        required: true
-      - label: Pronunciation
-        hint: E.g. "Err On" "Co Bye Ah She"
-        name: pronunciation
-        widget: string
-        required: false
-      - label: Pronoun
-        hint: E.g. "he/him," "she/her," "they/them"
-        name: pronoun
-        widget: string
-        required: false
-      - label: Organization
-        hint: E.g. Picayune Times
-        name: organization
-        widget: string
-        required: false
-      - label: Title or Profession
-        hint: E.g. Sub-sub-sub-editor
-        name: role
-        widget: string
-        required: false
-      - label: Languages
-        name: languages
-        widget: string
-        required: false
-      - label: beat
-        name: beat
-        widget: list
-        hint: Use commas to separate items
-        required: false
-      - label: Email
-        name: email
-        widget: email
-        required: false
-      - label: "Headshot"
-        name: "images"
-        widget: list
-        summary: "{{fields.image}}"
-        field: { label: Image, name: image, widget: image }
-      - label: "Resume"
-        name: "resume"
-        widget: file
-        required: false
-      - label: Website
-        hint: Full URL with https:// or http://
-        name: website
-        widget: string
-        required: false
-      - label: Facebook
-        hint: Full URL with https://facebook.com/
-        name: facebook
-        widget: string
-        required: false
-      - label: Twitter
-        hint: Full URL with https://twitter.com
-        name: twitter
-        widget: string
-        required: false
-      - label: Instagram
-        hint: Full URL with https://instagram.com
-        name: instagram
-        widget: string
-        required: false
-      - label: Threads
-        hint: Full URL with https://www.threads.net
-        name: threads
-        widget: string
-        required: false
-      - label: LinkedIn
-        hint: Full URL with the https://www.linkedin.com/in/
-        name: linkedin
-        widget: string
-        required: false
-      - label: Coverage area
-        hint: E.g. "Boulder"
-        name: area
-        widget: list
-        required: false
+      - label: 'Name'
+        name: 'name'
+        widget: 'string'
+      - label: 'Institution of Ph.D.'
+        name: 'institution_of_phd'
+        widget: 'string'
+      - label: 'Field of Ph.D.'
+        name: 'field_of_phd'
+        widget: 'string'
+      - label: 'Year of Ph.D.'
+        name: 'year_of_phd'
+        widget: 'number'
+      - label: 'Research areas'
+        name: 'research_areas'
+        widget: 'list'
         field:
-          label: Coverage area
-          name: area
-          widget: string
-      - label: "Phone"
-        name: phone
-        widget: string
-        required: false
-      - label: Preferred method of contact
-        hint: E.g. "Phone" or "Email"
-        name: contact
-        widget: string
-        required: false
-      - label: Biography
-        name: bio
-        widget: markdown
-        required: false
-      - label: layout
-        name: layout
-        default: person
-        widget: hidden
-        required: true
+          label: 'Area'
+          name: 'area'
+          widget: 'string'
+      - label: 'Relevant courses'
+        name: 'relevant_courses'
+        widget: 'list'
+        field:
+          label: 'Course'
+          name: 'course'
+          widget: 'string'
+      - label: 'Relevant concepts'
+        name: 'relevant_concepts'
+        widget: 'list'
+        field:
+          label: 'Concept'
+          name: 'concept'
+          widget: 'string'
+      - label: 'Wikipedia'
+        name: 'wikipedia'
+        widget: 'string'
+      - label: 'Image'
+        name: 'image'
+        widget: 'string'
+      - label: 'General bio'
+        name: 'general_bio'
+        widget: 'markdown'
+      - label: 'Key contributions'
+        name: 'key_contributions'
+        widget: 'object'
+        fields:
+          - label: 'Contribution title'
+            name: 'title'
+            widget: 'string'
+          - label: 'Summary'
+            name: 'summary'
+            widget: 'text'
+      - label: 'Citations'
+        name: 'citations'
+        widget: 'list'
+        field:
+          label: 'Citation'
+          name: 'citation'
+          widget: 'string'
   - label: Landing pages
     name: landing
     editor:
