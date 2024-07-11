@@ -1,8 +1,11 @@
 {{ define "main" }}
   {{ $wellClass := `mx-auto max-w-screen-md` }}
   {{ $bgImage := resources.Get `img/background/titlebackground.webp` }}
-  <section class="p-8" style="background-image: url('{{ $bgImage.RelPermalink }}'); background-size: cover; background-position: center;">
-    <h1 class = "font-extrabold text-4xl bold text-center font-snas text-white">
+  <section
+    class="p-8"
+    style="background-image: url('{{ $bgImage.RelPermalink }}'); background-size: cover; background-position: center;"
+  >
+    <h1 class="bold font-snas text-center text-4xl font-extrabold text-white">
       HIDDEN FIGGURE
     </h1>
     <h2
@@ -132,9 +135,6 @@
       </div>
     </div>
   </section>
-
-
-
 
   <section class="bg-g-3 p-8 shadow-inner">
     <div class="{{ $wellClass }}" x-data="{ isOpen: false }">

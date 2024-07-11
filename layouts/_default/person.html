@@ -1,6 +1,6 @@
 {{ define "main" }}
-  <main class="p-8" data-pagefind-body x-data="{isBio: true}"> 
-    <div class="mx-auto max-w-screen-md flex flex-col">
+  <main class="p-8" data-pagefind-body x-data="{isBio: true}">
+    <div class="mx-auto flex max-w-screen-md flex-col">
       <h1 class="break-word font-bold leading-tight">
         <span class="text-2xl text-black">
           {{ .Title }}
@@ -31,6 +31,7 @@
           {{ . }}
         </h2>
       {{ end }}
+
 
       <!-- basic info section -->
       <div class="links-blue-darker mt-2 text-sm sm:flex sm:flex-wrap">
@@ -256,21 +257,20 @@
         {{ end }}
       </div>
 
-
       <!-- content button switch -->
-      <div class="flex flex-row justify-around bg-blue mt-4 p-2">
-        <button 
-          :class="isBio ? 'bg-white text-black' : 'bg-blue text-white'" 
-          class="px-4 py-2 mx-4 rounded-lg focus:outline-none flex-1 
-          transform transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg" 
+      <div class="mt-4 flex flex-row justify-around bg-blue p-2">
+        <button
+          :class="isBio ? 'bg-white text-black' : 'bg-blue text-white'"
+          class="mx-4 flex-1 transform rounded-lg px-4 py-2 
+          transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg focus:outline-none"
           @click="isBio = true"
         >
           Bio
         </button>
-        <button 
-          :class="!isBio ? 'bg-white text-black' : 'bg-blue text-white'" 
-          class="px-4 py-2 mx-4 rounded-lg focus:outline-none flex-1 
-          transform transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg" 
+        <button
+          :class="!isBio ? 'bg-white text-black' : 'bg-blue text-white'"
+          class="mx-4 flex-1 transform rounded-lg px-4 py-2 
+          transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg focus:outline-none"
           @click="isBio = false"
         >
           Contribution
@@ -370,7 +370,7 @@
         x-transition:leave-start="transform opacity-100 scale-100"
         x-transition:leave-end="transform opacity-0 scale-95"
         x-cloak
-      > 
+      >
         <p>This Feature is waiting for implementing</p>
       </div>
     </div>
