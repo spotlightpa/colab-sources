@@ -19,6 +19,7 @@ buildFuture = true
   location = "location"
   beat = "beat"
   area = "area"
+  reasearchareas = "research_areas"
 
 [markup]
   defaultMarkdownHandler = "goldmark"

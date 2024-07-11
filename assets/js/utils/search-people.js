@@ -31,6 +31,7 @@ export default function searchPeople() {
     filterType: "",
     filterExpertise: [],
     filterLocation: [],
+    filterResearchAreas: [], 
     filterArea: [],
     filterBeat: [],
     query: "",
@@ -56,6 +57,7 @@ export default function searchPeople() {
         "filterType",
         "filterArea",
         "filterExpertise",
+        "filterResearchareas", 
         "filterLocation",
         "filterArea",
         "filterBeat",
@@ -78,9 +80,11 @@ export default function searchPeople() {
         if (this.filterType === "expert") {
           options.filters.expertise = this.filterExpertise.map((f) => f.value);
           options.filters.location = this.filterLocation.map((f) => f.value);
+          options.filters.researchAreas = this.filterResearchAreas.map((f) => f.value);
         } else if (this.filterType === "journalist") {
           options.filters.area = this.filterArea.map((f) => f.value);
           options.filters.beat = this.filterBeat.map((f) => f.value);
+          options.filters.researchAreas = this.filterResearchAreas.map((f) => f.value);
         }
       }
       if (this.hasFilters && !query) {
@@ -147,6 +151,9 @@ export default function searchPeople() {
         return this.filterExpertise.length || this.filterLocation.length;
       } else if (this.filterType === "journalist") {
         return this.filterArea.length || this.filterBeat.length;
+      }
+      if (this.filterType ==="scientist") {
+        return this.filterResearchAreas.length
       }
       return false;
     },

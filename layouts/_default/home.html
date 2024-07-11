@@ -182,7 +182,7 @@
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>
-        {{ $people := .GetPage "experts" }}
+        {{ $people := .GetPage "research_areas" }}
         {{ partial "people-by-last-name.html" $people }}
       </div>
     </div>
@@ -199,7 +199,7 @@
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>
-        {{ $beat := .GetPage "beat" }}
+        {{ $beat := .GetPage "research_areas" }}
         {{ partial "pages-list.html" $beat.Pages }}
       </div>
     </div>

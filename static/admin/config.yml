@@ -168,6 +168,8 @@ collections:
         default: person
         widget: hidden
         required: true
+
+# Our data starts here
   - label: 'Scientists'
     label_singular: 'Scientist'
     name: 'scientists'
@@ -184,6 +186,11 @@ collections:
       - label: 'Name'
         name: 'name'
         widget: 'string'
+      - label: Link to as
+        name: linktitle
+        hint: "When linking to this page from another page, use this as the link title instead of hed"
+        widget: string
+        required: false
       - label: 'Institution of Ph.D.'
         name: 'institution_of_phd'
         widget: 'string'
@@ -240,6 +247,8 @@ collections:
           label: 'Citation'
           name: 'citation'
           widget: 'string'
+
+
   - label: Landing pages
     name: landing
     editor:
@@ -263,6 +272,11 @@ collections:
       - label: "Area of experience list page"
         name: expertise
         file: content/expertise/_index.md
+        format: toml-frontmatter
+        fields: *page-fields
+      - label: "research area page"
+        name: research_areas
+        file: content/research_areas/_index.md
         format: toml-frontmatter
         fields: *page-fields
   - label: Content pages
