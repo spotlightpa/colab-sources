@@ -38,6 +38,5 @@ Alpine.data("combobox", comboBox);
 Alpine.magic("shuffle", () => (el) => shuffleChildren(el));
 Alpine.magic("rotate", () => (el, n) => rotateChildren(el, n));
 
-
-window.Alpine = Alpine
+window.Alpine = Alpine;
 Alpine.start();
