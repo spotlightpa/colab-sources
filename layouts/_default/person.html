@@ -45,7 +45,7 @@
             </svg>
           </span>
           <span>
-            {{ .Params.year_of_phd }}
+            Year of P.H.D: {{ .Params.year_of_phd }}
           </span>
         </p>
         <p class="sm:w-1/2">
@@ -233,7 +233,7 @@
             {{ range $key, $value := .Params.key_contributions }}
               {{ $isOdd = not $isOdd }}
               <div
-                class="{{ cond $isOdd `bg-g-3 rounded` `` }} p-2"
+                class="{{ cond $isOdd `bg-g-3 shadow-inner` `` }} p-2"
                 x-data="{ isOpen: false }"
               >
                 <h3 class="text-md font-semibold">
