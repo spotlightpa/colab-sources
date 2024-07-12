@@ -254,8 +254,6 @@ collections:
           name: "citation"
           widget: "string"
 
-
-
   - label: Landing pages
     name: landing
     editor:
