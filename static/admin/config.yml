@@ -172,13 +172,14 @@ collections:
   # Our data starts here
   - label: "Scientists"
     label_singular: "Scientist"
-    name: "scientists"
-    folder: "content/scientists"
-    format: "json"
-    extension: "md"
+    name: scientists
+    folder: content/scientists
+    filter: { field: "layout", value: "person" }
+    format: json
+    extension: md
     create: True
     slug: "{{title}}"
-    preview_path: "/scientists/{{slug}}/"
+    preview_path: /scientists/{{slug}}/
     identity_field: "title"
     editor:
       preview: False
@@ -252,6 +253,8 @@ collections:
           label: "Citation"
           name: "citation"
           widget: "string"
+
+
 
   - label: Landing pages
     name: landing

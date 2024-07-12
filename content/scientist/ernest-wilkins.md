@@ -26,6 +26,7 @@
     "Mathematical Models": "Created mathematical models that have advanced the understanding of nuclear physics."
   },
   "citations": [
-    "[1] https://doi.org/10.1007/978-3-642-77425-6_33"
-  ]
+    "https://doi.org/10.1007/978-3-642-77425-6_33"
+  ], 
+  "layout": "person"
 }

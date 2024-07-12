@@ -26,6 +26,7 @@
     "Wu Experiment": "Conducted the experiment that disproved the law of conservation of parity."
   },
   "citations": [
-    "[1] https://doi.org/10.1007/978-3-319-19204-8_8"
-  ]
+    "https://doi.org/10.1007/978-3-319-19204-8_8"
+  ], 
+  "layout": "person"
 }
