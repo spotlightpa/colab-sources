@@ -31,8 +31,8 @@ export default function searchPeople() {
     filterType: "",
     filterExpertise: [],
     filterLocation: [],
-    filterResearchAreas: [], 
-    filterRelevantCourses: [], 
+    filterResearchAreas: [],
+    filterRelevantCourses: [],
     filterArea: [],
     filterBeat: [],
     query: "",
@@ -58,8 +58,8 @@ export default function searchPeople() {
         "filterType",
         "filterArea",
         "filterExpertise",
-        "filterResearchAreas", 
-        "filterRelevantCourses", 
+        "filterResearchAreas",
+        "filterRelevantCourses",
         "filterLocation",
         "filterArea",
         "filterBeat",
@@ -79,8 +79,12 @@ export default function searchPeople() {
         options.filters = {
           type: this.filterType,
         };
-        options.filters.researchAreas = this.filterResearchAreas.map((f) => f.value);
-        options.filters.relevantCourses = this.filterRelevantCourses.map((f) => f.value);
+        options.filters.researchAreas = this.filterResearchAreas.map(
+          (f) => f.value,
+        );
+        options.filters.relevantCourses = this.filterRelevantCourses.map(
+          (f) => f.value,
+        );
         if (this.filterType === "expert") {
           options.filters.expertise = this.filterExpertise.map((f) => f.value);
           options.filters.location = this.filterLocation.map((f) => f.value);
@@ -154,8 +158,8 @@ export default function searchPeople() {
       } else if (this.filterType === "journalist") {
         return this.filterArea.length || this.filterBeat.length;
       }
-      if (this.filterType ==="scientist") {
-        return this.filterResearchAreas.length
+      if (this.filterType === "scientist") {
+        return this.filterResearchAreas.length;
       }
       return false;
     },

@@ -169,23 +169,23 @@ collections:
         widget: hidden
         required: true
 
-# Our data starts here
-  - label: 'Scientists'
-    label_singular: 'Scientist'
-    name: 'scientists'
-    folder: 'content/scientists'
-    format: 'json'
-    extension: 'md'
+  # Our data starts here
+  - label: "Scientists"
+    label_singular: "Scientist"
+    name: "scientists"
+    folder: "content/scientists"
+    format: "json"
+    extension: "md"
     create: True
-    slug: '{{title}}'
-    preview_path: '/scientists/{{slug}}/'
-    identity_field: 'title'
+    slug: "{{title}}"
+    preview_path: "/scientists/{{slug}}/"
+    identity_field: "title"
     editor:
       preview: False
     fields:
-      - label: 'Name'
-        name: 'name'
-        widget: 'string'
+      - label: "Name"
+        name: "name"
+        widget: "string"
       - label: Link to as
         name: linktitle
         hint: "When linking to this page from another page, use this as the link title instead of hed"
@@ -196,63 +196,62 @@ collections:
         name: last
         widget: string
         required: true
-      - label: 'Institution of Ph.D.'
-        name: 'institution_of_phd'
-        widget: 'string'
-      - label: 'Field of Ph.D.'
-        name: 'field_of_phd'
-        widget: 'string'
-      - label: 'Year of Ph.D.'
-        name: 'year_of_phd'
-        widget: 'number'
-      - label: 'Research areas'
-        name: 'research_areas'
-        widget: 'list'
+      - label: "Institution of Ph.D."
+        name: "institution_of_phd"
+        widget: "string"
+      - label: "Field of Ph.D."
+        name: "field_of_phd"
+        widget: "string"
+      - label: "Year of Ph.D."
+        name: "year_of_phd"
+        widget: "number"
+      - label: "Research areas"
+        name: "research_areas"
+        widget: "list"
         field:
-          label: 'Area'
-          name: 'area'
-          widget: 'string'
-      - label: 'Relevant courses'
-        name: 'relevant_courses'
-        widget: 'list'
+          label: "Area"
+          name: "area"
+          widget: "string"
+      - label: "Relevant courses"
+        name: "relevant_courses"
+        widget: "list"
         field:
-          label: 'Course'
-          name: 'course'
-          widget: 'string'
-      - label: 'Relevant concepts'
-        name: 'relevant_concepts'
-        widget: 'list'
+          label: "Course"
+          name: "course"
+          widget: "string"
+      - label: "Relevant concepts"
+        name: "relevant_concepts"
+        widget: "list"
         field:
-          label: 'Concept'
-          name: 'concept'
-          widget: 'string'
-      - label: 'Wikipedia'
-        name: 'wikipedia'
-        widget: 'string'
-      - label: 'Image'
-        name: 'image'
-        widget: 'string'
-      - label: 'General bio'
-        name: 'general_bio'
-        widget: 'markdown'
-      - label: 'Key contributions'
-        name: 'key_contributions'
-        widget: 'object'
+          label: "Concept"
+          name: "concept"
+          widget: "string"
+      - label: "Wikipedia"
+        name: "wikipedia"
+        widget: "string"
+      - label: "Image"
+        name: "image"
+        widget: "string"
+      - label: "General bio"
+        name: "general_bio"
+        widget: "markdown"
+      - label: "Key contributions"
+        name: "key_contributions"
+        widget: "object"
         fields:
-          - label: 'Contribution title'
-            name: 'title'
-            widget: 'string'
-          - label: 'Summary'
-            name: 'summary'
-            widget: 'text'
-      - label: 'Citations'
-        name: 'citations'
-        widget: 'list'
+          - label: "Contribution title"
+            name: "title"
+            widget: "string"
+          - label: "Summary"
+            name: "summary"
+            widget: "text"
+      - label: "Citations"
+        name: "citations"
+        widget: "list"
         field:
-          label: 'Citation'
-          name: 'citation'
-          widget: 'string'
-
+          label: "Citation"
+          name: "citation"
+          widget: "string"
 
   - label: Landing pages
     name: landing
