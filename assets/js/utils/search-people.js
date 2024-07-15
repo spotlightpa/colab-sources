@@ -91,6 +91,9 @@ export default function searchPeople() {
         } else if (this.filterType === "journalist") {
           options.filters.area = this.filterArea.map((f) => f.value);
           options.filters.beat = this.filterBeat.map((f) => f.value);
+        } else if (this.filterType === "scientist") {
+          options.filters.researchAreas = this.filterResearchAreas.map((f) => f.value);
+          options.filters.relevantCourses = this.filterRelevantCourses.map((f) => f.value);
         }
       }
       if (this.hasFilters && !query) {
@@ -132,7 +135,6 @@ export default function searchPeople() {
 
     get people() {
       if (!this.results) return [];
-
       return this.results.map((data) => ({
         id: data.url,
         url: data.url,
@@ -158,9 +160,7 @@ export default function searchPeople() {
       } else if (this.filterType === "journalist") {
         return this.filterArea.length || this.filterBeat.length;
       }
-      if (this.filterType === "scientist") {
-        return this.filterResearchAreas.length;
-      }
+      return this.filterResearchAreas.length || this.filterRelevantCourses.length;
       return false;
     },
 

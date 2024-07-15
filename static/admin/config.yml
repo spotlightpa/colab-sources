@@ -172,7 +172,7 @@ collections:
   # Our data starts here
   - label: "Scientists"
     label_singular: "Scientist"
-    name: scientists
+    name: scientist
     folder: content/scientists
     filter: { field: "layout", value: "person" }
     format: json
@@ -184,6 +184,11 @@ collections:
     editor:
       preview: False
     fields:
+      - label: Full name
+        hint: E.g. "John Jacob Jingleheimer Schmidt, IV PhD CPA"
+        name: title
+        widget: string
+        required: true
       - label: "Name"
         name: "name"
         widget: "string"

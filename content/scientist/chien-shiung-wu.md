@@ -1,4 +1,5 @@
 {
+  "title": "Chien-Shiung Wu",
   "name": "Chien-Shiung Wu",
   "linktitle": "Chien-Shiung Wu",
   "last": "Wu", 

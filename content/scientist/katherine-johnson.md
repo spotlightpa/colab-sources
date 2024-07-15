@@ -1,4 +1,5 @@
 {
+  "title": "Katherine Johnson",
   "name": "Katherine Johnson",
   "linktitle": "Katherine Johnson",
   "last" : "Johnson",

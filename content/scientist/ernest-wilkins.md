@@ -1,4 +1,5 @@
 {
+  "title": "Ernest Wilkins Jr.",
   "name": "Ernest Wilkins Jr.",
   "linktitle" : "Ernest Wilkins Jr.",
   "last" :  "Wilkins", 
