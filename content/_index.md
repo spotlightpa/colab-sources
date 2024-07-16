@@ -10,4 +10,4 @@ The guide is a response to a call from community members and journalists of colo
 
 Information in this diverse source guide is voluntarily shared and self-reported by participants, and should be verified before publication.
 
-Have a question? Ideas for improvements? See an error? [Send us a note](mailto:amplifycolorado@colabnews.co).
+Have a question? [Check out our FAQs](https://colabnews.co/amplify-colorado/). Ideas for improvements? See an error? [Send us a note](mailto:amplifycolorado@colabnews.co).
