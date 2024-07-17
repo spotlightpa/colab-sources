@@ -1,10 +1,10 @@
-<header class="border-b border-g-5 bg-white font-sans uppercase">
+<header class="border-b border-g-5 bg-gray font-sans uppercase">
   <nav x-data="{ isOpen: false, showModal: false }">
     <div class="mx-auto max-w-7xl px-6">
       <div class="relative flex h-16 items-center justify-between md:h-24">
         <div class="flex flex-1 items-center justify-start">
           <a class="inline-flex flex-shrink-0 leading-none text-white" href="/">
-            {{ $logo := resources.Get "img/logos/hiddenfigs_logo.png" }}
+            {{ $logo := resources.Get "img/logos/hiddenfigs_logo_dark.png" }}
             {{ $logo = $logo | fingerprint }}
             <img
               class="h-14 w-auto sm:h-16 md:h-20"
