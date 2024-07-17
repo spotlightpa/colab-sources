@@ -1,4 +1,4 @@
 +++
-title = "Scientist listed by research_areas"
+title = "Scientists listed by research_areas"
 linktitle = "research_areas"
 +++

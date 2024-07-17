@@ -20,7 +20,7 @@
     "Wilkins Effect"
   ],
   "wikipedia": "https://en.wikipedia.org/wiki/J._Ernest_Wilkins_Jr.",
-  "image": "https://en.wikipedia.org/wiki/J._Ernest_Wilkins_Jr.#/media/File:J._Ernest_Wilkins,_Jr._9.jpg",
+  "images": ["/img/uploads/J._Ernest_Wilkins,_Jr._9.jpg"],
   "general_bio": "J. Ernest Wilkins Jr. was an American nuclear scientist, engineer, and mathematician. He is known for his work on radiation shielding and his contributions to the Manhattan Project. Wilkins was a child prodigy who entered the University of Chicago at the age of 13 and earned his Ph.D. in Mathematics by the age of 19.",
   "key_contributions": {
     "Radiation Shielding Theory": "Developed significant theories in radiation shielding that are still in use today.",
