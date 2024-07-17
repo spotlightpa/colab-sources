@@ -3,16 +3,16 @@
     <div class="flex items-center">
       <a
         class="inline-flex flex-shrink-0 leading-none text-white"
-        href="https://colabnews.co/"
+        href="https://rescorp.org/"
       >
-        {{ $logo := resources.Get "img/logos/colab-white-trans-square.png" }}
+        {{ $logo := resources.Get "img/logos/rcsa_logo.png" }}
         {{ $logo = $logo | fingerprint }}
         <img
-          class="aspect-square h-auto w-48"
-          width="800"
-          height="800"
+          class="h-auto w-[200px]"
+          width="476"
+          height="146"
           src="{{ $logo.RelPermalink }}"
-          alt="Colorado News Collaborative logo"
+          alt="Research Corporation for Science Advancement logo"
           loading="lazy"
         />
       </a>
@@ -20,7 +20,7 @@
 
     {{ $context := dict
       "menu" site.Menus.footer
-      "name" "COLab"
+      "name" "RCSA"
     }}
     {{ block "featured-footer" $context }}
       <div class="flex-1 font-sans">
@@ -37,12 +37,12 @@
       </div>
     {{ end }}
     <div class="flex items-center">
-      {{ $logoAmp := resources.Get "img/logos/amplify-vertical.png" }}
+      {{ $logoAmp := resources.Get "img/logos/hiddenfigs_logo.png" }}
       {{ $imgSmall := $logoAmp.Resize "30x" }}
       {{ $imgMedium := $logoAmp.Resize "600x" }}
       <a class="" href="/">
         <img
-          class="h-auto w-[30px]"
+          class="h-auto w-[200px]"
           width="{{ $imgSmall.Width }}"
           height="{{ $imgSmall.Height }}"
           src="{{ $imgSmall.RelPermalink }}"
@@ -50,54 +50,32 @@
             {{ $imgSmall.RelPermalink }} 30w,
             {{ $imgMedium.RelPermalink }} 60w
           "
-          alt="Amplify Colorado logo"
+          alt="Hidden Figures logo"
           loading="lazy"
         />
       </a>
     </div>
-    {{ $context = dict "menu" site.Menus.follow "name" "Amplify Colorado" }}
+    {{ $context = dict "menu" site.Menus.follow "name" "Hidden Figures" }}
     {{ template "featured-footer" $context }}
-    <div class="flex items-center">
-      {{ $logoAmp := resources.Get "img/logos/cmp-white-trans.png" }}
-      {{ $imgSmall := $logoAmp.Resize "200x" }}
-      {{ $imgMedium := $logoAmp.Resize "400x" }}
-      <a href="https://coloradomediaproject.com/">
-        <img
-          class="h-auto w-[200px]"
-          width="{{ $imgSmall.Width }}"
-          height="{{ $imgSmall.Height }}"
-          src="{{ $imgSmall.RelPermalink }}"
-          srcset="
-            {{ $imgSmall.RelPermalink }} 200w,
-            {{ $imgMedium.RelPermalink }} 400w
-          "
-          alt="Colorado Media Project logo"
-          loading="lazy"
-        />
-      </a>
-    </div>
     <div class="flex-grow">
       <p class="links-blue-lighter leading-tight">
-        Amplify Colorado is a project of the <br />
-        <a href="https://colabnews.co">Colorado News Collaborative</a>, <br />
-        with generous funding from <br />
-        <a href="https://coloradomediaproject.com/">Colorado Media Project</a>.
+        Hidden Figures in Physics and Astronomy is a<br />
+        Cottrell Scholars Collaborative funded by the<br />
+        <a href="https://colabnews.co"
+          >Research Corporation for Science Advancement</a
+        >.
         <br />
         Thanks to
-        <a href="https://colabnews.co/the-voices-initiative/">Voices members</a
-        >, <br />
-        who inspired this guide, <br />
-        and to
         <a href="https://www.spotlightpa.org">Spotlight PA</a>
         for sharing<br />
         <a href="https://github.com/spotlightpa/sourcesdb">the code</a> from
-        their own <br />
+        their <br />
         <a href="https://sources.spotlightpa.org">diverse source database</a>.
       </p>
       <p class="mt-4 leading-tight">
         &copy;
         {{ now.Format "2006" }}
-        Colorado News Collaborative
+        Hidden Figures in Physics and Astronomy
       </p>
     </div>
   </nav>

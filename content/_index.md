@@ -1,13 +1,8 @@
 ---
-title: Amplify Colorado
-description: A resource for Colorado journalists to improve representation and
-  diversify perspectives in their coverage.
-title-tag: Amplify Colorado - COLab
+title: Hidden Figures
+description: A database to highlight the contributions of physicists and astronomers from marginalized backgrounds.
+title-tag: Hidden Figures - COLab
 ---
-Amplify Colorado Diverse Source Guide aims to ensure that Colorado’s local and statewide news coverage is more equitable and better reflects the communities it serves. 
+Hidden Figures in Physics and Astronomy Database aims to highlight the contributions of physicists and astronomers from marginalized backgrounds.
 
-The guide is a response to a call from community members and journalists of color who want to strengthen the relationship between newsrooms and Coloradans from diverse backgrounds of all kinds by broadening the range of voices, experiences and expertise in local news stories and by making it easier for community members to connect with their local reporters.
-
-Information in this diverse source guide is voluntarily shared and self-reported by participants, and should be verified before publication.
-
-Have a question? Ideas for improvements? See an error? [Send us a note](mailto:amplifycolorado@colabnews.co).
+Have a question? Ideas for improvements? See an error? [Send us a note](mailto:hiddenfigs@googlegroups.com).
