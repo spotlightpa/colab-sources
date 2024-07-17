@@ -76,8 +76,6 @@ export default function searchPeople() {
       this.isLoading = true;
       this.resultCount = 0;
       let options = {};
-      console.log(options.filters)
-      console.log(options)
       if (this.filterType) {
         options.filters = {
           type: this.filterType,
@@ -89,8 +87,12 @@ export default function searchPeople() {
           options.filters.area = this.filterArea.map((f) => f.value);
           options.filters.beat = this.filterBeat.map((f) => f.value);
         } else if (this.filterType === "scientist") {
-          options.filters.researchAreas = this.filterResearchAreas.map((f) => f.value);
-          options.filters.relevantCourses = this.filterRelevantCourses.map((f) => f.value);
+          options.filters.researchAreas = this.filterResearchAreas.map(
+            (f) => f.value,
+          );
+          options.filters.relevantCourses = this.filterRelevantCourses.map(
+            (f) => f.value,
+          );
         }
       }
       if (this.hasFilters && !query) {
@@ -151,14 +153,15 @@ export default function searchPeople() {
       }));
     },
 
-    get () {
+    get() {
       if (this.filterType === "expert") {
         return this.filterExpertise.length || this.filterLocation.length;
       } else if (this.filterType === "journalist") {
         return this.filterArea.length || this.filterBeat.length;
       }
-      return this.filterResearchAreas.length || this.filterRelevantCourses.length;
-      return false;
+      return (
+        this.filterResearchAreas.length || this.filterRelevantCourses.length
+      );
     },
 
     get resultsText() {
