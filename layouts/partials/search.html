@@ -50,7 +50,9 @@
       </svg>
     </button>
   </div>
-  <div class="mt-2">
+  <div class="mt-2"
+  x-model="filterType"
+  value="scientist">
     <div class="grid items-end gap-4 md:grid-cols-2">
       {{ partial "combobox.html" (dict
         "options" (.GetPage "research_areas").Pages

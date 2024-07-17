@@ -69,22 +69,19 @@ export default function searchPeople() {
     },
 
     async search() {
+      // searchBox
       let query = this.query;
       // Don't wait for an empty search
       let timeout = this.query.trim() ? 300 : 0;
       this.isLoading = true;
       this.resultCount = 0;
       let options = {};
+      console.log(options.filters)
+      console.log(options)
       if (this.filterType) {
         options.filters = {
           type: this.filterType,
         };
-        options.filters.researchAreas = this.filterResearchAreas.map(
-          (f) => f.value,
-        );
-        options.filters.relevantCourses = this.filterRelevantCourses.map(
-          (f) => f.value,
-        );
         if (this.filterType === "expert") {
           options.filters.expertise = this.filterExpertise.map((f) => f.value);
           options.filters.location = this.filterLocation.map((f) => f.value);
@@ -154,7 +151,7 @@ export default function searchPeople() {
       }));
     },
 
-    get hasFilters() {
+    get () {
       if (this.filterType === "expert") {
         return this.filterExpertise.length || this.filterLocation.length;
       } else if (this.filterType === "journalist") {

@@ -269,6 +269,11 @@ collections:
         file: content/_index.md
         format: toml-frontmatter
         fields: *page-fields
+      - label: "Aboutpage"
+        name: about
+        file: content/about/_index.md
+        format: toml-frontmatter
+        fields: *page-fields
       - label: "People list page"
         name: people
         file: content/people/_index.md
