@@ -1,12 +1,14 @@
-# Amplify Colorado Diverse Sources Database
+# Hidden Figures in Physics and Astronomy Database
 
-A resource for Colorado journalists to improve representation and diversify perspectives in their coverage.
+<p align="center">
+  <img src="assets/img/logos/hiddenfigs_logo.png" alt="Hidden Figures" width="400"/>
+</p>
 
-Project forked from https://github.com/spotlightpa/sourcesdb and https://github.com/spotlightpa/ctmirror-sources. See original project for details about creation and architecture.
+A resource to highlight the contributions of physicists and astronomers from marginalized backgrounds.
 
 ## License
 
-All content copyright Colorado News Collective. Code available under the MIT license. Photos used with permission of subjects. Information contained in this database is self-reported by participants and should be verified before publication.
+All content copyright Hidden Figures in Physics and Astronomy. Code available under the MIT license.
 
 ## Installation
 
@@ -24,4 +26,4 @@ Site search is powered by [PageFind](https://pagefind.app/). Before deploy, a se
 
 Email addresses are Base64 encoded to prevent casual scraping.
 
-The site was not made with reuse in mind, but it hasn't been so hard. Just rip out the content files, rewrite nav.html and footer.html to remove references to Spotlight PA or Colorado, and change the base URL in config.toml. Contact webmaster@spotlightpa.org with questions.
+The site was not made with reuse in mind, but it hasn't been so hard. Just rip out the content files, rewrite nav.html and footer.html and change the base URL in config.toml.
