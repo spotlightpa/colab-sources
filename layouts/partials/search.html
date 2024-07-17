@@ -15,7 +15,7 @@
       class="block w-full appearance-none rounded-full border-2 border-g-5 bg-white px-10 py-2 tracking-wider text-g-8 placeholder-g-5 placeholder-opacity-100 outline-none ring-blue focus:ring-2"
       x-model="query"
       @keydown.escape="clear()"
-      placeholder="Ex. “Jane Smith” “History” “Boulder”"
+      placeholder="Ex. “Katherine Johnson”  “Aerospace” “Calculus”"
     />
     <span
       class="pointer-events-none absolute inset-y-0 left-0 z-10 inline-flex w-10 items-center justify-center leading-none text-g-5"
@@ -50,18 +50,20 @@
       </svg>
     </button>
   </div>
-  <div class="mt-2">
+  <div class="mt-2"
+  x-model="filterType"
+  value="scientist">
     <div class="grid items-end gap-4 md:grid-cols-2">
       {{ partial "combobox.html" (dict
-        "options" (.GetPage "expertise").Pages
-        "placeholder" "Filter by area"
-        "xmodel" "filterExpertise"
+        "options" (.GetPage "research_areas").Pages
+        "placeholder" "Filter by research areas"
+        "xmodel" "filterResearchAreas"
         )
       }}
       {{ partial "combobox.html" (dict
-        "options" (.GetPage "location").Pages
-        "placeholder" "Filter by location"
-        "xmodel" "filterLocation"
+        "options" (.GetPage "relevant_courses").Pages
+        "placeholder" "Filter by relevant courses"
+        "xmodel" "filterRelevantCourses"
         )
       }}
     </div>
@@ -94,21 +96,23 @@
           />
         </div>
         <div x-show="!p.srcset">
-          {{ $img := resources.Get "img/logos/amplify-placeholder.png" }}
+          {{ $img := resources.Get "img/logos/person-svgrepo-com.png" }}
           {{ $imgSmall := $img.Resize "150x" }}
           {{ $imgMedium := $img.Resize "300x" }}
-          <img
-            aria-hidden="true"
-            class="mx-auto h-auto w-auto max-w-[150px] rounded bg-green shadow"
-            alt="Placeholder"
-            width="{{ $imgSmall.Width }}"
-            height="{{ $imgSmall.Height }}"
-            src="{{ $imgSmall.RelPermalink }}"
-            srcset="
-              {{ $imgSmall.RelPermalink }} 150w,
-              {{ $imgMedium.RelPermalink }} 300w
-            "
-          />
+          <div>
+            <img
+              aria-hidden="true"
+              class="mx-auto h-auto w-auto max-w-[150px] rounded"
+              alt="Placeholder"
+              width="{{ $imgSmall.Width }}"
+              height="{{ $imgSmall.Height }}"
+              src="{{ $imgSmall.RelPermalink }}"
+              srcset="
+                {{ $imgSmall.RelPermalink }} 150w,
+                {{ $imgMedium.RelPermalink }} 300w
+              "
+            />
+          </div>
         </div>
         <h2
           class="mt-auto text-lg font-bold underline decoration-blue decoration-4 underline-offset-2 transition-colors duration-500 group-hover:decoration-blue-darker"

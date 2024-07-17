@@ -31,6 +31,8 @@ export default function searchPeople() {
     filterType: "",
     filterExpertise: [],
     filterLocation: [],
+    filterResearchAreas: [],
+    filterRelevantCourses: [],
     filterArea: [],
     filterBeat: [],
     query: "",
@@ -56,6 +58,8 @@ export default function searchPeople() {
         "filterType",
         "filterArea",
         "filterExpertise",
+        "filterResearchAreas",
+        "filterRelevantCourses",
         "filterLocation",
         "filterArea",
         "filterBeat",
@@ -65,12 +69,15 @@ export default function searchPeople() {
     },
 
     async search() {
+      // searchBox
       let query = this.query;
       // Don't wait for an empty search
       let timeout = this.query.trim() ? 300 : 0;
       this.isLoading = true;
       this.resultCount = 0;
       let options = {};
+      console.log(options.filters)
+      console.log(options)
       if (this.filterType) {
         options.filters = {
           type: this.filterType,
@@ -81,6 +88,9 @@ export default function searchPeople() {
         } else if (this.filterType === "journalist") {
           options.filters.area = this.filterArea.map((f) => f.value);
           options.filters.beat = this.filterBeat.map((f) => f.value);
+        } else if (this.filterType === "scientist") {
+          options.filters.researchAreas = this.filterResearchAreas.map((f) => f.value);
+          options.filters.relevantCourses = this.filterRelevantCourses.map((f) => f.value);
         }
       }
       if (this.hasFilters && !query) {
@@ -122,7 +132,6 @@ export default function searchPeople() {
 
     get people() {
       if (!this.results) return [];
-
       return this.results.map((data) => ({
         id: data.url,
         url: data.url,
@@ -142,12 +151,13 @@ export default function searchPeople() {
       }));
     },
 
-    get hasFilters() {
+    get () {
       if (this.filterType === "expert") {
         return this.filterExpertise.length || this.filterLocation.length;
       } else if (this.filterType === "journalist") {
         return this.filterArea.length || this.filterBeat.length;
       }
+      return this.filterResearchAreas.length || this.filterRelevantCourses.length;
       return false;
     },
 

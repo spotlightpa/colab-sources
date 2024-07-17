@@ -3,17 +3,8 @@
     <div class="mx-auto flex max-w-screen-md flex-col">
       <h1 class="break-word font-bold leading-tight">
         <span class="text-2xl text-black">
-          {{ .Title }}
+          {{- .Params.name -}}
         </span>
-        {{ with .Param "pronunciation" }}
-          {{ if hasPrefix . "http" }}
-            <span class="text-base text-g-6">
-              (<a href="{{ . }}">Listen</a>)
-            </span>
-          {{ else }}
-            <span class="text-base text-g-6"> ({{ . }}) </span>
-          {{ end }}
-        {{ end }}
       </h1>
       {{ with .Param "organization" }}
         <h2
@@ -23,240 +14,78 @@
           {{ . }}
         </h2>
       {{ end }}
-      {{ with .Param "role" }}
-        <h2
-          class="break-word text-lg leading-tight text-g-6"
-          data-pagefind-meta="role"
-        >
-          {{ . }}
-        </h2>
-      {{ end }}
 
 
       <!-- basic info section -->
       <div class="links-blue-darker mt-2 text-sm sm:flex sm:flex-wrap">
-        {{ if .GetTerms "location" }}
-          <p class="sm:w-1/2">
-            <span class="mr-5 text-g-6">
-              <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
-                <title>Location</title>
-                <use xlink:href="#earth-svg"></use>
-              </svg>
-            </span>
-            <span>
-              {{ range $i, $l := .GetTerms "location" }}
-                {{- if ne $i 0 -}}
-                  ,
-                {{ end -}}
-                <a href="{{ .RelPermalink }}" data-pagefind-filter="location">
-                  {{- .Title -}}
-                </a>
-              {{- end }}
-            </span>
-          </p>
-        {{ end }}
-        {{ if .GetTerms "area" }}
-          <p class="sm:w-1/2">
-            <span class="mr-5 text-g-6">
-              <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
-                <title>Coverage area</title>
-                <use xlink:href="#earth-svg"></use>
-              </svg>
-            </span>
-            <span>
-              {{ range $i, $l := .GetTerms "area" }}
-                {{- if ne $i 0 -}}
-                  ,
-                {{ end -}}
-                <a href="{{ .RelPermalink }}" data-pagefind-filter="area">
-                  {{- .Title -}}
-                </a>
-              {{- end }}
-            </span>
-          </p>
-        {{ end }}
-
-        {{ with .Param "pronoun" }}
-          <p class="sm:w-1/2">
-            <span class="mr-5 text-g-6">
-              <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
-                <title>Preferred pronoun</title>
-                <use xlink:href="#user-svg"></use>
-              </svg>
-            </span>
-            <span>{{ . }}</span>
-          </p>
-        {{ end }}
-
-        {{ with .Param "languages" }}
-          <p class="sm:w-1/2">
-            <span class="mr-5 text-g-6">
-              <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
-                <title>Languages</title>
-                <use xlink:href="#language-svg"></use>
-              </svg>
-            </span>
-            <span>{{ . }}</span>
-          </p>
-        {{ end }}
-
-        {{ with .Param "email" }}
-          <p
-            class="no-js-hide sm:w-1/2"
-            x-data="{ email: atob($el.dataset.email) }"
-            data-email="{{ . }}"
-          >
-            <span class="mr-5 text-g-6">
-              <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
-                <title>Email address</title>
-                <use xlink:href="#email-svg"></use>
-              </svg>
-            </span>
-            <a :href="'mailto:'+email" x-text="email"></a>
-          </p>
-        {{ end }}
-
-        {{ with .Param "phone" }}
-          <!--
-            If it's US 7 digit phone number, replace it with
-            tel:+1digits and ###-###-####, but if not,
-            just print the phone number as is.
-          -->
-          {{ $phoneDigits := replaceRE `\D` "" . }}
-          {{ $pat := `^1?(\d{3})(\d{3})(\d{4})$` }}
-          {{ $phoneDisplay := . }}
-          {{ if findRE $pat $phoneDigits 1 }}
-            {{ $phoneDisplay = replaceRE $pat "$1-$2-$3" $phoneDigits }}
-            {{ $phoneDigits = printf "+1%s" $phoneDigits }}
-          {{ end }}
-          <p class="sm:w-1/2">
-            <span class="mr-5 text-g-6">
-              <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
-                <title>Telephone number</title>
-                <use xlink:href="#phone-svg"></use>
-              </svg>
-            </span>
-            <a href="tel:{{ $phoneDigits }}">{{ $phoneDisplay }}</a>
-          </p>
-        {{ end }}
-
-        {{ with .Param "website" }}
-          <p class="sm:w-1/2">
-            {{ $url := urls.Parse . }}
-            <span class="mr-5 text-g-6">
-              <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
-                <title>Website</title>
-                <use xlink:href="#globe-svg"></use>
-              </svg>
-            </span>
-            <a href="{{ . }}" target="_blank">
-              {{- $url.Host -}}
-            </a>
-          </p>
-        {{ end }}
-
-        {{ with .Param "facebook" }}
-          <p class="sm:w-1/2">
-            <span class="mr-5 text-g-6">
-              <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
-                <title>Facebook page</title>
-                <use xlink:href="#fb-svg"></use>
-              </svg>
-            </span>
-            <a href="{{ . }}" target="_blank">
-              {{- "Facebook" -}}
-            </a>
-          </p>
-        {{ end }}
-
-        {{ with .Param "twitter" }}
-          {{ $pat := `((https?://(www\.)?twitter\.com/)|@)?([^/]+).*/?` }}
-          {{ $username := replaceRE $pat "$4" . }}
-          <p class="sm:w-1/2">
-            <span class="mr-5 text-g-6">
-              <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
-                <title>Twitter account</title>
-                <use xlink:href="#twitter-svg"></use>
-              </svg>
-            </span>
-            <a href="https://www.twitter.com/{{ $username }}" target="_blank">
-              {{- print "@" $username -}}
-            </a>
-          </p>
-        {{ end }}
-
-        {{ with .Param "instagram" }}
-          {{ $pat := `((https?://(www\.)?instagram\.com/)|@)?([^/]+).*/?` }}
-          {{ $username := replaceRE $pat "$4" . }}
-          <p class="sm:w-1/2">
-            <span class="mr-5 text-g-6">
-              <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
-                <title>Instagram account</title>
-                <use xlink:href="#instagram-svg"></use>
-              </svg>
-            </span>
-            <a
-              href="https://www.instagram.com/{{ $username }}/"
-              target="_blank"
-            >
-              {{- print "@" $username -}}
-            </a>
-          </p>
-        {{ end }}
-
-        {{ with .Param "threads" }}
-          <p class="sm:w-1/2">
-            <span class="mr-5 text-g-6">
-              <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
-                <title>Threads account</title>
-                <use xlink:href="#threads-svg"></use>
-              </svg>
-            </span>
-            <a href="{{ . }}/" target="_blank"> Threads </a>
-          </p>
-        {{ end }}
-
-        {{ with .Param "linkedin" }}
-          <p class="sm:w-1/2">
-            <span class="mr-5 text-g-6">
-              <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
-                <title>LinkedIn account</title>
-                <use xlink:href="#linkedin-svg"></use>
-              </svg>
-            </span>
-            <a href="{{ . }}" target="_blank">
-              {{- "LinkedIn" -}}
-            </a>
-          </p>
-        {{ end }}
-
-        {{ with .Param "contact" }}
-          <p class="sm:w-1/2">
-            <span class="mr-5 text-g-6">
-              <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
-                <title>Preferred contact</title>
-                <use xlink:href="#contact-svg"></use>
-              </svg>
-            </span>
-            <span>Prefers contact by {{ . | lower }}</span>
-          </p>
-        {{ end }}
-
-        {{ with .Param "resume" }}
-          <p class="sm:w-1/2">
-            <span class="mr-5 text-g-6">
-              <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
-                <title>Download résumé</title>
-                <use xlink:href="#resume-svg"></use>
-              </svg>
-            </span>
-            <a href="{{ . }}" target="_blank">
-              {{- "Résumé" -}}
-            </a>
-          </p>
-        {{ end }}
+        <p class="sm:w-1/2">
+          <span class="mr-5 text-g-6">
+            <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
+              <use xlink:href="#university-svg"></use>
+            </svg>
+          </span>
+          <span>
+            {{ .Params.institution_of_phd }}
+          </span>
+        </p>
+        <p class="sm:w-1/2">
+          <span class="mr-5 text-g-6">
+            <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
+              <use xlink:href="#phd"></use>
+            </svg>
+          </span>
+          <span>
+            {{ .Params.field_of_phd }}
+          </span>
+        </p>
+        <p class="sm:w-1/2">
+          <span class="mr-5 text-g-6">
+            <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
+              <use xlink:href="#year"></use>
+            </svg>
+          </span>
+          <span>
+            Year of P.H.D: {{ .Params.year_of_phd }}
+          </span>
+        </p>
+        <p class="sm:w-1/2">
+          <span class="mr-5 text-g-6">
+            <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
+              <use xlink:href="#research"></use>
+            </svg>
+          </span>
+          <span>
+            {{ range $i, $p := .Params.research_areas }}
+              {{- if ne $i 0 }},{{ end }}
+              {{ . -}}
+            {{- end }}
+          </span>
+        </p>
+        <p class="sm:w-1/2">
+          <span class="mr-5 text-g-6">
+            <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
+              <use xlink:href="#open-book"></use>
+            </svg>
+          </span>
+          <span>
+            {{ range $i, $p := .Params.relevant_courses }}
+              {{- if ne $i 0 }},{{ end }}
+              {{ . -}}
+            {{- end }}
+          </span>
+        </p>
+        <p class="sm:w-1/2">
+          <span class="mr-5 text-g-6">
+            <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
+              <title>Website</title>
+              <use xlink:href="#globe-svg"></use>
+            </svg>
+          </span>
+          <a href="{{ .Params.wikipedia }}" target="_blank">
+            {{ .Params.wikipedia }}
+          </a>
+        </p>
       </div>
-
       <!-- content button switch -->
       <div class="mt-4 flex flex-row justify-around bg-blue p-2">
         <button
@@ -286,7 +115,9 @@
         x-transition:leave="transition ease-in duration-75"
         x-transition:leave-start="transform opacity-100 scale-100"
         x-transition:leave-end="transform opacity-0 scale-95"
+        class="mt-4"
       >
+        <h2 class="text-lg font-bold">Scientist Biography</h2>
         {{ with .Param "images" }}
           {{ range . }}
             {{ $img := resources.GetMatch . }}
@@ -320,31 +151,38 @@
               </a>
             </p>
           {{ end }}
+        {{ else }}
+          {{ $img := resources.Get "img/logos/person-svgrepo-com.png" }}
+          {{ $imgSmall := $img.Resize "200x" }}
+          {{ $imgMedium := $img.Resize "400x" }}
+          <div class="float-left mb-4 mr-4 mt-6">
+            <img
+              aria-hidden="true"
+              class="mx-auto h-auto w-auto max-w-[150px] rounded"
+              alt="Placeholder"
+              width="{{ $imgSmall.Width }}"
+              height="{{ $imgSmall.Height }}"
+              src="{{ $imgSmall.RelPermalink }}"
+              srcset="
+                {{ $imgSmall.RelPermalink }} 150w,
+                {{ $imgMedium.RelPermalink }} 300w
+              "
+            />
+          </div>
         {{ end }}
+
+
         <section
           class="content-area links-blue-darker clear-both mt-4 sm:clear-none"
         >
           <h2 class="sr-only" data-pagefind-ignore>Biographical information</h2>
-          {{ .Param "bio" | markdownify }}
+          <p>
+            {{ .Params.general_bio }}
+          </p>
         </section>
         <div class="links-blue-darker mt-4 md:flex">
-          {{ with .GetTerms "expertise" }}
-            <div class="md:max-w-sm">
-              <h2 class="text-lg font-bold">Areas of experience</h2>
-              <p class="text-md">
-                {{ range $i, $p := . }}
-                  {{- if ne $i 0 }},{{ end }}
-                  <a
-                    href="{{ $p.RelPermalink }}"
-                    data-pagefind-filter="expertise"
-                  >
-                    {{- .Title -}}
-                  </a>
-                {{- end }}
-              </p>
-            </div>
-          {{ end }}
-          {{ with .GetTerms "beat" }}
+          <!-- Links -->
+          <!-- {{ with .GetTerms "beat" }}
             <div class="md:max-w-sm">
               <h2 class="text-lg font-bold">Journalism beat</h2>
               <p class="text-md">
@@ -357,6 +195,22 @@
               </p>
             </div>
           {{ end }}
+          {{ with .GetTerms "research_areas" }}
+            <div class="md:max-w-sm">
+              <h2 class="text-lg font-bold">Research areas</h2>
+              <p class="text-md">
+                {{ range $i, $p := . }}
+                  {{- if ne $i 0 }},{{ end }}
+                  <a
+                    href="{{ $p.RelPermalink }}"
+                    data-pagefind-filter="research_areas"
+                  >
+                    {{- .Title -}}
+                  </a>
+                {{- end }}
+              </p>
+            </div>
+          {{ end }} -->
         </div>
       </div>
 
@@ -370,16 +224,57 @@
         x-transition:leave-start="transform opacity-100 scale-100"
         x-transition:leave-end="transform opacity-0 scale-95"
         x-cloak
+        class="mt-4"
       >
-        <p>This Feature is waiting for implementing</p>
+        <h2 class="text-lg font-bold">Key Contributions</h2>
+        <section class="mt-2">
+          <div>
+            {{ $isOdd := false }}
+            {{ range $key, $value := .Params.key_contributions }}
+              {{ $isOdd = not $isOdd }}
+              <div
+                class="{{ cond $isOdd `bg-g-3 shadow-inner` `` }} p-2"
+                x-data="{ isOpen: false }"
+              >
+                <h3 class="text-md font-semibold">
+                  <button
+                    @click="isOpen = !isOpen"
+                    :aria-expanded="isOpen"
+                    class="flex items-center"
+                  >
+                    <span
+                      x-show="isOpen"
+                      x-cloak
+                      aria-hidden="true"
+                      class="mr-2"
+                      >&minus;</span
+                    >
+                    <span x-show="!isOpen" aria-hidden="true" class="mr-2"
+                      >&plus;</span
+                    >
+                    <span>{{ $key }}</span>
+                  </button>
+                </h3>
+                <div x-show="isOpen" x-cloak x-collapse class="mt-2">
+                  <p>{{ $value }}</p>
+                </div>
+              </div>
+            {{ end }}
+          </div>
+        </section>
+        <h2 class="text-lg font-bold">Citations</h2>
+        <ol type="1" class="links-blue-darker">
+          {{ range $index, $citation := .Params.citations }}
+            <li>
+              <a href="{{ $citation }}" target="_blank">{{ $citation }}</a>
+            </li>
+          {{ end }}
+        </ol>
       </div>
     </div>
   </main>
 
   <div hidden data-pagefind-meta="title">
-    {{- .LinkTitle -}}
-  </div>
-  <div hidden data-pagefind-filter="type">
-    {{- .Param "person-type" -}}
+    {{ .Params.linktitle }}
   </div>
 {{ end }}

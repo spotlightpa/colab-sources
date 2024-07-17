@@ -29,13 +29,13 @@
       </div>
     {{ end }}
   {{ else }}
-    {{ $img := resources.Get "img/logos/amplify-placeholder.png" }}
+    {{ $img := resources.Get "img/logos/person-svgrepo-com.png" }}
     {{ $imgSmall := $img.Resize "150x" }}
     {{ $imgMedium := $img.Resize "300x" }}
     <div>
       <img
         aria-hidden="true"
-        class="mx-auto h-auto w-auto max-w-[150px] rounded bg-green shadow"
+        class="mx-auto h-auto w-auto max-w-[150px] rounded"
         alt="Placeholder"
         width="{{ $imgSmall.Width }}"
         height="{{ $imgSmall.Height }}"
@@ -52,29 +52,24 @@
   <h2
     class="mt-auto font-sans text-lg font-bold underline decoration-blue decoration-4 underline-offset-2 transition-colors duration-500 group-hover:decoration-blue-darker"
   >
-    {{- .LinkTitle -}}
+    {{- .Params.name -}}
   </h2>
-  {{ with .Param "organization" }}
-    <h3 class="truncate font-sans text-g-6">
-      {{ . }}
-    </h3>
-  {{ end }}
-  {{ if $xpts := .GetTerms "expertise" }}
+  {{ if $xpts := .Params.research_areas }}
     <p class="text-sm leading-normal">
       <svg
         class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
       >
-        <title>Experience</title>
-        <use xlink:href="#university-svg"></use>
+        <title>Research Areas</title>
+        <use xlink:href="#research"></use>
       </svg>
       <span class="text-gray">
         {{ $list := $xpts }}
-        {{ if gt ($xpts) 3 }}
+        {{ if gt (len $xpts) 3 }}
           {{ $list = first 2 $xpts }}
         {{ end }}
         {{ range $i, $p := $list }}
           {{- if ne $i 0 }},{{ end }}
-          {{ .Title -}}
+          {{ . -}}
         {{- end }}
         {{ if gt (len $xpts) 3 }}
           and more
@@ -82,70 +77,24 @@
       </span>
     </p>
   {{ end }}
-  {{ if $xpts := .GetTerms "beat" }}
+  {{ if $xpts := .Params.relevant_courses }}
     <p class="text-sm leading-normal">
       <svg
         class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
       >
-        <title>Beat</title>
-        <use xlink:href="#newspaper-svg"></use>
+        <title>Research Areas</title>
+        <use xlink:href="#open-book"></use>
       </svg>
       <span class="text-gray">
         {{ $list := $xpts }}
-        {{ if gt ($xpts) 3 }}
+        {{ if gt (len $xpts) 3 }}
           {{ $list = first 2 $xpts }}
         {{ end }}
         {{ range $i, $p := $list }}
           {{- if ne $i 0 }},{{ end }}
-          {{ .Title -}}
+          {{ . -}}
         {{- end }}
         {{ if gt (len $xpts) 3 }}
-          and more
-        {{ end }}
-      </span>
-    </p>
-  {{ end }}
-  {{ if $locs := .GetTerms "location" }}
-    <p class="text-sm leading-normal">
-      <svg
-        class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
-      >
-        <title>Location</title>
-        <use xlink:href="#earth-svg"></use>
-      </svg>
-      <span class="text-gray">
-        {{ $list := $locs }}
-        {{ if gt ($locs) 3 }}
-          {{ $list = first 2 $locs }}
-        {{ end }}
-        {{ range $i, $p := $list }}
-          {{- if ne $i 0 }},{{ end }}
-          {{ .Title -}}
-        {{- end }}
-        {{ if gt (len $locs) 3 }}
-          and more
-        {{ end }}
-      </span>
-    </p>
-  {{ end }}
-  {{ if $locs := .GetTerms "area" }}
-    <p class="text-sm leading-normal">
-      <svg
-        class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
-      >
-        <title>Coverage area</title>
-        <use xlink:href="#earth-svg"></use>
-      </svg>
-      <span class="text-gray">
-        {{ $list := $locs }}
-        {{ if gt ($locs) 3 }}
-          {{ $list = first 2 $locs }}
-        {{ end }}
-        {{ range $i, $p := $list }}
-          {{- if ne $i 0 }},{{ end }}
-          {{ .Title -}}
-        {{- end }}
-        {{ if gt (len $locs) 3 }}
           and more
         {{ end }}
       </span>

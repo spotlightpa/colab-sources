@@ -133,58 +133,7 @@
     </div>
   </section>
 
-  <section class="bg-g-3 p-8 shadow-inner">
-    <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
-      <h2 class="{{ $secHedClass }}" id="by-expertise">
-        <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
-          <span x-show="isOpen" x-cloak aria-hidden="true" class="">
-            &minus;
-          </span>
-          <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
-          <span>Scientist by expertise area</span>
-        </button>
-      </h2>
-      <div x-cloak x-show="isOpen" x-collapse>
-        {{ $expertise := .GetPage "expertise" }}
-        {{ partial "pages-list.html" $expertise.Pages }}
-      </div>
-    </div>
-  </section>
-  <section class="p-8">
-    <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
-      <h2 class="{{ $secHedClass }}" id="by-location">
-        <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
-          <span x-show="isOpen" x-cloak aria-hidden="true" class="">
-            &minus;
-          </span>
-          <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
-          <span>Community members by location</span>
-        </button>
-      </h2>
-      <div x-cloak x-show="isOpen" x-collapse>
-        {{ $loc := .GetPage "location" }}
-        {{ partial "pages-list.html" $loc.Pages }}
-      </div>
-    </div>
-  </section>
-  <section class="bg-g-3 p-8 shadow-inner">
-    <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
-      <h2 class="{{ $secHedClass }}" id="by-name">
-        <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
-          <span x-show="isOpen" x-cloak aria-hidden="true" class="">
-            &minus;
-          </span>
-          <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
-          <span>Community members by last name</span>
-        </button>
-      </h2>
-      <div x-cloak x-show="isOpen" x-collapse>
-        {{ $people := .GetPage "experts" }}
-        {{ partial "people-by-last-name.html" $people }}
-      </div>
-    </div>
-  </section>
-  <section class="p-8">
+  <section class="p-8 bg-g-3 shadow-inner">
     <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
       <h2 class="{{ $secHedClass }}" id="by-beat">
         <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
@@ -196,12 +145,12 @@
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>
-        {{ $beat := .GetPage "beat" }}
+        {{ $beat := .GetPage "research_areas" }}
         {{ partial "pages-list.html" $beat.Pages }}
       </div>
     </div>
   </section>
-  <section class="bg-g-3 p-8 shadow-inner">
+  <section class="p-8">
     <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
       <h2 class="{{ $secHedClass }}" id="by-area">
         <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
@@ -209,16 +158,16 @@
             &minus;
           </span>
           <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
-          <span>Journalists by coverage area</span>
+          <span>Scientists by relevant course work</span>
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>
-        {{ $area := .GetPage "area" }}
-        {{ partial "pages-list.html" $area.Pages }}
+        {{ $course := .GetPage "relevant_courses" }}
+        {{ partial "pages-list.html" $course.Pages }}
       </div>
     </div>
   </section>
-  <section class="p-8">
+  <section class="p-8 bg-g-3 shadow-inner">
     <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
       <h2 class="{{ $secHedClass }}" id="scientist">
         <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
@@ -226,7 +175,7 @@
             &minus;
           </span>
           <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
-          <span>Journalists by last name</span>
+          <span>Scientist by last name</span>
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>
