@@ -1,14 +1,14 @@
 [[navbar]]
-name = "COLab"
-url = "https://colabnews.co/"
+name = "RCSA"
+url = "https://rescorp.org/"
 weight = 1
 
 [navbar.params]
-image = "img/logos/colab-square-all-white-trans.png"
+image = "img/logos/rcsa_logo.png"
 
 [[navbar]]
 name = "Contact Us"
-url = "mailto:amplifycolorado@colabnews.co"
+url = "mailto:hiddenfigs@googlegroups.com"
 weight = 2
 
 [[mobile]]
@@ -17,58 +17,39 @@ url = "/"
 weight = 1
 
 [[mobile]]
-name = "COLab"
-url = "https://colabnews.co/"
+name = "RCSA"
+url = "https://rescorp.org/"
 weight = 2
 
 [[mobile]]
 name = "Add your info"
-url = "http://bit.ly/AmplifyColorado"
+url = "https://forms.gle/ZRopiyBevpXu9D459"
 weight = 3
 post = "_blank"
 
 [[mobile]]
 name = "Contact Us"
-url = "mailto:amplifycolorado@colabnews.co"
+url = "mailto:hiddenfigs@googlegroups.com"
 weight = 4
 
-[[mobile]]
-name = "Donate"
-url = "https://colab.fundjournalism.org/amplifycolorado/"
-weight = 5
 
 [[footer]]
 name = "Home"
-url = "https://colabnews.co/"
+url = "https://rescorp.org/"
 weight = 1
 
 [[footer]]
-name = "About Us"
-url = "https://colabnews.co/mission-and-vision/"
+name = "About CSC"
+url = "https://rescorp.org/cottrell-scholars/cottrell-scholars-collaborative"
 weight = 2
-
-[[footer]]
-name = "Contact"
-url = "mailto:amplifycolorado@colabnews.co"
-weight = 3
-
-[[footer]]
-name = "Donate"
-url = "http://colab.fundjournalism.org/amplifycolorado"
-weight = 4
-
-[[follow]]
-name = "FAQs"
-url = "https://colabnews.co/amplify-colorado/"
-weight = 1
 
 [[follow]]
 name = "Add your info"
-url = "http://bit.ly/AmplifyColorado"
+url = "https://forms.gle/ZRopiyBevpXu9D459"
 weight = 2
 post = "_blank"
 
 [[follow]]
 name = "Contact"
-url = "mailto:amplifycolorado@colabnews.co"
+url = "mailto:hiddenfigs@googlegroups.com"
 weight = 3
