@@ -42,7 +42,6 @@
                 <a
                   class="self-center text-blue duration-500 hover:text-blue-darker"
                   href="{{ .URL }}"
-                  @click="showModal = true;  console.log(showModal)"
                   {{ with .Post }}target="{{ . }}"{{ end }}
                 >
                   {{- .Name -}}

@@ -11,6 +11,11 @@ name = "Contact Us"
 url = "mailto:hiddenfigs@googlegroups.com"
 weight = 2
 
+[[navbar]]
+name = "About Us"
+url = "/about"
+weight = 2
+
 [[mobile]]
 name = "Home"
 url = "/"
@@ -32,7 +37,6 @@ name = "Contact Us"
 url = "mailto:hiddenfigs@googlegroups.com"
 weight = 4
 
-
 [[footer]]
 name = "Home"
 url = "https://rescorp.org/"
@@ -41,6 +45,11 @@ weight = 1
 [[footer]]
 name = "About CSC"
 url = "https://rescorp.org/cottrell-scholars/cottrell-scholars-collaborative"
+weight = 2
+
+[[follow]]
+name = "About Us"
+url = "/about"
 weight = 2
 
 [[follow]]
