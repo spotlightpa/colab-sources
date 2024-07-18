@@ -6,7 +6,7 @@
 "field_of_phd":"Mathematics",
 "year_of_phd":"1942",
 "research_areas":["nuclear physics","mathematical physics"],
-"relevant_courses":"thermodynamics",
+"relevant_courses":["thermodynamics],
 "relevant_concepts":["thermodynamics","Maxwell-Boltzmann distribution"],
 "wikipedia":"https://en.wikipedia.org/wiki/J._Ernest_Wilkins_Jr",
 "image":"/img/uploads/j-ernest-wilkins-jr.jpeg",

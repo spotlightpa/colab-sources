@@ -6,7 +6,7 @@
 "field_of_phd":"Physics",
 "year_of_phd":"1895",
 "research_areas":["Materials"],
-"relevant_courses":"Material Science",
+"relevant_courses":["Material Science"],
 "relevant_concepts":["Young’s Modulus"],
 "wikipedia":"https://en.wikipedia.org/wiki/Mary_Chilton_Noyes",
 "image":"/img/uploads/mary-chilton-noyes.jpg",

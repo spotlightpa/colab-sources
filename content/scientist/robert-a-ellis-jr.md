@@ -6,7 +6,7 @@
 "field_of_phd":"Physics",
 "year_of_phd":"1954",
 "research_areas":["plasma physics","nuclear fusion","cosmic rays"],
-"relevant_courses":"electricity and magnetism/modern physics",
+"relevant_courses":["electricity and magnetism, modern physics"],
 "relevant_concepts":["plasma confinement","nuclear physics"],
 "wikipedia":"https://en.wikipedia.org/wiki/Robert_Ellis_(physicist)",
 "image":"/img/uploads/robert-a-ellis-jr.jpg",
