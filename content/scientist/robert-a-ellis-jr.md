@@ -9,7 +9,7 @@
   "relevant_courses": ["electricity and magnetism", "modern physics"],
   "relevant_concepts": ["plasma confinement", "nuclear physics"],
   "wikipedia": "https://en.wikipedia.org/wiki/Robert_Ellis_(physicist)",
-  "image": "/img/uploads/robert-a-ellis-jr.jpg",
+  "images": ["/img/uploads/robert-a-ellis-jr.png"],
   "general_bio": "Robert A. Ellis Jr. was born in Kansas City, Missouri in 1927. Ellis earned his bachelor's degree from Fisk University and his master's from Yale University. Ellis became an instructor at the Tennessee Agricultural & Industrial State College, at the time an all-Black institution (now Tennessee State University); Ellis later was promoted to full professor there. On leave from that position, he completed PhD work at the University of Iowa, where he was James Van Allen’s first PhD student. He designed payloads for balloon-launched rockets to study cosmic rays in the upper atmosphere. From the obituary in Physics Today, 'Van Allen' urged him to seek a position at a research university. But Bob’s commitment to black. In 1956, Ellis joined Project Matterhorn (later became the Princeton Plasma Physics Laboratory) to work in a group led by Lyman Spitzer Jr., who invented the stellarator. Remained at PPPL until his death in 1989. He committed to furthering international cooperation and collaboration in science, in various positions (including spending 6 months at the Institute of Nuclear Physics in Novosibirsk, USSR in 1969; 2 years as head of the physics section of the IAEA).",
   "key_contributions": 
     {
