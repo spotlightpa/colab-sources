@@ -76,7 +76,7 @@ export default function searchPeople() {
       this.isLoading = true;
       this.resultCount = 0;
       let options = {};
-      console.log(this.filterType)
+      console.log(this.filterType);
       if (this.filterType) {
         options.filters = {
           type: this.filterType,
@@ -94,7 +94,7 @@ export default function searchPeople() {
           options.filters.relevantCourses = this.filterRelevantCourses.map(
             (f) => f.value,
           );
-          console.log(options.filters)
+          console.log(options.filters);
         }
       }
       if (this.hasFilters && !query) {
@@ -109,9 +109,9 @@ export default function searchPeople() {
           options,
           timeout,
         );
-        console.log(this.pagefind)
-        console.log(query)
-        console.log(options)
+        console.log(this.pagefind);
+        console.log(query);
+        console.log(options);
         if (search === null) return;
         results = await Promise.all(search.results.map((r) => r.data()));
         this.resultCount = search.results.length;
