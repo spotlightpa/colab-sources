@@ -10,8 +10,8 @@ googleAnalytics = 'G-0N3FRVSW3G'
 buildFuture = true
 
 [params]
-  favicon = "/img/logos/amplify-placeholder.png"
-  touch-icon = "/img/logos/colab-square.png"
+  favicon = "/img/logos/hiddenfigs_logo.png"
+  touch-icon = "/img/logos/hiddenfigs_logo.png"
   donate-link = "https://colab.fundjournalism.org/amplifycolorado/"
   nominate-link = "http://bit.ly/AmplifyColorado"
 [taxonomies]
