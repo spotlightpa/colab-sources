@@ -17,7 +17,7 @@
       <template x-for="selectedOpt in selected" :key="selectedOpt.id">
         <button
           @click.prevent="remove(selectedOpt)"
-          class="inline-flex items-center gap-1 rounded bg-blue p-1 px-2 text-xs text-white hover:bg-gray"
+          class="inline-flex items-center gap-1 rounded bg-gray p-1 px-2 text-xs text-white hover:bg-gray"
         >
           <span x-text="selectedOpt.name"></span>
           <svg class="h-3 w-3 fill-current">
@@ -62,7 +62,7 @@
               :value="opt"
               :disabled="opt.disabled"
               :class="{
-                    'bg-blue/75 text-white': $comboboxOption.isActive,
+                    'bg-gray/75 text-white': $comboboxOption.isActive,
                     'text-g-7': ! $comboboxOption.isActive,
                     'opacity-50 cursor-not-allowed': $comboboxOption.isDisabled,
                   }"
@@ -70,7 +70,7 @@
             >
               <span
                 hidden
-                class="cursor-not-allowed bg-blue/75 text-g-7 text-white opacity-50"
+                class="cursor-not-allowed bg-gray/75 text-g-7 text-white opacity-50"
               ></span>
               <span x-text="opt.name"></span>
 

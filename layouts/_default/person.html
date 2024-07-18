@@ -88,9 +88,9 @@
         </p>
       </div>
       <!-- content button switch -->
-      <div class="mt-4 flex flex-row justify-around bg-blue p-2">
+      <div class="mt-4 flex flex-row justify-around bg-black p-2">
         <button
-          :class="isBio ? 'bg-white text-black' : 'bg-blue text-white'"
+          :class="isBio ? 'bg-white text-black' : 'bg-gray text-white'"
           class="mx-4 flex-1 transform rounded-lg px-4 py-2 
           transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg focus:outline-none"
           @click="isBio = true"
@@ -98,7 +98,7 @@
           Bio
         </button>
         <button
-          :class="!isBio ? 'bg-white text-black' : 'bg-blue text-white'"
+          :class="!isBio ? 'bg-white text-black' : 'bg-gray text-white'"
           class="mx-4 flex-1 transform rounded-lg px-4 py-2 
           transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg focus:outline-none"
           @click="isBio = false"
