@@ -6,14 +6,14 @@
   "institution_of_phd": "University of California, Berkeley",
   "field_of_phd": "Physics",
   "year_of_phd": 1940,
-  "research_areas": [
-    "Nuclear Physics",
-    "Beta Decay"
+  "researchAreas": [
+    "nuclear physics",
+    "beta decay"
   ],
-  "relevant_courses": [
-    "Quantum Mechanics",
-    "Nuclear Physics",
-    "Statistical Mechanics"
+  "relevantCourses": [
+    "quantum mechanics",
+    "nuclear physics",
+    "statistical mechanics"
   ],
   "relevant_concepts": [
     "Parity Violation",

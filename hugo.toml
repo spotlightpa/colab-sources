@@ -19,8 +19,8 @@ buildFuture = true
   location = "location"
   beat = "beat"
   area = "area"
-  reasearchareas = "research_areas"
-  relevantcourses = "relevant_courses"
+  researchAreas = "researchAreas"
+  relevantCourses = "relevantCourses"
 
 [markup]
   defaultMarkdownHandler = "goldmark"

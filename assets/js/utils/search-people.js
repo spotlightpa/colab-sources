@@ -11,14 +11,22 @@ async function debouncedSearch(
   options = {},
   debounceTimeoutMs = 300,
 ) {
+  const filters = await pf.filters();
+  if(options.filters.relevantCourses.length == 0 && options.filters.researchAreas.length == 0){
+    const searchResult = await pf.search(term)
+    return searchResult
+  }
+  options.filters.relevantCourses = options.filters.relevantCourses.map(course => course.toLowerCase());
+  options.filters.researchAreas = options.filters.researchAreas.map(area => area.toLowerCase());
   const thisSearchID = ++currentSearchID;
-  pf.preload(term, { ...options });
   await asyncSleep(debounceTimeoutMs);
 
   if (thisSearchID !== currentSearchID) {
     return null;
   }
-
+   if (options.filters && options.filters.type) {
+    delete options.filters.type;
+  }
   const searchResult = await pf.search(term, options);
   if (thisSearchID !== currentSearchID) {
     return null;
@@ -76,7 +84,6 @@ export default function searchPeople() {
       this.isLoading = true;
       this.resultCount = 0;
       let options = {};
-      console.log(this.filterType);
       if (this.filterType) {
         options.filters = {
           type: this.filterType,
@@ -94,7 +101,6 @@ export default function searchPeople() {
           options.filters.relevantCourses = this.filterRelevantCourses.map(
             (f) => f.value,
           );
-          console.log(options.filters);
         }
       }
       if (this.hasFilters && !query) {
@@ -109,9 +115,6 @@ export default function searchPeople() {
           options,
           timeout,
         );
-        console.log(this.pagefind);
-        console.log(query);
-        console.log(options);
         if (search === null) return;
         results = await Promise.all(search.results.map((r) => r.data()));
         this.resultCount = search.results.length;

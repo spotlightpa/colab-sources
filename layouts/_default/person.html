@@ -56,7 +56,7 @@
             </svg>
           </span>
           <span>
-            {{ range $i, $p := .Params.research_areas }}
+            {{ range $i, $p := .Params.researchAreas }}
               {{- if ne $i 0 }},{{ end }}
               {{ . -}}
             {{- end }}
@@ -69,7 +69,7 @@
             </svg>
           </span>
           <span>
-            {{ range $i, $p := .Params.relevant_courses }}
+            {{ range $i, $p := .Params.relevantCourses }}
               {{- if ne $i 0 }},{{ end }}
               {{ . -}}
             {{- end }}
@@ -181,37 +181,21 @@
             {{ .Params.general_bio }}
           </p>
         </section>
-        <div class="links-blue-darker mt-4 md:flex">
-          <!-- Links -->
-          <!-- {{ with .GetTerms "beat" }}
-            <div class="md:max-w-sm">
-              <h2 class="text-lg font-bold">Journalism beat</h2>
-              <p class="text-md">
-                {{ range $i, $p := . }}
-                  {{- if ne $i 0 }},{{ end }}
-                  <a href="{{ $p.RelPermalink }}" data-pagefind-filter="beat">
-                    {{- .Title -}}
-                  </a>
-                {{- end }}
-              </p>
-            </div>
-          {{ end }}
-          {{ with .GetTerms "research_areas" }}
-            <div class="md:max-w-sm">
-              <h2 class="text-lg font-bold">Research areas</h2>
-              <p class="text-md">
-                {{ range $i, $p := . }}
-                  {{- if ne $i 0 }},{{ end }}
-                  <a
-                    href="{{ $p.RelPermalink }}"
-                    data-pagefind-filter="research_areas"
-                  >
-                    {{- .Title -}}
-                  </a>
-                {{- end }}
-              </p>
-            </div>
-          {{ end }} -->
+        <div class="links-blue-darker mt-4 md:flex flex flex-col">
+          <span>
+            <p class="text-lg font-bold mt-2">Reserach Areas: </p>
+            {{ range $i, $p := .Params.researchAreas }}
+              {{- if ne $i 0 }},{{ end }}
+              <span data-pagefind-filter = "researchAreas">{{ . -}}</span>
+            {{- end }}
+          </span>
+          <span>
+            <p class="text-lg font-bold mt-2">Relevant Courses </p>
+            {{ range $i, $p := .Params.relevantCourses }}
+              {{- if ne $i 0 }},{{ end }}
+              <span data-pagefind-filter = "relevantCourses">{{ . -}}</span>
+            {{- end }}
+          </span>
         </div>
       </div>
 
@@ -277,5 +261,8 @@
 
   <div hidden data-pagefind-meta="title">
     {{ .Params.linktitle }}
+  </div>
+  <div hidden data-pagefind-filter="type">
+    "scientist"
   </div>
 {{ end }}
