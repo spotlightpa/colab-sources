@@ -181,19 +181,19 @@
             {{ .Params.general_bio }}
           </p>
         </section>
-        <div class="links-blue-darker mt-4 md:flex flex flex-col">
+        <div class="links-blue-darker mt-4 flex flex-col md:flex">
           <span>
-            <p class="text-lg font-bold mt-2">Reserach Areas: </p>
+            <p class="mt-2 text-lg font-bold">Reserach Areas:</p>
             {{ range $i, $p := .Params.researchAreas }}
               {{- if ne $i 0 }},{{ end }}
-              <span data-pagefind-filter = "researchAreas">{{ . -}}</span>
+              <span data-pagefind-filter="researchAreas">{{ . -}}</span>
             {{- end }}
           </span>
           <span>
-            <p class="text-lg font-bold mt-2">Relevant Courses </p>
+            <p class="mt-2 text-lg font-bold">Relevant Courses</p>
             {{ range $i, $p := .Params.relevantCourses }}
               {{- if ne $i 0 }},{{ end }}
-              <span data-pagefind-filter = "relevantCourses">{{ . -}}</span>
+              <span data-pagefind-filter="relevantCourses">{{ . -}}</span>
             {{- end }}
           </span>
         </div>
@@ -262,7 +262,5 @@
   <div hidden data-pagefind-meta="title">
     {{ .Params.linktitle }}
   </div>
-  <div hidden data-pagefind-filter="type">
-    "scientist"
-  </div>
+  <div hidden data-pagefind-filter="type">"scientist"</div>
 {{ end }}

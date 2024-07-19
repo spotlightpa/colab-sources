@@ -11,20 +11,26 @@ async function debouncedSearch(
   options = {},
   debounceTimeoutMs = 300,
 ) {
-  const filters = await pf.filters();
-  if(options.filters.relevantCourses.length == 0 && options.filters.researchAreas.length == 0){
-    const searchResult = await pf.search(term)
-    return searchResult
+  if (
+    options.filters.relevantCourses.length == 0 &&
+    options.filters.researchAreas.length == 0
+  ) {
+    const searchResult = await pf.search(term);
+    return searchResult;
   }
-  options.filters.relevantCourses = options.filters.relevantCourses.map(course => course.toLowerCase());
-  options.filters.researchAreas = options.filters.researchAreas.map(area => area.toLowerCase());
+  options.filters.relevantCourses = options.filters.relevantCourses.map(
+    (course) => course.toLowerCase(),
+  );
+  options.filters.researchAreas = options.filters.researchAreas.map((area) =>
+    area.toLowerCase(),
+  );
   const thisSearchID = ++currentSearchID;
   await asyncSleep(debounceTimeoutMs);
 
   if (thisSearchID !== currentSearchID) {
     return null;
   }
-   if (options.filters && options.filters.type) {
+  if (options.filters && options.filters.type) {
     delete options.filters.type;
   }
   const searchResult = await pf.search(term, options);
