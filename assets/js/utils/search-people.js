@@ -43,12 +43,8 @@ async function debouncedSearch(
 export default function searchPeople() {
   return {
     filterType: "scientist",
-    filterExpertise: [],
-    filterLocation: [],
     filterResearchAreas: [],
     filterRelevantCourses: [],
-    filterArea: [],
-    filterBeat: [],
     query: "",
     pagefind: null,
     error: null,
@@ -70,13 +66,8 @@ export default function searchPeople() {
       for (let param of [
         "query",
         "filterType",
-        "filterArea",
-        "filterExpertise",
         "filterResearchAreas",
         "filterRelevantCourses",
-        "filterLocation",
-        "filterArea",
-        "filterBeat",
       ]) {
         this.$watch(param, () => this.search());
       }
@@ -94,20 +85,12 @@ export default function searchPeople() {
         options.filters = {
           type: this.filterType,
         };
-        if (this.filterType === "expert") {
-          options.filters.expertise = this.filterExpertise.map((f) => f.value);
-          options.filters.location = this.filterLocation.map((f) => f.value);
-        } else if (this.filterType === "journalist") {
-          options.filters.area = this.filterArea.map((f) => f.value);
-          options.filters.beat = this.filterBeat.map((f) => f.value);
-        } else if (this.filterType === "scientist") {
-          options.filters.researchAreas = this.filterResearchAreas.map(
-            (f) => f.value,
-          );
-          options.filters.relevantCourses = this.filterRelevantCourses.map(
-            (f) => f.value,
-          );
-        }
+        options.filters.researchAreas = this.filterResearchAreas.map(
+          (f) => f.value,
+        );
+        options.filters.relevantCourses = this.filterRelevantCourses.map(
+          (f) => f.value,
+        );
       }
       if (this.hasFilters && !query) {
         query = null; // magic value for show all in category
@@ -153,12 +136,7 @@ export default function searchPeople() {
         url: data.url,
         name: data.meta.title,
         excerpt: data.excerpt,
-        organization: data.meta.organization || "",
         role: data.meta.role || "",
-        beat: data.filters.beat || [],
-        expertise: data.filters.expertise || [],
-        location: data.filters.location || [],
-        area: data.filters.area || [],
         researchAreas: data.filters.researchAreas || [], // New Filter
         relevantCourses: data.filters.relevantCourses || [],
         image: data.meta.image,
