@@ -1,4 +1,5 @@
 {
+  "title" : "Mary Chilton Noyes",
   "name": "Mary Chilton Noyes",
   "linktitle": "Mary Chilton Noyes",
   "last": "Noyes",

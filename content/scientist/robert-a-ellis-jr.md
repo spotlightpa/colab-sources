@@ -1,4 +1,5 @@
 {
+  "title": "Robert A. Ellis Jr.",
   "name": "Robert A. Ellis Jr.",
   "linktitle": "Robert A. Ellis Jr.",
   "last": "Ellis",

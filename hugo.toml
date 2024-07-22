@@ -1,6 +1,6 @@
 baseURL = "https://amplifycolorado.colabnews.co/"
 languageCode = "en-us"
-title = "Amplify Colorado"
+title = ""
 enableRobotsTXT = true
 enableGitInfo = true
 rssLimit = 50
@@ -12,13 +12,7 @@ buildFuture = true
 [params]
   favicon = "/img/logos/hiddenfigs_logo.png"
   touch-icon = "/img/logos/hiddenfigs_logo.png"
-  donate-link = "https://colab.fundjournalism.org/amplifycolorado/"
-  nominate-link = "http://bit.ly/AmplifyColorado"
 [taxonomies]
-  expertise = "expertise"
-  location = "location"
-  beat = "beat"
-  area = "area"
   researchAreas = "researchAreas"
   relevantCourses = "relevantCourses"
 
