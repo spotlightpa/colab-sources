@@ -2,16 +2,19 @@
   <!-- Main Content Area -->
   <main class="p-8" data-pagefind-body x-data="{ isBio: true }">
     <div class="mx-auto flex max-w-screen-md flex-col">
-
       <!-- Title and Organization -->
       <h1 class="break-word font-bold leading-tight">
         <span class="text-2xl text-black">{{ .Params.name }}</span>
       </h1>
       {{ with .Param "organization" }}
-        <h2 class="break-word text-lg leading-tight text-gray" data-pagefind-meta="organization">
+        <h2
+          class="break-word text-lg leading-tight text-gray"
+          data-pagefind-meta="organization"
+        >
           {{ . }}
         </h2>
       {{ end }}
+
 
       <!-- Basic Information Section -->
       <div class="links-blue-darker mt-2 text-sm sm:flex sm:flex-wrap">
@@ -42,7 +45,9 @@
               <use xlink:href="#year"></use>
             </svg>
           </span>
-          <span>Year of Ph.D. or highest degree: {{ .Params.year_of_phd }}</span>
+          <span
+            >Year of Ph.D. or highest degree: {{ .Params.year_of_phd }}</span
+          >
         </p>
 
         <!-- Research Areas -->
@@ -83,7 +88,9 @@
               <use xlink:href="#globe-svg"></use>
             </svg>
           </span>
-          <a href="{{ .Params.wikipedia }}" target="_blank">{{ .Params.wikipedia }}</a>
+          <a href="{{ .Params.wikipedia }}" target="_blank"
+            >{{ .Params.wikipedia }}</a
+          >
         </p>
       </div>
 
@@ -168,8 +175,11 @@
           </div>
         {{ end }}
 
+
         <!-- Biographical Information -->
-        <section class="content-area links-blue-darker clear-both mt-4 sm:clear-none">
+        <section
+          class="content-area links-blue-darker clear-both mt-4 sm:clear-none"
+        >
           <h2 class="sr-only" data-pagefind-ignore>Biographical information</h2>
           <p>{{ .Params.general_bio }}</p>
         </section>
@@ -214,11 +224,26 @@
             <!-- List of Key Contributions -->
             {{ range $key, $value := .Params.key_contributions }}
               {{ $isOdd = not $isOdd }}
-              <div class="{{ cond $isOdd `bg-g-3 shadow-inner` `` }} p-2" x-data="{ isOpen: false }">
+              <div
+                class="{{ cond $isOdd `bg-g-3 shadow-inner` `` }} p-2"
+                x-data="{ isOpen: false }"
+              >
                 <h3 class="text-md font-semibold">
-                  <button @click="isOpen = !isOpen" :aria-expanded="isOpen" class="flex items-center">
-                    <span x-show="isOpen" x-cloak aria-hidden="true" class="mr-2">&minus;</span>
-                    <span x-show="!isOpen" aria-hidden="true" class="mr-2">&plus;</span>
+                  <button
+                    @click="isOpen = !isOpen"
+                    :aria-expanded="isOpen"
+                    class="flex items-center"
+                  >
+                    <span
+                      x-show="isOpen"
+                      x-cloak
+                      aria-hidden="true"
+                      class="mr-2"
+                      >&minus;</span
+                    >
+                    <span x-show="!isOpen" aria-hidden="true" class="mr-2"
+                      >&plus;</span
+                    >
                     <span>{{ $key }}</span>
                   </button>
                 </h3>
