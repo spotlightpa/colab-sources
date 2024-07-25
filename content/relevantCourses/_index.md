@@ -1,4 +1,4 @@
 +++
-title = "Scientists listed by relevant relevantCourses"
-linktitle = "relevantCourses"
+title = "Scientists listed by Relevant Courses"
+linktitle = "Relevant Courses"
 +++
