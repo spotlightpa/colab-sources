@@ -2,10 +2,16 @@
   <section class="p-8">
     <div class="mx-auto max-w-screen-md">
       <h1 class="text-right text-lg leading-tight">
-        <a class="text-blue duration-500 hover:text-blue-darker" href="/">Home</a>
+        <a class="text-blue duration-500 hover:text-blue-darker" href="/"
+          >Home</a
+        >
         <span class="text-g-5">»</span>
         {{ if .Parent }}
-          <a class="text-blue duration-500 hover:text-blue-darker" href="{{ .Parent.Permalink }}">{{ .Parent.LinkTitle }}</a>
+          <a
+            class="text-blue duration-500 hover:text-blue-darker"
+            href="{{ .Parent.Permalink }}"
+            >{{ .Parent.LinkTitle }}</a
+          >
           <span class="text-g-5">»</span>
         {{ end }}
         <span class="font-bold">{{ .Title }}</span>
