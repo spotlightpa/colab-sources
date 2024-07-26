@@ -33,8 +33,9 @@
               </a>
 
               <!-- Categories Link -->
-              <div class="links-blue-darker font-sans text-base leading-snug text-g-7">
-
+              <div
+                class="links-blue-darker font-sans text-base leading-snug text-g-7"
+              >
                 <!-- researchAreas Link List-->
                 {{ if .Params.researchAreas }}
                   <span class="mr-1 text-g-7">
@@ -46,12 +47,16 @@
                   <span class="mr-1 align-middle">
                     {{ range $index, $area := .Params.researchAreas }}
                       {{- if ne $index 0 }},{{ end }}
-                      <a class="hover:underline" href="/researchAreas/{{ $area | urlize }}">
+                      <a
+                        class="hover:underline"
+                        href="/researchAreas/{{ $area | urlize }}"
+                      >
                         {{ $area -}}
                       </a>
                     {{- end }}
                   </span>
                 {{ end }}
+
 
                 <!-- RelevantCourses Links List -->
                 {{ if .Params.relevantCourses }}
@@ -64,7 +69,10 @@
                   <span class="mr-1 align-middle">
                     {{ range $index, $course := .Params.relevantCourses }}
                       {{- if ne $index 0 }},{{ end }}
-                      <a class="hover:underline" href="/relevantCourses/{{ $course | urlize }}">
+                      <a
+                        class="hover:underline"
+                        href="/relevantCourses/{{ $course | urlize }}"
+                      >
                         {{ $course -}}
                       </a>
                     {{- end }}
@@ -75,7 +83,7 @@
           {{ end }}
         </ul>
 
-      <!-- categories page -->
+        <!-- categories page -->
       {{ else }}
         <ul class="links-blue-darker mt-6 sm:columns-2 md:columns-3">
           {{ range .Pages }}

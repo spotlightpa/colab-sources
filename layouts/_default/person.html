@@ -186,7 +186,6 @@
 
         <!-- Additional Information: Research Areas and Relevant Courses -->
         <div class="links-blue-darker mt-4 flex flex-col md:flex">
-          
           <!-- Research Areas Link List-->
           <span>
             {{ if .Params.researchAreas }}
@@ -194,7 +193,11 @@
               <span class="mr-1 align-middle">
                 {{ range $index, $area := .Params.researchAreas }}
                   {{- if ne $index 0 }},{{ end }}
-                  <a data-pagefind-filter="researchAreas" class="hover:underline" href="/researchAreas/{{ $area | urlize }}">
+                  <a
+                    data-pagefind-filter="researchAreas"
+                    class="hover:underline"
+                    href="/researchAreas/{{ $area | urlize }}"
+                  >
                     {{ $area -}}
                   </a>
                 {{- end }}
@@ -211,7 +214,11 @@
               <span class="mr-1 align-middle">
                 {{ range $index, $course := .Params.relevantCourses }}
                   {{- if ne $index 0 }},{{ end }}
-                  <a data-pagefind-filter="relevantCourses" class="hover:underline" href="/relevantCourses/{{ $course | urlize }}">
+                  <a
+                    data-pagefind-filter="relevantCourses"
+                    class="hover:underline"
+                    href="/relevantCourses/{{ $course | urlize }}"
+                  >
                     {{ $course -}}
                   </a>
                 {{- end }}
