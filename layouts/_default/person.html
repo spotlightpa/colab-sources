@@ -186,21 +186,37 @@
 
         <!-- Additional Information: Research Areas and Relevant Courses -->
         <div class="links-blue-darker mt-4 flex flex-col md:flex">
-          <!-- Research Areas -->
+          
+          <!-- Research Areas Link List-->
           <span>
-            <p class="mt-2 text-lg font-bold">Research Areas:</p>
-            {{ range $i, $p := .Params.researchAreas }}
-              {{- if ne $i 0 }},{{ end }}
-              <span data-pagefind-filter="researchAreas">{{ . -}}</span>
-            {{- end }}
+            {{ if .Params.researchAreas }}
+              <p class="mt-2 text-lg font-bold">Research Areas:</p>
+              <span class="mr-1 align-middle">
+                {{ range $index, $area := .Params.researchAreas }}
+                  {{- if ne $index 0 }},{{ end }}
+                  <a data-pagefind-filter="researchAreas" class="hover:underline" href="/researchAreas/{{ $area | urlize }}">
+                    {{ $area -}}
+                  </a>
+                {{- end }}
+              </span>
+            {{ end }}
           </span>
-          <!-- Relevant Courses -->
+
+          <!-- Relevant Courses Link List-->
           <span>
-            <p class="mt-2 text-lg font-bold">Relevant Courses:</p>
-            {{ range $i, $p := .Params.relevantCourses }}
-              {{- if ne $i 0 }},{{ end }}
-              <span data-pagefind-filter="relevantCourses">{{ . -}}</span>
-            {{- end }}
+            {{ if .Params.relevantCourses }}
+              <span class="mr-1 text-g-7">
+                <p class="mt-2 text-lg font-bold">Relevant Courses:</p>
+              </span>
+              <span class="mr-1 align-middle">
+                {{ range $index, $course := .Params.relevantCourses }}
+                  {{- if ne $index 0 }},{{ end }}
+                  <a data-pagefind-filter="relevantCourses" class="hover:underline" href="/relevantCourses/{{ $course | urlize }}">
+                    {{ $course -}}
+                  </a>
+                {{- end }}
+              </span>
+            {{ end }}
           </span>
         </div>
       </div>

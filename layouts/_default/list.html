@@ -16,6 +16,8 @@
         {{ end }}
         <span class="font-bold">{{ .Title }}</span>
       </h1>
+
+      <!-- people list page -->
       {{ if not (or (eq .Params.linktitle "Research Areas") (eq .Params.linktitle "Relevant Courses")) }}
         <ul class="mt-6">
           {{ $isOdd := false }}
@@ -29,57 +31,51 @@
                   {{ .LinkTitle }}
                 </h2>
               </a>
-              <div class="font-sans text-base leading-snug text-g-7">
-                <span>
+
+              <!-- Categories Link -->
+              <div class="links-blue-darker font-sans text-base leading-snug text-g-7">
+
+                <!-- researchAreas Link List-->
+                {{ if .Params.researchAreas }}
                   <span class="mr-1 text-g-7">
                     <svg class="inline-block h-3 w-3 fill-current align-middle">
-                      <title>Area of experience</title>
+                      <title>researchAreas</title>
                       <use xlink:href="#university-svg"></use>
                     </svg>
                   </span>
-                  {{ range $i, $p := .Params.researchAreas }}
-                    {{- if ne $i 0 }},{{ end }}
-                    <span>{{ . -}}</span>
-                  {{- end }}
-                </span>
-                <span>
+                  <span class="mr-1 align-middle">
+                    {{ range $index, $area := .Params.researchAreas }}
+                      {{- if ne $index 0 }},{{ end }}
+                      <a class="hover:underline" href="/researchAreas/{{ $area | urlize }}">
+                        {{ $area -}}
+                      </a>
+                    {{- end }}
+                  </span>
+                {{ end }}
+
+                <!-- RelevantCourses Links List -->
+                {{ if .Params.relevantCourses }}
                   <span class="mr-1 text-g-7">
                     <svg class="inline-block h-3 w-3 fill-current align-middle">
-                      <title>relevantCourses</title>
+                      <title>Relevant Courses</title>
                       <use xlink:href="#open-book"></use>
                     </svg>
                   </span>
-                  {{ range $i, $p := .Params.relevantCourses }}
-                    {{- if ne $i 0 }},{{ end }}
-                    <span>{{ . -}}</span>
-                  {{- end }}
-                </span>
-
-                <!-- TODO: FIX THE LINK -->
-                <!-- {{ with .GetTerms "relevantCourses" }}
-                  <span class="mr-1 text-g-7">
-                    <svg class="inline-block h-3 w-3 fill-current align-middle">
-                      <title>Beat</title>
-                      <use xlink:href="#newspaper-svg"></use>
-                    </svg>
-                  </span>
                   <span class="mr-1 align-middle">
-                    {{ range $i, $p := . }}
-                      {{- if ne $i 0 }},{{ end }}
-                      {{ if ne $.RelPermalink $p.RelPermalink }}
-                        <a class="hover:underline" href="{{ $p.RelPermalink }}">
-                          {{ .Title -}}
-                        </a>
-                      {{- else }}
-                        {{ .Title -}}
-                      {{ end }}
+                    {{ range $index, $course := .Params.relevantCourses }}
+                      {{- if ne $index 0 }},{{ end }}
+                      <a class="hover:underline" href="/relevantCourses/{{ $course | urlize }}">
+                        {{ $course -}}
+                      </a>
                     {{- end }}
                   </span>
-                {{ end }} -->
+                {{ end }}
               </div>
             </li>
           {{ end }}
         </ul>
+
+      <!-- categories page -->
       {{ else }}
         <ul class="links-blue-darker mt-6 sm:columns-2 md:columns-3">
           {{ range .Pages }}
