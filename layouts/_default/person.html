@@ -81,21 +81,23 @@
         </p>
 
         <!-- Wikipedia Link -->
-        <p class="sm:w-1/2">
+        <p class=" flex items-center sm:w-1/2">
           <span class="mr-5 text-g-6">
             <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
               <title>Website</title>
               <use xlink:href="#globe-svg"></use>
             </svg>
           </span>
-          <a href="{{ .Params.wikipedia }}" target="_blank"
-            >{{ .Params.wikipedia }}</a
-          >
+          <span class="break-words overflow-hidden">
+            <a href="{{ .Params.wikipedia }}" target="_blank"
+              >{{ .Params.wikipedia }}</a
+            >
+          </span>
         </p>
       </div>
 
       <!-- Content Switch Buttons -->
-      <div class="mt-4 flex flex-row justify-around bg-black p-2">
+      <div class="mt-4 grid items-end gap-4 md:grid-cols-2 bg-black p-2">
         <!-- Bio Button -->
         <button
           :class="isBio ? 'bg-white text-black' : 'bg-gray text-white'"
@@ -126,71 +128,70 @@
         class="mt-4"
       >
         <h2 class="text-lg font-bold">Scientist Biography</h2>
-        {{ with .Param "images" }}
-          <!-- Display Images if Available -->
-          {{ range . }}
-            {{ $img := resources.GetMatch . }}
-            {{ if not $img }}
-              {{ warnf "missing image %q" . }}
-              {{ continue }}
+        
+        <div class = "w-full flex flex-wrap mt-4">
+          {{ with .Param "images" }}
+            <!-- Display Images if Available -->
+            {{ range . }}
+              {{ $img := resources.GetMatch . }}
+              {{ if not $img }}
+                {{ warnf "missing image %q" . }}
+                {{ continue }}
+              {{ end }}
+              {{ $imgSmall := $img.Resize "200x" }}
+              {{ $imgMedium := $img.Resize "400x" }}
+              <div class="w-full sm:w-auto sm:mr-4 mb-4 sm:mb-0 text-center sm:text-left">
+                <a href="{{ $img.RelPermalink }}" download>
+                  <img
+                    data-pagefind-meta="image[src], image_alt[alt], image_srcset[srcset], image_width[width], image_height[height]"
+                    title="Click to download"
+                    class="rounded bg-g-4 shadow transition-shadow duration-500 hover:shadow-lg mx-auto sm:mx-0"
+                    alt="Headshot of {{ $.Title }}"
+                    width="{{ $imgSmall.Width }}"
+                    height="{{ $imgSmall.Height }}"
+                    src="{{ $imgSmall.RelPermalink }}"
+                    srcset="
+                      {{ $imgSmall.RelPermalink }} 1x,
+                      {{ $imgMedium.RelPermalink }} 2x
+                    "
+                  />
+                </a>
+              </div>
             {{ end }}
+          {{ else }}
+            <!-- Placeholder Image if No Images Available -->
+            {{ $img := resources.Get "img/logos/person-svgrepo-com.png" }}
             {{ $imgSmall := $img.Resize "200x" }}
             {{ $imgMedium := $img.Resize "400x" }}
-            <p class="float-left mb-4 mr-4 mt-6">
-              <a href="{{ $img.RelPermalink }}" download>
-                <img
-                  data-pagefind-meta="image[src], image_alt[alt], image_srcset[srcset], image_width[width], image_height[height]"
-                  title="Click to download"
-                  class="rounded bg-g-4 shadow transition-shadow duration-500 hover:shadow-lg"
-                  alt="Headshot of {{ $.Title }}"
-                  width="{{ $imgSmall.Width }}"
-                  height="{{ $imgSmall.Height }}"
-                  src="{{ $imgSmall.RelPermalink }}"
-                  srcset="
-                    {{ $imgSmall.RelPermalink }} 1x,
-                    {{ $imgMedium.RelPermalink }} 2x
-                  "
-                />
-              </a>
-            </p>
+            <div class="w-full sm:w-auto sm:mr-4 mb-4 sm:mb-0 text-center sm:text-left">
+              <img
+                aria-hidden="true"
+                class="mx-auto sm:mx-0 h-auto w-auto max-w-[150px] rounded"
+                alt="Placeholder"
+                width="{{ $imgSmall.Width }}"
+                height="{{ $imgSmall.Height }}"
+                src="{{ $imgSmall.RelPermalink }}"
+                srcset="
+                  {{ $imgSmall.RelPermalink }} 150w,
+                  {{ $imgMedium.RelPermalink }} 300w
+                "
+              />
+            </div>
           {{ end }}
-        {{ else }}
-          <!-- Placeholder Image if No Images Available -->
-          {{ $img := resources.Get "img/logos/person-svgrepo-com.png" }}
-          {{ $imgSmall := $img.Resize "200x" }}
-          {{ $imgMedium := $img.Resize "400x" }}
-          <div class="float-left mb-4 mr-4 mt-6">
-            <img
-              aria-hidden="true"
-              class="mx-auto h-auto w-auto max-w-[150px] rounded"
-              alt="Placeholder"
-              width="{{ $imgSmall.Width }}"
-              height="{{ $imgSmall.Height }}"
-              src="{{ $imgSmall.RelPermalink }}"
-              srcset="
-                {{ $imgSmall.RelPermalink }} 150w,
-                {{ $imgMedium.RelPermalink }} 300w
-              "
-            />
-          </div>
-        {{ end }}
-
-
-        <!-- Biographical Information -->
-        <section
-          class="content-area links-blue-darker clear-both mt-4 sm:clear-none"
-        >
-          <h2 class="sr-only" data-pagefind-ignore>Biographical information</h2>
-          <p>{{ .Params.general_bio }}</p>
-        </section>
+          <!-- Biographical Information -->
+          <section class="content-area links-blue-darker mt-4 sm:mt-0 sm:ml-4 flex-1 md:ml-2">
+            <h2 class="sr-only" data-pagefind-ignore>Biographical information</h2>
+            <p>{{ .Params.general_bio }}</p>
+          </section>
+        </div>
 
         <!-- Additional Information: Research Areas and Relevant Courses -->
-        <div class="links-blue-darker mt-4 flex flex-col md:flex">
+        <div class="links-blue-darker mt-4 flex flex-col">
           <!-- Research Areas Link List-->
-          <span>
-            {{ if .Params.researchAreas }}
-              <p class="mt-2 text-lg font-bold">Research Areas:</p>
-              <span class="mr-1 align-middle">
+          {{ if .Params.researchAreas }}
+            <div class="mt-2">
+              <p class="text-lg font-bold">Research Areas:</p>
+              <span class="align-middle">
                 {{ range $index, $area := .Params.researchAreas }}
                   {{- if ne $index 0 }},{{ end }}
                   <a
@@ -202,16 +203,14 @@
                   </a>
                 {{- end }}
               </span>
-            {{ end }}
-          </span>
+            </div>
+          {{ end }}
 
           <!-- Relevant Courses Link List-->
-          <span>
-            {{ if .Params.relevantCourses }}
-              <span class="mr-1 text-g-7">
-                <p class="mt-2 text-lg font-bold">Relevant Courses:</p>
-              </span>
-              <span class="mr-1 align-middle">
+          {{ if .Params.relevantCourses }}
+            <div class="mt-2">
+              <p class="text-lg font-bold">Relevant Courses:</p>
+              <span class="align-middle">
                 {{ range $index, $course := .Params.relevantCourses }}
                   {{- if ne $index 0 }},{{ end }}
                   <a
@@ -223,10 +222,11 @@
                   </a>
                 {{- end }}
               </span>
-            {{ end }}
-          </span>
+            </div>
+          {{ end }}
         </div>
       </div>
+
 
       <!-- Contributions Section -->
       <div
@@ -282,7 +282,7 @@
         <h2 class="text-lg font-bold">Citations</h2>
         <ol type="1" class="links-blue-darker">
           {{ range $index, $citation := .Params.citations }}
-            <li>
+            <li class="break-words overflow-hidden">
               <a href="{{ $citation }}" target="_blank">{{ $citation }}</a>
             </li>
           {{ end }}
