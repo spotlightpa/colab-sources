@@ -88,7 +88,7 @@
               <use xlink:href="#globe-svg"></use>
             </svg>
           </span>
-          <span class="break-words overflow-hidden">
+          <span class="overflow-hidden break-words">
             <a href="{{ .Params.wikipedia }}" target="_blank"
               >{{ .Params.wikipedia }}</a
             >
@@ -97,7 +97,7 @@
       </div>
 
       <!-- Content Switch Buttons -->
-      <div class="mt-4 grid items-end gap-4 md:grid-cols-2 bg-black p-2">
+      <div class="mt-4 grid items-end gap-4 bg-black p-2 md:grid-cols-2">
         <!-- Bio Button -->
         <button
           :class="isBio ? 'bg-white text-black' : 'bg-gray text-white'"
@@ -128,8 +128,8 @@
         class="mt-4"
       >
         <h2 class="text-lg font-bold">Scientist Biography</h2>
-        
-        <div class = "w-full flex flex-wrap mt-4">
+
+        <div class="mt-4 flex w-full flex-wrap">
           {{ with .Param "images" }}
             <!-- Display Images if Available -->
             {{ range . }}
@@ -140,12 +140,14 @@
               {{ end }}
               {{ $imgSmall := $img.Resize "200x" }}
               {{ $imgMedium := $img.Resize "400x" }}
-              <div class="w-full sm:w-auto sm:mr-4 mb-4 sm:mb-0 text-center sm:text-left">
+              <div
+                class="mb-4 w-full text-center sm:mb-0 sm:mr-4 sm:w-auto sm:text-left"
+              >
                 <a href="{{ $img.RelPermalink }}" download>
                   <img
                     data-pagefind-meta="image[src], image_alt[alt], image_srcset[srcset], image_width[width], image_height[height]"
                     title="Click to download"
-                    class="rounded bg-g-4 shadow transition-shadow duration-500 hover:shadow-lg mx-auto sm:mx-0"
+                    class="mx-auto rounded bg-g-4 shadow transition-shadow duration-500 hover:shadow-lg sm:mx-0"
                     alt="Headshot of {{ $.Title }}"
                     width="{{ $imgSmall.Width }}"
                     height="{{ $imgSmall.Height }}"
@@ -163,10 +165,12 @@
             {{ $img := resources.Get "img/logos/person-svgrepo-com.png" }}
             {{ $imgSmall := $img.Resize "200x" }}
             {{ $imgMedium := $img.Resize "400x" }}
-            <div class="w-full sm:w-auto sm:mr-4 mb-4 sm:mb-0 text-center sm:text-left">
+            <div
+              class="mb-4 w-full text-center sm:mb-0 sm:mr-4 sm:w-auto sm:text-left"
+            >
               <img
                 aria-hidden="true"
-                class="mx-auto sm:mx-0 h-auto w-auto max-w-[150px] rounded"
+                class="mx-auto h-auto w-auto max-w-[150px] rounded sm:mx-0"
                 alt="Placeholder"
                 width="{{ $imgSmall.Width }}"
                 height="{{ $imgSmall.Height }}"
@@ -179,8 +183,12 @@
             </div>
           {{ end }}
           <!-- Biographical Information -->
-          <section class="content-area links-blue-darker mt-4 sm:mt-0 sm:ml-4 flex-1 md:ml-2">
-            <h2 class="sr-only" data-pagefind-ignore>Biographical information</h2>
+          <section
+            class="content-area links-blue-darker mt-4 flex-1 sm:ml-4 sm:mt-0 md:ml-2"
+          >
+            <h2 class="sr-only" data-pagefind-ignore>
+              Biographical information
+            </h2>
             <p>{{ .Params.general_bio }}</p>
           </section>
         </div>
@@ -206,6 +214,7 @@
             </div>
           {{ end }}
 
+
           <!-- Relevant Courses Link List-->
           {{ if .Params.relevantCourses }}
             <div class="mt-2">
@@ -226,7 +235,6 @@
           {{ end }}
         </div>
       </div>
-
 
       <!-- Contributions Section -->
       <div
@@ -282,7 +290,7 @@
         <h2 class="text-lg font-bold">Citations</h2>
         <ol type="1" class="links-blue-darker">
           {{ range $index, $citation := .Params.citations }}
-            <li class="break-words overflow-hidden">
+            <li class="overflow-hidden break-words">
               <a href="{{ $citation }}" target="_blank">{{ $citation }}</a>
             </li>
           {{ end }}
