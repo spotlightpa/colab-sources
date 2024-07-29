@@ -18,7 +18,9 @@
           {{ range .Params.team_members }}
             <div class="rounded-lg bg-white p-4 shadow">
               {{ if .image }}
-                <div class="h-48 w-full overflow-hidden rounded-t-lg bg-gray-200 flex items-center justify-center">
+                <div
+                  class="bg-gray-200 flex h-48 w-full items-center justify-center overflow-hidden rounded-t-lg"
+                >
                   <img
                     src="{{ .image }}"
                     alt="Photo of {{ .name }}"
@@ -29,7 +31,9 @@
                 {{ $img := resources.Get "img/logos/person-svgrepo-com.png" }}
                 {{ $imgSmall := $img.Resize "150x" }}
                 {{ $imgMedium := $img.Resize "300x" }}
-                <div class="h-48 w-full overflow-hidden rounded-t-lg bg-gray-200 flex items-center justify-center">
+                <div
+                  class="bg-gray-200 flex h-48 w-full items-center justify-center overflow-hidden rounded-t-lg"
+                >
                   <img
                     aria-hidden="true"
                     class="max-h-full max-w-full"
@@ -52,9 +56,6 @@
           {{ end }}
         </div>
       </section>
-      
-      
-
     </div>
   </main>
 {{ end }}
