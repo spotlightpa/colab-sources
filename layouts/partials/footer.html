@@ -1,10 +1,12 @@
 <footer class="mt-auto bg-gray p-12 font-serif text-white">
   <nav class="flex max-w-screen-xl flex-col gap-6 lg:flex-row">
+    <!-- RCSA Logo Section -->
     <div class="flex items-center">
       <a
         class="inline-flex flex-shrink-0 leading-none text-white"
         href="https://rescorp.org/"
       >
+        <!-- Load and fingerprint the RCSA logo image -->
         {{ $logo := resources.Get "img/logos/rcsa_logo.png" }}
         {{ $logo = $logo | fingerprint }}
         <img
@@ -18,10 +20,8 @@
       </a>
     </div>
 
-    {{ $context := dict
-      "menu" site.Menus.footer
-      "name" "RCSA"
-    }}
+    <!-- RCSA Menu Section -->
+    {{ $context := dict "menu" site.Menus.footer "name" "RCSA" }}
     {{ block "featured-footer" $context }}
       <div class="flex-1 font-sans">
         <h3 class="font-bold uppercase">{{ .name }}</h3>
@@ -36,11 +36,15 @@
         </ul>
       </div>
     {{ end }}
+
+
+    <!-- Hidden Figures Logo Section -->
     <div class="flex items-center">
+      <!-- Load and resize the Hidden Figures logo images -->
       {{ $logoAmp := resources.Get "img/logos/hiddenfigs_logo_dark.png" }}
       {{ $imgSmall := $logoAmp.Resize "30x" }}
       {{ $imgMedium := $logoAmp.Resize "600x" }}
-      <a class="" href="/">
+      <a href="/">
         <img
           class="h-auto w-[200px]"
           width="{{ $imgSmall.Width }}"
@@ -55,8 +59,13 @@
         />
       </a>
     </div>
+
+    <!-- Hidden Figures Menu Section -->
     {{ $context = dict "menu" site.Menus.follow "name" "Hidden Figures" }}
     {{ template "featured-footer" $context }}
+
+
+    <!-- Additional Information Section -->
     <div class="flex-grow">
       <p class="links-blue-lighter leading-tight">
         Hidden Figures in Physics and Astronomy is a<br />

@@ -1,15 +1,19 @@
 <div x-data="combobox" class="w-full" data-xmodel="{{ .xmodel }}">
+  <!-- Data List for Options -->
   <datalist x-ref="options">
     {{ range .options }}
       <option value="{{ .Title }}">{{ .Title }}</option>
     {{ end }}
   </datalist>
+
+  <!-- Combobox Component -->
   <div
     x-combobox
     x-model="{{ .xmodel }}"
     multiple
     class="border-none bg-transparent"
   >
+    <!-- Selected Options Display -->
     <div
       x-show="selected.length"
       class="mb-4 mt-1 flex flex-wrap items-center gap-1.5"
@@ -27,6 +31,7 @@
       </template>
     </div>
 
+    <!-- Input and Dropdown Button -->
     <div
       class="relative mt-1 rounded focus-within:ring-2 focus-within:ring-blue"
     >
@@ -49,6 +54,7 @@
         </button>
       </div>
 
+      <!-- Options Dropdown -->
       <div
         x-combobox:options
         x-cloak
@@ -62,10 +68,10 @@
               :value="opt"
               :disabled="opt.disabled"
               :class="{
-                    'bg-gray/75 text-white': $comboboxOption.isActive,
-                    'text-g-7': ! $comboboxOption.isActive,
-                    'opacity-50 cursor-not-allowed': $comboboxOption.isDisabled,
-                  }"
+                'bg-gray/75 text-white': $comboboxOption.isActive,
+                'text-g-7': !$comboboxOption.isActive,
+                'opacity-50 cursor-not-allowed': $comboboxOption.isDisabled,
+              }"
               class="flex w-full cursor-default items-center justify-between gap-2 px-4 py-2 text-sm"
             >
               <span
@@ -73,7 +79,6 @@
                 class="cursor-not-allowed bg-gray/75 text-g-7 text-white opacity-50"
               ></span>
               <span x-text="opt.name"></span>
-
               <span
                 x-show="$comboboxOption.isSelected"
                 class="font-bold text-blue"
@@ -86,6 +91,7 @@
           </template>
         </ul>
 
+        <!-- No Options Message -->
         <p
           x-show="filteredOptions.length == 0"
           class="px-4 py-2 text-sm text-g-6"

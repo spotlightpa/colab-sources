@@ -2,8 +2,10 @@
   <nav x-data="{ isOpen: false, showModal: false }">
     <div class="mx-auto max-w-7xl px-6">
       <div class="relative flex h-16 items-center justify-between md:h-24">
+        <!-- Logo Section -->
         <div class="flex flex-1 items-center justify-start">
           <a class="inline-flex flex-shrink-0 leading-none text-white" href="/">
+            <!-- Load and fingerprint the Hidden Figures logo image -->
             {{ $logo := resources.Get "img/logos/hiddenfigs_logo_dark.png" }}
             {{ $logo = $logo | fingerprint }}
             <img
@@ -16,6 +18,7 @@
           </a>
         </div>
 
+        <!-- Desktop Menu -->
         <div
           class="relative flex h-16 items-center justify-between"
           @click.away="isOpen = false"
@@ -49,8 +52,9 @@
               {{ end }}
             {{ end }}
           </span>
+
+          <!-- Mobile Menu Button -->
           <div class="flex items-center lg:hidden">
-            <!-- Mobile menu button-->
             <button
               type="button"
               class="inline-flex items-center justify-center rounded-md p-2 text-g-1 focus:outline-none"
@@ -58,7 +62,7 @@
               :aria-expanded="String(isOpen)"
               @click="isOpen = !isOpen"
             >
-              <!-- Heroicon name: menu -->
+              <!-- Menu Icon -->
               <svg
                 x-show="!isOpen"
                 class="h-6 w-6"
@@ -74,9 +78,9 @@
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               </svg>
-              <!-- Heroicon name: x -->
+              <!-- Close Icon -->
               <svg
-                x-cloak="1"
+                x-cloak
                 x-show="isOpen"
                 class="h-6 w-6"
                 fill="none"
@@ -93,6 +97,7 @@
               </svg>
             </button>
 
+            <!-- Mobile Menu -->
             <div
               x-show="isOpen"
               x-transition:enter="transition ease-out duration-100"
@@ -131,6 +136,7 @@
         </div>
       </div>
     </div>
+
     <!-- Popup Modal -->
     <div
       x-show="showModal"
