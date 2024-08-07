@@ -2,127 +2,109 @@
   <section class="p-8">
     <div class="mx-auto max-w-screen-md">
       <h1 class="text-right text-lg leading-tight">
-        {{ with .Parent }}
-          <a class="text-blue duration-500 hover:text-blue-darker" href="/"
-            >Home</a
+        <a class="text-blue duration-500 hover:text-blue-darker" href="/"
+          >Home</a
+        >
+        <span class="text-g-5">»</span>
+        {{ if .Parent.Parent }}
+          <a
+            class="text-blue duration-500 hover:text-blue-darker"
+            href="{{ .Parent.Permalink }}"
+            >{{ .Parent.LinkTitle }}</a
           >
           <span class="text-g-5">»</span>
-          {{ if ne . site.Home }}
-            <a
-              class="text-blue duration-500 hover:text-blue-darker"
-              href="/#by-{{ .RelPermalink | anchorize }}"
-              >{{ .LinkTitle }}</a
-            >
-            <span class="text-g-5">»</span>
-          {{ end }}
         {{ end }}
-        <span class="font-bold">
-          {{ .Title }}
-        </span>
+        <span class="font-bold">{{ .Title }}</span>
       </h1>
 
-      <ul class="mt-6">
-        {{ $isOdd := false }}
-        {{ range .Pages.ByParam "last" }}
-          {{ $isOdd = not $isOdd }}
-          <li class="{{ cond $isOdd `bg-g-3 rounded` `` }} p-2">
-            <a class="text-base" href="{{ .RelPermalink }}">
-              <h2
-                class="inline font-bold text-blue duration-500 hover:text-blue-darker"
+      <!-- people list page -->
+      {{ if not (or (eq .Params.linktitle "Research Areas") (eq .Params.linktitle "Relevant Courses")) }}
+        <ul class="mt-6">
+          {{ $isOdd := false }}
+          {{ range .Pages.ByParam "last" }}
+            {{ $isOdd = not $isOdd }}
+            <li class="{{ cond $isOdd `bg-g-3 rounded` `` }} p-2">
+              <a class="text-base" href="{{ .RelPermalink }}">
+                <h2
+                  class="inline font-bold text-blue duration-500 hover:text-blue-darker"
+                >
+                  {{ .LinkTitle }}
+                </h2>
+              </a>
+
+              <!-- Categories Link -->
+              <div
+                class="links-blue-darker font-sans text-base leading-snug text-g-7"
               >
-                {{ .LinkTitle }}
-              </h2>
-              {{ with .Param "organization" }}
-                <h3 class="ml-1 inline text-g-9 hover:underline">
-                  {{ . }}
-                </h3>
-              {{ end }}
-            </a>
-            <div class="font-sans text-base leading-snug text-g-7">
-              {{ with .GetTerms "expertise" }}
-                <span class="mr-1 text-g-7">
-                  <svg class="inline-block h-3 w-3 fill-current align-middle">
-                    <title>Area of experience</title>
-                    <use xlink:href="#university-svg"></use>
-                  </svg>
-                </span>
-                <span class="mr-1 align-middle">
-                  {{ range $i, $p := . }}
-                    {{- if ne $i 0 }},{{ end }}
-                    {{ if ne $.RelPermalink $p.RelPermalink }}
-                      <a class="hover:underline" href="{{ $p.RelPermalink }}">
-                        {{ .Title -}}
-                      </a>
-                    {{- else }}
-                      {{ .Title -}}
-                    {{ end }}
-                  {{- end }}
-                </span>
-              {{ end }}
-              {{ with .GetTerms "beat" }}
-                <span class="mr-1 text-g-7">
-                  <svg class="inline-block h-3 w-3 fill-current align-middle">
-                    <title>Beat</title>
-                    <use xlink:href="#newspaper-svg"></use>
-                  </svg>
-                </span>
-                <span class="mr-1 align-middle">
-                  {{ range $i, $p := . }}
-                    {{- if ne $i 0 }},{{ end }}
-                    {{ if ne $.RelPermalink $p.RelPermalink }}
-                      <a class="hover:underline" href="{{ $p.RelPermalink }}">
-                        {{ .Title -}}
-                      </a>
-                    {{- else }}
-                      {{ .Title -}}
-                    {{ end }}
-                  {{- end }}
-                </span>
-              {{ end }}
-              {{ with .GetTerms "location" }}
-                {{ if le (len .) 2 }}
-                  {{ range . }}
-                    <span class="mr-1 text-g-7">
-                      <svg
-                        class="inline-block h-3 w-3 fill-current align-middle"
+                <!-- researchAreas Link List-->
+                {{ if .Params.researchAreas }}
+                  <span class="mr-1 text-g-7">
+                    <svg class="inline-block h-3 w-3 fill-current align-middle">
+                      <title>researchAreas</title>
+                      <use xlink:href="#university-svg"></use>
+                    </svg>
+                  </span>
+                  <span class="mr-1 align-middle">
+                    {{ range $index, $area := .Params.researchAreas }}
+                      {{- if ne $index 0 }},{{ end }}
+                      <a
+                        class="hover:underline"
+                        href="/researchAreas/{{ $area | urlize }}"
                       >
-                        <title>Location</title>
-                        <use xlink:href="#earth-svg"></use>
-                      </svg>
-                    </span>
-                    <a
-                      class="align-middle hover:underline"
-                      href="{{ .RelPermalink }}"
-                    >
-                      {{ .Title }}
-                    </a>
-                  {{ end }}
+                        {{ $area -}}
+                      </a>
+                    {{- end }}
+                  </span>
                 {{ end }}
-              {{ end }}
-              {{ with .GetTerms "area" }}
-                {{ if le (len .) 2 }}
-                  {{ range . }}
-                    <span class="mr-1 text-g-7">
-                      <svg
-                        class="inline-block h-3 w-3 fill-current align-middle"
+
+
+                <!-- RelevantCourses Links List -->
+                {{ if .Params.relevantCourses }}
+                  <span class="mr-1 text-g-7">
+                    <svg class="inline-block h-3 w-3 fill-current align-middle">
+                      <title>Relevant Courses</title>
+                      <use xlink:href="#open-book"></use>
+                    </svg>
+                  </span>
+                  <span class="mr-1 align-middle">
+                    {{ range $index, $course := .Params.relevantCourses }}
+                      {{- if ne $index 0 }},{{ end }}
+                      <a
+                        class="hover:underline"
+                        href="/relevantCourses/{{ $course | urlize }}"
                       >
-                        <title>Coverage area</title>
-                        <use xlink:href="#earth-svg"></use>
-                      </svg>
-                    </span>
-                    <a
-                      class="align-middle hover:underline"
-                      href="{{ .RelPermalink }}"
-                    >
-                      {{ .Title }}
-                    </a>
-                  {{ end }}
+                        {{ $course -}}
+                      </a>
+                    {{- end }}
+                  </span>
                 {{ end }}
-              {{ end }}
-            </div>
-          </li>
-        {{ end }}
-      </ul>
+              </div>
+            </li>
+          {{ end }}
+        </ul>
+
+        <!-- categories page -->
+      {{ else }}
+        <ul class="links-blue-darker mt-6 sm:columns-2 md:columns-3">
+          {{ range .Pages }}
+            <li class="mb-4">
+              <a
+                href="{{ .RelPermalink }}"
+                class="hover:bg-blue-100 block transform rounded bg-white p-4 shadow transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
+              >
+                <h2
+                  class="text-blue-700 hover:text-blue-900 text-lg font-semibold"
+                >
+                  {{ .LinkTitle }}
+                  {{ if gt (len .Pages) 1 }}
+                    <span class="text-g-6"> ({{ len .Pages }}) </span>
+                  {{ end }}
+                </h2>
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
     </div>
   </section>
 {{ end }}

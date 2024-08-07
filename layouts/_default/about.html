@@ -21,7 +21,7 @@
                 <img
                   src="{{ .image }}"
                   alt="Photo of {{ .name }}"
-                  class="h-48 w-full rounded-t-lg object-cover"
+                  class="centered-img h-48 w-full rounded-t-lg object-cover"
                 />
               {{ else }}
                 {{ $img := resources.Get "img/logos/person-svgrepo-com.png" }}

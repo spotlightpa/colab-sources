@@ -53,17 +53,33 @@
   <div class="mt-2" x-model="filterType" value="scientist">
     <div class="grid items-end gap-4 md:grid-cols-2">
       {{ partial "combobox.html" (dict
-        "options" (.GetPage "research_areas").Pages
+        "options" (.GetPage "researchAreas").Pages
         "placeholder" "Filter by research areas"
         "xmodel" "filterResearchAreas"
         )
       }}
       {{ partial "combobox.html" (dict
-        "options" (.GetPage "relevant_courses").Pages
+        "options" (.GetPage "relevantCourses").Pages
         "placeholder" "Filter by relevant courses"
         "xmodel" "filterRelevantCourses"
         )
       }}
+    </div>
+  </div>
+  <div class="mt-2">
+    <div class="grid items-end gap-4 md:grid-cols-2">
+      <a
+        href="/researchAreas"
+        class="btn rounded border-2 border-g-5 px-4 py-2 text-black hover:shadow-lg"
+      >
+        Research Area List
+      </a>
+      <a
+        href="/relevantCourses"
+        class="btn rounded border-2 border-g-5 px-4 py-2 text-black hover:shadow-lg"
+      >
+        Relevant Courses List
+      </a>
     </div>
   </div>
   <p class="mt-1 text-g-7" x-text="resultsText"></p>
@@ -118,27 +134,27 @@
         ></h2>
         <h3 class="truncate text-g-6" x-text="p.organization"></h3>
         <div class="font-serif text-sm leading-normal text-gray">
-          <p x-show="p.expertise.length">
+          <p x-show="p.researchAreas.length">
             <span class="mr-1 text-g-7">
               <svg
                 class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
               >
-                <title>Area of Experience</title>
+                <title>Research Areas</title>
                 <use xlink:href="#university-svg"></use>
               </svg>
             </span>
-            <span x-text="andMore(p.expertise)"></span>
+            <span x-text="andMore(p.researchAreas)"></span>
           </p>
-          <p x-show="p.beat.length">
+          <p x-show="p.relevantCourses.length">
             <span class="mr-1 text-g-7">
               <svg
                 class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
               >
-                <title>Beat</title>
-                <use xlink:href="#newspaper-svg"></use>
+                <title>Relevant Courses</title>
+                <use xlink:href="#open-book"></use>
               </svg>
             </span>
-            <span x-text="andMore(p.beat)"></span>
+            <span x-text="andMore(p.relevantCourses)"></span>
           </p>
           <p x-show="p.location.length">
             <span class="mr-1 text-g-7">

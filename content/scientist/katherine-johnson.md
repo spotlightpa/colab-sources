@@ -6,14 +6,14 @@
   "institution_of_phd": "West Virginia University",
   "field_of_phd": "Mathematics",
   "year_of_phd": 1937,
-  "research_areas": [
-    "Orbital Mechanics",
-    "Aerospace Engineering"
+  "researchAreas": [
+    "orbital mechanics",
+    "aerospace engineering"
   ],
-  "relevant_courses": [
-    "Linear Algebra",
-    "Calculus",
-    "Numerical Analysis"
+  "relevantCourses": [
+    "linear algebra",
+    "calculus",
+    "numerical analysis"
   ],
   "relevant_concepts": [
     "Trajectory Analysis",

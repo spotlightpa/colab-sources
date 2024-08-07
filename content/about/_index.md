@@ -1,5 +1,6 @@
 ---
 title: "Team Members"
+title-tag: Team Members
 date: 2024-07-17
 draft: false
 mission: "Our mission is to foster inclusivity and diversity in physics and astronomy education by creating an accessible, searchable online repository that highlights the contributions of historically marginalized scientists. We strive to support the retention and identity development of marginalized students in these fields by providing educators with the resources needed to incorporate diverse role models into their courses. Our values include integrity in our research and representation, innovation in educational resources, excellence in creating comprehensive and reliable content, collaboration across disciplines and backgrounds, and respect for the diverse contributions that have shaped and continue to shape the fields of physics and astronomy."

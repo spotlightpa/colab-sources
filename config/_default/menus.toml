@@ -22,6 +22,11 @@ url = "/"
 weight = 1
 
 [[mobile]]
+name = "About Us"
+url = "/about"
+weight = 1
+
+[[mobile]]
 name = "RCSA"
 url = "https://rescorp.org/"
 weight = 2

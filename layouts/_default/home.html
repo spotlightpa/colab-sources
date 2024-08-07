@@ -1,10 +1,11 @@
 {{ define "main" }}
   {{ $wellClass := `mx-auto max-w-screen-md` }}
+
+
+  <!-- Main Section with Logo and Title -->
   <section class="p-8">
     <h1>
-      <span class="sr-only">
-        {{ .Title }}
-      </span>
+      <span class="sr-only">{{ .Title }}</span>
       {{ $img := resources.Get `img/logos/hiddenfigs_logo.png` }}
       {{ $imgSmall := $img.Resize "400x" }}
       {{ $imgMedium := $img.Resize "1000x" }}
@@ -25,14 +26,16 @@
       class="links-blue-darker text-center font-sans text-xl leading-tight text-gray md:text-xl"
     >
       A Cottrell Scholars Collaborative funded by the
-      <a class="font-bold" href="https://rescorp.org/">
-        {{- "Research Corporation for Science Advancement" -}}
-      </a>
+      <a class="font-bold" href="https://rescorp.org/"
+        >Research Corporation for Science Advancement</a
+      >
     </h2>
     <div class="content-area mx-auto mt-8 max-w-prose text-gray">
       {{ .Content }}
     </div>
   </section>
+
+  <!-- Section with Call-to-Action Links -->
   <section
     class="flex flex-col justify-around space-y-4 bg-g-4 p-8 shadow-inner sm:flex-row sm:space-x-4 sm:space-y-0"
   >
@@ -40,6 +43,9 @@
     {{ $svgWrapperClass := `text-blue group-hover:text-blue-darker` }}
     {{ $hedClass := `text-blue font-sans font-bold uppercase group-hover:text-blue-darker duration-100` }}
     {{ $dekClass := `my-1 mx-auto max-w-xs font-serif text-g-7` }}
+
+
+    <!-- Add an Entry Button -->
     <a
       class="{{ $blkClass }}"
       href="https://forms.gle/ZRopiyBevpXu9D459"
@@ -65,7 +71,9 @@
         Or recommend someone and we’ll follow up!
       </div>
     </a>
-    {{ $emailSubject:= `About my Hidden Figures database entry` }}
+
+    <!-- Update Entry Button -->
+    {{ $emailSubject := `About my Hidden Figures database entry` }}
     <a
       href="mailto:hiddenfigs@googlegroups.com?subject={{ $emailSubject }}"
       class="{{ $blkClass }}"
@@ -91,9 +99,13 @@
       </div>
     </a>
   </section>
+
+  <!-- Search Section -->
   <section class="no-js-hide p-8">
     {{ partial "search.html" . }}
   </section>
+
+  <!-- Section to Meet Our Scientists -->
   {{ $secHedClass := `text-2xl font-sans font-bold leading-tight mb-2` }}
   <section class="p-8 pt-0">
     <div class="{{ $wellClass }}" x-data>
@@ -104,10 +116,7 @@
       {{ $people := $scientists.RegularPages }}
       <ul
         x-init="$shuffle($el)"
-        class="
-          first-half-dozen mt-4 grid max-w-screen-md gap-x-4  gap-y-4
-          sm:grid-cols-2 md:grid-cols-3
-        "
+        class="first-half-dozen mt-4 grid max-w-screen-md gap-x-4 gap-y-4 sm:grid-cols-2 md:grid-cols-3"
         x-ref="container"
       >
         {{ range $people }}
@@ -120,10 +129,7 @@
         <p>
           <button
             type="button"
-            @click="
-              $rotate($refs.container, 6);
-              $refs.hed.scrollIntoView({ block: 'start', behavior: 'smooth' });
-            "
+            @click="$rotate($refs.container, 6); $refs.hed.scrollIntoView({ block: 'start', behavior: 'smooth' });"
             class="decoration-blue decoration-4 underline-offset-2 transition-colors duration-500 hover:underline"
           >
             And many more…
@@ -133,47 +139,64 @@
     </div>
   </section>
 
+  <!-- Section by Area of Expertise -->
   <section class="bg-g-3 p-8 shadow-inner">
     <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
       <h2 class="{{ $secHedClass }}" id="by-beat">
-        <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
-          <span x-show="isOpen" x-cloak aria-hidden="true" class="">
-            &minus;
-          </span>
+        <button
+          @click="isOpen = !isOpen"
+          :aria-expanded="isOpen"
+          class="text-left"
+        >
+          <span x-show="isOpen" x-cloak aria-hidden="true" class=""
+            >&minus;</span
+          >
           <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
           <span>Scientist by area</span>
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>
-        {{ $beat := .GetPage "research_areas" }}
-        {{ partial "pages-list.html" $beat.Pages }}
+        {{ $area := .GetPage "researchAreas" }}
+        {{ partial "pages-list.html" $area.Pages }}
       </div>
     </div>
   </section>
+
+  <!-- Section by Relevant Course Work -->
   <section class="p-8">
     <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
       <h2 class="{{ $secHedClass }}" id="by-area">
-        <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
-          <span x-show="isOpen" x-cloak aria-hidden="true" class="">
-            &minus;
-          </span>
+        <button
+          @click="isOpen = !isOpen"
+          :aria-expanded="isOpen"
+          class="text-left"
+        >
+          <span x-show="isOpen" x-cloak aria-hidden="true" class=""
+            >&minus;</span
+          >
           <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
           <span>Scientists by relevant course work</span>
         </button>
       </h2>
       <div x-cloak x-show="isOpen" x-collapse>
-        {{ $course := .GetPage "relevant_courses" }}
+        {{ $course := .GetPage "relevantCourses" }}
         {{ partial "pages-list.html" $course.Pages }}
       </div>
     </div>
   </section>
+
+  <!-- Section by Scientist Last Name -->
   <section class="bg-g-3 p-8 shadow-inner">
     <div class="{{ $wellClass }}" x-data="{ isOpen: false }">
       <h2 class="{{ $secHedClass }}" id="scientist">
-        <button @click="isOpen = !isOpen" :aria-expanded="isOpen">
-          <span x-show="isOpen" x-cloak aria-hidden="true" class="">
-            &minus;
-          </span>
+        <button
+          @click="isOpen = !isOpen"
+          :aria-expanded="isOpen"
+          class="text-left"
+        >
+          <span x-show="isOpen" x-cloak aria-hidden="true" class=""
+            >&minus;</span
+          >
           <span x-show="!isOpen" aria-hidden="true" class=""> &plus; </span>
           <span>Scientist by last name</span>
         </button>

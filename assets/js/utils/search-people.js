@@ -1,9 +1,11 @@
+// Utility function for creating a delay
 const asyncSleep = async (ms = 100) => {
-  return new Promise((r) => setTimeout(r, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
 let currentSearchID = 0;
 
+// Debounced search function to prevent excessive API calls
 // See https://github.com/CloudCannon/pagefind/issues/441
 async function debouncedSearch(
   pf,
@@ -11,30 +13,45 @@ async function debouncedSearch(
   options = {},
   debounceTimeoutMs = 300,
 ) {
+  if (
+    options.filters.relevantCourses.length === 0 &&
+    options.filters.researchAreas.length === 0
+  ) {
+    const searchResult = await pf.search(term);
+    return searchResult;
+  }
+
+  options.filters.relevantCourses = options.filters.relevantCourses.map(
+    (course) => course.toLowerCase(),
+  );
+  options.filters.researchAreas = options.filters.researchAreas.map((area) =>
+    area.toLowerCase(),
+  );
+
   const thisSearchID = ++currentSearchID;
-  pf.preload(term, { ...options });
   await asyncSleep(debounceTimeoutMs);
 
   if (thisSearchID !== currentSearchID) {
     return null;
   }
 
+  if (options.filters && options.filters.type) {
+    delete options.filters.type;
+  }
+
   const searchResult = await pf.search(term, options);
   if (thisSearchID !== currentSearchID) {
     return null;
   }
+
   return searchResult;
 }
 
 export default function searchPeople() {
   return {
     filterType: "scientist",
-    filterExpertise: [],
-    filterLocation: [],
     filterResearchAreas: [],
     filterRelevantCourses: [],
-    filterArea: [],
-    filterBeat: [],
     query: "",
     pagefind: null,
     error: null,
@@ -42,6 +59,7 @@ export default function searchPeople() {
     results: null,
     resultCount: 0,
 
+    // Initialize the search component
     async init() {
       let pagefind;
       try {
@@ -56,47 +74,33 @@ export default function searchPeople() {
       for (let param of [
         "query",
         "filterType",
-        "filterArea",
-        "filterExpertise",
         "filterResearchAreas",
         "filterRelevantCourses",
-        "filterLocation",
-        "filterArea",
-        "filterBeat",
       ]) {
         this.$watch(param, () => this.search());
       }
     },
 
+    // Perform the search
     async search() {
-      // searchBox
-      let query = this.query;
-      // Don't wait for an empty search
-      let timeout = this.query.trim() ? 300 : 0;
+      let query = this.query.trim();
+      let timeout = query ? 300 : 0;
       this.isLoading = true;
       this.resultCount = 0;
+
       let options = {};
-      console.log(this.filterType);
       if (this.filterType) {
         options.filters = {
           type: this.filterType,
         };
-        if (this.filterType === "expert") {
-          options.filters.expertise = this.filterExpertise.map((f) => f.value);
-          options.filters.location = this.filterLocation.map((f) => f.value);
-        } else if (this.filterType === "journalist") {
-          options.filters.area = this.filterArea.map((f) => f.value);
-          options.filters.beat = this.filterBeat.map((f) => f.value);
-        } else if (this.filterType === "scientist") {
-          options.filters.researchAreas = this.filterResearchAreas.map(
-            (f) => f.value,
-          );
-          options.filters.relevantCourses = this.filterRelevantCourses.map(
-            (f) => f.value,
-          );
-          console.log(options.filters);
-        }
+        options.filters.researchAreas = this.filterResearchAreas.map(
+          (f) => f.value,
+        );
+        options.filters.relevantCourses = this.filterRelevantCourses.map(
+          (f) => f.value,
+        );
       }
+
       if (this.hasFilters && !query) {
         query = null; // magic value for show all in category
       }
@@ -109,9 +113,6 @@ export default function searchPeople() {
           options,
           timeout,
         );
-        console.log(this.pagefind);
-        console.log(query);
-        console.log(options);
         if (search === null) return;
         results = await Promise.all(search.results.map((r) => r.data()));
         this.resultCount = search.results.length;
@@ -125,6 +126,7 @@ export default function searchPeople() {
       this.isLoading = false;
     },
 
+    // Clear the search results
     clear() {
       this.query = "";
       this.isLoading = false;
@@ -132,11 +134,13 @@ export default function searchPeople() {
       this.error = null;
     },
 
+    // Determine if the clear button should be shown
     get showClearButton() {
       if (this.isLoading) return false;
       return !!this.query.trim();
     },
 
+    // Map search results to a usable format
     get people() {
       if (!this.results) return [];
       return this.results.map((data) => ({
@@ -144,13 +148,8 @@ export default function searchPeople() {
         url: data.url,
         name: data.meta.title,
         excerpt: data.excerpt,
-        organization: data.meta.organization || "",
         role: data.meta.role || "",
-        beat: data.filters.beat || [],
-        expertise: data.filters.expertise || [],
-        location: data.filters.location || [],
-        area: data.filters.area || [],
-        researchAreas: data.filters.researchAreas || [], // New Filter
+        researchAreas: data.filters.researchAreas || [],
         relevantCourses: data.filters.relevantCourses || [],
         image: data.meta.image,
         alt: data.meta.image_alt,
@@ -160,12 +159,15 @@ export default function searchPeople() {
       }));
     },
 
+    // Check if any filters are applied
     get hasFilters() {
       return (
-        this.filterResearchAreas.length || this.filterRelevantCourses.length
+        this.filterResearchAreas.length > 0 ||
+        this.filterRelevantCourses.length > 0
       );
     },
 
+    // Generate the results text
     get resultsText() {
       if (this.isLoading || !this.results) return "\u00a0";
       if (!this.query && !this.hasFilters) return "\u00a0";
@@ -183,11 +185,12 @@ export default function searchPeople() {
       return `Got ${total} search results. ${more}`;
     },
 
-    andMore(a) {
-      if (a.length > 3) {
-        return a.slice(0, 2).join(", ") + " and more";
+    // Helper function to format arrays
+    andMore(arr) {
+      if (arr.length > 3) {
+        return arr.slice(0, 2).join(", ") + " and more";
       }
-      return a.join(", ");
+      return arr.join(", ");
     },
   };
 }

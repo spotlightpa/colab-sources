@@ -55,120 +55,6 @@ yaml-definitions: &page-fields
       widget: string
 
 collections:
-  - label: Community members
-    label_singular: Community member
-    name: experts
-    folder: content/experts
-    filter: { field: "layout", value: "person" }
-    format: json
-    extension: md
-    create: true
-    slug: "{{title}}"
-    preview_path: /experts/{{slug}}/
-    identity_field: title
-    editor:
-      preview: false
-    fields:
-      - label: Full name
-        hint: E.g. "John Jacob Jingleheimer Schmidt, IV PhD CPA"
-        name: title
-        widget: string
-        required: true
-      - label: Short name
-        hint: E.g. "John Schmidt" or "Betty Jo Smith-Rodriguez"
-        name: linktitle
-        widget: string
-        required: true
-      - label: First name
-        hint: E.g. "John" or "Betty Jo"
-        name: first
-        widget: string
-        required: true
-      - label: Last name
-        hint: E.g. "Schmidt" or "Smith-Rodriguez"
-        name: last
-        widget: string
-        required: true
-      - label: Pronunciation
-        hint: E.g. "Err On" "Co Bye Ah She"
-        name: pronunciation
-        widget: string
-        required: false
-      - label: Pronoun
-        hint: E.g. "he/him," "she/her," "they/them"
-        name: pronoun
-        widget: string
-        required: false
-      - label: Organization
-        hint: E.g. University of Colorado
-        name: organization
-        widget: string
-        required: false
-      - label: Title or Profession
-        hint: E.g. Assistant Professor of Example Studies
-        name: role
-        widget: string
-        required: false
-      - label: Languages
-        name: languages
-        widget: string
-        required: false
-      - label: Areas of experience
-        name: expertise
-        widget: list
-        hint: Use commas to separate items
-        required: false
-      - label: Email
-        name: email
-        widget: email
-        required: false
-      - label: "Headshot"
-        name: "images"
-        widget: list
-        summary: "{{fields.image}}"
-        field: { label: Image, name: image, widget: image }
-      - label: "Resume"
-        name: "resume"
-        widget: file
-        required: false
-      - label: Website
-        hint: Full URL with https:// or http://
-        name: website
-        widget: string
-        required: false
-      - label: LinkedIn
-        hint: Full URL with the https://www.linkedin.com/in/
-        name: linkedin
-        widget: string
-        required: false
-      - label: Location
-        hint: E.g. "Philadelphia, PA", "California", "Canada"
-        name: location
-        widget: list
-        required: false
-        field:
-          label: Location
-          name: location
-          widget: string
-      - label: "Phone"
-        name: phone
-        widget: string
-        required: false
-      - label: Preferred method of contact
-        hint: E.g. "Phone" or "Email"
-        name: contact
-        widget: string
-        required: false
-      - label: Biography
-        name: bio
-        widget: markdown
-        required: false
-      - label: layout
-        name: layout
-        default: person
-        widget: hidden
-        required: true
-
   # Our data starts here
   - label: "Scientists"
     label_singular: "Scientist"
@@ -212,26 +98,14 @@ collections:
         name: "year_of_phd"
         widget: "number"
       - label: "Research areas"
-        name: "research_areas"
+        name: "researchAreas"
         widget: "list"
-        field:
-          label: "Area"
-          name: "area"
-          widget: "string"
       - label: "Relevant courses"
-        name: "relevant_courses"
+        name: "relevantCourses"
         widget: "list"
-        field:
-          label: "Course"
-          name: "course"
-          widget: "string"
       - label: "Relevant concepts"
         name: "relevant_concepts"
         widget: "list"
-        field:
-          label: "Concept"
-          name: "concept"
-          widget: "string"
       - label: "Wikipedia"
         name: "wikipedia"
         widget: "string"
@@ -290,13 +164,13 @@ collections:
         format: toml-frontmatter
         fields: *page-fields
       - label: "research area page"
-        name: research_areas
-        file: content/research_areas/_index.md
+        name: researchAreas
+        file: content/researchAreas/_index.md
         format: toml-frontmatter
         fields: *page-fields
       - label: "relevant courses page"
-        name: relevant_courses
-        file: content/relevant_courses/_index.md
+        name: relevantCourses
+        file: content/relevantCourses/_index.md
         format: toml-frontmatter
         fields: *page-fields
   - label: Content pages
