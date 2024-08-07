@@ -17,6 +17,6 @@
     "Advancements in planetary motion theories": "Al-Kindi made pioneering contributions to astronomy by enhancing the understanding of planetary motions and the construction of astrolabes. He integrated Aristotelian cosmology into Islamic astronomical thought, which significantly influenced future Islamic astronomers."
 }
 ,
-"citations": ["https://www.cambridge.org/core/books/abs/cambridge-companion-to-arabic-philosophy/alkindi-and-the-reception-of-greek-philosophy/61F9ABB0B26411F5296213B89B2CFA8E"],
+"citations": ["https://doi.org/10.1017/CCOL0521817439.003"],
 "layout": "person"
 }
