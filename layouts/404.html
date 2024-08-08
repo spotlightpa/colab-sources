@@ -1,22 +1,22 @@
 {{ define "main" }}
   <main class="flex items-center justify-center h-screen bg-gray-100 p-8">
     <canvas id="starCanvas" class="absolute top-0 left-0 w-full h-full"></canvas>
-    <div class="max-w-screen-md text-center">
-      <h1 class="text-5xl font-bold text-red-500">
+    <div class="max-w-screen-md text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <h1 class="text-5xl font-bold text-white">
         404
       </h1>
-      <h2 class="text-2xl font-semibold mt-4">
+      <h2 class="text-2xl font-semibold mt-4 text-white">
         Page Not Found
       </h2>
-      <p class="mt-4 text-gray-700">
+      <p class="mt-4 text-white">
         Sorry, the page you are looking for does not exist or has been moved.
       </p>
       <div class="content-area mt-8">
-        <a href="/" class="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-300">
+        <a href="/" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors duration-300">
           Go Home
         </a>
         <a href="https://rescorp.org/" class="inline-block ml-4 bg-gray-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors duration-300">
-          Visit Research Corporation for Science Advancement
+          Visit RCSA
         </a>
       </div>
     </div>
@@ -66,9 +66,6 @@
     .font-bold {
       font-weight: bold;
     }
-    .text-red-500 {
-      color: #f56565;
-    }
     .text-2xl {
       font-size: 1.5rem;
     }
@@ -78,17 +75,11 @@
     .mt-4 {
       margin-top: 1rem;
     }
-    .text-gray-700 {
-      color: #4a5568;
-    }
     .mt-8 {
       margin-top: 2rem;
     }
     .inline-block {
       display: inline-block;
-    }
-    .bg-blue-500 {
-      background-color: #4299e1;
     }
     .text-white {
       color: #fff;
@@ -106,9 +97,6 @@
     }
     .font-medium {
       font-weight: 500;
-    }
-    .hover\:bg-blue-700:hover {
-      background-color: #2b6cb0;
     }
     .transition-colors {
       transition-property: background-color, border-color, color, fill, stroke;
@@ -159,23 +147,35 @@
       this.radius = Math.random() * 2;
       this.vx = (Math.random() - 0.5) * maxSpeed;
       this.vy = (Math.random() - 0.5) * maxSpeed;
+      this.history = [];
 
       this.draw = function() {
         context.beginPath();
         context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         context.fillStyle = 'white';
         context.fill();
+
+        context.beginPath();
+        context.moveTo(this.x, this.y);
+        for (let i = 0; i < this.history.length; i++) {
+          context.lineTo(this.history[i].x, this.history[i].y);
+        }
+        context.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+        context.stroke();
       }
 
-      this.update = function() {
+      this.update = function(i) {
         this.x += this.vx;
         this.y += this.vy;
 
         // Wrap around edges
-        if (this.x < 0) this.x = canvas.width;
-        if (this.x > canvas.width) this.x = 0;
-        if (this.y < 0) this.y = canvas.height;
-        if (this.y > canvas.height) this.y = 0;
+        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+          // Remove the current star
+          stars.splice(i, 1);
+          // Add a new star to replace it
+          stars.push(new Star());
+          return; // Exit the function early to avoid further processing
+        }
 
         // Dodge mouse
         const dx = this.x - mouse.x;
@@ -189,6 +189,11 @@
           this.vy = Math.sin(angle) * maxSpeed;
         }
 
+        this.history.push({ x: this.x, y: this.y });
+        if (this.history.length > 10) {
+          this.history.shift();
+        }
+
         this.draw();
       }
     }
@@ -196,7 +201,7 @@
     function animate() {
       context.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < stars.length; i++) {
-        stars[i].update();
+        stars[i].update(i);
       }
       requestAnimationFrame(animate);
     }
