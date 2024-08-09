@@ -1,28 +1,36 @@
 {{ define "main" }}
-  <main class="flex items-center justify-center h-screen bg-gray-100 p-8">
-    <canvas id="starCanvas" class="absolute top-0 left-0 w-full h-full"></canvas>
-    <div class="max-w-screen-md text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-      <h1 class="text-5xl font-bold text-white">
-        404
-      </h1>
-      <h2 class="text-2xl font-semibold mt-4 text-white">
-        Page Not Found
-      </h2>
+  <main class="bg-gray-100 flex h-screen items-center justify-center p-8">
+    <canvas
+      id="starCanvas"
+      class="absolute left-0 top-0 h-full w-full"
+    ></canvas>
+    <div
+      class="absolute left-1/2 top-1/2 max-w-screen-md -translate-x-1/2 -translate-y-1/2 transform text-center"
+    >
+      <h1 class="text-5xl font-bold text-white">404</h1>
+      <h2 class="mt-4 text-2xl font-semibold text-white">Page Not Found</h2>
       <p class="mt-4 text-white">
         Sorry, the page you are looking for does not exist or has been moved.
       </p>
       <div class="content-area mt-8">
-        <a href="/" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors duration-300">
+        <a
+          href="/"
+          class="bg-gray-500 hover:bg-gray-700 inline-block rounded-lg px-6 py-3 font-medium text-white transition-colors duration-300"
+        >
           Go Home
         </a>
-        <a href="https://rescorp.org/" class="inline-block ml-4 bg-gray-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors duration-300">
+        <a
+          href="https://rescorp.org/"
+          class="bg-gray-500 hover:bg-gray-700 ml-4 inline-block rounded-lg px-6 py-3 font-medium text-white transition-colors duration-300"
+        >
           Visit RCSA
         </a>
       </div>
     </div>
   </main>
   <style>
-    body, html {
+    body,
+    html {
       margin: 0;
       padding: 0;
       overflow: hidden;
@@ -115,8 +123,8 @@
     }
   </style>
   <script>
-    const canvas = document.getElementById('starCanvas');
-    const context = canvas.getContext('2d');
+    const canvas = document.getElementById("starCanvas");
+    const context = canvas.getContext("2d");
     let stars = [];
     const numStars = 100;
     const maxSpeed = 2;
@@ -135,8 +143,8 @@
       canvas.height = window.innerHeight;
     }
 
-    window.addEventListener('resize', resizeCanvas);
-    window.addEventListener('mousemove', (event) => {
+    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener("mousemove", (event) => {
       mouse.x = event.clientX;
       mouse.y = event.clientY;
     });
@@ -149,10 +157,10 @@
       this.vy = (Math.random() - 0.5) * maxSpeed;
       this.history = [];
 
-      this.draw = function() {
+      this.draw = function () {
         context.beginPath();
         context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        context.fillStyle = 'white';
+        context.fillStyle = "white";
         context.fill();
 
         context.beginPath();
@@ -160,16 +168,21 @@
         for (let i = 0; i < this.history.length; i++) {
           context.lineTo(this.history[i].x, this.history[i].y);
         }
-        context.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+        context.strokeStyle = "rgba(255, 255, 255, 0.5)";
         context.stroke();
-      }
+      };
 
-      this.update = function(i) {
+      this.update = function (i) {
         this.x += this.vx;
         this.y += this.vy;
 
         // Wrap around edges
-        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+        if (
+          this.x < 0 ||
+          this.x > canvas.width ||
+          this.y < 0 ||
+          this.y > canvas.height
+        ) {
           // Remove the current star
           stars.splice(i, 1);
           // Add a new star to replace it
@@ -195,7 +208,7 @@
         }
 
         this.draw();
-      }
+      };
     }
 
     function animate() {
