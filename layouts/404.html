@@ -1,14 +1,224 @@
 {{ define "main" }}
-  <main class="p-8">
-    <h1 class="text-2xl font-bold">
-      {{ .Title }}
-    </h1>
-
-    <div class="content-area mt-8">
-      <p>
-        <a href="/">Go home</a> or
-        <a href="https://colabnews.co">go to COLab</a>?
+  <main class="bg-gray-100 flex h-screen items-center justify-center p-8">
+    <canvas
+      id="starCanvas"
+      class="absolute left-0 top-0 h-full w-full"
+    ></canvas>
+    <div
+      class="absolute left-1/2 top-1/2 max-w-screen-md -translate-x-1/2 -translate-y-1/2 transform text-center"
+    >
+      <h1 class="text-5xl font-bold text-white">404</h1>
+      <h2 class="mt-4 text-2xl font-semibold text-white">Page Not Found</h2>
+      <p class="mt-4 text-white">
+        Sorry, the page you are looking for does not exist or has been moved.
       </p>
+      <div class="content-area mt-8">
+        <a
+          href="/"
+          class="bg-gray-500 hover:bg-gray-700 inline-block rounded-lg px-6 py-3 font-medium text-white transition-colors duration-300"
+        >
+          Go Home
+        </a>
+        <a
+          href="https://rescorp.org/"
+          class="bg-gray-500 hover:bg-gray-700 ml-4 inline-block rounded-lg px-6 py-3 font-medium text-white transition-colors duration-300"
+        >
+          Visit RCSA
+        </a>
+      </div>
     </div>
   </main>
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+    }
+    #starCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: black;
+    }
+    main > div {
+      position: relative;
+      z-index: 1;
+    }
+    .flex {
+      display: flex;
+    }
+    .items-center {
+      align-items: center;
+    }
+    .justify-center {
+      justify-content: center;
+    }
+    .h-screen {
+      height: 100vh;
+    }
+    .p-8 {
+      padding: 2rem;
+    }
+    .max-w-screen-md {
+      max-width: 768px;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .text-5xl {
+      font-size: 3rem;
+    }
+    .font-bold {
+      font-weight: bold;
+    }
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+    .font-semibold {
+      font-weight: 600;
+    }
+    .mt-4 {
+      margin-top: 1rem;
+    }
+    .mt-8 {
+      margin-top: 2rem;
+    }
+    .inline-block {
+      display: inline-block;
+    }
+    .text-white {
+      color: #fff;
+    }
+    .px-6 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+    .font-medium {
+      font-weight: 500;
+    }
+    .transition-colors {
+      transition-property: background-color, border-color, color, fill, stroke;
+    }
+    .duration-300 {
+      transition-duration: 300ms;
+    }
+    .ml-4 {
+      margin-left: 1rem;
+    }
+    .bg-gray-500 {
+      background-color: #a0aec0;
+    }
+    .hover\:bg-gray-700:hover {
+      background-color: #4a5568;
+    }
+  </style>
+  <script>
+    const canvas = document.getElementById("starCanvas");
+    const context = canvas.getContext("2d");
+    let stars = [];
+    const numStars = 100;
+    const maxSpeed = 2;
+    const mouse = { x: -100, y: -100 };
+
+    function init() {
+      resizeCanvas();
+      for (let i = 0; i < numStars; i++) {
+        stars.push(new Star());
+      }
+      animate();
+    }
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener("mousemove", (event) => {
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
+    });
+
+    function Star() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.radius = Math.random() * 2;
+      this.vx = (Math.random() - 0.5) * maxSpeed;
+      this.vy = (Math.random() - 0.5) * maxSpeed;
+      this.history = [];
+
+      this.draw = function () {
+        context.beginPath();
+        context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        context.fillStyle = "white";
+        context.fill();
+
+        context.beginPath();
+        context.moveTo(this.x, this.y);
+        for (let i = 0; i < this.history.length; i++) {
+          context.lineTo(this.history[i].x, this.history[i].y);
+        }
+        context.strokeStyle = "rgba(255, 255, 255, 0.5)";
+        context.stroke();
+      };
+
+      this.update = function (i) {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Wrap around edges
+        if (
+          this.x < 0 ||
+          this.x > canvas.width ||
+          this.y < 0 ||
+          this.y > canvas.height
+        ) {
+          // Remove the current star
+          stars.splice(i, 1);
+          // Add a new star to replace it
+          stars.push(new Star());
+          return; // Exit the function early to avoid further processing
+        }
+
+        // Dodge mouse
+        const dx = this.x - mouse.x;
+        const dy = this.y - mouse.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const minDist = 50;
+
+        if (distance < minDist) {
+          const angle = Math.atan2(dy, dx);
+          this.vx = Math.cos(angle) * maxSpeed;
+          this.vy = Math.sin(angle) * maxSpeed;
+        }
+
+        this.history.push({ x: this.x, y: this.y });
+        if (this.history.length > 10) {
+          this.history.shift();
+        }
+
+        this.draw();
+      };
+    }
+
+    function animate() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < stars.length; i++) {
+        stars[i].update(i);
+      }
+      requestAnimationFrame(animate);
+    }
+
+    init();
+  </script>
 {{ end }}
