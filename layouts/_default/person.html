@@ -195,17 +195,14 @@
 
         <!-- Additional Information: Research Areas and Relevant Courses -->
         <div class="links-blue-darker mt-4 flex flex-col">
-
           <!-- relevant concept list List-->
-          {{ if .Params.relevant_concepts}}
+          {{ if .Params.relevant_concepts }}
             <div class="mt-2">
               <p class="text-lg font-bold">Relevant Concepts</p>
               <span class="align-middle">
                 {{ range $index, $area := .Params.relevant_concepts }}
                   {{- if ne $index 0 }},{{ end }}
-                  <span
-                    class="hover:underline"
-                  >
+                  <span class="hover:underline">
                     {{ $area -}}
                   </span>
                 {{- end }}
