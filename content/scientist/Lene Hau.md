@@ -8,8 +8,19 @@
   "year_of_phd": "1991",
   "researchAreas": ["Quantum optics", "nanotechnology"],
   "images": ["/img/uploads/lene-hau.jpg"],
-  "relevantCourses": ["---"],
-  "relevant_concepts": ["---"],
+  "relevantCourses": [
+    "Quantum Optics",
+    "Photonics",
+    "Condensed Matter Physics",
+    "Nanotechnology",
+    "Advanced Laboratory Techniques"
+  ],
+  "relevant_concepts": [
+    "Bose-Einstein Condensates",
+    "Quantum Information",
+    "Ultracold Atoms",
+    "Light Manipulation"
+  ],
   "wikipedia": "https://en.wikipedia.org/wiki/Lene_Hau",
   "general_bio": "Lene Hau is a Danish physicist acclaimed for her pioneering work in quantum optics and Bose-Einstein condensates. After earning her Ph.D. from the University of Aarhus in 1991, she joined Harvard University, where she achieved groundbreaking results in controlling light and matter. Hau's research has significant implications for quantum computing, information processing, and the study of ultracold atoms. Her experiments have demonstrated the ability to slow, stop, and transfer light to matter, providing new avenues for technological advancements.",
   "key_contributions": {
@@ -18,9 +29,7 @@
   },
   "citations": [
     "https://www.thecrimson.com/article/1999/10/13/hau-receives-tenure-physics-professor-slowed/",
-    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3113630/",
-    "https://www.optica.org/history/biographies/bios/donna-t-strickland/",
-    "https://www.nobelprize.org/prizes/physics/2018/strickland/biographical/"
+    "https://doi.org/10.1103/PhysRevLett.104.133002"
   ],
   "layout": "person"
 }

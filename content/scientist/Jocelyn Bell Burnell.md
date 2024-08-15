@@ -7,10 +7,18 @@
   "field_of_phd": "Astrophysics",
   "year_of_phd": "1969",
   "researchAreas": ["Radio astronomy", "pulsars", "astrophysics"],
-  "relevantCourses": ["Astrophysics"],
+  "images": ["/img/uploads/j-bell-burnell.jpg"],
+  "relevantCourses": [
+    "Astrophysics",
+    "Radio Astronomy",
+    "Observational Astronomy",
+    "High-Energy Astrophysics",
+    "Stellar Structure and Evolution",
+    "Cosmology",
+    "Mathematical Physics"
+  ],
   "relevant_concepts": ["Radio Pulsars", "Pulsars"],
   "wikipedia": "https://en.wikipedia.org/wiki/Jocelyn_Bell_Burnell",
-  "images": ["/img/uploads/j-bell-burnell.jpg"],
   "general_bio": "Jocelyn Bell Burnell is a British astrophysicist best known for her discovery of the first radio pulsars in 1967, a groundbreaking achievement in astronomy. Despite her pivotal role, the Nobel Prize for the discovery was controversially awarded to her male supervisor. Bell Burnell has held numerous academic and leadership positions and is a passionate advocate for diversity in science, using her influence to support underrepresented groups in physics.",
   "key_contributions": {
     "Discovery of Radio Pulsars": "While working on her Ph.D. at Cambridge, Bell Burnell identified the first radio pulsars, a type of neutron star that emits regular radio pulses. This discovery revolutionized our understanding of stellar evolution and neutron stars, although the Nobel Prize was awarded to her supervisor instead of her.",
