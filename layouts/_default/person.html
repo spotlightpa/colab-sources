@@ -15,6 +15,7 @@
         </h2>
       {{ end }}
 
+
       <!-- Basic Information Section -->
       <div class="links-blue-darker mt-2 text-sm sm:flex sm:flex-wrap">
         <!-- Institution of Ph.D. -->
@@ -44,7 +45,9 @@
               <use xlink:href="#year"></use>
             </svg>
           </span>
-          <span>Year of Ph.D. or highest degree: {{ .Params.year_of_phd }}</span>
+          <span
+            >Year of Ph.D. or highest degree: {{ .Params.year_of_phd }}</span
+          >
         </p>
 
         <!-- Research Areas -->
@@ -86,7 +89,9 @@
             </svg>
           </span>
           <span class="overflow-hidden break-words">
-            <a href="{{ .Params.wikipedia }}" target="_blank">{{ .Params.wikipedia }}</a>
+            <a href="{{ .Params.wikipedia }}" target="_blank"
+              >{{ .Params.wikipedia }}</a
+            >
           </span>
         </p>
       </div>
@@ -101,7 +106,7 @@
           Bio
         </button>
         <button
-          id = "contributionsButton"
+          id="contributionsButton"
           :class="!isBio ? 'bg-white text-black' : 'bg-gray text-white'"
           class="mx-4 flex-1 transform rounded-lg px-4 py-2 transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg focus:outline-none"
           @click="isBio = false"
@@ -133,7 +138,9 @@
               {{ end }}
               {{ $imgSmall := $img.Resize "200x" }}
               {{ $imgMedium := $img.Resize "400x" }}
-              <div class="mb-4 w-full text-center sm:mb-0 sm:mr-4 sm:w-auto sm:text-left">
+              <div
+                class="mb-4 w-full text-center sm:mb-0 sm:mr-4 sm:w-auto sm:text-left"
+              >
                 <a href="{{ $img.RelPermalink }}" download>
                   <img
                     data-pagefind-meta="image[src], image_alt[alt], image_srcset[srcset], image_width[width], image_height[height]"
@@ -155,7 +162,9 @@
             {{ $img := resources.Get "img/logos/person-svgrepo-com.png" }}
             {{ $imgSmall := $img.Resize "200x" }}
             {{ $imgMedium := $img.Resize "400x" }}
-            <div class="mb-4 w-full text-center sm:mb-0 sm:mr-4 sm:w-auto sm:text-left">
+            <div
+              class="mb-4 w-full text-center sm:mb-0 sm:mr-4 sm:w-auto sm:text-left"
+            >
               <img
                 aria-hidden="true"
                 class="mx-auto h-auto w-auto max-w-[150px] rounded sm:mx-0"
@@ -171,10 +180,17 @@
             </div>
           {{ end }}
 
+
           <!-- Biographical Information -->
-          <section class="content-area links-blue-darker mt-4 flex-1 sm:ml-4 sm:mt-0 md:ml-2">
-            <h2 class="sr-only" data-pagefind-ignore>Biographical information</h2>
-            <p >{{ replaceRE "\\[CITE (\\d+)\\]" "<a href=\"#cite-$1\" class=\"citation-link\" data-cite=\"$1\" >[$1]</a>" .Params.general_bio | safeHTML }}</p>
+          <section
+            class="content-area links-blue-darker mt-4 flex-1 sm:ml-4 sm:mt-0 md:ml-2"
+          >
+            <h2 class="sr-only" data-pagefind-ignore>
+              Biographical information
+            </h2>
+            <p>
+              {{ replaceRE "\\[CITE (\\d+)\\]" "<a href=\"#cite-$1\" class=\"citation-link\" data-cite=\"$1\" >[$1]</a>" .Params.general_bio | safeHTML }}
+            </p>
           </section>
         </div>
 
@@ -248,20 +264,38 @@
             {{ $isOdd := false }}
             {{ range $key, $value := .Params.key_contributions }}
               {{ $isOdd = not $isOdd }}
-              <div class="{{ cond $isOdd `bg-g-3 shadow-inner` `` }} p-2" x-data="{ isOpen: false }">
+              <div
+                class="{{ cond $isOdd `bg-g-3 shadow-inner` `` }} p-2"
+                x-data="{ isOpen: false }"
+              >
                 <h3 class="text-md font-semibold">
                   <button
                     @click="isOpen = !isOpen"
                     :aria-expanded="isOpen"
                     class="flex items-center"
                   >
-                    <span x-show="isOpen" x-cloak aria-hidden="true" class="mr-2">&minus;</span>
-                    <span x-show="!isOpen" aria-hidden="true" class="mr-2">&plus;</span>
+                    <span
+                      x-show="isOpen"
+                      x-cloak
+                      aria-hidden="true"
+                      class="mr-2"
+                      >&minus;</span
+                    >
+                    <span x-show="!isOpen" aria-hidden="true" class="mr-2"
+                      >&plus;</span
+                    >
                     <span>{{ $key }}</span>
                   </button>
                 </h3>
-                <div x-show="isOpen" x-cloak x-collapse class="mt-2 links-blue-darker">
-                  <p>{{ replaceRE "\\[CITE (\\d+)\\]" "<a href=\"#cite-$1\" class=\"citation-link\" data-cite=\"$1\">[$1]</a>" $value | safeHTML }}</p>
+                <div
+                  x-show="isOpen"
+                  x-cloak
+                  x-collapse
+                  class="links-blue-darker mt-2"
+                >
+                  <p>
+                    {{ replaceRE "\\[CITE (\\d+)\\]" "<a href=\"#cite-$1\" class=\"citation-link\" data-cite=\"$1\">[$1]</a>" $value | safeHTML }}
+                  </p>
                 </div>
               </div>
             {{ end }}
@@ -272,8 +306,13 @@
         <h2 class="text-lg font-bold">Citations</h2>
         <ol type="1" class="links-blue-darker">
           {{ range $index, $citation := .Params.citations }}
-            <li id="cite-{{ add $index 1 }}" class="overflow-hidden break-words citation-item">
-              <a href="{{ $citation }}" target="_blank">[{{ add $index 1 }}]{{ $citation }}</a>
+            <li
+              id="cite-{{ add $index 1 }}"
+              class="citation-item overflow-hidden break-words"
+            >
+              <a href="{{ $citation }}" target="_blank"
+                >[{{ add $index 1 }}]{{ $citation }}</a
+              >
             </li>
           {{ end }}
         </ol>
@@ -286,33 +325,35 @@
 
   <!-- JavaScript for scroll and highlight -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const citationLinks = document.querySelectorAll('.citation-link');
+    document.addEventListener("DOMContentLoaded", function () {
+      const citationLinks = document.querySelectorAll(".citation-link");
 
-      citationLinks.forEach(link => {
-        link.addEventListener('click', function (event) {
+      citationLinks.forEach((link) => {
+        link.addEventListener("click", function (event) {
           event.preventDefault();
 
           // Trigger the Contributions button click
-          const contributionsButton = document.querySelector("#contributionsButton");
+          const contributionsButton = document.querySelector(
+            "#contributionsButton",
+          );
           if (contributionsButton) {
             contributionsButton.click();
           }
 
-          const citeId = this.getAttribute('data-cite');
-          const citationElement = document.getElementById('cite-' + citeId);
+          const citeId = this.getAttribute("data-cite");
+          const citationElement = document.getElementById("cite-" + citeId);
 
-          citationElement.scrollIntoView({ behavior: 'smooth' });
+          citationElement.scrollIntoView({ behavior: "smooth" });
 
-          citationElement.classList.add('highlight');
+          citationElement.classList.add("highlight");
 
           // Start the fade-out effect after 2 seconds
           setTimeout(() => {
-            citationElement.classList.add('fade-out');
+            citationElement.classList.add("fade-out");
 
             // Remove highlight class after fade-out effect completes
             setTimeout(() => {
-              citationElement.classList.remove('highlight', 'fade-out');
+              citationElement.classList.remove("highlight", "fade-out");
             }, 500); // This should match the duration of the CSS transition
           }, 2000); // Highlight lasts for 2 seconds
         });
@@ -324,11 +365,13 @@
   <style>
     .citation-item.highlight {
       background-color: yellow;
-      transition: background-color 0.5s ease-out, opacity 0.5s ease-out;
+      transition:
+        background-color 0.5s ease-out,
+        opacity 0.5s ease-out;
     }
-    
+
     .citation-item.fade-out {
       background-color: transparent;
     }
-    </style>
+  </style>
 {{ end }}
