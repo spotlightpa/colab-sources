@@ -13,7 +13,7 @@ async function debouncedSearch(
   options = {},
   debounceTimeoutMs = 300,
 ) {
-  if(!options.filters.level){
+  if (!options.filters.level) {
     delete options.filters.level;
   }
   if (options.filters && options.filters.type) {
@@ -45,7 +45,7 @@ export default function searchPeople() {
     filterType: "scientist",
     filterResearchAreas: [],
     filterRelevantCourses: [],
-    filterLevel: "", 
+    filterLevel: "",
     query: "",
     pagefind: null,
     error: null,
@@ -70,7 +70,7 @@ export default function searchPeople() {
         "filterType",
         "filterResearchAreas",
         "filterRelevantCourses",
-        "filterLevel"
+        "filterLevel",
       ]) {
         this.$watch(param, () => this.search());
       }
@@ -89,7 +89,7 @@ export default function searchPeople() {
           type: this.filterType,
           researchAreas: this.filterResearchAreas.map((f) => f.value),
           relevantCourses: this.filterRelevantCourses.map((f) => f.value),
-          level: this.filterLevel
+          level: this.filterLevel,
         };
       }
 
@@ -143,7 +143,7 @@ export default function searchPeople() {
         role: data.meta.role || "",
         researchAreas: data.filters.researchAreas || [],
         relevantCourses: data.filters.relevantCourses || [],
-        level: this.filterLevel, 
+        level: this.filterLevel,
         image: data.meta.image,
         alt: data.meta.image_alt,
         srcset: data.meta.image_srcset,
@@ -156,7 +156,8 @@ export default function searchPeople() {
     get hasFilters() {
       return (
         this.filterResearchAreas.length > 0 ||
-        this.filterRelevantCourses.length > 0 || this.filterLevel
+        this.filterRelevantCourses.length > 0 ||
+        this.filterLevel
       );
     },
 

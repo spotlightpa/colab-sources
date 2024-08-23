@@ -104,14 +104,17 @@
           <span class="overflow-hidden break-words">
             {{ range $index, $level := .Params.level }}
               {{- if ne $index 0 }},{{ end }}
-              <span
-                data-pagefind-filter="level"
-              >
-                {{- if eq $level "K12" }}K-12
-                {{- else if eq $level "UGLD" }}Undergraduate Level - Lower Division
-                {{- else if eq $level "UGUD" }}Undergraduate Level - Upper Division
-                {{- else if eq $level "G" }}Graduate Level
-                {{- else }}{{ $level }}
+              <span data-pagefind-filter="level">
+                {{- if eq $level "K12" }}
+                  K-12
+                {{- else if eq $level "UGLD" }}
+                  Undergraduate Level - Lower Division
+                {{- else if eq $level "UGUD" }}
+                  Undergraduate Level - Upper Division
+                {{- else if eq $level "G" }}
+                  Graduate Level
+                {{- else }}
+                  {{ $level }}
                 {{- end }}
               </span>
             {{- end }}
