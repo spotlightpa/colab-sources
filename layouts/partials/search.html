@@ -66,6 +66,59 @@
       }}
     </div>
   </div>
+  <div class="mt-2 flex flex-wrap gap-4">
+    <label>
+      <input
+        class="accent-blue"
+        x-model="filterLevel"
+        type="radio"
+        name="level"
+        value=""
+        checked
+      />
+      <span class="ml-1">Everyone</span>
+    </label>
+    <label>
+      <input
+        class="accent-blue"
+        x-model="filterLevel"
+        type="radio"
+        name="level"
+        value="K12"
+      />
+      <span class="ml-1">K-12</span>
+    </label>
+    <label>
+      <input
+        class="accent-blue"
+        x-model="filterLevel"
+        type="radio"
+        name="level"
+        value="UGLD"
+      />
+      <span class="ml-1">Undergraduate Level - Lower Division</span>
+    </label>
+    <label>
+      <input
+        class="accent-blue"
+        x-model="filterLevel"
+        type="radio"
+        name="level"
+        value="UGUD"
+      />
+      <span class="ml-1">Undergraduate Level - Upper Division</span>
+    </label>
+    <label>
+      <input
+        class="accent-blue"
+        x-model="filterLevel"
+        type="radio"
+        name="level"
+        value="G"
+      />
+      <span class="ml-1">Graduate Level</span>
+    </label>
+  </div>
   <div class="mt-2">
     <div class="grid items-end gap-4 md:grid-cols-2">
       <a
@@ -155,28 +208,6 @@
               </svg>
             </span>
             <span x-text="andMore(p.relevantCourses)"></span>
-          </p>
-          <p x-show="p.location.length">
-            <span class="mr-1 text-g-7">
-              <svg
-                class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
-              >
-                <title>Location</title>
-                <use xlink:href="#earth-svg"></use>
-              </svg>
-            </span>
-            <span x-text="andMore(p.location)"></span>
-          </p>
-          <p x-show="p.area.length">
-            <span class="mr-1 text-g-7">
-              <svg
-                class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
-              >
-                <title>Coverage area</title>
-                <use xlink:href="#earth-svg"></use>
-              </svg>
-            </span>
-            <span x-text="andMore(p.area)"></span>
           </p>
         </div>
         <p

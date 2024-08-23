@@ -29,5 +29,6 @@
     "https://www.swpc.noaa.gov/phenomena/solar-flares-radio-blackouts", 
     "https://www.nrao.edu/astrores/gbsrbs/Pubs/AJP_07.pdf"
   ],
-  "layout": "person"
+  "layout": "person",
+  "level" : ["UGUD", "G"]
 }

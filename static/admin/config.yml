@@ -132,6 +132,9 @@ collections:
           label: "Citation"
           name: "citation"
           widget: "string"
+      - label: "Level"
+        name: "level"
+        widget: "list"
 
   - label: Landing pages
     name: landing
@@ -151,16 +154,6 @@ collections:
       - label: "People list page"
         name: people
         file: content/people/_index.md
-        format: toml-frontmatter
-        fields: *page-fields
-      - label: "Location list page"
-        name: location
-        file: content/location/_index.md
-        format: toml-frontmatter
-        fields: *page-fields
-      - label: "Area of experience list page"
-        name: expertise
-        file: content/expertise/_index.md
         format: toml-frontmatter
         fields: *page-fields
       - label: "research area page"

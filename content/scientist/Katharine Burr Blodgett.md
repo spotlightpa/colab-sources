@@ -29,5 +29,6 @@
     "https://www.pbs.org/video/katharine-burr-blodgett-she-inspires-marl6o/", 
     "https://www.sciencehistory.org/stories/magazine/the-invisible-woman/"
   ],
-  "layout": "person"
+  "layout": "person",
+  "level" : ["UGUD", "G"]
 }

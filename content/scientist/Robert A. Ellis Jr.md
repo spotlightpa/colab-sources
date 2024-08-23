@@ -27,5 +27,6 @@
     "https://www.economist.com/science-and-technology/2015/10/24/stellar-work",
     "https://www.energy.gov/science/doe-explainsfusion-energy-science"
   ],
-  "layout": "person"
+  "layout": "person",
+  "level" : ["K12"]
 }

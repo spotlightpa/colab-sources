@@ -29,5 +29,6 @@
     "https://www.nobelprize.org/prizes/physics/2018/strickland/biographical/", 
     "https://www.optica.org/history/biographies/bios/donna-t-strickland/"
   ],
-  "layout": "person"
+  "layout": "person",
+  "level" : ["K12", "G"]
 }

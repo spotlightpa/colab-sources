@@ -33,5 +33,6 @@
   "citations": [
     "https://doi.org/10.1093/anb/9780198606697.article.1302346"
   ], 
-  "layout": "person"
+  "layout": "person",
+  "level" : ["K12", "UGLD"]
 }
