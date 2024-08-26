@@ -13,6 +13,9 @@ async function debouncedSearch(
   options = {},
   debounceTimeoutMs = 300,
 ) {
+  console.log(options.filters.level);
+  const filters = await pf.filters();
+  console.log(filters);
   if (!options.filters.level) {
     delete options.filters.level;
   }
@@ -143,7 +146,7 @@ export default function searchPeople() {
         role: data.meta.role || "",
         researchAreas: data.filters.researchAreas || [],
         relevantCourses: data.filters.relevantCourses || [],
-        level: this.filterLevel,
+        level: data.filters.filterLevel,
         image: data.meta.image,
         alt: data.meta.image_alt,
         srcset: data.meta.image_srcset,

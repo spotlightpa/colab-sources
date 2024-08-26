@@ -104,18 +104,11 @@
           <span class="overflow-hidden break-words">
             {{ range $index, $level := .Params.level }}
               {{- if ne $index 0 }},{{ end }}
-              <span data-pagefind-filter="level">
-                {{- if eq $level "K12" }}
-                  K-12
-                {{- else if eq $level "UGLD" }}
-                  Undergraduate Level - Lower Division
-                {{- else if eq $level "UGUD" }}
-                  Undergraduate Level - Upper Division
-                {{- else if eq $level "G" }}
-                  Graduate Level
-                {{- else }}
-                  {{ $level }}
-                {{- end }}
+              <span
+                data-pagefind-filter="level"
+                data-pagefind-filter-value="{{ $level }}"
+              >
+                {{ $level }}
               </span>
             {{- end }}
           </span>
@@ -349,7 +342,7 @@
   <!-- Hidden Meta Information for Pagefind -->
   <div hidden data-pagefind-meta="title">{{ .Params.linktitle }}</div>
 
-  <!-- JavaScript for scroll and highlight -->
+  <!-- CODE FOR CITATION, JavaScript for scroll and highlight-->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const citationLinks = document.querySelectorAll(".citation-link");
@@ -384,6 +377,39 @@
           }, 2000); // Highlight lasts for 2 seconds
         });
       });
+    });
+  </script>
+
+  <!-- CODE FOR CONVERTING ENCODING LEVEL TO NORMAL WORDING, JavaScript for scroll and highlight-->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Map of levels to their descriptive text
+      const levelDescriptions = {
+        K12: "K-12",
+        UGLD: "Undergraduate Level - Lower Division",
+        UGUD: "Undergraduate Level - Upper Division",
+        G: "Graduate Level",
+      };
+
+      // Function to update the innerHTML of elements with data-pagefind-filter="level"
+      const updateLevelDescriptions = () => {
+        // Select all elements with the data-pagefind-filter attribute set to "level"
+        const levelElements = document.querySelectorAll(
+          '[data-pagefind-filter="level"]',
+        );
+
+        // Loop through each element and update its innerHTML
+        levelElements.forEach((element) => {
+          const level = element.getAttribute("data-pagefind-filter-value");
+          const description = levelDescriptions[level];
+          if (description) {
+            element.innerHTML = description;
+          }
+        });
+      };
+
+      // Call the function to update level descriptions
+      updateLevelDescriptions();
     });
   </script>
 
