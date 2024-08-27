@@ -98,7 +98,6 @@
 
       <!-- Content Switch Buttons -->
       <div class="mt-4 grid items-end gap-4 bg-black p-2 md:grid-cols-2">
-        <!-- Bio Button -->
         <button
           :class="isBio ? 'bg-white text-black' : 'bg-gray text-white'"
           class="mx-4 flex-1 transform rounded-lg px-4 py-2 transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg focus:outline-none"
@@ -106,8 +105,8 @@
         >
           Bio
         </button>
-        <!-- Contribution Button -->
         <button
+          id="contributionsButton"
           :class="!isBio ? 'bg-white text-black' : 'bg-gray text-white'"
           class="mx-4 flex-1 transform rounded-lg px-4 py-2 transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg focus:outline-none"
           @click="isBio = false"
@@ -131,7 +130,6 @@
 
         <div class="mt-4 flex w-full flex-wrap">
           {{ with .Param "images" }}
-            <!-- Display Images if Available -->
             {{ range . }}
               {{ $img := resources.GetMatch . }}
               {{ if not $img }}
@@ -161,7 +159,6 @@
               </div>
             {{ end }}
           {{ else }}
-            <!-- Placeholder Image if No Images Available -->
             {{ $img := resources.Get "img/logos/person-svgrepo-com.png" }}
             {{ $imgSmall := $img.Resize "200x" }}
             {{ $imgMedium := $img.Resize "400x" }}
@@ -182,6 +179,8 @@
               />
             </div>
           {{ end }}
+
+
           <!-- Biographical Information -->
           <section
             class="content-area links-blue-darker mt-4 flex-1 sm:ml-4 sm:mt-0 md:ml-2"
@@ -189,13 +188,26 @@
             <h2 class="sr-only" data-pagefind-ignore>
               Biographical information
             </h2>
-            <p>{{ .Params.general_bio }}</p>
+            <p>
+              {{ replaceRE "\\[CITE (\\d+)\\]" "<a href=\"#cite-$1\" class=\"citation-link\" data-cite=\"$1\" >[$1]</a>" .Params.general_bio | safeHTML }}
+            </p>
           </section>
         </div>
 
         <!-- Additional Information: Research Areas and Relevant Courses -->
         <div class="links-blue-darker mt-4 flex flex-col">
-          <!-- Research Areas Link List-->
+          {{ if .Params.relevant_concepts }}
+            <div class="mt-2">
+              <p class="text-lg font-bold">Relevant Concepts</p>
+              <span class="align-middle">
+                {{ range $index, $area := .Params.relevant_concepts }}
+                  {{- if ne $index 0 }},{{ end }}
+                  <span class="hover:underline">{{ $area -}}</span>
+                {{- end }}
+              </span>
+            </div>
+          {{ end }}
+
           {{ if .Params.researchAreas }}
             <div class="mt-2">
               <p class="text-lg font-bold">Research Areas:</p>
@@ -214,8 +226,6 @@
             </div>
           {{ end }}
 
-
-          <!-- Relevant Courses Link List-->
           {{ if .Params.relevantCourses }}
             <div class="mt-2">
               <p class="text-lg font-bold">Relevant Courses:</p>
@@ -252,7 +262,6 @@
         <section class="mt-2">
           <div>
             {{ $isOdd := false }}
-            <!-- List of Key Contributions -->
             {{ range $key, $value := .Params.key_contributions }}
               {{ $isOdd = not $isOdd }}
               <div
@@ -278,8 +287,15 @@
                     <span>{{ $key }}</span>
                   </button>
                 </h3>
-                <div x-show="isOpen" x-cloak x-collapse class="mt-2">
-                  <p>{{ $value }}</p>
+                <div
+                  x-show="isOpen"
+                  x-cloak
+                  x-collapse
+                  class="links-blue-darker mt-2"
+                >
+                  <p>
+                    {{ replaceRE "\\[CITE (\\d+)\\]" "<a href=\"#cite-$1\" class=\"citation-link\" data-cite=\"$1\">[$1]</a>" $value | safeHTML }}
+                  </p>
                 </div>
               </div>
             {{ end }}
@@ -290,7 +306,10 @@
         <h2 class="text-lg font-bold">Citations</h2>
         <ol type="1" class="links-blue-darker">
           {{ range $index, $citation := .Params.citations }}
-            <li class="overflow-hidden break-words">
+            <li
+              id="cite-{{ add $index 1 }}"
+              class="citation-item overflow-hidden break-words"
+            >
               <a href="{{ $citation }}" target="_blank"
                 >[{{ add $index 1 }}]{{ $citation }}</a
               >
@@ -303,4 +322,56 @@
 
   <!-- Hidden Meta Information for Pagefind -->
   <div hidden data-pagefind-meta="title">{{ .Params.linktitle }}</div>
+
+  <!-- JavaScript for scroll and highlight -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const citationLinks = document.querySelectorAll(".citation-link");
+
+      citationLinks.forEach((link) => {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+
+          // Trigger the Contributions button click
+          const contributionsButton = document.querySelector(
+            "#contributionsButton",
+          );
+          if (contributionsButton) {
+            contributionsButton.click();
+          }
+
+          const citeId = this.getAttribute("data-cite");
+          const citationElement = document.getElementById("cite-" + citeId);
+
+          citationElement.scrollIntoView({ behavior: "smooth" });
+
+          citationElement.classList.add("highlight");
+
+          // Start the fade-out effect after 2 seconds
+          setTimeout(() => {
+            citationElement.classList.add("fade-out");
+
+            // Remove highlight class after fade-out effect completes
+            setTimeout(() => {
+              citationElement.classList.remove("highlight", "fade-out");
+            }, 500); // This should match the duration of the CSS transition
+          }, 2000); // Highlight lasts for 2 seconds
+        });
+      });
+    });
+  </script>
+
+  <!-- CSS for highlighting -->
+  <style>
+    .citation-item.highlight {
+      background-color: yellow;
+      transition:
+        background-color 0.5s ease-out,
+        opacity 0.5s ease-out;
+    }
+
+    .citation-item.fade-out {
+      background-color: transparent;
+    }
+  </style>
 {{ end }}
