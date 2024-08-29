@@ -82,7 +82,6 @@ export default function searchPeople() {
       let timeout = query ? 300 : 0;
       this.isLoading = true;
       this.resultCount = 0;
-      console.log(this.filterLevel);
       let options = {};
       if (this.filterType) {
         options.filters = {
