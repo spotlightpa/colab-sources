@@ -1,5 +1,5 @@
 {
-    "title": "name",
+    "title": "Arthur Bertram Cuthbert Walker Jr.",
     "name": "Arthur Bertram Cuthbert Walker Jr.",
     "linktitle": "Arthur Bertram Cuthbert Walker Jr.",
     "last": "Walker",

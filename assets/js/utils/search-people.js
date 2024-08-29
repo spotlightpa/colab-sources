@@ -48,7 +48,7 @@ export default function searchPeople() {
     filterType: "scientist",
     filterResearchAreas: [],
     filterRelevantCourses: [],
-    filterLevel: "",
+    filterLevel: [],
     query: "",
     pagefind: null,
     error: null,
@@ -85,14 +85,14 @@ export default function searchPeople() {
       let timeout = query ? 300 : 0;
       this.isLoading = true;
       this.resultCount = 0;
-
+      console.log(this.filterLevel)
       let options = {};
       if (this.filterType) {
         options.filters = {
           type: this.filterType,
           researchAreas: this.filterResearchAreas.map((f) => f.value),
           relevantCourses: this.filterRelevantCourses.map((f) => f.value),
-          level: this.filterLevel,
+          level: this.filterLevel
         };
       }
 
@@ -146,7 +146,7 @@ export default function searchPeople() {
         role: data.meta.role || "",
         researchAreas: data.filters.researchAreas || [],
         relevantCourses: data.filters.relevantCourses || [],
-        level: data.filters.filterLevel,
+        level: data.filters.level || [],
         image: data.meta.image,
         alt: data.meta.image_alt,
         srcset: data.meta.image_srcset,
@@ -160,7 +160,7 @@ export default function searchPeople() {
       return (
         this.filterResearchAreas.length > 0 ||
         this.filterRelevantCourses.length > 0 ||
-        this.filterLevel
+        this.filterLevel.length > 0
       );
     },
 

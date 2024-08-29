@@ -70,55 +70,40 @@
     <label>
       <input
         class="accent-blue"
-        x-model="filterLevel"
-        type="radio"
-        name="level"
-        value=""
-        checked
-      />
-      <span class="ml-1">Everyone</span>
-    </label>
-    <label>
-      <input
-        class="accent-blue"
-        x-model="filterLevel"
-        type="radio"
-        name="level"
+        type="checkbox"
         value="K12"
+        x-model="filterLevel"
       />
       <span class="ml-1">K-12</span>
     </label>
     <label>
       <input
         class="accent-blue"
-        x-model="filterLevel"
-        type="radio"
-        name="level"
+        type="checkbox"
         value="UGLD"
+        x-model="filterLevel"
       />
-      <span class="ml-1">Undergraduate Level - Lower Division</span>
+      <span class="ml-1">Undergraduate - Lower Division</span>
     </label>
     <label>
       <input
         class="accent-blue"
-        x-model="filterLevel"
-        type="radio"
-        name="level"
+        type="checkbox"
         value="UGUD"
+        x-model="filterLevel"
       />
-      <span class="ml-1">Undergraduate Level - Upper Division</span>
+      <span class="ml-1">Undergraduate - Upper Division</span>
     </label>
     <label>
       <input
         class="accent-blue"
-        x-model="filterLevel"
-        type="radio"
-        name="level"
+        type="checkbox"
         value="G"
+        x-model="filterLevel" 
       />
-      <span class="ml-1">Graduate Level</span>
+      <span class="ml-1">Graduate</span>
     </label>
-  </div>
+  </div>  
   <div class="mt-2">
     <div class="grid items-end gap-4 md:grid-cols-2">
       <a
@@ -219,5 +204,14 @@
   </div>
 </search>
 
+<!-- Clear the input field on load-->
+<script>
+  window.addEventListener("load", function() {
+    let searchbox = document.getElementById("search");
+    if (searchbox) {
+      searchbox.value = ""; 
+    }
+  });
+</script>
 <!-- prevent CSS purge -->
 <mark hidden class="hidden"></mark>
