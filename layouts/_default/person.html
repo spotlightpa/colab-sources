@@ -221,7 +221,7 @@
               <span class="align-middle">
                 {{ range $index, $area := .Params.relevant_concepts }}
                   {{- if ne $index 0 }},{{ end }}
-                  <span class="hover:underline">{{ $area -}}</span>
+                  <span>{{ $area -}}</span>
                 {{- end }}
               </span>
             </div>
@@ -330,7 +330,7 @@
               class="citation-item overflow-hidden break-words"
             >
               <a href="{{ $citation }}" target="_blank"
-                >[{{ add $index 1 }}]{{ $citation }}</a
+                >[{{ add $index 1 }}] {{ $citation }}</a
               >
             </li>
           {{ end }}
@@ -386,9 +386,9 @@
       // Map of levels to their descriptive text
       const levelDescriptions = {
         K12: "K-12",
-        UGLD: "Undergraduate Level - Lower Division",
-        UGUD: "Undergraduate Level - Upper Division",
-        G: "Graduate Level",
+        UGLD: "Undergraduate - Lower Division",
+        UGUD: "Undergraduate - Upper Division",
+        G: "Graduate",
       };
 
       // Function to update the innerHTML of elements with data-pagefind-filter="level"
