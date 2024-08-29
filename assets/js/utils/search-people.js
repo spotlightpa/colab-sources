@@ -13,9 +13,6 @@ async function debouncedSearch(
   options = {},
   debounceTimeoutMs = 300,
 ) {
-  console.log(options.filters.level);
-  const filters = await pf.filters();
-  console.log(filters);
   if (!options.filters.level) {
     delete options.filters.level;
   }
