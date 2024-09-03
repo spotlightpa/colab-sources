@@ -66,6 +66,44 @@
       }}
     </div>
   </div>
+  <div class="mt-2 flex flex-wrap gap-4">
+    <label>
+      <input
+        class="accent-blue"
+        type="checkbox"
+        value="K12"
+        x-model="filterLevel"
+      />
+      <span class="ml-1">K-12</span>
+    </label>
+    <label>
+      <input
+        class="accent-blue"
+        type="checkbox"
+        value="UGLD"
+        x-model="filterLevel"
+      />
+      <span class="ml-1">Undergraduate - Lower Division</span>
+    </label>
+    <label>
+      <input
+        class="accent-blue"
+        type="checkbox"
+        value="UGUD"
+        x-model="filterLevel"
+      />
+      <span class="ml-1">Undergraduate - Upper Division</span>
+    </label>
+    <label>
+      <input
+        class="accent-blue"
+        type="checkbox"
+        value="G"
+        x-model="filterLevel"
+      />
+      <span class="ml-1">Graduate</span>
+    </label>
+  </div>
   <div class="mt-2">
     <div class="grid items-end gap-4 md:grid-cols-2">
       <a
@@ -156,28 +194,6 @@
             </span>
             <span x-text="andMore(p.relevantCourses)"></span>
           </p>
-          <p x-show="p.location.length">
-            <span class="mr-1 text-g-7">
-              <svg
-                class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
-              >
-                <title>Location</title>
-                <use xlink:href="#earth-svg"></use>
-              </svg>
-            </span>
-            <span x-text="andMore(p.location)"></span>
-          </p>
-          <p x-show="p.area.length">
-            <span class="mr-1 text-g-7">
-              <svg
-                class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
-              >
-                <title>Coverage area</title>
-                <use xlink:href="#earth-svg"></use>
-              </svg>
-            </span>
-            <span x-text="andMore(p.area)"></span>
-          </p>
         </div>
         <p
           class="mt-2 break-words font-serif text-sm italic text-gray [&_mark]:bg-green [&_mark]:p-[2px] [&_mark]:text-white"
@@ -188,5 +204,14 @@
   </div>
 </search>
 
+<!-- Clear the input field on load-->
+<script>
+  window.addEventListener("load", function () {
+    let searchbox = document.getElementById("search");
+    if (searchbox) {
+      searchbox.value = "";
+    }
+  });
+</script>
 <!-- prevent CSS purge -->
 <mark hidden class="hidden"></mark>

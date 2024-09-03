@@ -13,14 +13,12 @@ async function debouncedSearch(
   options = {},
   debounceTimeoutMs = 300,
 ) {
-  if (
-    options.filters.relevantCourses.length === 0 &&
-    options.filters.researchAreas.length === 0
-  ) {
-    const searchResult = await pf.search(term);
-    return searchResult;
+  if (!options.filters.level) {
+    delete options.filters.level;
   }
-
+  if (options.filters && options.filters.type) {
+    delete options.filters.type;
+  }
   options.filters.relevantCourses = options.filters.relevantCourses.map(
     (course) => course.toLowerCase(),
   );
@@ -34,11 +32,6 @@ async function debouncedSearch(
   if (thisSearchID !== currentSearchID) {
     return null;
   }
-
-  if (options.filters && options.filters.type) {
-    delete options.filters.type;
-  }
-
   const searchResult = await pf.search(term, options);
   if (thisSearchID !== currentSearchID) {
     return null;
@@ -52,6 +45,7 @@ export default function searchPeople() {
     filterType: "scientist",
     filterResearchAreas: [],
     filterRelevantCourses: [],
+    filterLevel: [],
     query: "",
     pagefind: null,
     error: null,
@@ -76,6 +70,7 @@ export default function searchPeople() {
         "filterType",
         "filterResearchAreas",
         "filterRelevantCourses",
+        "filterLevel",
       ]) {
         this.$watch(param, () => this.search());
       }
@@ -87,18 +82,14 @@ export default function searchPeople() {
       let timeout = query ? 300 : 0;
       this.isLoading = true;
       this.resultCount = 0;
-
       let options = {};
       if (this.filterType) {
         options.filters = {
           type: this.filterType,
+          researchAreas: this.filterResearchAreas.map((f) => f.value),
+          relevantCourses: this.filterRelevantCourses.map((f) => f.value),
+          level: this.filterLevel,
         };
-        options.filters.researchAreas = this.filterResearchAreas.map(
-          (f) => f.value,
-        );
-        options.filters.relevantCourses = this.filterRelevantCourses.map(
-          (f) => f.value,
-        );
       }
 
       if (this.hasFilters && !query) {
@@ -151,6 +142,7 @@ export default function searchPeople() {
         role: data.meta.role || "",
         researchAreas: data.filters.researchAreas || [],
         relevantCourses: data.filters.relevantCourses || [],
+        level: data.filters.level || [],
         image: data.meta.image,
         alt: data.meta.image_alt,
         srcset: data.meta.image_srcset,
@@ -163,7 +155,8 @@ export default function searchPeople() {
     get hasFilters() {
       return (
         this.filterResearchAreas.length > 0 ||
-        this.filterRelevantCourses.length > 0
+        this.filterRelevantCourses.length > 0 ||
+        this.filterLevel.length > 0
       );
     },
 

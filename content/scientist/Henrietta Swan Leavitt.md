@@ -35,5 +35,6 @@
     "https://www.nytimes.com/2024/03/27/obituaries/henrietta-leavitt-overlooked.html",
     "https://www.atnf.csiro.au/outreach/education/senior/astrophysics/variable_cepheids.html"
   ],
-  "layout": "person"
+  "layout": "person",
+  "level" : ["G"]
 }

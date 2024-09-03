@@ -31,5 +31,6 @@
     "https://www.thecrimson.com/article/1999/10/13/hau-receives-tenure-physics-professor-slowed/",
     "https://doi.org/10.1103/PhysRevLett.104.133002"
   ],
-  "layout": "person"
+  "layout": "person",
+  "level" : ["UGUD"]
 }

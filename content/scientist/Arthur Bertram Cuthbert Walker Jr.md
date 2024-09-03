@@ -1,5 +1,5 @@
 {
-    "title": "name",
+    "title": "Arthur Bertram Cuthbert Walker Jr.",
     "name": "Arthur Bertram Cuthbert Walker Jr.",
     "linktitle": "Arthur Bertram Cuthbert Walker Jr.",
     "last": "Walker",
@@ -27,5 +27,6 @@
         "http://www.math.buffalo.edu/mad/physics/walker_arthurbc.html", 
         "https://web.archive.org/web/20130826152433/https://aas.org/obituaries/arthur-b-c-walker-1936-2001"
     ],
-    "layout": "person"
+    "layout": "person",
+    "level" : ["UGLD"]
 }

@@ -27,5 +27,6 @@
         "Gamma Radiation Shielding": "Developed mathematical models to explain gamma radiation, which was critical to the development of shielding against gamma radiation emitted by nuclear sources and the sun and thus key to the design of safe nuclear reactors and space probes."
     },
     "citations":["https://doi.org/10.1007/978-3-642-77425-6_33"],
-    "layout":"person"
+    "layout":"person",
+    "level" : ["UGLD", "UGUD"]
 }

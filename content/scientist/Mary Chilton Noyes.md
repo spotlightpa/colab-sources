@@ -22,5 +22,6 @@
       "Elasticity of a Piano Wire": "Recorded the elasticity of a piano wire, expanding the temperature range to 200 degrees celsius. Prior work on the elasticity of piano wire only recorded work up to 100 degrees celsius. Noyes concluded that elasticity decreased linearly as temperature increased. Additionally, there was no maximum of elasticity at 100 degrees celsius."
     },
   "citations": ["https://doi.org/10.1103/PhysRevSeriesI.2.277"],
-  "layout": "person"
+  "layout": "person",
+  "level" : ["K12", "UGUD"]
 }

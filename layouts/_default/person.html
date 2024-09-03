@@ -94,6 +94,25 @@
             >
           </span>
         </p>
+        <p class=" flex items-center sm:w-1/2">
+          <span class="mr-5 text-g-6">
+            <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
+              <title>level</title>
+              <use xlink:href="#level"></use>
+            </svg>
+          </span>
+          <span class="overflow-hidden break-words">
+            {{ range $index, $level := .Params.level }}
+              {{- if ne $index 0 }},{{ end }}
+              <span
+                data-pagefind-filter="level"
+                data-pagefind-filter-value="{{ $level }}"
+              >
+                {{ $level }}
+              </span>
+            {{- end }}
+          </span>
+        </p>
       </div>
 
       <!-- Content Switch Buttons -->
@@ -202,7 +221,7 @@
               <span class="align-middle">
                 {{ range $index, $area := .Params.relevant_concepts }}
                   {{- if ne $index 0 }},{{ end }}
-                  <span class="hover:underline">{{ $area -}}</span>
+                  <span>{{ $area -}}</span>
                 {{- end }}
               </span>
             </div>
@@ -311,7 +330,7 @@
               class="citation-item overflow-hidden break-words"
             >
               <a href="{{ $citation }}" target="_blank"
-                >[{{ add $index 1 }}]{{ $citation }}</a
+                >[{{ add $index 1 }}] {{ $citation }}</a
               >
             </li>
           {{ end }}
@@ -323,7 +342,7 @@
   <!-- Hidden Meta Information for Pagefind -->
   <div hidden data-pagefind-meta="title">{{ .Params.linktitle }}</div>
 
-  <!-- JavaScript for scroll and highlight -->
+  <!-- CODE FOR CITATION, JavaScript for scroll and highlight-->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const citationLinks = document.querySelectorAll(".citation-link");
@@ -358,6 +377,39 @@
           }, 2000); // Highlight lasts for 2 seconds
         });
       });
+    });
+  </script>
+
+  <!-- CODE FOR CONVERTING ENCODING LEVEL TO NORMAL WORDING, JavaScript for scroll and highlight-->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Map of levels to their descriptive text
+      const levelDescriptions = {
+        K12: "K-12",
+        UGLD: "Undergraduate - Lower Division",
+        UGUD: "Undergraduate - Upper Division",
+        G: "Graduate",
+      };
+
+      // Function to update the innerHTML of elements with data-pagefind-filter="level"
+      const updateLevelDescriptions = () => {
+        // Select all elements with the data-pagefind-filter attribute set to "level"
+        const levelElements = document.querySelectorAll(
+          '[data-pagefind-filter="level"]',
+        );
+
+        // Loop through each element and update its innerHTML
+        levelElements.forEach((element) => {
+          const level = element.getAttribute("data-pagefind-filter-value");
+          const description = levelDescriptions[level];
+          if (description) {
+            element.innerHTML = description;
+          }
+        });
+      };
+
+      // Call the function to update level descriptions
+      updateLevelDescriptions();
     });
   </script>
 

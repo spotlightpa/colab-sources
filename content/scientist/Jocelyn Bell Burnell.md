@@ -29,5 +29,6 @@
     "https://doi.org/10.1093/ww/9780199540884.013.U7157",
     "https://www.allesoversterrenkunde.nl/!/!/!/actueel/artikelen/_detail/gli/50-years-pulsars/"
   ],
-  "layout": "person"
+  "layout": "person",
+  "level" : ["K12", "UGLD"]
 }
