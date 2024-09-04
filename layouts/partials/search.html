@@ -1,10 +1,10 @@
 <search
   role="search"
-  class="mx-auto block max-w-screen-md font-sans"
+  class="mx-auto block max-w-screen-md font-sans text-white"
   x-data="searchPeople"
 >
-  <h2 class="text-g-9">
-    <label class="text-2xl font-bold leading-tight text-black" for="search">
+  <h2 class="text-white">
+    <label class="text-2xl font-bold leading-tight text-white" for="search">
       Search for a scientist
     </label>
   </h2>
@@ -108,32 +108,32 @@
     <div class="grid items-end gap-4 md:grid-cols-2">
       <a
         href="/researchareas"
-        class="btn rounded border-2 border-g-5 px-4 py-2 text-black hover:shadow-lg"
+        class="btn rounded border-2 border-g-5 bg-white px-4 py-2 text-black hover:shadow-lg"
       >
         Research Area List
       </a>
       <a
         href="/relevantcourses"
-        class="btn rounded border-2 border-g-5 px-4 py-2 text-black hover:shadow-lg"
+        class="btn rounded border-2 border-g-5 bg-white px-4 py-2 text-black hover:shadow-lg"
       >
         Relevant Courses List
       </a>
     </div>
   </div>
-  <p class="mt-1 text-g-7" x-text="resultsText"></p>
+  <p class="mt-1 text-white" x-text="resultsText"></p>
   <p x-cloak x-show="error" class="mt-2">
     <span class="italic"> Something went wrong: </span>
     <br />
     <span class="font-bold" x-text="error && error.name || ''"></span>
     <br />
-    <span class="text-g-7" x-text="error && error.message || ''"></span>
+    <span class="text-white" x-text="error && error.message || ''"></span>
   </p>
   <div
     class="mt-4 grid max-w-screen-md gap-x-4 gap-y-4 sm:grid-cols-2 md:grid-cols-3"
   >
     <template x-for="p, i of people" :key="p.id" hidden>
       <a
-        class="group flex h-full min-w-0 flex-col gap-3 border-8 border-blue p-4 shadow transition-colors duration-500 hover:border-blue-darker"
+        class="group flex h-full min-w-0 flex-col gap-3 border-8 border-blue bg-g-4 p-4 shadow transition-colors duration-500 hover:border-blue-darker"
         :class='{"bg-g-3": i%2 }'
         :href="p.url"
       >
@@ -167,7 +167,7 @@
           </div>
         </div>
         <h2
-          class="mt-auto text-lg font-bold underline decoration-blue decoration-4 underline-offset-2 transition-colors duration-500 group-hover:decoration-blue-darker"
+          class="mt-auto text-lg font-bold text-black underline decoration-blue decoration-4 underline-offset-2 transition-colors duration-500 group-hover:decoration-blue-darker"
           x-text="p.name"
         ></h2>
         <h3 class="truncate text-g-6" x-text="p.organization"></h3>

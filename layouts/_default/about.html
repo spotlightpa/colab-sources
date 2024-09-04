@@ -51,5 +51,19 @@
         </div>
       </section>
     </div>
+
+    <style>
+      /* person box hover effect */
+      .team-member {
+        transition:
+          transform 0.3s ease-in-out,
+          box-shadow 0.3s ease-in-out;
+      }
+
+      .team-member:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+      }
+    </style>
   </main>
 {{ end }}

@@ -3,21 +3,22 @@
   <main class="p-8" data-pagefind-body x-data="{ isBio: true }">
     <div class="mx-auto flex max-w-screen-md flex-col">
       <!-- Title and Organization -->
-      <h1 class="break-word font-bold leading-tight">
-        <span class="text-2xl text-black">{{ .Params.name }}</span>
-      </h1>
-      {{ with .Param "organization" }}
-        <h2
-          class="break-word text-lg leading-tight text-gray"
-          data-pagefind-meta="organization"
-        >
-          {{ . }}
-        </h2>
-      {{ end }}
-
+      <div class=" enter">
+        <h1 class="break-word font-bold leading-tight">
+          <span class="text-2xl text-black">{{ .Params.name }}</span>
+        </h1>
+        {{ with .Param "organization" }}
+          <h2
+            class="break-word text-lg leading-tight text-gray"
+            data-pagefind-meta="organization"
+          >
+            {{ . }}
+          </h2>
+        {{ end }}
+      </div>
 
       <!-- Basic Information Section -->
-      <div class="links-blue-darker mt-2 text-sm sm:flex sm:flex-wrap">
+      <div class="links-blue-darker enter4 mt-2 text-sm sm:flex sm:flex-wrap">
         <!-- Institution of Ph.D. -->
         <p class="sm:w-1/2">
           <span class="mr-5 text-g-6">
@@ -116,7 +117,7 @@
       </div>
 
       <!-- Content Switch Buttons -->
-      <div class="mt-4 grid items-end gap-4 bg-black p-2 md:grid-cols-2">
+      <div class="enter5 mt-4 grid items-end gap-4 bg-black p-2 md:grid-cols-2">
         <button
           :class="isBio ? 'bg-white text-black' : 'bg-gray text-white'"
           class="mx-4 flex-1 transform rounded-lg px-4 py-2 transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg focus:outline-none"
@@ -143,7 +144,7 @@
         x-transition:leave="transition ease-in duration-75"
         x-transition:leave-start="transform opacity-100 scale-100"
         x-transition:leave-end="transform opacity-0 scale-95"
-        class="mt-4"
+        class="enter6 mt-4"
       >
         <h2 class="text-lg font-bold">Scientist Biography</h2>
 
@@ -164,7 +165,7 @@
                   <img
                     data-pagefind-meta="image[src], image_alt[alt], image_srcset[srcset], image_width[width], image_height[height]"
                     title="Click to download"
-                    class="mx-auto rounded bg-g-4 shadow transition-shadow duration-500 hover:shadow-lg sm:mx-0"
+                    class="image-zoom mx-auto rounded bg-g-4 shadow transition-shadow duration-500 hover:shadow-lg sm:mx-0"
                     alt="Headshot of {{ $.Title }}"
                     width="{{ $imgSmall.Width }}"
                     height="{{ $imgSmall.Height }}"
@@ -411,10 +412,21 @@
       // Call the function to update level descriptions
       updateLevelDescriptions();
     });
+
+    // initial animation remove
+    document.addEventListener("DOMContentLoaded", function () {
+      const bioSection = document.querySelector(".enter6");
+
+      if (bioSection) {
+        bioSection.addEventListener("animationend", function () {
+          bioSection.classList.remove("enter6");
+        });
+      }
+    });
   </script>
 
-  <!-- CSS for highlighting -->
   <style>
+    /* CSS for highlighting */
     .citation-item.highlight {
       background-color: yellow;
       transition:
@@ -424,6 +436,39 @@
 
     .citation-item.fade-out {
       background-color: transparent;
+    }
+
+    /* CSS for image Zoom */
+    .image-zoom {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .image-zoom:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .enter3 {
+      animation: slideInLeft 0.3s ease-out forwards;
+    }
+    .enter4 {
+      animation: slideInLeft 0.4s ease-out forwards;
+    }
+    .enter5 {
+      animation: slideInLeft 0.5s ease-out forwards;
+    }
+    .enter6 {
+      animation: slideInLeft 0.6s ease-out forwards;
     }
   </style>
 {{ end }}
