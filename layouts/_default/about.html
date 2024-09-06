@@ -1,7 +1,11 @@
 {{ define "main" }}
-  <main class="p-8">
+  {{ $bgImage := resources.Get `img/logos/personBackground.jpg` }}
+  <main
+    class="p-8 text-white"
+    style="background-image: url('{{ $bgImage.RelPermalink }}'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+  >
     <div class="mx-auto max-w-screen-md">
-      <h1 class="text-3xl font-bold text-black">About Us</h1>
+      <h1 class="text-3xl font-bold">About Us</h1>
 
       <!-- Mission and Values -->
       <section class="mt-6">
@@ -14,7 +18,7 @@
       <!-- Team Members -->
       <section class="mt-6">
         <h2 class="text-gray-800 text-2xl font-semibold">Meet Our Team</h2>
-        <div class="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-4 grid gap-6 text-black sm:grid-cols-2 lg:grid-cols-3">
           {{ range .Params.team_members }}
             <div class="team-member rounded-lg bg-white p-4 shadow">
               {{ if .image }}

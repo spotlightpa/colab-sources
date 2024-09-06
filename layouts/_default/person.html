@@ -1,11 +1,17 @@
 {{ define "main" }}
   <!-- Main Content Area -->
-  <main class="p-8" data-pagefind-body x-data="{ isBio: true }">
+  {{ $bgImage := resources.Get `img/logos/personBackground.jpg` }}
+  <main
+    class="p-8 text-white"
+    data-pagefind-body
+    x-data="{ isBio: true }"
+    style="background-image: url('{{ $bgImage.RelPermalink }}'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+  >
     <div class="mx-auto flex max-w-screen-md flex-col">
       <!-- Title and Organization -->
       <div class=" enter">
         <h1 class="break-word font-bold leading-tight">
-          <span class="text-2xl text-black">{{ .Params.name }}</span>
+          <span class="text-2xl">{{ .Params.name }}</span>
         </h1>
         {{ with .Param "organization" }}
           <h2
@@ -117,7 +123,7 @@
       </div>
 
       <!-- Content Switch Buttons -->
-      <div class="enter5 mt-4 grid items-end gap-4 bg-black p-2 md:grid-cols-2">
+      <div class="enter5 mt-4 grid items-end gap-4 p-2 md:grid-cols-2">
         <button
           :class="isBio ? 'bg-white text-black' : 'bg-gray text-white'"
           class="mx-4 flex-1 transform rounded-lg px-4 py-2 transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg focus:outline-none"
@@ -285,7 +291,7 @@
             {{ range $key, $value := .Params.key_contributions }}
               {{ $isOdd = not $isOdd }}
               <div
-                class="{{ cond $isOdd `bg-g-3 shadow-inner` `` }} p-2"
+                class="{{ cond $isOdd ` shadow-inner` `` }} p-2"
                 x-data="{ isOpen: false }"
               >
                 <h3 class="text-md font-semibold">
