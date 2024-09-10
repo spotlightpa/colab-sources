@@ -1,11 +1,10 @@
 {{ define "main" }}
   <!-- Main Content Area -->
-  {{ $bgImage := resources.Get `img/logos/personBackground.jpg` }}
   <main
-    class="p-8 text-white"
+    class="p-8 text-white flex-grow bg-gray "
     data-pagefind-body
     x-data="{ isBio: true }"
-    style="background-image: url('{{ $bgImage.RelPermalink }}'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+    style="background-image: url('/img/background/personBackground.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"
   >
     <div class="mx-auto flex max-w-screen-md flex-col">
       <!-- Title and Organization -->
@@ -132,7 +131,6 @@
           Bio
         </button>
         <button
-          id="contributionsButton"
           :class="!isBio ? 'bg-white text-black' : 'bg-gray text-white'"
           class="mx-4 flex-1 transform rounded-lg px-4 py-2 transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg focus:outline-none"
           @click="isBio = false"
@@ -147,9 +145,6 @@
         x-transition:enter="transition ease-out duration-100 delay-100"
         x-transition:enter-start="transform opacity-0 scale-95"
         x-transition:enter-end="transform opacity-100 scale-100"
-        x-transition:leave="transition ease-in duration-75"
-        x-transition:leave-start="transform opacity-100 scale-100"
-        x-transition:leave-end="transform opacity-0 scale-95"
         class="enter6 mt-4"
       >
         <h2 class="text-lg font-bold">Scientist Biography</h2>
@@ -278,9 +273,6 @@
         x-transition:enter="transition ease-out duration-100 delay-100"
         x-transition:enter-start="transform opacity-0 scale-95"
         x-transition:enter-end="transform opacity-100 scale-100"
-        x-transition:leave="transition ease-in duration-75"
-        x-transition:leave-start="transform opacity-100 scale-100"
-        x-transition:leave-end="transform opacity-0 scale-95"
         x-cloak
         class="mt-4"
       >

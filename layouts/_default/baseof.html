@@ -37,6 +37,10 @@
       href="/css/fonts/montserrat-v25/montserrat-v25-latin-regular.woff2"
       crossorigin
     />
+    <link rel="preload" href="/img/background/bodyBackground.webp" as="image"/>
+    <link rel="preload" href="/img/background/titleBackground.webp" as="image"/>
+    <link rel="preload" href="/img/background/personBackground.webp" as="image"/>
+
 
     {{ $cssTW := resources.Get "css/main.css" }}
     {{ $css := $cssTW | resources.PostCSS (dict "inlineImports" true) }}

@@ -3,10 +3,9 @@
 
 
   <!-- Main Section with Logo and Title -->
-  {{ $bgImage := resources.Get `img/logos/titleBackground.webp` }}
   <section
-    class="parallax p-8"
-    style="background-image: url('{{ $bgImage.RelPermalink }}');"
+    class="parallax p-8 bg-gray"
+    style="background-image: url(/img/background/titleBackground.webp);"
   >
     <h1>
       <span class="sr-only">{{ .Title }}</span>
@@ -197,10 +196,9 @@
   </style>
 
   <!-- Search Section -->
-  {{ $bodybgImage := resources.Get `img/logos/bodyBackground.webp` }}
   <section
     class="parallax relative overflow-hidden p-8 text-white"
-    style="background-image: url('{{ $bodybgImage.RelPermalink }}');"
+    style="background-image: url(/img/background/bodyBackground.webp);"
   >
     <!-- Meteors -->
     <div class="meteor meteor-1"></div>
