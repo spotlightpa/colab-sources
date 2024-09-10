@@ -1,14 +1,14 @@
 {{ define "main" }}
   <main
-    class="p-8 text-white bg-gray "
+    class="bg-gray p-8 text-white "
     style="background-image: url('/img/background/personBackground.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"
   >
     <div class="mx-auto max-w-screen-md">
       <!-- Title -->
-      <h1 class="text-3xl font-bold enter-title">About Us</h1>
+      <h1 class="enter-title text-3xl font-bold">About Us</h1>
 
       <!-- Mission and Values Section -->
-      <section class="mt-6 enter-mission">
+      <section class="enter-mission mt-6">
         <h2 class="text-gray-800 text-2xl font-semibold">Our Mission</h2>
         <p class="text-gray-700 mt-2">
           {{ .Params.mission }}
@@ -16,14 +16,14 @@
       </section>
 
       <!-- Meet Our Team Section -->
-      <section class="mt-6 enter-team-header">
+      <section class="enter-team-header mt-6">
         <h2 class="text-gray-800 text-2xl font-semibold">Meet Our Team</h2>
         <div class="mt-4 grid gap-6 text-black sm:grid-cols-2 lg:grid-cols-3">
           {{ range $index, $member := .Params.team_members }}
             {{ $delay := printf "%.1fs" (add 0.5 (mul $index 0.1)) }}
             <div
-              class="team-member rounded-lg bg-white p-4 shadow enter-team-member"
-              style="--animation-delay: {{ $delay }};"  
+              class="team-member enter-team-member rounded-lg bg-white p-4 shadow"
+              style="--animation-delay: {{ $delay }};"
             >
               {{ if $member.image }}
                 <img
@@ -51,7 +51,9 @@
                 </div>
               {{ end }}
               <div class="mt-4">
-                <h3 class="text-gray-800 text-lg font-bold">{{ $member.name }}</h3>
+                <h3 class="text-gray-800 text-lg font-bold">
+                  {{ $member.name }}
+                </h3>
                 <p class="text-gray-600 text-sm">{{ $member.position }}</p>
               </div>
             </div>
@@ -59,12 +61,11 @@
         </div>
       </section>
     </div>
-
   </main>
 
   <!-- JavaScript to Remove Animation Class After Animation Ends -->
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       const animatedElements = document.querySelectorAll(".enter-team-member");
 
       animatedElements.forEach((element) => {
@@ -78,7 +79,6 @@
 
   <!-- Staggered Animation for Page Elements -->
   <style>
-
     /* Title Animation */
     .enter-title {
       opacity: 0;
@@ -107,7 +107,9 @@
     }
 
     .team-member:hover {
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      transition:
+        transform 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
       transform: scale(1.05);
       box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
     }
@@ -115,11 +117,11 @@
     @keyframes popUp {
       0% {
         opacity: 0;
-        transform: translateY(20px);  /* Change to translate instead of scale */
+        transform: translateY(20px); /* Change to translate instead of scale */
       }
       100% {
         opacity: 1;
-        transform: translateY(0);    /* Reset translate to 0 */
+        transform: translateY(0); /* Reset translate to 0 */
       }
     }
   </style>
