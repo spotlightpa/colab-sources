@@ -1,5 +1,5 @@
 {
-"title": "name",
+"title": "Al-Kindi",
 "name": "Al-Kindi",
 "linktitle": "Al-Kindi",
 "last": "N/A",

@@ -46,6 +46,7 @@
                   class="self-center text-blue duration-500 hover:text-blue-darker"
                   href="{{ .URL }}"
                   {{ with .Post }}target="{{ . }}"{{ end }}
+                  @click="showModal = true;  console.log(showModal)"
                 >
                   {{- .Name -}}
                 </a>
@@ -152,7 +153,7 @@
       <div
         class="transform overflow-hidden rounded-lg bg-white shadow-xl transition-all sm:w-full sm:max-w-lg"
       >
-        <div class="bg-blue px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+        <div class="bg-gray px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
           <button
             @click="showModal = false"
             type="button"
@@ -207,7 +208,7 @@
               <div class="flex justify-end">
                 <button
                   type="submit"
-                  class="bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 mt-3 inline-flex w-full justify-center rounded-md border border-transparent px-4 py-2 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 sm:mt-0 sm:w-auto sm:text-sm"
+                  class="bg-gray hover:bg-blue focus:ring-blue-500 mt-3 inline-flex w-full justify-center rounded-md border border-transparent px-4 py-2 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 sm:mt-0 sm:w-auto sm:text-sm"
                 >
                   Send
                 </button>
@@ -217,5 +218,35 @@
         </div>
       </div>
     </div>
+    <script>
+      function submitForm(event) {
+        event.preventDefault();
+        
+        let formData = {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          message: document.getElementById('message').value
+        };
+    
+        fetch('YOUR_WEB_APP_URL', {  // Replace with your Google Apps Script Web App URL
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+          alert('Your message has been sent successfully!');
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          alert('Failed to send your message.');
+        });
+      }
+    
+      document.querySelector('form').addEventListener('submit', submitForm);
+    </script>
   </nav>
 </header>

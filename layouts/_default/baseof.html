@@ -4,12 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>
-      {{- with .Param "title-tag" -}}
-        {{- . -}}
-      {{- else -}}
-        {{ .Title }} &middot;
-        {{ .Site.Title }}
-      {{- end -}}
+      {{ .Title }}
     </title>
 
     <!-- Preload fonts -->

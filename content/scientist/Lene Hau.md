@@ -1,5 +1,5 @@
 {
-  "title": "name",
+  "title": "Lene Hau",
   "name": "Lene Hau",
   "linktitle": "Lene Hau",
   "last": "Hau",

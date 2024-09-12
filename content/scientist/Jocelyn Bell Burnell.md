@@ -1,5 +1,5 @@
 {
-  "title": "name",
+  "title": "Jocelyn Bell Burnell",
   "name": "Jocelyn Bell Burnell",
   "linktitle": "Jocelyn Bell Burnell",
   "last": "Burnell",
