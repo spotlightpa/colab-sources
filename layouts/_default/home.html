@@ -91,7 +91,7 @@
         <div class="moon"></div>
       </div>
     </a>
-    
+
     <!-- Popup Modal -->
     <div
       x-show="showModal"
@@ -162,7 +162,7 @@
               <div class="flex justify-end">
                 <button
                   type="submit"
-                  class="bg-gray hover:bg-blue focus:ring-blue-500 mt-3 inline-flex w-full justify-center rounded-md border border-transparent px-4 py-2 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 sm:mt-0 sm:w-auto sm:text-sm"
+                  class="focus:ring-blue-500 mt-3 inline-flex w-full justify-center rounded-md border border-transparent bg-gray px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue focus:outline-none focus:ring-2 focus:ring-offset-2 sm:mt-0 sm:w-auto sm:text-sm"
                 >
                   Send
                 </button>
@@ -175,32 +175,36 @@
     <script>
       function submitForm(event) {
         event.preventDefault();
-        
+
         let formData = {
-          name: document.getElementById('name').value,
-          email: document.getElementById('email').value,
-          message: document.getElementById('message').value
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          message: document.getElementById("message").value,
         };
 
-        fetch('https://script.google.com/macros/s/AKfycbwlZYbDFD3_lT9q6UJSCk46rsVLXal5jhys3aFYQBCQEvCqIqUR5pN4lsn7vmqvPF7-/exec', {  // Replace with your Google Apps Script Web App URL
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
+        fetch(
+          "https://script.google.com/macros/s/AKfycbwlZYbDFD3_lT9q6UJSCk46rsVLXal5jhys3aFYQBCQEvCqIqUR5pN4lsn7vmqvPF7-/exec",
+          {
+            // Replace with your Google Apps Script Web App URL
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
           },
-          body: JSON.stringify(formData),
-        })
-        .then(response => response.json())
-        .then(data => {
-          console.log('Success:', data);
-          alert('Your message has been sent successfully!');
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-          alert('Failed to send your message.');
-        });
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Success:", data);
+            alert("Your message has been sent successfully!");
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("Failed to send your message.");
+          });
       }
 
-      document.querySelector('form').addEventListener('submit', submitForm);
+      document.querySelector("form").addEventListener("submit", submitForm);
     </script>
   </section>
 
