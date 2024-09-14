@@ -317,11 +317,6 @@
     class="parallax relative overflow-hidden p-8 text-white"
     style="background-image: url(/img/background/bodyBackground.webp);"
   >
-    <!-- Meteors -->
-    <div class="meteor meteor-1"></div>
-    <div class="meteor meteor-2"></div>
-    <div class="meteor meteor-3"></div>
-    <div class="meteor meteor-4"></div>
 
     <section class="no-js-hide p-8">
       {{ partial "search.html" . }}
@@ -361,61 +356,6 @@
       </div>
     </section>
   </section>
-
-  <style>
-    .meteor {
-      position: absolute; /* Positioned relative to the section */
-      width: 20px;
-      height: 20px;
-      background: linear-gradient(135deg, white, transparent);
-      border-radius: 50%;
-      transform: rotate(45deg);
-      opacity: 0.8;
-    }
-
-    /* Individual meteor start positions relative to the section */
-    .meteor-1 {
-      top: 0;
-      right: 0;
-    }
-    .meteor-2 {
-      top: 0;
-      right: 20px;
-    }
-    .meteor-3 {
-      top: 0;
-      right: 40px;
-    }
-    .meteor-4 {
-      top: 0;
-      right: 60px;
-    }
-  </style>
-
-  <script>
-    document.addEventListener("scroll", () => {
-      const section = document.querySelector(".parallax"); // Get the section
-      const sectionTop = section.offsetTop; // Get section's top offset relative to the page
-      const scrollPosition = window.scrollY;
-
-      // Check if the section is in view
-      if (scrollPosition >= sectionTop) {
-        const relativeScroll = scrollPosition - sectionTop; // Scroll relative to the section
-
-        // Select all meteors
-        const meteors = document.querySelectorAll(".meteor");
-
-        // Adjust position of each meteor based on scroll amount
-        meteors.forEach((meteor, index) => {
-          const speed = (index + 1) * 0.5; // Each meteor moves at a different speed
-          const xMovement = relativeScroll * speed; // Horizontal movement (to the left)
-          const yMovement = relativeScroll * speed; // Vertical movement (downward)
-
-          meteor.style.transform = `translate(-${xMovement}px, -${yMovement}px) rotate(45deg)`;
-        });
-      }
-    });
-  </script>
 
   <!-- Section by Area of Expertise -->
   <section class="bg-g-3 p-8 shadow-inner">

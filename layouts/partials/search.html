@@ -172,23 +172,21 @@
         ></h2>
         <h3 class="truncate text-g-6" x-text="p.organization"></h3>
         <div class="font-serif text-sm leading-normal text-gray">
-          <p x-show="p.researchAreas.length">
+          <p x-show="p.researchAreas.length" id = "researchArea">
             <span class="mr-1 text-g-7">
               <svg
                 class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
               >
-                <title>Research Areas</title>
-                <use xlink:href="#university-svg"></use>
+                <use xlink:href="#research"></use>
               </svg>
             </span>
             <span x-text="andMore(p.researchAreas)"></span>
           </p>
-          <p x-show="p.relevantCourses.length">
+          <p x-show="p.relevantCourses.length" id = "relevantCourses">
             <span class="mr-1 text-g-7">
               <svg
                 class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
               >
-                <title>Relevant Courses</title>
                 <use xlink:href="#open-book"></use>
               </svg>
             </span>
@@ -199,6 +197,19 @@
           class="mt-2 break-words font-serif text-sm italic text-gray [&_mark]:bg-green [&_mark]:p-[2px] [&_mark]:text-white"
           x-html="p.excerpt+'…'"
         ></p>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            tippy('#researchArea', {
+                content: 'Research Areas',
+            });
+            tippy('#relevantCourses', {
+                content: 'Relevant Courses',
+            });
+          });
+        </script>
       </a>
     </template>
   </div>

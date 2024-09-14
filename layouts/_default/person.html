@@ -25,7 +25,7 @@
       <!-- Basic Information Section -->
       <div class="links-blue-darker enter4 mt-2 text-sm sm:flex sm:flex-wrap">
         <!-- Institution of Ph.D. -->
-        <p class="sm:w-1/2">
+        <p class="sm:w-1/2" id = college>
           <span class="mr-5 text-g-6">
             <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
               <use xlink:href="#university-svg"></use>
@@ -35,7 +35,7 @@
         </p>
 
         <!-- Field of Ph.D. -->
-        <p class="sm:w-1/2">
+        <p class="sm:w-1/2" id = major>
           <span class="mr-5 text-g-6">
             <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
               <use xlink:href="#phd"></use>
@@ -45,19 +45,17 @@
         </p>
 
         <!-- Year of Ph.D. -->
-        <p class="sm:w-1/2">
+        <p class="sm:w-1/2" id = "years">
           <span class="mr-5 text-g-6">
             <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
               <use xlink:href="#year"></use>
             </svg>
           </span>
-          <span
-            >Year of Ph.D. or highest degree: {{ .Params.year_of_phd }}</span
-          >
+          <span>{{ .Params.year_of_phd }}</span>
         </p>
 
         <!-- Research Areas -->
-        <p class="sm:w-1/2">
+        <p class="sm:w-1/2" id = researchArea>
           <span class="mr-5 text-g-6">
             <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
               <use xlink:href="#research"></use>
@@ -72,7 +70,7 @@
         </p>
 
         <!-- Relevant Courses -->
-        <p class="sm:w-1/2">
+        <p class="sm:w-1/2" id = relevantCourses>
           <span class="mr-5 text-g-6">
             <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
               <use xlink:href="#open-book"></use>
@@ -87,7 +85,7 @@
         </p>
 
         <!-- Wikipedia Link -->
-        <p class=" flex items-center sm:w-1/2">
+        <p class=" flex items-center sm:w-1/2" id = wiki>
           <span class="mr-5 text-g-6">
             <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
               <title>Website</title>
@@ -100,7 +98,9 @@
             >
           </span>
         </p>
-        <p class=" flex items-center sm:w-1/2">
+
+        <!-- college level -->
+        <p class=" flex items-center sm:w-1/2" id = levels>
           <span class="mr-5 text-g-6">
             <svg class="inline-block h-4 w-4 fill-current align-text-bottom">
               <title>level</title>
@@ -162,10 +162,10 @@
               <div
                 class="mb-4 w-full text-center sm:mb-0 sm:mr-4 sm:w-auto sm:text-left"
               >
-                <a href="{{ $img.RelPermalink }}" download>
+                <a href="{{ $img.RelPermalink }}" download
+                id = imageDownload>
                   <img
                     data-pagefind-meta="image[src], image_alt[alt], image_srcset[srcset], image_width[width], image_height[height]"
-                    title="Click to download"
                     class="image-zoom mx-auto rounded bg-g-4 shadow transition-shadow duration-500 hover:shadow-lg sm:mx-0"
                     alt="Headshot of {{ $.Title }}"
                     width="{{ $imgSmall.Width }}"
@@ -469,4 +469,42 @@
       animation: slideInLeft 0.6s ease-out forwards;
     }
   </style>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      tippy('#college', {
+          content: 'Institution of Ph.D.',
+          placement: "left"
+      });
+      tippy('#major', {
+          content: 'Field of Ph.D.',
+          placement: "right"
+      });
+      tippy('#years', {
+          content: 'Year of Ph.D. or highest degree',
+          placement: "left"
+      });
+      tippy('#researchArea', {
+          content: 'Research Areas',
+          placement: "right"
+      });
+      tippy('#relevantCourses', {
+          content: 'Relevant Courses',
+          placement: "left"
+      });
+      tippy('#wiki', {
+          content: 'Wikipedia Link',
+          placement: "right"
+      });
+      tippy('#levels', {
+          content: 'College Level Assessment',
+          placement: "left"
+      });
+      tippy('#imageDownload', {
+        content: 'click the image to download',
+    });
+    });
+  </script>
 {{ end }}
