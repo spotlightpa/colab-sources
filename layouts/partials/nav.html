@@ -46,7 +46,9 @@
                   class="self-center text-blue duration-500 hover:text-blue-darker"
                   href="{{ .URL }}"
                   {{ with .Post }}target="{{ . }}"{{ end }}
-                  @click="showModal = true;  console.log(showModal)"
+                  {{ if eq .Name "Contact Us" }}
+                    @click="showModal = true;"
+                  {{ end }}
                 >
                   {{- .Name -}}
                 </a>

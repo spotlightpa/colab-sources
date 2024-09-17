@@ -34,11 +34,23 @@
     />
     {{ if .IsHome }}
       <!-- Preload images for the homepage -->
-      <link rel="preload" href="/img/background/bodyBackground.webp" as="image" />
-      <link rel="preload" href="/img/background/titleBackground.webp" as="image" />
+      <link
+        rel="preload"
+        href="/img/background/bodyBackground.webp"
+        as="image"
+      />
+      <link
+        rel="preload"
+        href="/img/background/titleBackground.webp"
+        as="image"
+      />
     {{ else }}
       <!-- Preload image for other pages -->
-      <link rel="preload" href="/img/background/personBackground.webp" as="image" />
+      <link
+        rel="preload"
+        href="/img/background/personBackground.webp"
+        as="image"
+      />
     {{ end }}
 
     {{ $cssTW := resources.Get "css/main.css" }}
