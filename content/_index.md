@@ -1,5 +1,5 @@
 ---
-title: Hidden Figures
+title: Hidden Figures- RCSA
 description: A database to highlight the contributions of physicists and astronomers from marginalized backgrounds.
 title-tag: Hidden Figures - RCSA
 ---

@@ -4,7 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>
-      {{ .Title }}
+      {{- if .Param "last" -}}
+        Hidden Figure &middot;
+        {{ .Title }}
+      {{- else -}}
+        {{ .Title }}
+      {{- end -}}
     </title>
 
     <!-- Preload fonts -->
