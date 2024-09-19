@@ -7,7 +7,9 @@
     class="parallax bg-gray p-8 "
     style="background-image: url(/img/background/titleBackground.webp); text-align: center;"
   >
-    <div style="display: inline-block; background-color: rgb(39, 39, 39, 0.5); padding: 20px; border-radius: 8px; ">
+    <div
+      style="display: inline-block; background-color: rgb(39, 39, 39, 0.5); padding: 20px; border-radius: 8px; "
+    >
       <h1>
         <span class="sr-only">{{ .Title }}</span>
         {{ $img := resources.Get `img/logos/hiddenfigs_logo.png` }}
@@ -26,13 +28,15 @@
           "
         />
       </h1>
-      <h2 
-        class="links-blue-darker text-center font-sans text-xl leading-tight text-white md:text-xl">
+      <h2
+        class="links-blue-darker text-center font-sans text-xl leading-tight text-white md:text-xl"
+      >
         A Cottrell Scholars Collaborative funded by the
-        <a class="font-bold" href="https://rescorp.org/">Research Corporation for Science Advancement</a>
+        <a class="font-bold" href="https://rescorp.org/"
+          >Research Corporation for Science Advancement</a
+        >
       </h2>
-      <div 
-        class="content-area mx-auto mt-8 max-w-prose text-white">
+      <div class="content-area mx-auto mt-8 max-w-prose text-white">
         {{ .Content }}
       </div>
     </div>

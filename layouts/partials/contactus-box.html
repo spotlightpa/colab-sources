@@ -26,11 +26,16 @@
     </div>
     <div class="px-4 py-5 sm:p-6">
       <h3 class="text-lg font-medium leading-6 text-black">Contact Us</h3>
-      <div class="mt-2 mb-4">
-        <button class="text-sm cursor-pointer hover:text-blue-darker" id="emailText" onclick="copyEmailToClipboard()">
-            <svg class="inline-block h-4 w-4 fill-current align-text-bottom ">
-              <use xlink:href="#copy"></use>
-            </svg> hiddenfigs@googlegroups.com
+      <div class="mb-4 mt-2">
+        <button
+          class="cursor-pointer text-sm hover:text-blue-darker"
+          id="emailText"
+          onclick="copyEmailToClipboard()"
+        >
+          <svg class="inline-block h-4 w-4 fill-current align-text-bottom ">
+            <use xlink:href="#copy"></use>
+          </svg>
+          hiddenfigs@googlegroups.com
         </button>
       </div>
       <div class="mt-2">
@@ -115,11 +120,14 @@
 
   document.querySelector("form").addEventListener("submit", submitForm);
   function copyEmailToClipboard() {
-    const emailText = 'your-email@example.com';
-    navigator.clipboard.writeText(emailText).then(function() {
-      alert('Email copied to clipboard!');
-    }, function(err) {
-      console.error('Could not copy text: ', err);
-    });
+    const emailText = "your-email@example.com";
+    navigator.clipboard.writeText(emailText).then(
+      function () {
+        alert("Email copied to clipboard!");
+      },
+      function (err) {
+        console.error("Could not copy text: ", err);
+      },
+    );
   }
 </script>
