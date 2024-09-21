@@ -1,4 +1,5 @@
 <!-- layouts/partials/modal.html -->
+<!-- the actual form sending function is not implemented, it's probably the problem on the google sheet side, app script -->
 <div
   x-show="showModal"
   x-transition:enter="transition ease-out duration-200"
@@ -86,6 +87,8 @@
     </div>
   </div>
 </div>
+
+<!-- the form sending and copy email to clipboard script -->
 <script>
   function submitForm(event) {
     event.preventDefault();

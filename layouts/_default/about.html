@@ -74,6 +74,7 @@
       animatedElements.forEach((element) => {
         element.addEventListener("animationend", () => {
           // Remove the animation class after the animation ends
+          // the transform will be overwritten by the entering animation, so it get's removed and replaced with the hover animation
           element.classList.remove("enter-team-member");
         });
       });
