@@ -11,3 +11,5 @@ The guide is a response to a call from community members and journalists of colo
 Information in this diverse source guide is voluntarily shared and self-reported by participants, and should be verified before publication.
 
 Have a question? [Check out our FAQs](https://colabnews.co/amplify-colorado/). Ideas for improvements? See an error? [Send us a note](mailto:amplifycolorado@colabnews.co).
+
+Want to learn more about Colorado's diverse communities? [Visit Amplify Colorado: Community Narratives](https://colabnews.co/amplify-colorado-community-narratives/). 
