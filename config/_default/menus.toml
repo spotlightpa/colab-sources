@@ -28,14 +28,19 @@ weight = 3
 post = "_blank"
 
 [[mobile]]
+name = "Community Narratives"
+url = "https://colabnews.co/amplify-colorado-community-narratives/"
+weight = 4
+
+[[mobile]]
 name = "Contact Us"
 url = "mailto:amplifycolorado@colabnews.co"
-weight = 4
+weight = 5
 
 [[mobile]]
 name = "Donate"
 url = "https://colabnews.co/donate/"
-weight = 5
+weight = 6
 
 [[footer]]
 name = "Home"
