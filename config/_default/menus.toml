@@ -34,7 +34,7 @@ weight = 4
 
 [[mobile]]
 name = "Donate"
-url = "https://colab.fundjournalism.org/amplifycolorado/"
+url = "https://colabnews.co/donate/"
 weight = 5
 
 [[footer]]
@@ -54,7 +54,7 @@ weight = 3
 
 [[footer]]
 name = "Donate"
-url = "http://colab.fundjournalism.org/amplifycolorado"
+url = "https://colabnews.co/donate/"
 weight = 4
 
 [[follow]]
@@ -69,6 +69,11 @@ weight = 2
 post = "_blank"
 
 [[follow]]
+name = "Explore Community Narratives"
+url = "https://colabnews.co/amplify-colorado-community-narratives/"
+weight = 3
+
+[[follow]]
 name = "Contact"
 url = "mailto:amplifycolorado@colabnews.co"
-weight = 3
+weight = 4
