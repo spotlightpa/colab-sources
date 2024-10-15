@@ -69,11 +69,11 @@ weight = 2
 post = "_blank"
 
 [[follow]]
-name = "Explore Community Narratives"
-url = "https://colabnews.co/amplify-colorado-community-narratives/"
+name = "Contact"
+url = "mailto:amplifycolorado@colabnews.co"
 weight = 3
 
 [[follow]]
-name = "Contact"
-url = "mailto:amplifycolorado@colabnews.co"
+name = "Community Narratives"
+url = "https://colabnews.co/amplify-colorado-community-narratives/"
 weight = 4
