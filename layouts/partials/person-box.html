@@ -1,5 +1,5 @@
 <a
-  class="group flex h-full flex-col gap-3 border-8 border-blue p-4 shadow transition-colors duration-500 hover:border-blue-darker"
+  class="group flex h-full flex-col gap-3 border-8 border-blue bg-g-4 p-4 shadow transition-colors duration-500 hover:border-blue-darker"
   href="{{ $.RelPermalink }}"
 >
   {{ with .Param "images" }}
@@ -50,16 +50,15 @@
 
 
   <h2
-    class="mt-auto font-sans text-lg font-bold underline decoration-blue decoration-4 underline-offset-2 transition-colors duration-500 group-hover:decoration-blue-darker"
+    class="mt-auto font-sans text-lg font-bold text-black underline decoration-blue decoration-4 underline-offset-2 transition-colors duration-500 group-hover:decoration-blue-darker"
   >
     {{- .Params.name -}}
   </h2>
   {{ if $xpts := .Params.researchAreas }}
-    <p class="text-sm leading-normal">
+    <p class="text-sm leading-normal" id="researchArea">
       <svg
         class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
       >
-        <title>Research Areas</title>
         <use xlink:href="#research"></use>
       </svg>
       <span class="text-gray">
@@ -78,11 +77,10 @@
     </p>
   {{ end }}
   {{ if $xpts := .Params.relevantCourses }}
-    <p class="text-sm leading-normal">
+    <p class="text-sm leading-normal" id="relevantCourses">
       <svg
         class="relative top-[2px] mr-2 inline-block h-4 w-4 fill-current align-baseline text-g-6"
       >
-        <title>Research Areas</title>
         <use xlink:href="#open-book"></use>
       </svg>
       <span class="text-gray">
@@ -100,4 +98,19 @@
       </span>
     </p>
   {{ end }}
+
+
+  <!-- the tool tip script -->
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      tippy("#researchArea", {
+        content: "Research Areas",
+      });
+      tippy("#relevantCourses", {
+        content: "Relevant Courses",
+      });
+    });
+  </script>
 </a>

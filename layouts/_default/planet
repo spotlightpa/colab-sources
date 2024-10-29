@@ -1,0 +1,153 @@
+
+  <!-- Section with Call-to-Action Links -->
+  <section
+    class="flex flex-col justify-around space-y-4 bg-gray shadow-inner sm:flex-row sm:space-x-4 sm:space-y-0"
+    x-data="{ isOpen: false, showModal: false }"
+  >
+    {{ $blkClass := `group relative block w-full p-2 text-center leading-tight duration-100 sm:w-64` }}
+    {{ $hedClass := `text-gray font-sans font-bold uppercase group-hover:text-white duration-100` }}
+    {{ $dekClass := `my-1 mx-auto max-w-xs font-serif text-g-7` }}
+
+
+    <!-- Add an Entry Button -->
+    <a
+      class="system {{ $blkClass }}"
+      href="https://forms.gle/ZRopiyBevpXu9D459"
+      target="_blank"
+    >
+      <div class="planet">
+        <div>
+          <div class="{{ $hedClass }}">Add an entry</div>
+          or recommend someone and we will follow up
+        </div>
+      </div>
+      <div class="orbit">
+        <div class="moon"></div>
+      </div>
+    </a>
+
+    <!-- Update Entry Button -->
+    {{ $emailSubject := `About my Hidden Figures database entry` }}
+    <a
+      class="system {{ $blkClass }}"
+      href="mailto:hiddenfigs@googlegroups.com?subject={{ $emailSubject }}"
+      @click.prevent="showModal = true; console.log(showModal)"
+    >
+      <div class="planet">
+        <div>
+          <div class="{{ $hedClass }}">Update entry.</div>
+          Let us know if your information changed
+        </div>
+      </div>
+      <div class="orbit">
+        <div class="moon"></div>
+      </div>
+    </a>
+
+    <!-- Popup Modal -->
+    {{ partial "contactus-box.html" . }}
+  </section>
+
+  <style>
+    .system {
+      perspective: 1000px;
+      transform-style: preserve-3d;
+      height: 300px;
+      aspect-ratio: 1;
+      rotate: 45deg;
+      position: relative; /* Make sure it can contain absolutely positioned elements */
+    }
+
+    .planet,
+    .orbit,
+    .moon {
+      position: absolute;
+      transform-style: preserve-3d;
+      inset: 0;
+      height: calc(var(--size) * 1%);
+      margin: auto;
+      aspect-ratio: 1;
+      border-radius: 50%;
+    }
+
+    .planet {
+      --size: 50;
+      background: radial-gradient(circle at 40% 40%, #1e90ff, #104e8b 70%);
+      border-radius: 50%;
+      box-shadow:
+        inset -20px -20px 30px rgba(0, 0, 0, 0.4),
+        inset 10px 10px 20px rgba(255, 255, 255, 0.2),
+        0 0 30px rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      rotate: -45deg;
+    }
+
+    .orbit {
+      --size: 80;
+      --duration: 6s;
+      box-shadow:
+        0 0 0 2cqmin #5554,
+        inset 0 0 0 2cqmin #5554; /* Orbit outline */
+      animation: orbit calc(var(--duration)) linear infinite;
+      rotate: 1 0 0 80deg;
+      animation-timing-function: linear;
+      animation-play-state: running;
+      will-change: transform;
+    }
+
+    .moon {
+      --size: 24;
+      height: calc(var(--size) * 1%);
+      margin-left: calc(var(--size) * -0.5%);
+      background: radial-gradient(circle at 30% 30%, #d3d3d3, #a9a9a9 70%);
+      border-radius: 50%;
+      position: relative;
+      box-shadow:
+        inset -10px -10px 30px rgba(0, 0, 0, 0.5),
+        inset 10px 10px 20px rgba(255, 255, 255, 0.2),
+        0 0 30px rgba(255, 255, 255, 0.1);
+      animation: moon calc(var(--duration)) linear infinite;
+      rotate: 1 0 0 90deg;
+      animation-timing-function: linear;
+      animation-play-state: running;
+      will-change: transform;
+    }
+
+    /* Orbit and Moon Animation */
+    @keyframes orbit {
+      to {
+        transform: rotate3d(0, 0, 1, 360deg);
+      }
+    }
+
+    @keyframes moon {
+      to {
+        transform: rotate3d(0, 1, 0, -360deg);
+      }
+    }
+
+    /* Hover effect for smoother speed change */
+    .group:hover .orbit,
+    .group:hover .moon {
+      animation-duration: 3s; /* Speed up the animation without resetting */
+      transition: animation-duration 0.5s ease; /* Smooth transition for speeding up */
+    }
+
+    .planet-text {
+      display: block;
+      text-align: center;
+      width: 80%;
+      font-size: 14px;
+    }
+
+    /* Additional button styling */
+    .group:hover .planet {
+      background: #005faf; /* Change planet color on hover */
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>

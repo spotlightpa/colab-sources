@@ -1,5 +1,5 @@
 {
-  "title": "name",
+  "title": "Katharine Burr Blodgett",
   "name": "Katharine Burr Blodgett",
   "linktitle": "Katharine Burr Blodgett",
   "last": "Blodgett",

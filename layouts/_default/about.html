@@ -1,26 +1,37 @@
 {{ define "main" }}
-  <main class="p-8">
+  <main
+    class="bg-gray p-8 text-white "
+    style="background-image: url('/img/background/personBackground.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+  >
     <div class="mx-auto max-w-screen-md">
-      <h1 class="text-3xl font-bold text-black">About Us</h1>
+      <!-- Title -->
+      <h1 class="enter-title text-3xl font-bold">About Us</h1>
 
-      <!-- Mission and Values -->
-      <section class="mt-6">
+      <!-- Mission and Values Section -->
+      <section class="enter-mission mt-6">
         <h2 class="text-gray-800 text-2xl font-semibold">Our Mission</h2>
-        <p class="text-gray-700 mt-2">
+        <p
+          class="text-gray-700 mt-2"
+          style="display: inline-block; background-color: rgb(39, 39, 39, 0.5); padding: 20px; border-radius: 8px;"
+        >
           {{ .Params.mission }}
         </p>
       </section>
 
-      <!-- Team Members -->
-      <section class="mt-6">
+      <!-- Meet Our Team Section -->
+      <section class="enter-team-header mt-6">
         <h2 class="text-gray-800 text-2xl font-semibold">Meet Our Team</h2>
-        <div class="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {{ range .Params.team_members }}
-            <div class="team-member rounded-lg bg-white p-4 shadow">
-              {{ if .image }}
+        <div class="mt-4 grid gap-6 text-black sm:grid-cols-2 lg:grid-cols-3">
+          {{ range $index, $member := .Params.team_members }}
+            {{ $delay := printf "%.1fs" (add 0.5 (mul $index 0.1)) }}
+            <div
+              class="team-member enter-team-member rounded-lg bg-white p-4 shadow"
+              style="--animation-delay: {{ $delay }};"
+            >
+              {{ if $member.image }}
                 <img
-                  src="{{ .image }}"
-                  alt="Photo of {{ .name }}"
+                  src="{{ $member.image }}"
+                  alt="Photo of {{ $member.name }}"
                   class="centered-img h-48 w-full rounded-t-lg object-cover"
                 />
               {{ else }}
@@ -43,8 +54,10 @@
                 </div>
               {{ end }}
               <div class="mt-4">
-                <h3 class="text-gray-800 text-lg font-bold">{{ .name }}</h3>
-                <p class="text-gray-600 text-sm">{{ .position }}</p>
+                <h3 class="text-gray-800 text-lg font-bold">
+                  {{ $member.name }}
+                </h3>
+                <p class="text-gray-600 text-sm">{{ $member.position }}</p>
               </div>
             </div>
           {{ end }}
@@ -52,4 +65,68 @@
       </section>
     </div>
   </main>
+
+  <!-- JavaScript to Remove Animation Class After Animation Ends -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const animatedElements = document.querySelectorAll(".enter-team-member");
+
+      animatedElements.forEach((element) => {
+        element.addEventListener("animationend", () => {
+          // Remove the animation class after the animation ends
+          // the transform will be overwritten by the entering animation, so it get's removed and replaced with the hover animation
+          element.classList.remove("enter-team-member");
+        });
+      });
+    });
+  </script>
+
+  <!-- Staggered Animation for Page Elements -->
+  <style>
+    /* Title Animation */
+    .enter-title {
+      opacity: 0;
+      animation: popUp 0.3s ease-out forwards;
+    }
+
+    /* Mission Section Animation */
+    .enter-mission {
+      opacity: 0;
+      animation: popUp 0.4s ease-out forwards;
+      animation-delay: 0.2s;
+    }
+
+    /* Team Header Animation */
+    .enter-team-header {
+      opacity: 0;
+      animation: popUp 0.5s ease-out forwards;
+      animation-delay: 0.3s;
+    }
+
+    /* Team Members Animation (with ripple effect) */
+    .enter-team-member {
+      opacity: 0;
+      animation: popUp 0.5s ease-out forwards;
+      animation-delay: var(--animation-delay, 0s); /* Use the delay variable */
+    }
+
+    .team-member:hover {
+      transition:
+        transform 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
+      transform: scale(1.05);
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes popUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px); /* Change to translate instead of scale */
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0); /* Reset translate to 0 */
+      }
+    }
+  </style>
 {{ end }}

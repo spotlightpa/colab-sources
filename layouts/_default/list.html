@@ -1,5 +1,8 @@
 {{ define "main" }}
-  <section class="p-8">
+  <section
+    class="min-h-screen p-8"
+    style="background-image: url('/img/background/personBackground.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+  >
     <div class="mx-auto max-w-screen-md">
       <h1 class="text-right text-lg leading-tight">
         <a class="text-blue duration-500 hover:text-blue-darker" href="/"
@@ -14,16 +17,17 @@
           >
           <span class="text-g-5">»</span>
         {{ end }}
-        <span class="font-bold">{{ .Title }}</span>
+        <span class="font-bold text-blue">{{ .Title }}</span>
       </h1>
 
-      <!-- people list page -->
+      <!-- People List Page -->
       {{ if not (or (eq .Params.linktitle "Research Areas") (eq .Params.linktitle "Relevant Courses")) }}
         <ul class="mt-6">
-          {{ $isOdd := false }}
           {{ range .Pages.ByParam "last" }}
-            {{ $isOdd = not $isOdd }}
-            <li class="{{ cond $isOdd `bg-g-3 rounded` `` }} p-2">
+            <li
+              class="person-list-item mt-6 rounded bg-white p-2"
+              style="will-change: opacity, transform;"
+            >
               <a class="text-base" href="{{ .RelPermalink }}">
                 <h2
                   class="inline font-bold text-blue duration-500 hover:text-blue-darker"
@@ -36,11 +40,11 @@
               <div
                 class="links-blue-darker font-sans text-base leading-snug text-g-7"
               >
-                <!-- researchAreas Link List-->
+                <!-- Research Areas Link List -->
                 {{ if .Params.researchAreas }}
                   <span class="mr-1 text-g-7">
                     <svg class="inline-block h-3 w-3 fill-current align-middle">
-                      <title>researchAreas</title>
+                      <title>Research Areas</title>
                       <use xlink:href="#university-svg"></use>
                     </svg>
                   </span>
@@ -58,7 +62,7 @@
                 {{ end }}
 
 
-                <!-- RelevantCourses Links List -->
+                <!-- Relevant Courses Link List -->
                 {{ if .Params.relevantCourses }}
                   <span class="mr-1 text-g-7">
                     <svg class="inline-block h-3 w-3 fill-current align-middle">
@@ -83,11 +87,14 @@
           {{ end }}
         </ul>
 
-        <!-- categories page -->
+        <!-- Categories Page -->
       {{ else }}
         <ul class="links-blue-darker mt-6 sm:columns-2 md:columns-3">
           {{ range .Pages }}
-            <li class="mb-4">
+            <li
+              class="category-list-item mb-4"
+              style="will-change: opacity, transform;"
+            >
               <a
                 href="{{ .RelPermalink }}"
                 class="hover:bg-blue-100 block transform rounded bg-white p-4 shadow transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
@@ -107,4 +114,66 @@
       {{ end }}
     </div>
   </section>
+
+  <!-- JavaScript to Trigger Animation on Scroll with IntersectionObserver -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const animatedElements = document.querySelectorAll(
+        ".person-list-item, .category-list-item",
+      );
+
+      function handleIntersection(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fadeInUp");
+            observer.unobserve(entry.target); // Stop observing once animation has started
+          }
+        });
+      }
+
+      const observer = new IntersectionObserver(
+        handleIntersection,
+        observerOptions,
+      );
+
+      animatedElements.forEach((element) => {
+        observer.observe(element);
+      });
+    });
+  </script>
+
+  <!-- Fade-In and Upward Motion Animation Styles -->
+  <style>
+    /* Person List Item and Category List Item - Starting State */
+    .person-list-item,
+    .category-list-item {
+      opacity: 0;
+      transform: translateY(20px); /* Initial state before animation */
+      transition:
+        transform 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
+    }
+
+    /* Hover Effects */
+    .person-list-item:hover,
+    .category-list-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Trigger Fade-In and Upward Motion */
+    .fadeInUp {
+      opacity: 1;
+      transform: translateY(0);
+      transition:
+        opacity 0.7s ease-out,
+        transform 0.7s ease-out;
+    }
+  </style>
 {{ end }}

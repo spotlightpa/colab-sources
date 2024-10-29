@@ -1,5 +1,5 @@
 {
-  "title": "name",
+  "title": "Henrietta Swan Leavitt",
   "name": "Henrietta Swan Leavitt",
   "linktitle": "Henrietta Swan Leavitt",
   "last": "Leavitt",
