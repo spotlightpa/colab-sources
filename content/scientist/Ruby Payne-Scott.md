@@ -1,4 +1,4 @@
-{
+
   "title": "Ruby Payne-Scott",
   "name": "Ruby Payne-Scott",
   "linktitle": "Ruby Payne-Scott",
