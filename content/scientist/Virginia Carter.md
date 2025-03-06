@@ -17,6 +17,5 @@
 },
 "citations":["https://www.nytimes.com/2024/1https://www.hollywoodreporter.com/tv/tv-news/virginia-carter-dead-norman-lear-adviser-1236048009/1/06/arts/television/virginia-carter-dead.html","https://www.hollywoodreporter.com/tv/tv-news/virginia-carter-dead-norman-lear-adviser-1236048009/"],
 "layout":"person",
-"level":["UG-LD"],
-
+"level":["UG-LD"]
 }
