@@ -3,14 +3,14 @@
   "honorific": "",
   "facebook": "",
   "pronoun": "He/Him/His",
-  "bio": "Vignesh Ramachandran (he/him) is a member of the AAPI Voices working group and participated in the South Asian-focused session. He is a Denver-based journalist reporting on race, culture and politics currently working as a growth editor for Apple News. He is also co-founder of Red, White and Brown Media, an online platform chronicling South Asian American stories.",
+  "bio": "Vignesh Ramachandran (he/him) is a member of the AAPI Voices working group and participated in the South Asian-focused session. He is also co-founder of Red, White and Brown Media, an online platform chronicling South Asian American stories.",
   "threads": "",
   "layout": "person",
   "resume": "",
   "area": [
     "Statewide (Colorado)"
   ],
-  "phone": "303-915-5735",
+  "phone": "",
   "first": "Vignesh",
   "instagram": "https://www.instagram.com/vigneshr/",
   "organization": "Red, White and Brown Media",
