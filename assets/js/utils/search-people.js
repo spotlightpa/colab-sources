@@ -55,16 +55,18 @@ export default function searchPeople() {
 
     // Initialize the search component
     async init() {
-      let pagefind;
-      try {
-        pagefind = await import("/pagefind/pagefind.js");
-        await pagefind.options({ excerptLength: 10 });
-        await pagefind.init();
-      } catch (e) {
-        this.error = e;
-        return;
-      }
-      this.pagefind = pagefind;
+      // Commenting out the pagefind.js import and initialization
+      // let pagefind;
+      // try {
+      //   pagefind = await import("/pagefind/pagefind.js");
+      //   await pagefind.options({ excerptLength: 10 });
+      //   await pagefind.init();
+      // } catch (e) {
+      //   console.error("Pagefind.js not found. Skipping initialization.", e);
+      //   // Proceed with the rest of your code
+      //   this.pagefind = null;
+      //   this.error = e;
+      // }
       for (let param of [
         "query",
         "filterType",
@@ -74,10 +76,23 @@ export default function searchPeople() {
       ]) {
         this.$watch(param, () => this.search());
       }
+      // Ensure popup initialization runs
+      this.initPopup();
+    },
+
+    // Function to initialize the popup
+    initPopup() {
+      // Your popup initialization code here
+      console.log("Popup initialized");
     },
 
     // Perform the search
     async search() {
+      // Commenting out the search functionality related to pagefind
+      // if (!this.pagefind) {
+      //   console.warn("Pagefind.js not initialized. Skipping search.");
+      //   return;
+      // }
       let query = this.query.trim();
       let timeout = query ? 300 : 0;
       this.isLoading = true;
@@ -98,22 +113,22 @@ export default function searchPeople() {
 
       let results;
       try {
-        const search = await debouncedSearch(
-          this.pagefind,
-          query,
-          options,
-          timeout,
-        );
-        if (search === null) return;
-        results = await Promise.all(search.results.map((r) => r.data()));
-        this.resultCount = search.results.length;
+        // const search = await debouncedSearch(
+        //   this.pagefind,
+        //   query,
+        //   options,
+        //   timeout,
+        // );
+        // if (search === null) return;
+        // results = await Promise.all(search.results.map((r) => r.data()));
+        // this.resultCount = search.results.length;
       } catch (e) {
         this.resultCount = 0;
         this.error = e;
         this.isLoading = false;
         return;
       }
-      this.results = results;
+      // this.results = results;
       this.isLoading = false;
     },
 

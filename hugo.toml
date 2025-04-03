@@ -4,7 +4,6 @@ title = ""
 enableRobotsTXT = true
 enableGitInfo = true
 rssLimit = 50
-Paginate = 25
 
 googleAnalytics = 'G-0N3FRVSW3G'
 buildFuture = true
@@ -58,6 +57,12 @@ buildFuture = true
     source = "assets/.*\\.(.*)$"
     target = "$1"
 
+[css]
+  [css.PostCSS]
+    config = "postcss.config.js"
+    targetPath = "css/styles.css"
+    inlineImports = true
+    
 [minify]
   minifyOutput = true
 

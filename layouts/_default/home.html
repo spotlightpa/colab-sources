@@ -12,7 +12,7 @@
     >
       <h1>
         <span class="sr-only">{{ .Title }}</span>
-        {{ $img := resources.Get `img/logos/hiddenfigs_logo.png` }}
+        <!-- {{ $img := resources.Get `img/logos/hiddenfigs_logo.png` }} -->
         {{ $imgSmall := $img.Resize "400x" }}
         {{ $imgMedium := $img.Resize "1000x" }}
         <img

@@ -135,3 +135,67 @@ input[type="search"]::-webkit-search-cancel-button {
     @apply text-blue decoration-white decoration-2 underline-offset-4 hover:underline;
   }
 }
+
+
+
+
+.popup {
+  display: none; /* Keep the popup hidden initially */
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* Adjust the width as necessary */
+  max-width: 500px; /* Adds a max-width for larger screens */
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px; /* Soften the corners */
+  border: 1px solid #ccc; /* Subtle border */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* More pronounced shadow */
+  z-index: 1000; /* Ensure it's above other content */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column; /* Stack the content vertically */
+}
+
+.popup-content > div {
+  margin-bottom: 15px; /* Space out the rows */
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%; /* Full width of the container */
+  padding: 10px; /* Make the inputs taller, easier to click */
+  margin-top: 5px; /* Space between label and input box */
+  box-sizing: border-box; /* Include padding in width calculation */
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Rounded borders for the input fields */
+}
+
+button {
+  padding: 10px 20px; /* Sufficient padding for easy interaction */
+  color: white;
+  background-color: #007BFF; /* Bootstrap primary color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darken button on hover for feedback */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}

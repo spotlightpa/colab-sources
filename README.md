@@ -1,7 +1,7 @@
 # Hidden Figures in Physics and Astronomy Database
 
 <p align="center">
-  <img src="assets/img/logos/hiddenfigs_logo.png" alt="Hidden Figures" width="400"/>
+  <!-- <img src="assets/img/logos/hiddenfigs_logo.png" alt="Hidden Figures" width="400"/> -->
 </p>
 
 A resource to highlight the contributions of physicists and astronomers from marginalized backgrounds.
