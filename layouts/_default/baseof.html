@@ -196,12 +196,13 @@
 </div>
 
 <script>
-  // Show/close popup logic
   document.addEventListener("DOMContentLoaded", () => {
     const popup = document.getElementById("popup");
     const inputDisplay = document.getElementById("inputDisplay");
 
-    document.getElementById("openPopupBtn").onclick = () => popup.style.display = "block";
+    // Show the popup immediately on page load
+    popup.style.display = "block";
+
     document.getElementById("closePopupBtn").onclick = () => popup.style.display = "none";
     document.getElementById("closeFormBtn").onclick = () => popup.style.display = "none";
 
@@ -210,7 +211,6 @@
     };
   });
 
-  // Input preview
   function showInput() {
     const getVal = (id) => document.getElementById(id)?.value || "";
 
@@ -234,67 +234,76 @@
   }
 </script>
 
+
 <style>
-  .popup {
-    display: none;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid #888;
-    background-color: white;
-    padding: 30px;
-    z-index: 1000;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    max-width: 700px;
-    width: 90%;
-  }
+ .popup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #888;
+  background-color: white;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;       /* <- Constrain height to screen */
+  overflow: auto;         /* <- Enable scrolling */
+}
 
-  .popup-content {
-    position: relative;
-    width: 100%;
-  }
+.popup-content {
+  position: relative;
+  width: 100%;
+}
 
-  .popup label {
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
-  }
+.popup label {
+  font-weight: bold;
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+}
 
-  .popup input, .popup textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 4px;
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
+.popup input,
+.popup textarea {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
 
-  .popup button {
-    margin-right: 10px;
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 14px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+.popup button {
+  margin-top: 10px;
+  margin-right: 8px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
 
-  .popup .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-  }
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
 
-  .popup pre {
-    background: #f8f8f8;
-    padding: 15px;
-    border-radius: 5px;
-    max-height: 300px;
-    overflow: auto;
-  }
+.popup pre {
+  background: #f8f8f8;
+  padding: 12px;
+  border-radius: 4px;
+  max-height: 250px;
+  overflow: auto;
+  font-size: 13px;
+}
+
 </style>
 
   </body>
