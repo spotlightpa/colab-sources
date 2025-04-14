@@ -18,7 +18,7 @@
   "location": [
     "Denver"
   ],
-  "role": "manager",
+  "role": "Manager",
   "last": "Luong",
   "title": "Mimi Luong",
   "images": [
