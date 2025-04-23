@@ -10,9 +10,9 @@
   "phone": "781-635-2212",
   "first": "Lindsey",
   "instagram": "https://www.instagram.com/linze3/",
-  "organization": "Documentary filmmaker",
+  "organization": "Freelance",
   "pronunciation": "LIN_ zee",
-  "role": "Freelance",
+  "role": "Documentary filmmaker",
   "last": "Hagen",
   "beat": [
     "Air Quality & Wildfires",
