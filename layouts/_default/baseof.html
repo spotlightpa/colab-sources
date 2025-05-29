@@ -139,178 +139,243 @@
 
     {{ block "extra-footer" . }}{{ end }}
 
-
-
-<<<<<<< Updated upstream
-
-
-=======
->>>>>>> Stashed changes
+    <<<<<<< Updated upstream ======= >>>>>>> Stashed changes
     <!-- Popup trigger -->
-<button id="openPopupBtn" style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">Open Popup</button>
+    <button
+      id="openPopupBtn"
+      style="position: fixed; bottom: 20px; right: 20px; z-index: 999;"
+    >
+      Open Popup
+    </button>
 
-<!-- Scientist Popup -->
-<div id="popup" class="popup" style="display:none;">
-  <div class="popup-content">
-    <span class="close" id="closePopupBtn">&times;</span>
-    <h2>Welcome to our site!</h2>
-    <form id="scientistForm">
-      <div><label for="firstName">First Name:</label><input type="text" id="firstName" required /></div>
-      <div><label for="lastName">Last Name:</label><input type="text" id="lastName" required /></div>
-      <div><label for="researchArea">Research Area(s):</label><input type="text" id="researchArea" required /></div>
-      <div><label for="institution_of_phd">Institution of PhD:</label><input type="text" id="institution_of_phd" required /></div>
-      <div><label for="relevantCourses">Relevant Course(s):</label><input type="text" id="relevantCourses" required /></div>
-      <div><label for="relevantConcepts">Relevant Concept(s):</label><input type="text" id="relevantConcepts" required /></div>
-      <div><label for="images">Images (url):</label><input type="text" id="images" required /></div>
-      <div><label for="wikipedia">Wikipedia (url):</label><input type="text" id="wikipedia" required /></div>
-      <div><label for="general_bio">General Bio:</label><textarea id="general_bio" required></textarea></div>
-      <div><label for="key_contributions">Key Contributions:</label><textarea id="key_contributions" required></textarea></div>
-      <div><label for="citations">Citations:</label><textarea id="citations" required></textarea></div>
-      <div><label for="layout">Layout:</label><input type="text" id="layout" required /></div>
-      <div>
-        <button type="button" onclick="showInput()">Show My Input</button>
-        <button type="button" id="closeFormBtn">Close</button>
+    <!-- Scientist Popup -->
+    <div id="popup" class="popup" style="display:none;">
+      <div class="popup-content">
+        <span class="close" id="closePopupBtn">&times;</span>
+        <h2>Welcome to our site!</h2>
+        <form id="scientistForm">
+          <div>
+            <label for="firstName">First Name:</label
+            ><input type="text" id="firstName" required />
+          </div>
+          <div>
+            <label for="lastName">Last Name:</label
+            ><input type="text" id="lastName" required />
+          </div>
+          <div>
+            <label for="researchArea">Research Area(s):</label
+            ><input type="text" id="researchArea" required />
+          </div>
+          <div>
+            <label for="institution_of_phd">Institution of PhD:</label
+            ><input type="text" id="institution_of_phd" required />
+          </div>
+          <div>
+            <label for="relevantCourses">Relevant Course(s):</label
+            ><input type="text" id="relevantCourses" required />
+          </div>
+          <div>
+            <label for="relevantConcepts">Relevant Concept(s):</label
+            ><input type="text" id="relevantConcepts" required />
+          </div>
+          <div>
+            <label for="images">Images (url):</label
+            ><input type="text" id="images" required />
+          </div>
+          <div>
+            <label for="wikipedia">Wikipedia (url):</label
+            ><input type="text" id="wikipedia" required />
+          </div>
+          <div>
+            <label for="general_bio">General Bio:</label
+            ><textarea id="general_bio" required></textarea>
+          </div>
+          <div>
+            <label for="key_contributions">Key Contributions:</label
+            ><textarea id="key_contributions" required></textarea>
+          </div>
+          <div>
+            <label for="citations">Citations:</label
+            ><textarea id="citations" required></textarea>
+          </div>
+          <div>
+            <label for="layout">Layout:</label
+            ><input type="text" id="layout" required />
+          </div>
+          <div>
+            <button type="button" onclick="showInput()">Show My Input</button>
+            <button type="button" id="closeFormBtn">Close</button>
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
-</div>
+    </div>
 
-<!-- Display results -->
-<div id="inputDisplay" class="popup" style="display:none;">
-  <div class="popup-content">
-    <span class="close" onclick="document.getElementById('inputDisplay').style.display='none'">&times;</span>
-    <h2>Your Input</h2>
-    <pre id="displayText"></pre>
-    <p><strong>Instructions:</strong></p>
-    <ol>
-      <li><strong>Instructions to update your input! Take a picture if you can.</strong></li>
-      <li><strong>Step 1:</strong> Copy the dictionary above.</li>
-      <li><strong>Step 2:</strong> Click the link below to create a 'add file'.</li>
-      <li><strong>Step 3:</strong> Click 'Create new file'.</li>
-      <li><strong>Step 4:</strong> Paste the dictionary into the file.</li>
-      <li><strong>Step 5:</strong> On "Name your file...", give your file a name!</li>
-      <li><strong>Step 6:</strong> Click the green button 'Commit changes...'.</li>
-      <li><strong>Step 7:</strong> Propose Changes.</li>
-      <li><strong>Step 8:</strong> Click on the top right green button, "Create Pull Request", give an input, and submit your copied input!</li>
-      <li><strong>Step 9:</strong> Bottom Right, Create Pull Request.</li>
-    </ol>
-    <a id="prLink" href="https://github.com/hiddenfigs/hiddenfigs.github.io/tree/main/content" target="_blank">Create New Pull Request</a>
-  </div>
-</div>
+    <!-- Display results -->
+    <div id="inputDisplay" class="popup" style="display:none;">
+      <div class="popup-content">
+        <span
+          class="close"
+          onclick="document.getElementById('inputDisplay').style.display='none'"
+          >&times;</span
+        >
+        <h2>Your Input</h2>
+        <pre id="displayText"></pre>
+        <p><strong>Instructions:</strong></p>
+        <ol>
+          <li>
+            <strong
+              >Instructions to update your input! Take a picture if you
+              can.</strong
+            >
+          </li>
+          <li><strong>Step 1:</strong> Copy the dictionary above.</li>
+          <li>
+            <strong>Step 2:</strong> Click the link below to create a 'add
+            file'.
+          </li>
+          <li><strong>Step 3:</strong> Click 'Create new file'.</li>
+          <li><strong>Step 4:</strong> Paste the dictionary into the file.</li>
+          <li>
+            <strong>Step 5:</strong> On "Name your file...", give your file a
+            name!
+          </li>
+          <li>
+            <strong>Step 6:</strong> Click the green button 'Commit changes...'.
+          </li>
+          <li><strong>Step 7:</strong> Propose Changes.</li>
+          <li>
+            <strong>Step 8:</strong> Click on the top right green button,
+            "Create Pull Request", give an input, and submit your copied input!
+          </li>
+          <li><strong>Step 9:</strong> Bottom Right, Create Pull Request.</li>
+        </ol>
+        <a
+          id="prLink"
+          href="https://github.com/hiddenfigs/hiddenfigs.github.io/tree/main/content"
+          target="_blank"
+          >Create New Pull Request</a
+        >
+      </div>
+    </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const popup = document.getElementById("popup");
-    const inputDisplay = document.getElementById("inputDisplay");
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const popup = document.getElementById("popup");
+        const inputDisplay = document.getElementById("inputDisplay");
 
-    // Show the popup immediately on page load
-    popup.style.display = "block";
+        // Show the popup immediately on page load
+        popup.style.display = "block";
 
-    document.getElementById("closePopupBtn").onclick = () => popup.style.display = "none";
-    document.getElementById("closeFormBtn").onclick = () => popup.style.display = "none";
+        document.getElementById("closePopupBtn").onclick = () =>
+          (popup.style.display = "none");
+        document.getElementById("closeFormBtn").onclick = () =>
+          (popup.style.display = "none");
 
-    window.onclick = (e) => {
-      if (e.target === popup) popup.style.display = "none";
-    };
-  });
+        window.onclick = (e) => {
+          if (e.target === popup) popup.style.display = "none";
+        };
+      });
 
-  function showInput() {
-    const getVal = (id) => document.getElementById(id)?.value || "";
+      function showInput() {
+        const getVal = (id) => document.getElementById(id)?.value || "";
 
-    const inputData = {
-      "First Name": getVal("firstName"),
-      "Last Name": getVal("lastName"),
-      "Research Area": getVal("researchArea"),
-      "Institution of PhD": getVal("institution_of_phd"),
-      "Relevant Courses": getVal("relevantCourses").split(",").map(s => s.trim()),
-      "Relevant Concepts": getVal("relevantConcepts").split(",").map(s => s.trim()),
-      "Images (url)": getVal("images"),
-      "Wikipedia": getVal("wikipedia"),
-      "General Bio": getVal("general_bio"),
-      "Key Contributions": getVal("key_contributions"),
-      "Citations": getVal("citations"),
-      "Layout": getVal("layout")
-    };
+        const inputData = {
+          "First Name": getVal("firstName"),
+          "Last Name": getVal("lastName"),
+          "Research Area": getVal("researchArea"),
+          "Institution of PhD": getVal("institution_of_phd"),
+          "Relevant Courses": getVal("relevantCourses")
+            .split(",")
+            .map((s) => s.trim()),
+          "Relevant Concepts": getVal("relevantConcepts")
+            .split(",")
+            .map((s) => s.trim()),
+          "Images (url)": getVal("images"),
+          Wikipedia: getVal("wikipedia"),
+          "General Bio": getVal("general_bio"),
+          "Key Contributions": getVal("key_contributions"),
+          Citations: getVal("citations"),
+          Layout: getVal("layout"),
+        };
 
-    document.getElementById("displayText").innerText = JSON.stringify(inputData, null, 2);
-    document.getElementById("inputDisplay").style.display = "block";
-  }
-</script>
+        document.getElementById("displayText").innerText = JSON.stringify(
+          inputData,
+          null,
+          2,
+        );
+        document.getElementById("inputDisplay").style.display = "block";
+      }
+    </script>
 
+    <style>
+      .popup {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #888;
+        background-color: white;
+        padding: 20px;
+        z-index: 1000;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        max-width: 600px;
+        width: 90%;
+        max-height: 90vh; /* <- Constrain height to screen */
+        overflow: auto; /* <- Enable scrolling */
+      }
 
-<style>
- .popup {
-  display: none;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid #888;
-  background-color: white;
-  padding: 20px;
-  z-index: 1000;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  max-width: 600px;
-  width: 90%;
-  max-height: 90vh;       /* <- Constrain height to screen */
-  overflow: auto;         /* <- Enable scrolling */
-}
+      .popup-content {
+        position: relative;
+        width: 100%;
+      }
 
-.popup-content {
-  position: relative;
-  width: 100%;
-}
+      .popup label {
+        font-weight: bold;
+        display: block;
+        margin-top: 8px;
+        font-size: 14px;
+      }
 
-.popup label {
-  font-weight: bold;
-  display: block;
-  margin-top: 8px;
-  font-size: 14px;
-}
+      .popup input,
+      .popup textarea {
+        width: 100%;
+        padding: 6px;
+        margin-top: 4px;
+        margin-bottom: 8px;
+        font-size: 13px;
+      }
 
-.popup input,
-.popup textarea {
-  width: 100%;
-  padding: 6px;
-  margin-top: 4px;
-  margin-bottom: 8px;
-  font-size: 13px;
-}
+      .popup button {
+        margin-top: 10px;
+        margin-right: 8px;
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 13px;
+      }
 
-.popup button {
-  margin-top: 10px;
-  margin-right: 8px;
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 13px;
-}
+      .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
 
-.popup .close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.popup pre {
-  background: #f8f8f8;
-  padding: 12px;
-  border-radius: 4px;
-  max-height: 250px;
-  overflow: auto;
-  font-size: 13px;
-}
-
-</style>
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
+      .popup pre {
+        background: #f8f8f8;
+        padding: 12px;
+        border-radius: 4px;
+        max-height: 250px;
+        overflow: auto;
+        font-size: 13px;
+      }
+    </style>
+    <<<<<<< Updated upstream ======= >>>>>>> Stashed changes
   </body>
 </html>
