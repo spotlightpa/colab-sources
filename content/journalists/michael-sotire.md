@@ -4,7 +4,7 @@
   "bio": "I focus on solutions stories that can expand the societal outcomes and impact of previously published stories in order to advance digital equity, environmental justice, disability inclusion and other societal imperatives.",
   "layout": "person",
   "area": [
-    "Statewide"
+    "Statewide (Colorado)"
   ],
   "first": "Michael",
   "organization": "Local News Network",
