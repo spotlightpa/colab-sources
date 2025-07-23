@@ -5,7 +5,7 @@
   "layout": "person",
   "resume": "/img/uploads/lindseyhagen_resume2025-lindsey-hagen.pdf",
   "area": [
-    "Statewide"
+    "Statewide (Colorado)"
   ],
   "phone": "781-635-2212",
   "first": "Lindsey",
