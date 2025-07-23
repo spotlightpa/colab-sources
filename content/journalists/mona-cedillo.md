@@ -9,6 +9,7 @@
   ],
   "first": "Mona",
   "organization": "Freelance",
+  "pronunciation": "Moan-uh",
   "role": "Journalist",
   "last": "Cedillo",
   "beat": [
@@ -18,7 +19,7 @@
     "Opinion & Editorial",
     "Tribal Issues"
   ],
-  "title": "Mona",
+  "title": "Mona Cedillo",
   "images": [
     "/img/uploads/mona-cedillo.jpeg"
   ],
