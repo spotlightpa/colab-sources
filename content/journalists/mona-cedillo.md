@@ -18,7 +18,7 @@
     "Opinion & Editorial",
     "Tribal Issues"
   ],
-  "title": "Mona Cedillo",
+  "title": "Mona",
   "images": [
     "/img/uploads/mona-cedillo.jpeg"
   ],
