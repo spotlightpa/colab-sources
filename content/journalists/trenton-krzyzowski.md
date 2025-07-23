@@ -3,7 +3,7 @@
   "bio": "Trenton’s devoted investigations develop understanding that truth is the greatest power. He is assiduously dedicated to his writing every day so he can empower the masses with helpful insights and wisdom. \n\nNew to this industry, but here is his magazine: <https://zenixmag.com>.",
   "layout": "person",
   "area": [
-    "Statewide"
+    "Statewide (Colorado)"
   ],
   "phone": "970-481-2673",
   "first": "Trenton",
