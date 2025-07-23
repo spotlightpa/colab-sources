@@ -9,7 +9,7 @@
   ],
   "first": "Mona",
   "organization": "Freelance",
-  "pronunciation": "Moan-uh",
+  "pronunciation": "",
   "role": "Journalist",
   "last": "Cedillo",
   "beat": [
