@@ -19,7 +19,7 @@
   "last": "Clarke",
   "title": "Dānia Clarke",
   "images": [
-    "https://drive.google.com/file/d/1Pt7K4R1cYAmNndR0ijgO5XUF--5pMi51/view"
+    "/img/uploads/dānia.clarke.jpg"
   ],
   "languages": "English, Spanish",
   "email": "Y29ubmVjdEBicmlkZ2VodW1hbnMuY29t",
