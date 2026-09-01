@@ -16,9 +16,7 @@
   "role": "Student Journalist",
   "last": "Buerge",
   "title": "John Buerge",
-  "images": [
-    "/img/uploads/img_1677-johnathan-buerge.jpeg"
-  ],
+  "images": [],
   "languages": "English",
   "email": "c3RhZ2VtYWdpY0B5YWhvby5jb20=",
   "linktitle": "John Buerge"
