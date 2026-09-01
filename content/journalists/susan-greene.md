@@ -3,7 +3,7 @@
   "honorific": "",
   "facebook": "",
   "pronoun": "She/Her/Hers",
-  "bio": "Susan Greene is the Forward’s Israel-based correspondent. She has spent the last quarter century reporting news in Colorado, most recently as an investigative reporter and coach for journalists throughout the state.",
+  "bio": "Investigative reporter and editor with experience in newspapers, independent online news, collaborative journalism, hands-on mentoring and coaching journalists through all manner of reporting pickles. First-Amendment freedom fighter. Evangelist for old-school beat reporting, source building and holding power to account. Finalist for the 2008 Pulitzer in investigative journalism. Colorado Press Association's 2021 News Leader of the Year. Specialist in reporting on police and prosecutorial misconduct, prison conditions, mental health safety-net systems, Western water issues, issues touching on Israel and American Jewish life, politics and complex public policies.",
   "threads": "",
   "layout": "person",
   "resume": "",
@@ -13,7 +13,7 @@
   "phone": "303-886-8852",
   "first": "Susan",
   "instagram": "",
-  "organization": "The Forward",
+  "organization": "",
   "twitter": "https://twitter.com/Greeneindenver",
   "pronunciation": "",
   "location": "",
@@ -32,8 +32,8 @@
     "/img/uploads/susan-greene.jpeg"
   ],
   "languages": "English, French",
-  "website": "https://forward.com/authors/susan-greene/",
-  "email": "Z3JlZW5lQGZvcndhcmQuY29t",
+  "website": "",
+  "email": "Z3JlZW5laW5kZW52ZXJAZ21haWwuY29t",
   "linkedin": "",
   "linktitle": "Susan Greene"
 }
