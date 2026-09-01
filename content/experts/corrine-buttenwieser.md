@@ -1,7 +1,7 @@
 {
   "contact": "Text",
   "pronoun": "She/Her/Hers",
-  "bio": "I'm just a concerned mother who has been experiencing color of law violations and depervision of human rights.",
+  "bio": "I'm just a concerned mother who has been experiencing color of law violations and deprivation of human rights.",
   "layout": "person",
   "phone": "719-606-8299",
   "first": "Corrine",
