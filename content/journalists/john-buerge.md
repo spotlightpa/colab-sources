@@ -1,27 +1,36 @@
 {
-  "contact": "Email, Phone, Text",
+  "contact": "Email, Phone",
   "pronoun": "He/Him/His",
-  "bio": "I’m a journalism student with NYU. Im grateful for this career change. I’m a Colorado native and my hobbies are entertainment magic and fishing.",
-  "layout": "person",
-  "resume": "",
+  "bio": "I lead a team of reporters who cover local and state government and big public policy issues, including the environment. Until 2023, I was an enterprise reporter with a focus on transportation, and I previously covered Denver city government. I grew up in Colorado.",
   "area": [
+    "Statewide (Colorado)",
     "Adams",
+    "Arapahoe",
+    "Boulder",
     "Broomfield",
     "Denver",
+    "Douglas",
     "Jefferson"
   ],
-  "phone": "720-353-8967, 720-474-5513",
-  "first": "John",
-  "instagram": "https://twitter.com/JohnBuerge",
-  "organization": "",
-  "pronunciation": "JON",
-  "role": "Student journalist",
-  "last": "Buerge",
-  "title": "John Buerge",
+  "phone": "720-432-6616",
+  "first": "Jon",
+  "organization": "The Denver Post",
+  "twitter": "https://twitter.com/jonmurray",
+  "role": "Senior editor for public affairs/politics",
+  "last": "Murray",
+  "beat": [
+    "Climate & Environment",
+    "Government",
+    "Immigration",
+    "Politics",
+    "Water"
+  ],
+  "title": "Jon Murray",
   "images": [
-    "/img/uploads/img_1677-johnathan-buerge.jpeg"
+    "/img/uploads/jon.murray-jon-murray.jpg"
   ],
   "languages": "English",
-  "email": "c3RhZ2VtYWdpY0B5YWhvby5jb20=",
-  "linktitle": "John Buerge"
+  "website": "https://www.denverpost.com",
+  "email": "am11cnJheUBkZW52ZXJwb3N0LmNvbQ==",
+  "linktitle": "Jon Murray"
 }
